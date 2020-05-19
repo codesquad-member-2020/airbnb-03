@@ -41,4 +41,13 @@ extension UIView {
         self.trailingAnchor.constraint(equalTo: superview.trailingAnchor,
                                        constant: -padding.right).isActive = true
     }
+    
+    func centerInSuperview(constantX: CGFloat = 0, constantY: CGFloat = 0) {
+        guard let superview = self.superview else { return }
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerXAnchor.constraint(equalTo: superview.centerXAnchor,
+                                      constant: constantX).isActive = true
+        self.centerYAnchor.constraint(equalTo: superview.centerYAnchor,
+                                      constant: constantY).isActive = true
+    }
 }
