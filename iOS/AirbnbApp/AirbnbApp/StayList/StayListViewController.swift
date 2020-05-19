@@ -4,7 +4,7 @@ class StayListViewController: UIViewController {
     
     private var searchViewLayout: UIView!
     private var filterViewLayout: UIView!
-    private var collectionViewLayout: UIView!
+    private var collectionViewLayout: StayListCollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,7 @@ class StayListViewController: UIViewController {
         searchViewLayout.backgroundColor = .red
         filterViewLayout = UIView()
         filterViewLayout.backgroundColor = .blue
-        collectionViewLayout = UIView()
-        collectionViewLayout.backgroundColor = .orange
+        collectionViewLayout = StayListCollectionView()
     }
     
     private func configureLayout() {
