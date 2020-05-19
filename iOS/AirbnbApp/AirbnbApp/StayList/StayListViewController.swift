@@ -24,9 +24,9 @@ class StayListViewController: UIViewController {
     }
     
     private func configureLayout() {
-        view.addSubview(searchViewLayout)
-        view.addSubview(filterViewLayout)
-        view.addSubview(collectionViewLayout)
+        view.addSubviews(searchViewLayout,
+                         filterViewLayout,
+                         collectionViewLayout)
         
         let sidePadding: CGFloat = 24.0
         searchViewLayout.constraints(topAnchor: view.safeAreaLayoutGuide.topAnchor,
