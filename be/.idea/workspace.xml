@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b135873-3cb0-4cda-b836-e632fe9284e8" name="Default Changelist" comment="" />
+    <list default="true" id="7b135873-3cb0-4cda-b836-e632fe9284e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,6 +90,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Spring Boot.Airbnb3Application">
@@ -134,17 +140,31 @@
       <updated>1589786550284</updated>
       <workItem from="1589786557088" duration="1387000" />
       <workItem from="1589805793769" duration="1431000" />
+      <workItem from="1589876814860" duration="224000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="368" key="#Notifications" timestamp="1589805893220">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="720" y="368" key="#Notifications/0.0.1680.1050@0.0.1680.1050" timestamp="1589805893220" />
+    <state x="361" y="71" key="#Project_Structure" timestamp="1589877039576">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1589877039576" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589876914065">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589876914065" />
     <state width="1638" height="254" key="GridCell.Tab.0.bottom" timestamp="1589804637143">
       <screen x="0" y="23" width="1680" height="963" />
     </state>
@@ -177,9 +197,14 @@
       <screen x="0" y="23" width="1680" height="963" />
     </state>
     <state width="1638" height="254" key="GridCell.Tab.1.right/0.23.1680.963@0.23.1680.963" timestamp="1589804637144" />
-    <state x="341" y="164" key="SettingsEditor" timestamp="1589805869052">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="312" y="0" key="SettingsEditor" timestamp="1589877081340">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="312" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589877081340" />
     <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1589805869052" />
+    <state x="439" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1589876814356">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="439" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589876814356" />
   </component>
 </project>
