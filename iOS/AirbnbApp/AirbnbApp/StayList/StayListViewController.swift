@@ -4,7 +4,7 @@ class StayListViewController: UIViewController {
     
     private var searchViewLayout: UIView!
     private var filterViewLayout: UIView!
-    private var collectionViewLayout: StayListCollectionView!
+    private var stayListCollectionView: StayListCollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +20,13 @@ class StayListViewController: UIViewController {
         searchViewLayout.backgroundColor = .red
         filterViewLayout = UIView()
         filterViewLayout.backgroundColor = .blue
-        collectionViewLayout = StayListCollectionView()
+        stayListCollectionView = StayListCollectionView()
     }
     
     private func configureLayout() {
         view.addSubviews(searchViewLayout,
                          filterViewLayout,
-                         collectionViewLayout)
+                         stayListCollectionView)
         
         let sidePadding: CGFloat = 24.0
         searchViewLayout.constraints(topAnchor: view.safeAreaLayoutGuide.topAnchor,
@@ -46,7 +46,7 @@ class StayListViewController: UIViewController {
                                                     bottom: 0,
                                                     right: 0),
                                      size: .init(width: 0, height: 44))
-        collectionViewLayout.constraints(topAnchor: filterViewLayout.bottomAnchor,
+        stayListCollectionView.constraints(topAnchor: filterViewLayout.bottomAnchor,
                                          leadingAnchor: searchViewLayout.leadingAnchor,
                                          bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
                                          trailingAnchor: searchViewLayout.trailingAnchor,
