@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E332473D9680051528B /* UIView+AutoLayout.swift */; };
 		384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E362473E0650051528B /* StayListCollectionView.swift */; };
+		384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E382473F50F0051528B /* UIView+addSubviews.swift */; };
 		385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE424728EC8009E2E2B /* AppDelegate.swift */; };
 		385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE624728EC8009E2E2B /* SceneDelegate.swift */; };
 		385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE824728EC8009E2E2B /* TabBarController.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		384C0E332473D9680051528B /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		384C0E362473E0650051528B /* StayListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionView.swift; sourceTree = "<group>"; };
+		384C0E382473F50F0051528B /* UIView+addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviews.swift"; sourceTree = "<group>"; };
 		385D8BE124728EC8009E2E2B /* AirbnbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385D8BE424728EC8009E2E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		385D8BE624728EC8009E2E2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				384C0E332473D9680051528B /* UIView+AutoLayout.swift */,
+				384C0E382473F50F0051528B /* UIView+addSubviews.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
 				384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */,
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
+				384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
