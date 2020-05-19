@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StayCell" customModule="AirbnbApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="362"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="362"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WGr-q7-Mzh">
+                        <rect key="frame" x="0.0" y="256.5" width="414" height="97.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-qu-s24">
+                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.78 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-ur-I6Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Superhost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxp-sp-qP7">
+                                        <rect key="frame" x="81.5" y="0.0" width="79" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire Apartment・1 bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="264-Ef-QMx">
+                                <rect key="frame" x="0.0" y="25.5" width="189" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modern luxury studio in Gangnam! 5sec to Station" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMW-cF-5mI">
+                                <rect key="frame" x="0.0" y="51" width="382.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩99,323 / night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8n-Oh-f1s">
+                                <rect key="frame" x="0.0" y="77" width="122.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2N-sy-TGs">
+                        <rect key="frame" x="387.5" y="8" width="20.5" height="22"/>
+                        <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="heart" catalog="system"/>
+                    </button>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5R-JP-WcA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="248.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOz-NC-oJL">
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="248.5"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0k-At-5MP">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="YOz-NC-oJL" firstAttribute="bottom" secondItem="MKD-Sp-NGi" secondAttribute="bottom" id="BRM-nz-L5N"/>
+                            <constraint firstItem="YOz-NC-oJL" firstAttribute="height" secondItem="dNK-yT-uQZ" secondAttribute="height" id="Btu-5Z-Egw"/>
+                            <constraint firstItem="YOz-NC-oJL" firstAttribute="trailing" secondItem="MKD-Sp-NGi" secondAttribute="trailing" id="MST-pU-w1u"/>
+                            <constraint firstItem="YOz-NC-oJL" firstAttribute="leading" secondItem="MKD-Sp-NGi" secondAttribute="leading" id="QUL-FF-D74"/>
+                            <constraint firstAttribute="width" secondItem="o5R-JP-WcA" secondAttribute="height" multiplier="5:3" id="ZBO-ed-UFC"/>
+                            <constraint firstItem="YOz-NC-oJL" firstAttribute="top" secondItem="MKD-Sp-NGi" secondAttribute="top" id="eyT-gs-Vnx"/>
+                        </constraints>
+                        <viewLayoutGuide key="contentLayoutGuide" id="MKD-Sp-NGi"/>
+                        <viewLayoutGuide key="frameLayoutGuide" id="dNK-yT-uQZ"/>
+                    </scrollView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="WGr-q7-Mzh" secondAttribute="trailing" id="1th-8B-jkA"/>
+                <constraint firstAttribute="trailing" secondItem="l2N-sy-TGs" secondAttribute="trailing" constant="6" id="2eg-xd-nun"/>
+                <constraint firstItem="WGr-q7-Mzh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Gf-3P-JBq"/>
+                <constraint firstItem="l2N-sy-TGs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="91U-QR-q8T"/>
+                <constraint firstItem="o5R-JP-WcA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="M6h-WT-lea"/>
+                <constraint firstItem="o5R-JP-WcA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XoW-QX-mFE"/>
+                <constraint firstItem="WGr-q7-Mzh" firstAttribute="top" secondItem="o5R-JP-WcA" secondAttribute="bottom" constant="8" id="gms-Mw-AYn"/>
+                <constraint firstAttribute="bottom" secondItem="WGr-q7-Mzh" secondAttribute="bottom" constant="8" id="jxx-pp-ofb"/>
+                <constraint firstAttribute="trailing" secondItem="o5R-JP-WcA" secondAttribute="trailing" id="s0h-ZM-hWa"/>
+            </constraints>
+            <size key="customSize" width="370" height="362"/>
+            <point key="canvasLocation" x="168.11594202898553" y="256.47321428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="54"/>
+    </resources>
+</document>
