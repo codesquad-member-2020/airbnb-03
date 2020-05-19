@@ -8,19 +8,12 @@
     <facet type="web" name="Web">
       <configuration>
         <webroots />
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/../../src/main/resources" />
-          <root url="file://$MODULE_DIR$/../../src/main/java" />
-        </sourceRoots>
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
+    <output url="file://$MODULE_DIR$/../../out/production/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
-    </content>
     <content url="file://$MODULE_DIR$/../../src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
