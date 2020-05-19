@@ -13,8 +13,13 @@ class StayListCollectionView: UICollectionView {
     }
     
     private func configure() {
+        configureCollectionViewDelegate()
         configureCell()
         configureUI()
+    }
+    
+    private func configureCollectionViewDelegate() {
+        delegate = self
     }
     
     private func configureCell() {
@@ -24,5 +29,11 @@ class StayListCollectionView: UICollectionView {
     
     private func configureUI() {
         backgroundColor = .yellow
+    }
+}
+
+extension StayListCollectionView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        .init(width: collectionView.bounds.width, height: collectionView.bounds.height / 2)
     }
 }
