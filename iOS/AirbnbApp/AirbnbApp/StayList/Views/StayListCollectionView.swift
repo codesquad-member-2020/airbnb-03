@@ -13,7 +13,13 @@ class StayListCollectionView: UICollectionView {
     }
     
     private func configure() {
+        configureCell()
         configureUI()
+    }
+    
+    private func configureCell() {
+        let nib = UINib(nibName: StayCell.nibName, bundle: nil)
+        register(nib, forCellWithReuseIdentifier: StayCell.reuseIdentifier)
     }
     
     private func configureUI() {

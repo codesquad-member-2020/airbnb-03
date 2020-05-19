@@ -5,12 +5,19 @@ class StayListViewController: UIViewController {
     private var searchViewLayout: UIView!
     private var filterViewLayout: UIView!
     private var stayListCollectionView: StayListCollectionView!
+    private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
         configureLayout()
+        configureCollectionView()
+    }
+    
+    private func configureCollectionView() {
+        stayListCollectionViewDataSource = StayListCollectionViewDataSource()
+        stayListCollectionView.dataSource = stayListCollectionViewDataSource
     }
     
     private func configureUI() {
