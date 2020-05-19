@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E332473D9680051528B /* UIView+AutoLayout.swift */; };
 		385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE424728EC8009E2E2B /* AppDelegate.swift */; };
 		385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE624728EC8009E2E2B /* SceneDelegate.swift */; };
 		385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE824728EC8009E2E2B /* TabBarController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		384C0E332473D9680051528B /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		385D8BE124728EC8009E2E2B /* AirbnbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385D8BE424728EC8009E2E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		385D8BE624728EC8009E2E2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		384C0E322473D9380051528B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				384C0E332473D9680051528B /* UIView+AutoLayout.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		385D8BD824728EC8009E2E2B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 			children = (
 				8D8FE71B2473CF23008FF0AF /* TabBar */,
 				8D8FE71C2473CF3C008FF0AF /* StayList */,
+				384C0E322473D9380051528B /* Extensions */,
 				385D8BE424728EC8009E2E2B /* AppDelegate.swift */,
 				385D8BE624728EC8009E2E2B /* SceneDelegate.swift */,
 				385D8BED24728ECC009E2E2B /* Assets.xcassets */,
@@ -215,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
