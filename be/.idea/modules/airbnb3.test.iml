@@ -50,8 +50,8 @@
     <orderEntry type="library" name="Gradle: org.mockito:mockito-core:3.3.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.6.2" level="project" />
     <orderEntry type="library" name="Gradle: org.skyscreamer:jsonassert:1.5.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.6.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-test:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.6.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-relational:2.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:2.3.0.RELEASE" level="project" />
