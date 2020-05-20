@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-qu-s24">
                                 <rect key="frame" x="0.0" y="0.0" width="172.5" height="21"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.78 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-ur-I6Z">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.78 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-ur-I6Z" customClass="ReviewLabel" customModule="AirbnbApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -100,6 +100,9 @@
                 <constraint firstAttribute="trailing" secondItem="o5R-JP-WcA" secondAttribute="trailing" id="s0h-ZM-hWa"/>
             </constraints>
             <size key="customSize" width="370" height="362"/>
+            <connections>
+                <outlet property="reviewLabel" destination="OdB-ur-I6Z" id="CaZ-VQ-A4o"/>
+            </connections>
             <point key="canvasLocation" x="168.11594202898553" y="256.47321428571428"/>
         </collectionViewCell>
     </objects>
