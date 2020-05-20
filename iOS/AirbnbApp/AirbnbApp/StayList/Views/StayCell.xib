@@ -15,20 +15,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="362"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WGr-q7-Mzh">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WGr-q7-Mzh">
                         <rect key="frame" x="0.0" y="256.5" width="414" height="97.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-qu-s24">
-                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="20.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-qu-s24">
+                                <rect key="frame" x="0.0" y="0.0" width="172.5" height="21"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.78 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-ur-I6Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Superhost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxp-sp-qP7">
-                                        <rect key="frame" x="81.5" y="0.0" width="79" height="20.5"/>
+                                        <rect key="frame" x="93.5" y="0.0" width="79" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -36,19 +36,19 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire Apartment・1 bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="264-Ef-QMx">
-                                <rect key="frame" x="0.0" y="25.5" width="189" height="20.5"/>
+                                <rect key="frame" x="0.0" y="25" width="189" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modern luxury studio in Gangnam! 5sec to Station" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMW-cF-5mI">
-                                <rect key="frame" x="0.0" y="51" width="382.5" height="21"/>
+                                <rect key="frame" x="0.0" y="50.5" width="382.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩99,323 / night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8n-Oh-f1s">
-                                <rect key="frame" x="0.0" y="77" width="122.5" height="20.5"/>
+                                <rect key="frame" x="0.0" y="76" width="122.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
