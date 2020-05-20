@@ -5,7 +5,6 @@ class SuperHostLabel: UILabel, LabelWithLeadingImage {
     internal var leadingImage: UIImage? = UIImage(named: "host.super")
     internal var leadingImageTintColor: UIColor! = UIColor(named: "stay.tintcolor")
     internal var imageAttachment: NSTextAttachment!
-    internal var leadingImageYConstant: CGFloat = 2
     
     override init(frame: CGRect) {
         super.init(frame: frame)

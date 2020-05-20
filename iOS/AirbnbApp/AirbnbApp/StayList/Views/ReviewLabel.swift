@@ -5,6 +5,7 @@ class ReviewLabel: UILabel, LabelWithLeadingImage {
     internal var leadingImage: UIImage? = UIImage(named: "review.star")
     internal var leadingImageTintColor: UIColor! = UIColor(named: "stay.tintcolor")
     internal var imageAttachment: NSTextAttachment!
+    var leadingImageYConstant: CGFloat = -1
     
     override init(frame: CGRect) {
         super.init(frame: frame)
