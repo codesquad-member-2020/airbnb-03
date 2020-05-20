@@ -3,7 +3,7 @@ import UIKit
 class StayListViewController: UIViewController {
     
     private var searchView: SearchTextField!
-    private var filterViewLayout: UIView!
+    private var filterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
     private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
 
@@ -24,9 +24,7 @@ class StayListViewController: UIViewController {
         view.backgroundColor = .white
 
         searchView = viewFromNib(SearchTextField.self)
-
-        filterViewLayout = UIView()
-        filterViewLayout.backgroundColor = .blue
+        filterView = viewFromNib(SearchFilterView.self)
         stayListCollectionView = StayListCollectionView()
     }
 
@@ -43,7 +41,7 @@ class StayListViewController: UIViewController {
 extension StayListViewController {
     private func configureLayout() {
         view.addSubviews(searchView,
-                         filterViewLayout,
+                         filterView,
                          stayListCollectionView)
         
         let sidePadding: CGFloat = 24.0
@@ -55,7 +53,7 @@ extension StayListViewController {
                                                     bottom: 0,
                                                     right: sidePadding),
                                      size: .init(width: 0, height: 48))
-        filterViewLayout.constraints(topAnchor: searchView.bottomAnchor,
+        filterView.constraints(topAnchor: searchView.bottomAnchor,
                                      leadingAnchor: searchView.leadingAnchor,
                                      bottomAnchor: nil,
                                      trailingAnchor: searchView.trailingAnchor,
@@ -64,7 +62,7 @@ extension StayListViewController {
                                                     bottom: 0,
                                                     right: 0),
                                      size: .init(width: 0, height: 44))
-        stayListCollectionView.constraints(topAnchor: filterViewLayout.bottomAnchor,
+        stayListCollectionView.constraints(topAnchor: filterView.bottomAnchor,
                                          leadingAnchor: searchView.leadingAnchor,
                                          bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
                                          trailingAnchor: searchView.trailingAnchor,
