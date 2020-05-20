@@ -23,7 +23,7 @@ class SuperHostLabel: UILabel, LabelWithLeadingImage {
     
     private func configureLabel() {
         let attributedText = NSMutableAttributedString(attachment: imageAttachment)
-        attributedText.append(text: " Superhost", fontColor: .black, fontSize: 13, weight: .light)
+        attributedText.append(text: "Superhost", fontColor: .darkGray, fontSize: 13, weight: .light)
         self.attributedText = attributedText
     }
 }
