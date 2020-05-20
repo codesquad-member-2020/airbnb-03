@@ -1,11 +1,3 @@
-//
-//  NSMutableAttributedString+append.swift
-//  AirbnbApp
-//
-//  Created by Cory Kim on 2020/05/21.
-//  Copyright © 2020 codesquad. All rights reserved.
-//
-
 import UIKit
 
 extension NSMutableAttributedString {
