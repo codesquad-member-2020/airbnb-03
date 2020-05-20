@@ -6,6 +6,7 @@ class StayCell: UICollectionViewCell {
     static let reuseIdentifier: String = "StayCell"
 
     @IBOutlet weak var reviewLabel: ReviewLabel!
+    @IBOutlet weak var superHostLabel: SuperHostLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

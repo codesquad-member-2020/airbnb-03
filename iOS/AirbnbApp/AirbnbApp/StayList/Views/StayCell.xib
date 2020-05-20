@@ -27,7 +27,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Superhost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxp-sp-qP7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Superhost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxp-sp-qP7" customClass="SuperHostLabel" customModule="AirbnbApp" customModuleProvider="target">
                                         <rect key="frame" x="93.5" y="0.0" width="79" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -102,6 +102,7 @@
             <size key="customSize" width="370" height="362"/>
             <connections>
                 <outlet property="reviewLabel" destination="OdB-ur-I6Z" id="CaZ-VQ-A4o"/>
+                <outlet property="superHostLabel" destination="cxp-sp-qP7" id="FCy-xi-PCK"/>
             </connections>
             <point key="canvasLocation" x="168.11594202898553" y="256.47321428571428"/>
         </collectionViewCell>
