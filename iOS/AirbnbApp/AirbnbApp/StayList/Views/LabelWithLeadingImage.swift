@@ -26,7 +26,7 @@ extension LabelWithLeadingImage {
     
     func configureImageAttachment() {
         self.imageAttachment = NSTextAttachment()
-        let height = self.bounds.height * 0.8
+        let height = self.bounds.height * 0.7
         imageAttachment.bounds = .init(x: 0, y: -(self.bounds.midY - height * 0.5) - leadingImageYConstant, width: height, height: height)
         imageAttachment.image = leadingImage?.withTintColor(leadingImageTintColor)
     }
