@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E332473D9680051528B /* UIView+AutoLayout.swift */; };
+		384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E362473E0650051528B /* StayListCollectionView.swift */; };
+		384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E382473F50F0051528B /* UIView+addSubviews.swift */; };
+		384C0E3C2473F62A0051528B /* StayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E3A2473F62A0051528B /* StayCell.swift */; };
+		384C0E3D2473F62A0051528B /* StayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384C0E3B2473F62A0051528B /* StayCell.xib */; };
+		384C0E4024742B7D0051528B /* StayListCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E3F24742B7D0051528B /* StayListCollectionViewDataSource.swift */; };
 		385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE424728EC8009E2E2B /* AppDelegate.swift */; };
 		385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE624728EC8009E2E2B /* SceneDelegate.swift */; };
 		385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE824728EC8009E2E2B /* TabBarController.swift */; };
@@ -29,6 +34,11 @@
 
 /* Begin PBXFileReference section */
 		384C0E332473D9680051528B /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		384C0E362473E0650051528B /* StayListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionView.swift; sourceTree = "<group>"; };
+		384C0E382473F50F0051528B /* UIView+addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviews.swift"; sourceTree = "<group>"; };
+		384C0E3A2473F62A0051528B /* StayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCell.swift; sourceTree = "<group>"; };
+		384C0E3B2473F62A0051528B /* StayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayCell.xib; sourceTree = "<group>"; };
+		384C0E3F24742B7D0051528B /* StayListCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		385D8BE124728EC8009E2E2B /* AirbnbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385D8BE424728EC8009E2E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		385D8BE624728EC8009E2E2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +74,27 @@
 			isa = PBXGroup;
 			children = (
 				384C0E332473D9680051528B /* UIView+AutoLayout.swift */,
+				384C0E382473F50F0051528B /* UIView+addSubviews.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		384C0E352473E04C0051528B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				384C0E362473E0650051528B /* StayListCollectionView.swift */,
+				384C0E3B2473F62A0051528B /* StayCell.xib */,
+				384C0E3A2473F62A0051528B /* StayCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		384C0E3E24742B660051528B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				384C0E3F24742B7D0051528B /* StayListCollectionViewDataSource.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		385D8BD824728EC8009E2E2B = {
@@ -122,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */,
+				384C0E3E24742B660051528B /* ViewModels */,
+				384C0E352473E04C0051528B /* Views */,
 			);
 			path = StayList;
 			sourceTree = "<group>";
@@ -209,6 +240,7 @@
 			files = (
 				385D8BF124728ECC009E2E2B /* LaunchScreen.storyboard in Resources */,
 				385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */,
+				384C0E3D2473F62A0051528B /* StayCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,8 +260,12 @@
 			files = (
 				384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
+				384C0E4024742B7D0051528B /* StayListCollectionViewDataSource.swift in Sources */,
+				384C0E3C2473F62A0051528B /* StayCell.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
+				384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */,
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
+				384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
