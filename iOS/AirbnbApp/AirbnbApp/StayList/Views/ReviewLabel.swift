@@ -1,10 +1,10 @@
 import UIKit
 
-class ReviewLabel: UILabel {
+class ReviewLabel: UILabel, LabelWithLeadingImage {
     
-    private let leadingImage: UIImage? = UIImage(named: "review.star")
-    private let leadingImageTintColor: UIColor! = UIColor(named: "stay.tintcolor")
-    private var imageAttachment: NSTextAttachment!
+    internal var leadingImage: UIImage? = UIImage(named: "review.star")
+    internal var leadingImageTintColor: UIColor! = UIColor(named: "stay.tintcolor")
+    internal var imageAttachment: NSTextAttachment!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,13 +18,6 @@ class ReviewLabel: UILabel {
     
     private func configure() {
         configureImageAttachment()
-    }
-    
-    private func configureImageAttachment() {
-        self.imageAttachment = NSTextAttachment()
-        let height = self.bounds.height * 0.8
-        imageAttachment.bounds = .init(x: 0, y: -(self.bounds.midY - height / 2), width: height, height: height)
-        imageAttachment.image = leadingImage?.withTintColor(leadingImageTintColor)
     }
     
     func updateWith(reviewAverage: Double, numberOfReviews: Int) {
