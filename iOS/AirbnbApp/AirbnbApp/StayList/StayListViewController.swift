@@ -29,7 +29,10 @@ class StayListViewController: UIViewController {
         filterViewLayout.backgroundColor = .blue
         stayListCollectionView = StayListCollectionView()
     }
-    
+}
+
+// MARK:- Layout
+extension StayListViewController {
     private func configureLayout() {
         view.addSubviews(searchViewLayout,
                          filterViewLayout,
