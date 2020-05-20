@@ -2,7 +2,7 @@ import UIKit
 
 class StayListViewController: UIViewController {
     
-    private var searchView: SearchTextField!
+    private var searchView: SearchFieldView!
     private var filterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
     private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
@@ -23,12 +23,12 @@ class StayListViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .white
 
-        searchView = viewFromNib(SearchTextField.self)
-        filterView = viewFromNib(SearchFilterView.self)
+        searchView = viewFromXib(SearchFieldView.self)
+        filterView = viewFromXib(SearchFilterView.self)
         stayListCollectionView = StayListCollectionView()
     }
 
-    private func viewFromNib<T>(_ type: T.Type) -> T where T: ViewFromXib {
+    private func viewFromXib<T>(_ type: T.Type) -> T where T: ViewFromXib {
         guard let view = Bundle.main.loadNibNamed(T.xibName, owner: nil, options: nil)?.first as? T else {
             fatalError("Failed to load from xib: \(T.self)")
         }

@@ -20,8 +20,8 @@
 		385D8BF124728ECC009E2E2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385D8BEF24728ECC009E2E2B /* LaunchScreen.storyboard */; };
 		385D8BFC24728ECC009E2E2B /* AirbnbAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BFB24728ECC009E2E2B /* AirbnbAppTests.swift */; };
 		8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */; };
-		8DCA196D24750CB900B3C167 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchTextField.swift */; };
-		8DCA196F24750CCF00B3C167 /* SearchTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchTextField.xib */; };
+		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
+		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
 		8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA197024754B7900B3C167 /* SearchFilterView.xib */; };
 		8DCA197324754D5A00B3C167 /* SearchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA197224754D5A00B3C167 /* SearchFilterView.swift */; };
 		8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA19742475546C00B3C167 /* FilterButton.swift */; };
@@ -55,8 +55,8 @@
 		385D8BFB24728ECC009E2E2B /* AirbnbAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbAppTests.swift; sourceTree = "<group>"; };
 		385D8BFD24728ECC009E2E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListViewController.swift; sourceTree = "<group>"; };
-		8DCA196C24750CB900B3C167 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
-		8DCA196E24750CCF00B3C167 /* SearchTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTextField.xib; sourceTree = "<group>"; };
+		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
+		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
 		8DCA197024754B7900B3C167 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
 		8DCA197224754D5A00B3C167 /* SearchFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterView.swift; sourceTree = "<group>"; };
 		8DCA19742475546C00B3C167 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 				384C0E362473E0650051528B /* StayListCollectionView.swift */,
 				384C0E3B2473F62A0051528B /* StayCell.xib */,
 				384C0E3A2473F62A0051528B /* StayCell.swift */,
-				8DCA196C24750CB900B3C167 /* SearchTextField.swift */,
-				8DCA196E24750CCF00B3C167 /* SearchTextField.xib */,
+				8DCA196C24750CB900B3C167 /* SearchFieldView.swift */,
+				8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */,
 				8DCA197224754D5A00B3C167 /* SearchFilterView.swift */,
 				8DCA197024754B7900B3C167 /* SearchFilterView.xib */,
 				8DCA19742475546C00B3C167 /* FilterButton.swift */,
@@ -254,7 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				385D8BF124728ECC009E2E2B /* LaunchScreen.storyboard in Resources */,
-				8DCA196F24750CCF00B3C167 /* SearchTextField.xib in Resources */,
+				8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */,
 				385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */,
 				384C0E3D2473F62A0051528B /* StayCell.xib in Resources */,
 				8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */,
@@ -286,7 +286,7 @@
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
 				384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
-				8DCA196D24750CB900B3C167 /* SearchTextField.swift in Sources */,
+				8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

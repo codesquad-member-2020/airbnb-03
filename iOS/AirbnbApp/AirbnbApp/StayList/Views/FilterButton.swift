@@ -7,6 +7,10 @@ class FilterButton: UIButton {
     }
 
     private func configure() {
+        drawBorder()
+    }
+
+    private func drawBorder() {
         self.layer.cornerRadius = self.bounds.height / 2
         self.layer.borderWidth =  1
         self.layer.borderColor = UIColor.systemGray.cgColor

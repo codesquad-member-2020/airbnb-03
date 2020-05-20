@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchTextField" customModule="AirbnbApp" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchFieldView" customModule="AirbnbApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -28,6 +28,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="searchTextField" destination="Ec0-bu-Gag" id="wNR-7N-Ghg"/>
+            </connections>
             <point key="canvasLocation" x="-223.18840579710147" y="38.169642857142854"/>
         </view>
     </objects>
