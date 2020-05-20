@@ -18,8 +18,8 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WGr-q7-Mzh">
                         <rect key="frame" x="0.0" y="256.5" width="414" height="97.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-qu-s24">
-                                <rect key="frame" x="0.0" y="0.0" width="172.5" height="21"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-qu-s24">
+                                <rect key="frame" x="0.0" y="0.0" width="164.5" height="21"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.78 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-ur-I6Z" customClass="ReviewLabel" customModule="AirbnbApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="21"/>
@@ -28,7 +28,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Superhost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxp-sp-qP7" customClass="SuperHostLabel" customModule="AirbnbApp" customModuleProvider="target">
-                                        <rect key="frame" x="93.5" y="0.0" width="79" height="21"/>
+                                        <rect key="frame" x="85.5" y="0.0" width="79" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
