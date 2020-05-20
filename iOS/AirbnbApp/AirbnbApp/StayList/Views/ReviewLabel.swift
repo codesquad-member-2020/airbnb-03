@@ -23,8 +23,8 @@ class ReviewLabel: UILabel, LabelWithLeadingImage {
     
     func updateWith(reviewAverage: Double, numberOfReviews: Int) {
         let attributedText = NSMutableAttributedString(attachment: imageAttachment)
-        attributedText.append(text: " \(reviewAverage)", fontColor: .black, fontSize: 13, weight: .medium)
-        attributedText.append(text: " (\(numberOfReviews))", fontColor: .gray, fontSize: 13, weight: .medium)
+        attributedText.append(text: " \(reviewAverage)", fontColor: .black, fontSize: 13, weight: .light)
+        attributedText.append(text: " (\(numberOfReviews))", fontColor: .gray, fontSize: 13, weight: .light)
         self.attributedText = attributedText
     }
 }
