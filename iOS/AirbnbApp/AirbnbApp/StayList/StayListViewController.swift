@@ -23,18 +23,11 @@ class StayListViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .white
 
-        searchView = viewFromXib(SearchFieldView.self)
-        filterView = viewFromXib(SearchFilterView.self)
+        searchView = SearchFieldView.loadFromXib()
+        filterView = SearchFilterView.loadFromXib()
         stayListCollectionView = StayListCollectionView()
     }
 
-    private func viewFromXib<T>(_ type: T.Type) -> T where T: ViewFromXib {
-        guard let view = Bundle.main.loadNibNamed(T.xibName, owner: nil, options: nil)?.first as? T else {
-            fatalError("Failed to load from xib: \(T.self)")
-        }
-
-        return view
-    }
 }
 
 // MARK:- Layout
