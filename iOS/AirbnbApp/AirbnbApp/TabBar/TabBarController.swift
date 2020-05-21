@@ -17,7 +17,10 @@ class TabBarController: UITabBarController {
     
     private func configureTabBarControllers() {
         stayListViewController = StayListViewController()
-        
+
         viewControllers = [stayListViewController]
+
+        let item = UITabBarItem(title: "Stay", image: UIImage(systemName: "bed.double.fill"), tag: 0)
+        stayListViewController.tabBarItem = item
     }
 }
