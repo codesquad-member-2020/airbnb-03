@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class PropertiesDto {
+public class PropertiesDtoAlex {
     private Long id;
     private String title;
     private String state;
@@ -28,9 +28,9 @@ public class PropertiesDto {
     private List<String> images;
 
     @Builder
-    public PropertiesDto(Long id, String title, String state, String city, String address,
-                         Double latitude, Double longitude, Boolean reservable, Boolean saved,
-                         String hostType, Double price, String placeType, Double reviewAverage, Integer numberOfReviews, List<String> images) {
+    public PropertiesDtoAlex(Long id, String title, String state, String city, String address,
+                             Double latitude, Double longitude, Boolean reservable, Boolean saved,
+                             String hostType, Double price, String placeType, Double reviewAverage, Integer numberOfReviews, List<String> images) {
         this.id = id;
         this.title = title;
         this.state = state;

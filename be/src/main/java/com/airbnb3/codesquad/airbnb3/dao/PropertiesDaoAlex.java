@@ -1,6 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.dao;
 
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDto;
+import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -9,18 +9,18 @@ import java.util.Arrays;
 import java.util.List;
 
 @Repository
-public class PropertiesDao {
+public class PropertiesDaoAlex {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public List<PropertiesDto> getStayedProperties(int propertyRange) {
+    public List<PropertiesDtoAlex> getStayedProperties(int propertyRange) {
         String sql = "select p.id,p.title,p.state,p.city,p.address,p.latitude,p.longitude,p.reservable," +
                 "p.saved,p.host_type,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(i.image_url) AS image " +
                 "FROM properties p LEFT JOIN images i ON p.id = i.properties_id WHERE p.id < ? GROUP BY p.id;";
 
         return jdbcTemplate.query(sql, new Object[]{propertyRange}, (rs, rowNum) ->
-                PropertiesDto.builder()
+                PropertiesDtoAlex.builder()
                         .id(rs.getLong("id"))
                         .title(rs.getString("title"))
                         .state(rs.getString("state"))
