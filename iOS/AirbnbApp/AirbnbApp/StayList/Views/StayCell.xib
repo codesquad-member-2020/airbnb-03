@@ -35,8 +35,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire Apartment ・ 1 bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="264-Ef-QMx">
-                                <rect key="frame" x="0.0" y="25" width="194.5" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire Apartment ・ Upper East Side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="264-Ef-QMx" customClass="PlaceTypeAndCityLabel" customModule="AirbnbApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="25" width="275" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -101,8 +101,10 @@
             </constraints>
             <size key="customSize" width="370" height="362"/>
             <connections>
+                <outlet property="placeTypeAndCityLabel" destination="264-Ef-QMx" id="ndC-Kn-Yff"/>
                 <outlet property="reviewLabel" destination="OdB-ur-I6Z" id="CaZ-VQ-A4o"/>
                 <outlet property="superHostLabel" destination="cxp-sp-qP7" id="FCy-xi-PCK"/>
+                <outlet property="titleLabel" destination="VMW-cF-5mI" id="Nn4-A5-zWU"/>
             </connections>
             <point key="canvasLocation" x="168.11594202898553" y="256.47321428571428"/>
         </collectionViewCell>

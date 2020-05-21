@@ -7,10 +7,14 @@ class StayCell: UICollectionViewCell {
 
     @IBOutlet weak var reviewLabel: ReviewLabel!
     @IBOutlet weak var superHostLabel: SuperHostLabel!
+    @IBOutlet weak var placeTypeAndCityLabel: PlaceTypeAndCityLabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         reviewLabel.updateWith(reviewAverage: 4.67, numberOfReviews: 47)
+        placeTypeAndCityLabel.updateWith(type: "Entire Apartment", city: "Upper East Side")
+        titleLabel.text = "Modern luxury studio in Gangnam! 5sec to Station"
     }
 }
