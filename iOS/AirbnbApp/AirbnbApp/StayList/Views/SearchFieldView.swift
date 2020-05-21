@@ -4,12 +4,14 @@ import UIKit
 class SearchFieldView: UIView, ViewFromXib {
     static let xibName = String(describing: SearchFieldView.self)
 
-    private let searchTextFieldDelegate = SearchTextFieldDelegate()
     @IBOutlet weak var searchTextField: UITextField! {
         didSet {
-            searchTextField.delegate = searchTextFieldDelegate
             drawShadow(searchTextField)
         }
+    }
+
+    func configureTextFieldDelegate(_ delegate: UITextFieldDelegate) {
+        searchTextField.delegate = delegate
     }
 
     private func drawShadow(_ subView: UIView) {
@@ -21,10 +23,3 @@ class SearchFieldView: UIView, ViewFromXib {
     }
 }
 
-class SearchTextFieldDelegate: NSObject, UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-
-        return true
-    }
-}
