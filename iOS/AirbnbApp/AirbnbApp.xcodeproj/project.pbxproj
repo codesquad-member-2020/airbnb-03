@@ -21,6 +21,7 @@
 		385D8BFC24728ECC009E2E2B /* AirbnbAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BFB24728ECC009E2E2B /* AirbnbAppTests.swift */; };
 		8D328443247647900078678A /* ViewFromXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D328442247647900078678A /* ViewFromXib.swift */; };
 		8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */; };
+		8D32844824764DFB0078678A /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32844724764DFB0078678A /* SearchTextField.swift */; };
 		8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
 		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
@@ -58,6 +59,7 @@
 		385D8BFD24728ECC009E2E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D328442247647900078678A /* ViewFromXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromXib.swift; sourceTree = "<group>"; };
 		8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldDelegate.swift; sourceTree = "<group>"; };
+		8D32844724764DFB0078678A /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListViewController.swift; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				384C0E3B2473F62A0051528B /* StayCell.xib */,
 				384C0E3A2473F62A0051528B /* StayCell.swift */,
 				8DCA196C24750CB900B3C167 /* SearchFieldView.swift */,
+				8D32844724764DFB0078678A /* SearchTextField.swift */,
 				8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */,
 				8DCA197224754D5A00B3C167 /* SearchFilterView.swift */,
 				8DCA197024754B7900B3C167 /* SearchFilterView.xib */,
@@ -294,6 +297,7 @@
 				384C0E4024742B7D0051528B /* StayListCollectionViewDataSource.swift in Sources */,
 				384C0E3C2473F62A0051528B /* StayCell.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
+				8D32844824764DFB0078678A /* SearchTextField.swift in Sources */,
 				384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */,
 				8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */,
 				8DCA197324754D5A00B3C167 /* SearchFilterView.swift in Sources */,
