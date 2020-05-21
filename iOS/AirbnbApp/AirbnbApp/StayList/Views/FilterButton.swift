@@ -1,6 +1,5 @@
 import UIKit
 
-/// 검색 필터 버튼. 상위 클래스
 class FilterButton: UIButton {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -18,7 +17,6 @@ class FilterButton: UIButton {
     }
 }
 
-/// 각 버튼 대응
 class DateFilterButton: FilterButton { }
 class PeopleFilterButton: FilterButton { }
 class PriceFilterButton: FilterButton { }
