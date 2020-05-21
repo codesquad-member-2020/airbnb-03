@@ -3,8 +3,8 @@
 # Edit at https://www.gitignore.io/?templates=java,macos,gradle,windows
 
 ### Java ###
-# workspace.xm
-.idea/workspace.xm
+# workspace.xml
+.idea/workspace.xml
 
 # Compiled class file
 *.class
