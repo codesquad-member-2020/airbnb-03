@@ -13,8 +13,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ec0-bu-Gag" customClass="SearchTextField" customModule="AirbnbApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ec0-bu-Gag">
+                    <rect key="frame" x="12" y="0.0" width="390" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="search"/>
                 </textField>
@@ -22,9 +22,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ec0-bu-Gag" secondAttribute="bottom" id="FRN-6L-kTf"/>
-                <constraint firstItem="Ec0-bu-Gag" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SO4-LY-jlY"/>
+                <constraint firstItem="Ec0-bu-Gag" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="SO4-LY-jlY"/>
                 <constraint firstItem="Ec0-bu-Gag" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ge3-yz-XSN"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ec0-bu-Gag" secondAttribute="trailing" id="nsX-f0-qvy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ec0-bu-Gag" secondAttribute="trailing" constant="12" id="nsX-f0-qvy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
