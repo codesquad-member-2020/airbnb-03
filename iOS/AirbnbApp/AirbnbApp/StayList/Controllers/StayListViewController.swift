@@ -2,10 +2,11 @@ import UIKit
 
 class StayListViewController: UIViewController {
     
-    private var searchViewLayout: UIView!
-    private var filterViewLayout: UIView!
+    private var searchFieldView: SearchFieldView!
+    private var searchFilterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
     private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
+    private var searchTextFieldDelegate: SearchTextFieldDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +14,7 @@ class StayListViewController: UIViewController {
         configureUI()
         configureLayout()
         configureCollectionView()
+        configureTextFieldDelegate()
     }
     
     private func configureCollectionView() {
@@ -22,24 +24,28 @@ class StayListViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
-        
-        searchViewLayout = UIView()
-        searchViewLayout.backgroundColor = .red
-        filterViewLayout = UIView()
-        filterViewLayout.backgroundColor = .blue
+
+        searchFieldView = SearchFieldView.loadFromXib()
+        searchFilterView = SearchFilterView.loadFromXib()
         stayListCollectionView = StayListCollectionView()
     }
+
+    private func configureTextFieldDelegate() {
+        searchTextFieldDelegate = SearchTextFieldDelegate()
+        searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
+    }
+
 }
 
 // MARK:- Layout
 extension StayListViewController {
     private func configureLayout() {
-        view.addSubviews(searchViewLayout,
-                         filterViewLayout,
+        view.addSubviews(searchFieldView,
+                         searchFilterView,
                          stayListCollectionView)
         
         let sidePadding: CGFloat = 24.0
-        searchViewLayout.constraints(topAnchor: view.safeAreaLayoutGuide.topAnchor,
+        searchFieldView.constraints(topAnchor: view.safeAreaLayoutGuide.topAnchor,
                                      leadingAnchor: view.leadingAnchor,
                                      bottomAnchor: nil, trailingAnchor: view.trailingAnchor,
                                      padding: .init(top: 16,
@@ -47,19 +53,19 @@ extension StayListViewController {
                                                     bottom: 0,
                                                     right: sidePadding),
                                      size: .init(width: 0, height: 48))
-        filterViewLayout.constraints(topAnchor: searchViewLayout.bottomAnchor,
-                                     leadingAnchor: searchViewLayout.leadingAnchor,
+        searchFilterView.constraints(topAnchor: searchFieldView.bottomAnchor,
+                                     leadingAnchor: searchFieldView.leadingAnchor,
                                      bottomAnchor: nil,
-                                     trailingAnchor: searchViewLayout.trailingAnchor,
+                                     trailingAnchor: searchFieldView.trailingAnchor,
                                      padding: .init(top: 8,
                                                     left: 0,
                                                     bottom: 0,
                                                     right: 0),
                                      size: .init(width: 0, height: 44))
-        stayListCollectionView.constraints(topAnchor: filterViewLayout.bottomAnchor,
-                                         leadingAnchor: searchViewLayout.leadingAnchor,
+        stayListCollectionView.constraints(topAnchor: searchFilterView.bottomAnchor,
+                                         leadingAnchor: searchFieldView.leadingAnchor,
                                          bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
-                                         trailingAnchor: searchViewLayout.trailingAnchor,
+                                         trailingAnchor: searchFieldView.trailingAnchor,
                                          padding: .init(top: 12,
                                                         left: 0,
                                                         bottom: 0,
