@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */; };
+		381A030624762561004EDE84 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A030524762561004EDE84 /* PriceLabel.swift */; };
 		384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E332473D9680051528B /* UIView+AutoLayout.swift */; };
 		384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E362473E0650051528B /* StayListCollectionView.swift */; };
 		384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E382473F50F0051528B /* UIView+addSubviews.swift */; };
@@ -19,6 +21,10 @@
 		385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385D8BED24728ECC009E2E2B /* Assets.xcassets */; };
 		385D8BF124728ECC009E2E2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385D8BEF24728ECC009E2E2B /* LaunchScreen.storyboard */; };
 		385D8BFC24728ECC009E2E2B /* AirbnbAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BFB24728ECC009E2E2B /* AirbnbAppTests.swift */; };
+		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
+		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
+		38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */; };
+		38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */; };
 		8D328443247647900078678A /* ViewFromXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D328442247647900078678A /* ViewFromXib.swift */; };
 		8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */; };
 		8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */; };
@@ -40,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTypeAndCityLabel.swift; sourceTree = "<group>"; };
+		381A030524762561004EDE84 /* PriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
 		384C0E332473D9680051528B /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		384C0E362473E0650051528B /* StayListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionView.swift; sourceTree = "<group>"; };
 		384C0E382473F50F0051528B /* UIView+addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviews.swift"; sourceTree = "<group>"; };
@@ -56,6 +64,10 @@
 		385D8BF724728ECC009E2E2B /* AirbnbAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbnbAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		385D8BFB24728ECC009E2E2B /* AirbnbAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbAppTests.swift; sourceTree = "<group>"; };
 		385D8BFD24728ECC009E2E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
+		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
+		38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLeadingImage.swift; sourceTree = "<group>"; };
+		38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHostLabel.swift; sourceTree = "<group>"; };
 		8D328442247647900078678A /* ViewFromXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromXib.swift; sourceTree = "<group>"; };
 		8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldDelegate.swift; sourceTree = "<group>"; };
 		8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +101,7 @@
 			children = (
 				384C0E332473D9680051528B /* UIView+AutoLayout.swift */,
 				384C0E382473F50F0051528B /* UIView+addSubviews.swift */,
+				38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -100,6 +113,11 @@
 				384C0E362473E0650051528B /* StayListCollectionView.swift */,
 				384C0E3B2473F62A0051528B /* StayCell.xib */,
 				384C0E3A2473F62A0051528B /* StayCell.swift */,
+				38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */,
+				38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */,
+				38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */,
+				381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */,
+				381A030524762561004EDE84 /* PriceLabel.swift */,
 				8DCA196C24750CB900B3C167 /* SearchFieldView.swift */,
 				8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */,
 				8DCA197224754D5A00B3C167 /* SearchFilterView.swift */,
@@ -300,7 +318,13 @@
 				8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */,
 				8D328443247647900078678A /* ViewFromXib.swift in Sources */,
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
+				38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */,
 				384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */,
+				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
+				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
+				38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */,
+				381A030624762561004EDE84 /* PriceLabel.swift in Sources */,
+				38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
 				8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */,
 			);
