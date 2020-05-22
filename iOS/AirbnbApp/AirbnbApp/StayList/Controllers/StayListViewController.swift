@@ -84,12 +84,12 @@ extension StayListViewController {
                                                         bottom: 0,
                                                         right: 0))
 
-        mapButtonView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            mapButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            mapButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            mapButtonView.widthAnchor.constraint(equalToConstant: 80),
-            mapButtonView.heightAnchor.constraint(equalToConstant: 40)
-        ])
+        mapButtonView.constraints(topAnchor: nil,
+                                  leadingAnchor: nil,
+                                  bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
+                                  trailingAnchor: nil,
+                                  padding: .init(top: 0, left: 0, bottom: 20, right: 0),
+                                  size: CGSize(width: 80, height: 40))
+        mapButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
     }
 }

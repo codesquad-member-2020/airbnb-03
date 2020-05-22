@@ -20,7 +20,7 @@ class TabBarController: UITabBarController {
 
         viewControllers = [stayListViewController]
 
-        let item = UITabBarItem(title: "Stay", image: UIImage(systemName: "bed.double.fill"), tag: 0)
+        let item = UITabBarItem(title: "EXPLORE", image: UIImage(systemName: "magnifyingglass"), tag: 0)
         stayListViewController.tabBarItem = item
     }
 }
