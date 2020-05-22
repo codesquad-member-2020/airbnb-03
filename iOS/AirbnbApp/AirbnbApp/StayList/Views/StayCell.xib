@@ -86,7 +86,7 @@
                         <viewLayoutGuide key="contentLayoutGuide" id="MKD-Sp-NGi"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="dNK-yT-uQZ"/>
                     </scrollView>
-                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7OR-TE-P7o">
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7OR-TE-P7o">
                         <rect key="frame" x="187.5" y="211.5" width="39" height="37"/>
                     </pageControl>
                 </subviews>
