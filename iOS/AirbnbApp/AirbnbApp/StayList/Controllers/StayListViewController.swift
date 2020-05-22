@@ -88,7 +88,10 @@ extension StayListViewController {
                                   leadingAnchor: nil,
                                   bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
                                   trailingAnchor: nil,
-                                  padding: .init(top: 0, left: 0, bottom: 20, right: 0),
+                                  padding: .init(top: 0,
+                                                 left: 0,
+                                                 bottom: 20,
+                                                 right: 0),
                                   size: CGSize(width: 80, height: 40))
         mapButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
     }
