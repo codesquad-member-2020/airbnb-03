@@ -110,6 +110,7 @@
                 <outlet property="placeTypeAndCityLabel" destination="264-Ef-QMx" id="ndC-Kn-Yff"/>
                 <outlet property="priceLabel" destination="K8n-Oh-f1s" id="igF-YW-kMJ"/>
                 <outlet property="reviewLabel" destination="OdB-ur-I6Z" id="CaZ-VQ-A4o"/>
+                <outlet property="scrollView" destination="o5R-JP-WcA" id="cNb-Z1-1MH"/>
                 <outlet property="superHostLabel" destination="cxp-sp-qP7" id="FCy-xi-PCK"/>
                 <outlet property="titleLabel" destination="VMW-cF-5mI" id="Nn4-A5-zWU"/>
             </connections>
