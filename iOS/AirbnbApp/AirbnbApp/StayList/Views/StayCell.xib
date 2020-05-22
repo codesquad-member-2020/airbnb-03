@@ -55,12 +55,7 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2N-sy-TGs">
-                        <rect key="frame" x="387.5" y="8" width="20.5" height="22"/>
-                        <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" image="heart" catalog="system"/>
-                    </button>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5R-JP-WcA">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5R-JP-WcA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="248.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOz-NC-oJL">
@@ -86,14 +81,31 @@
                         <viewLayoutGuide key="contentLayoutGuide" id="MKD-Sp-NGi"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="dNK-yT-uQZ"/>
                     </scrollView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7OR-TE-P7o">
+                        <rect key="frame" x="187.5" y="211.5" width="39" height="37"/>
+                    </pageControl>
+                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2N-sy-TGs">
+                        <rect key="frame" x="382" y="8" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="l2N-sy-TGs" secondAttribute="height" multiplier="1:1" id="2W3-zJ-bnV"/>
+                            <constraint firstAttribute="width" constant="24" id="bG3-T4-ip3"/>
+                        </constraints>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="heart" catalog="system"/>
+                        <connections>
+                            <action selector="saveButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zhk-eB-sFS"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="WGr-q7-Mzh" secondAttribute="trailing" id="1th-8B-jkA"/>
-                <constraint firstAttribute="trailing" secondItem="l2N-sy-TGs" secondAttribute="trailing" constant="6" id="2eg-xd-nun"/>
+                <constraint firstAttribute="trailing" secondItem="l2N-sy-TGs" secondAttribute="trailing" constant="8" id="2eg-xd-nun"/>
                 <constraint firstItem="WGr-q7-Mzh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Gf-3P-JBq"/>
                 <constraint firstItem="l2N-sy-TGs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="91U-QR-q8T"/>
+                <constraint firstItem="7OR-TE-P7o" firstAttribute="centerX" secondItem="o5R-JP-WcA" secondAttribute="centerX" id="Aay-C3-oHl"/>
                 <constraint firstItem="o5R-JP-WcA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="M6h-WT-lea"/>
+                <constraint firstItem="7OR-TE-P7o" firstAttribute="bottom" secondItem="o5R-JP-WcA" secondAttribute="bottom" id="XjZ-aW-9r7"/>
                 <constraint firstItem="o5R-JP-WcA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XoW-QX-mFE"/>
                 <constraint firstItem="WGr-q7-Mzh" firstAttribute="top" secondItem="o5R-JP-WcA" secondAttribute="bottom" constant="8" id="gms-Mw-AYn"/>
                 <constraint firstAttribute="bottom" secondItem="WGr-q7-Mzh" secondAttribute="bottom" constant="8" id="jxx-pp-ofb"/>
@@ -101,10 +113,14 @@
             </constraints>
             <size key="customSize" width="370" height="362"/>
             <connections>
+                <outlet property="pageControl" destination="7OR-TE-P7o" id="LLN-sH-vRw"/>
                 <outlet property="placeTypeAndCityLabel" destination="264-Ef-QMx" id="ndC-Kn-Yff"/>
                 <outlet property="priceLabel" destination="K8n-Oh-f1s" id="igF-YW-kMJ"/>
                 <outlet property="reviewLabel" destination="OdB-ur-I6Z" id="CaZ-VQ-A4o"/>
+                <outlet property="saveButton" destination="l2N-sy-TGs" id="rAu-2a-W4w"/>
+                <outlet property="scrollView" destination="o5R-JP-WcA" id="cNb-Z1-1MH"/>
                 <outlet property="superHostLabel" destination="cxp-sp-qP7" id="FCy-xi-PCK"/>
+                <outlet property="thumbImageStackView" destination="YOz-NC-oJL" id="oTG-bR-aOL"/>
                 <outlet property="titleLabel" destination="VMW-cF-5mI" id="Nn4-A5-zWU"/>
             </connections>
             <point key="canvasLocation" x="168.11594202898553" y="256.47321428571428"/>
