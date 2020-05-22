@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */; };
 		381A030624762561004EDE84 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A030524762561004EDE84 /* PriceLabel.swift */; };
+		3839C7B02477D6760039BB19 /* SeperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3839C7AF2477D6760039BB19 /* SeperatorView.swift */; };
 		384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E332473D9680051528B /* UIView+AutoLayout.swift */; };
 		384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E362473E0650051528B /* StayListCollectionView.swift */; };
 		384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E382473F50F0051528B /* UIView+addSubviews.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTypeAndCityLabel.swift; sourceTree = "<group>"; };
 		381A030524762561004EDE84 /* PriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
+		3839C7AF2477D6760039BB19 /* SeperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeperatorView.swift; sourceTree = "<group>"; };
 		384C0E332473D9680051528B /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		384C0E362473E0650051528B /* StayListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionView.swift; sourceTree = "<group>"; };
 		384C0E382473F50F0051528B /* UIView+addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviews.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				8D328442247647900078678A /* ViewFromXib.swift */,
 				384C0E362473E0650051528B /* StayListCollectionView.swift */,
+				3839C7AF2477D6760039BB19 /* SeperatorView.swift */,
 				384BB7B82477D3BC0019000B /* SearchField */,
 				384BB7B92477D3CC0019000B /* SearchFilter */,
 				384BB7BA2477D3F90019000B /* MapButton */,
@@ -351,6 +354,7 @@
 			files = (
 				384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
+				3839C7B02477D6760039BB19 /* SeperatorView.swift in Sources */,
 				384C0E4024742B7D0051528B /* StayListCollectionViewDataSource.swift in Sources */,
 				384C0E3C2473F62A0051528B /* StayCell.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
