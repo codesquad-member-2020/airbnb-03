@@ -1,6 +1,9 @@
 import UIKit
 
 class FilterButton: UIButton {
+    
+    private let sidePadding: CGFloat = 20
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
@@ -11,9 +14,15 @@ class FilterButton: UIButton {
     }
 
     private func drawBorder() {
-        self.layer.cornerRadius = self.bounds.height / 2
-        self.layer.borderWidth =  1
-        self.layer.borderColor = UIColor.systemGray.cgColor
+        layer.cornerRadius = self.bounds.height / 2
+        layer.borderWidth =  1
+        layer.borderColor = UIColor.lightGray.cgColor
+    }
+
+    override var intrinsicContentSize: CGSize {
+        let size = super.intrinsicContentSize
+        return CGSize(width: size.width + (sidePadding * 2),
+                      height: size.height)
     }
 }
 

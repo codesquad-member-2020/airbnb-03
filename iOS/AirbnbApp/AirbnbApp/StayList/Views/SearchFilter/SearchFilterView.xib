@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,28 +13,28 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZrR-G0-IBa">
-                    <rect key="frame" x="0.0" y="0.0" width="196" height="40"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZrR-G0-IBa">
+                    <rect key="frame" x="0.0" y="0.0" width="126" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p8-VY-cQI" customClass="DateFilterButton" customModule="AirbnbApp" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="60" id="LXi-eK-CHJ"/>
-                            </constraints>
-                            <state key="normal" title="날짜">
-                                <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="0.0" y="0.0" width="36" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Dates">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHb-5k-hdf" customClass="PeopleFilterButton" customModule="AirbnbApp" customModuleProvider="target">
-                            <rect key="frame" x="68" y="0.0" width="60" height="40"/>
-                            <state key="normal" title="인원">
-                                <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="44" y="0.0" width="43" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Guests">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrv-9G-tao" customClass="PriceFilterButton" customModule="AirbnbApp" customModuleProvider="target">
-                            <rect key="frame" x="136" y="0.0" width="60" height="40"/>
-                            <state key="normal" title="가격">
-                                <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="95" y="0.0" width="31" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Price">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
                     </subviews>
@@ -44,7 +44,6 @@
             <constraints>
                 <constraint firstItem="ZrR-G0-IBa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2GI-wQ-QfB"/>
                 <constraint firstItem="ZrR-G0-IBa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HA0-qC-MJX"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZrR-G0-IBa" secondAttribute="trailing" id="U8t-2x-nAK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZrR-G0-IBa" secondAttribute="bottom" id="bVG-Qv-ZLS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
