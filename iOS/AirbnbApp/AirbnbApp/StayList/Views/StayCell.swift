@@ -24,10 +24,13 @@ class StayCell: UICollectionViewCell {
         titleLabel.text = "Modern luxury studio in Gangnam! 5sec to Station"
         priceLabel.updateWith(price: 1890)
         
+        configureScrollViewDelegate()
+        configureButtonAction()
+    }
+    
+    private func configureScrollViewDelegate() {
         thumbScrollViewDelegate = ThumbScrollViewDelegate()
         scrollView.delegate = thumbScrollViewDelegate
-        
-        configureButtonAction()
     }
     
     private func configureButtonAction() {
