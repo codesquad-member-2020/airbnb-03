@@ -5,6 +5,7 @@ class StayCell: UICollectionViewCell {
     static let nibName: String = String(describing: StayCell.self)
     static let reuseIdentifier: String = "StayCell"
 
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var reviewLabel: ReviewLabel!
     @IBOutlet weak var superHostLabel: SuperHostLabel!
     @IBOutlet weak var placeTypeAndCityLabel: PlaceTypeAndCityLabel!
@@ -18,5 +19,13 @@ class StayCell: UICollectionViewCell {
         placeTypeAndCityLabel.updateWith(type: "Entire Apartment", city: "Upper East Side")
         titleLabel.text = "Modern luxury studio in Gangnam! 5sec to Station"
         priceLabel.updateWith(price: 1890)
+    }
+    
+    private func configureControlPage(numberOfPage: Int) {
+        pageControl.numberOfPages = numberOfPage
+    }
+    
+    func updateThumbnailImage(with index: Int) {
+        pageControl.currentPage = index
     }
 }
