@@ -29,6 +29,7 @@ class StayListCollectionView: UICollectionView {
     
     private func configureUI() {
         backgroundColor = .clear
+        showsVerticalScrollIndicator = false
     }
 }
 
