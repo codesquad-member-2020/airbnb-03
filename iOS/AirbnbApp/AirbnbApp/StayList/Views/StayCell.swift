@@ -9,6 +9,7 @@ class StayCell: UICollectionViewCell {
     private var thumbScrollViewDelegate: ThumbScrollViewDelegate!
     @IBOutlet weak var thumbImageStackView: UIStackView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var reviewLabel: ReviewLabel!
     @IBOutlet weak var superHostLabel: SuperHostLabel!
     @IBOutlet weak var placeTypeAndCityLabel: PlaceTypeAndCityLabel!
@@ -25,6 +26,16 @@ class StayCell: UICollectionViewCell {
         
         thumbScrollViewDelegate = ThumbScrollViewDelegate()
         scrollView.delegate = thumbScrollViewDelegate
+        
+        configureButtonAction()
+    }
+    
+    private func configureButtonAction() {
+        saveButton.addTarget(self, action: #selector(saveStay), for: .touchUpInside)
+    }
+    
+    @objc private func saveStay() {
+        #warning("Save Stay Action 구현")
     }
     
     private func configureControlPage(numberOfPage: Int) {
