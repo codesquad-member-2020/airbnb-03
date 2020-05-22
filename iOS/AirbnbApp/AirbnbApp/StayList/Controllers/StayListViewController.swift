@@ -5,6 +5,7 @@ class StayListViewController: UIViewController {
     private var searchFieldView: SearchFieldView!
     private var searchFilterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
+    private var mapButtonView: MapButtonView!
     private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
 
@@ -28,6 +29,7 @@ class StayListViewController: UIViewController {
         searchFieldView = SearchFieldView.loadFromXib()
         searchFilterView = SearchFilterView.loadFromXib()
         stayListCollectionView = StayListCollectionView()
+        mapButtonView = MapButtonView.loadFromXib()
     }
 
     private func configureTextFieldDelegate() {
@@ -35,6 +37,15 @@ class StayListViewController: UIViewController {
         searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
     }
 
+    // MARK: - IBAction
+
+    @IBAction func mapButtonTouched(_ sender: Any) {
+        #warning("동작 확인용 VC")
+        let viewController = UIViewController()
+        viewController.modalPresentationStyle = .automatic // .fullScreen
+        viewController.view.backgroundColor = .systemTeal
+        present(viewController, animated: true)
+    }
 }
 
 // MARK:- Layout
@@ -42,7 +53,9 @@ extension StayListViewController {
     private func configureLayout() {
         view.addSubviews(searchFieldView,
                          searchFilterView,
-                         stayListCollectionView)
+                         stayListCollectionView,
+                         mapButtonView
+        )
         
         let sidePadding: CGFloat = 24.0
         searchFieldView.constraints(topAnchor: view.safeAreaLayoutGuide.topAnchor,
@@ -70,5 +83,13 @@ extension StayListViewController {
                                                         left: 0,
                                                         bottom: 0,
                                                         right: 0))
+
+        mapButtonView.constraints(topAnchor: nil,
+                                  leadingAnchor: nil,
+                                  bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
+                                  trailingAnchor: nil,
+                                  padding: .init(top: 0, left: 0, bottom: 20, right: 0),
+                                  size: CGSize(width: 80, height: 40))
+        mapButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
     }
 }
