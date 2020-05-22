@@ -60,7 +60,7 @@
                         <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" image="heart" catalog="system"/>
                     </button>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5R-JP-WcA">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5R-JP-WcA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="248.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOz-NC-oJL">
@@ -87,7 +87,7 @@
                         <viewLayoutGuide key="frameLayoutGuide" id="dNK-yT-uQZ"/>
                     </scrollView>
                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7OR-TE-P7o">
-                        <rect key="frame" x="187" y="211" width="39" height="37"/>
+                        <rect key="frame" x="187.5" y="211.5" width="39" height="37"/>
                     </pageControl>
                 </subviews>
             </view>
