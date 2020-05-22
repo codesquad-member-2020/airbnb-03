@@ -92,6 +92,9 @@
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" image="heart" catalog="system"/>
+                        <connections>
+                            <action selector="saveButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zhk-eB-sFS"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -114,7 +117,7 @@
                 <outlet property="placeTypeAndCityLabel" destination="264-Ef-QMx" id="ndC-Kn-Yff"/>
                 <outlet property="priceLabel" destination="K8n-Oh-f1s" id="igF-YW-kMJ"/>
                 <outlet property="reviewLabel" destination="OdB-ur-I6Z" id="CaZ-VQ-A4o"/>
-                <outlet property="saveButton" destination="l2N-sy-TGs" id="MWr-bY-abp"/>
+                <outlet property="saveButton" destination="l2N-sy-TGs" id="rAu-2a-W4w"/>
                 <outlet property="scrollView" destination="o5R-JP-WcA" id="cNb-Z1-1MH"/>
                 <outlet property="superHostLabel" destination="cxp-sp-qP7" id="FCy-xi-PCK"/>
                 <outlet property="thumbImageStackView" destination="YOz-NC-oJL" id="oTG-bR-aOL"/>

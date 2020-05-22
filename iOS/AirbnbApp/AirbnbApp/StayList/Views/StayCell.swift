@@ -25,7 +25,6 @@ class StayCell: UICollectionViewCell {
         priceLabel.updateWith(price: 1890)
         
         configureScrollViewDelegate()
-        configureButtonAction()
     }
     
     private func configureScrollViewDelegate() {
@@ -33,11 +32,7 @@ class StayCell: UICollectionViewCell {
         scrollView.delegate = thumbScrollViewDelegate
     }
     
-    private func configureButtonAction() {
-        saveButton.addTarget(self, action: #selector(saveStay), for: .touchUpInside)
-    }
-    
-    @objc private func saveStay() {
+    @IBAction func saveButtonTapped(_ sender: Any) {
         #warning("Save Stay Action 구현")
     }
     
