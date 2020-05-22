@@ -102,6 +102,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		384BB7B72477D39C0019000B /* StayCell */ = {
+			isa = PBXGroup;
+			children = (
+				384C0E3A2473F62A0051528B /* StayCell.swift */,
+				384C0E3B2473F62A0051528B /* StayCell.xib */,
+				38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */,
+				38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */,
+				38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */,
+				381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */,
+				381A030524762561004EDE84 /* PriceLabel.swift */,
+			);
+			path = StayCell;
+			sourceTree = "<group>";
+		};
+		384BB7B82477D3BC0019000B /* SearchField */ = {
+			isa = PBXGroup;
+			children = (
+				8DCA196C24750CB900B3C167 /* SearchFieldView.swift */,
+				8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */,
+			);
+			path = SearchField;
+			sourceTree = "<group>";
+		};
+		384BB7B92477D3CC0019000B /* SearchFilter */ = {
+			isa = PBXGroup;
+			children = (
+				8DCA197224754D5A00B3C167 /* SearchFilterView.swift */,
+				8DCA197024754B7900B3C167 /* SearchFilterView.xib */,
+				8DCA19742475546C00B3C167 /* FilterButton.swift */,
+			);
+			path = SearchFilter;
+			sourceTree = "<group>";
+		};
+		384BB7BA2477D3F90019000B /* MapButton */ = {
+			isa = PBXGroup;
+			children = (
+				8D63C75C2476CFA10074BF0F /* MapButtonView.swift */,
+				8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */,
+			);
+			path = MapButton;
+			sourceTree = "<group>";
+		};
 		384C0E322473D9380051528B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,20 +159,10 @@
 			children = (
 				8D328442247647900078678A /* ViewFromXib.swift */,
 				384C0E362473E0650051528B /* StayListCollectionView.swift */,
-				384C0E3B2473F62A0051528B /* StayCell.xib */,
-				384C0E3A2473F62A0051528B /* StayCell.swift */,
-				38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */,
-				38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */,
-				38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */,
-				381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */,
-				381A030524762561004EDE84 /* PriceLabel.swift */,
-				8DCA196C24750CB900B3C167 /* SearchFieldView.swift */,
-				8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */,
-				8DCA197224754D5A00B3C167 /* SearchFilterView.swift */,
-				8DCA197024754B7900B3C167 /* SearchFilterView.xib */,
-				8DCA19742475546C00B3C167 /* FilterButton.swift */,
-				8D63C75C2476CFA10074BF0F /* MapButtonView.swift */,
-				8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */,
+				384BB7B82477D3BC0019000B /* SearchField */,
+				384BB7B92477D3CC0019000B /* SearchFilter */,
+				384BB7BA2477D3F90019000B /* MapButton */,
+				384BB7B72477D39C0019000B /* StayCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
