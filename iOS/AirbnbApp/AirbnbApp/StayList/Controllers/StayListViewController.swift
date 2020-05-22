@@ -106,7 +106,8 @@ extension StayListViewController {
                                                  left: 0,
                                                  bottom: 20,
                                                  right: 0),
-                                  size: CGSize(width: 80, height: 40))
+                                  size: CGSize(width: MapButtonView.width,
+                                               height: MapButtonView.height))
         mapButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
     }
 }
