@@ -28,7 +28,7 @@ class StayListCollectionView: UICollectionView {
     }
     
     private func configureUI() {
-        backgroundColor = .yellow
+        backgroundColor = .clear
     }
 }
 
