@@ -4,7 +4,7 @@ final class StayListViewModel: NSObject, ViewModelBinding {
     
     typealias Key = StayList
     
-    private var stayList: StayList = StayList() {
+    private var stayList: StayList {
         didSet {
             changedHandler(stayList)
         }
@@ -32,7 +32,7 @@ extension StayListViewModel: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StayCell.reuseIdentifier, for: indexPath) as! StayCell
-        let stay = stayList[indexPath.item]
+        let stay = stayList[indexPath]
         cell.configureViewModel(with: stay)
         return cell
     }

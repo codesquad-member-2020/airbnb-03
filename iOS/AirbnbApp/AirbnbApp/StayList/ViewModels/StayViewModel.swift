@@ -1,6 +1,6 @@
 import Foundation
 
-class StayViewModel: ViewModelBinding {
+final class StayViewModel: ViewModelBinding {
     
     typealias Key = Stay
     
