@@ -2,40 +2,38 @@ import UIKit
 
 final class StayListViewModel: NSObject, ViewModelBinding {
     
-    typealias Key = [StayViewModel]
+    typealias Key = StayList
     
-    private var stayViewModels: [StayViewModel] = [StayViewModel]() {
+    private var stayList: StayList = StayList() {
         didSet {
-            changedHandler(stayViewModels)
+            changedHandler(stayList)
         }
     }
     private var changedHandler: Handler
     
-    init(with stayViewModels: Key = [], changedHandler: @escaping Handler = { _ in }) {
-        self.stayViewModels = stayViewModels
+    init(with stayList: Key = StayList(), changedHandler: @escaping Handler = { _ in }) {
+        self.stayList = stayList
         self.changedHandler = changedHandler
     }
     
     func configureStayList(_ stayList: [Stay]) {
-        stayViewModels = stayList.map { StayViewModel(with: $0) }
+        self.stayList = StayList(stayList)
     }
     
-    func updateNotify(handler: @escaping ([StayViewModel]) -> Void) {
+    func updateNotify(handler: @escaping Handler) {
         self.changedHandler = handler
-    }
-    
-    subscript(indexPath: IndexPath) -> StayViewModel {
-        stayViewModels[indexPath.item]
     }
 }
 
 extension StayListViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stayViewModels.count
+        return stayList.numberOfStay
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StayCell.reuseIdentifier, for: indexPath) as! StayCell
+        let stay = stayList[indexPath.item]
+//        cell.configureViewModel(stayViewModel)
         return cell
     }
 }
