@@ -16,6 +16,7 @@
 		384C0E3C2473F62A0051528B /* StayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E3A2473F62A0051528B /* StayCell.swift */; };
 		384C0E3D2473F62A0051528B /* StayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384C0E3B2473F62A0051528B /* StayCell.xib */; };
 		384C0E4024742B7D0051528B /* StayListCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E3F24742B7D0051528B /* StayListCollectionViewDataSource.swift */; };
+		3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859747E2478FF98004A358C /* ThumbImageView.swift */; };
 		385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE424728EC8009E2E2B /* AppDelegate.swift */; };
 		385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE624728EC8009E2E2B /* SceneDelegate.swift */; };
 		385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE824728EC8009E2E2B /* TabBarController.swift */; };
@@ -59,6 +60,7 @@
 		384C0E3A2473F62A0051528B /* StayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCell.swift; sourceTree = "<group>"; };
 		384C0E3B2473F62A0051528B /* StayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayCell.xib; sourceTree = "<group>"; };
 		384C0E3F24742B7D0051528B /* StayListCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		3859747E2478FF98004A358C /* ThumbImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbImageView.swift; sourceTree = "<group>"; };
 		385D8BE124728EC8009E2E2B /* AirbnbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385D8BE424728EC8009E2E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		385D8BE624728EC8009E2E2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				38863E242478F6AB00D8C75C /* ThumbImagePagingView.swift */,
+				3859747E2478FF98004A358C /* ThumbImageView.swift */,
 			);
 			path = ThumbImagePaging;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */,
 				8D63C75D2476CFA10074BF0F /* MapButtonView.swift in Sources */,
 				38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */,
+				3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
 				8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */,
 			);

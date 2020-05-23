@@ -20,14 +20,9 @@ final class ThumbImagePagingView: UIView {
         pageControl.numberOfPages = numberOfImage
         
         for _ in 0..<numberOfImage {
-            let imageView = UIImageView()
-            imageView.backgroundColor = UIColor(named: "thumb.image.background")
+            let imageView = ThumbImageView()
             imageStackView.addArrangedSubview(imageView)
-            imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor).isActive = true
-            imageView.layer.cornerRadius = 12
-            imageView.contentMode = .scaleAspectFit
-            imageView.clipsToBounds = true
         }
     }
     
