@@ -28,6 +28,7 @@
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
 		38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */; };
 		38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */; };
+		38F1F89224795E0400454668 /* Stay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1F89124795E0400454668 /* Stay.swift */; };
 		8D328443247647900078678A /* ViewFromXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D328442247647900078678A /* ViewFromXib.swift */; };
 		8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */; };
 		8D63C75B2476CF4E0074BF0F /* MapButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */; };
@@ -76,6 +77,7 @@
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
 		38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLeadingImage.swift; sourceTree = "<group>"; };
 		38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHostLabel.swift; sourceTree = "<group>"; };
+		38F1F89124795E0400454668 /* Stay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stay.swift; sourceTree = "<group>"; };
 		8D328442247647900078678A /* ViewFromXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromXib.swift; sourceTree = "<group>"; };
 		8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldDelegate.swift; sourceTree = "<group>"; };
 		8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButtonView.xib; sourceTree = "<group>"; };
@@ -232,6 +234,14 @@
 			path = ThumbImagePaging;
 			sourceTree = "<group>";
 		};
+		38F1F89024795DED00454668 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38F1F89124795E0400454668 /* Stay.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8D32844624764B4C0078678A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				8D32844624764B4C0078678A /* Controllers */,
+				38F1F89024795DED00454668 /* Model */,
 				384C0E3E24742B660051528B /* ViewModels */,
 				384C0E352473E04C0051528B /* Views */,
 			);
@@ -386,6 +397,7 @@
 				38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */,
 				3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
+				38F1F89224795E0400454668 /* Stay.swift in Sources */,
 				8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
