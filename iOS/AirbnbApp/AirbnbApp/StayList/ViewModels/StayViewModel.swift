@@ -2,7 +2,7 @@ import Foundation
 
 class StayViewModel: ViewModelBinding {
     
-    typealias Key = Stay?
+    typealias Key = Stay
     
     private var stay: Key {
         didSet {
@@ -11,12 +11,13 @@ class StayViewModel: ViewModelBinding {
     }
     private var changedHandler: Handler
     
-    init(with stay: Key = nil, handler changedHandler: @escaping Handler = { _ in }) {
+    init(with stay: Key, handler changedHandler: @escaping Handler = { _ in }) {
         self.stay = stay
         self.changedHandler = changedHandler
+        changedHandler(stay)
     }
     
-    func updateNotify(handler changedHandler: @escaping (Stay?) -> Void) {
+    func updateNotify(handler changedHandler: @escaping Handler) {
         self.changedHandler = changedHandler
     }
 }
