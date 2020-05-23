@@ -9,6 +9,7 @@ class StayListViewController: UIViewController {
     private var stayListViewModel: StayListViewModel!
     private var mapButtonView: MapButtonView!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
+    private var loadingView: LoadingView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,20 @@ class StayListViewController: UIViewController {
     
     private func configureStayListViewModel() {
         stayListViewModel = StayListViewModel(changedHandler: { [weak self] (_) in
-            self?.stayListCollectionView.reloadData()
+            DispatchQueue.main.async {
+                self?.stayListCollectionView.reloadData()
+                self?.dismissLoadingView()
+            }
         })
+    }
+    
+    private func dismissLoadingView() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.loadingView.alpha = 0
+        }) { (_) in
+            self.loadingView.stopLoadingAnimation()
+            self.loadingView.isHidden = true
+        }
     }
     
     private func configureCollectionView() {
@@ -38,6 +51,7 @@ class StayListViewController: UIViewController {
         searchFilterView = SearchFilterView.loadFromXib()
         stayListCollectionView = StayListCollectionView()
         mapButtonView = MapButtonView.loadFromXib()
+        loadingView = LoadingView()
     }
 
     private func configureTextFieldDelegate() {
@@ -63,7 +77,8 @@ extension StayListViewController {
                          seperatorView,
                          searchFilterView,
                          stayListCollectionView,
-                         mapButtonView
+                         mapButtonView,
+                         loadingView
         )
         
         let sidePadding: CGFloat = 24.0
@@ -115,5 +130,9 @@ extension StayListViewController {
                                   size: CGSize(width: MapButtonView.width,
                                                height: MapButtonView.height))
         mapButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        loadingView.constraints(topAnchor: stayListCollectionView.topAnchor,
+                                     leadingAnchor: stayListCollectionView.leadingAnchor,
+                                     bottomAnchor: stayListCollectionView.bottomAnchor,
+                                     trailingAnchor: stayListCollectionView.trailingAnchor)
     }
 }
