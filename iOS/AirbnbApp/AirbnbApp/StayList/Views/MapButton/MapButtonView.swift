@@ -1,7 +1,10 @@
 import UIKit
 
 class MapButtonView: UIView, ViewFromXib {
+    
     static let xibName = String(describing: MapButtonView.self)
+    static let width: CGFloat = 80
+    static let height: CGFloat = 40
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -26,9 +29,8 @@ class MapButtonView: UIView, ViewFromXib {
 
     private func drawShadow() {
         layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowOpacity = 0.6
         layer.shadowOffset = .zero
-        layer.shadowRadius = 3
-        layer.shouldRasterize = true
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 4
     }
 }

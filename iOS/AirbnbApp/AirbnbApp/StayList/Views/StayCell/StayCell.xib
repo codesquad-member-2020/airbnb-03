@@ -15,45 +15,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="362"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WGr-q7-Mzh">
-                        <rect key="frame" x="0.0" y="256.5" width="414" height="97.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WGr-q7-Mzh">
+                        <rect key="frame" x="0.0" y="260.5" width="414" height="101.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-qu-s24">
-                                <rect key="frame" x="0.0" y="0.0" width="164.5" height="21"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-qu-s24">
+                                <rect key="frame" x="0.0" y="0.0" width="164.5" height="23.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.78 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-ur-I6Z" customClass="ReviewLabel" customModule="AirbnbApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.78 (200)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="OdB-ur-I6Z" customClass="ReviewLabel" customModule="AirbnbApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="23.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Superhost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxp-sp-qP7" customClass="SuperHostLabel" customModule="AirbnbApp" customModuleProvider="target">
-                                        <rect key="frame" x="85.5" y="0.0" width="79" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Superhost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="cxp-sp-qP7" customClass="SuperHostLabel" customModule="AirbnbApp" customModuleProvider="target">
+                                        <rect key="frame" x="85.5" y="0.0" width="79" height="23.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire Apartment ・ Upper East Side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="264-Ef-QMx" customClass="PlaceTypeAndCityLabel" customModule="AirbnbApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="25" width="275" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entire Apartment ・ Upper East Side" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="264-Ef-QMx" customClass="PlaceTypeAndCityLabel" customModule="AirbnbApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="25.5" width="275" height="23.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modern luxury studio in Gangnam! 5sec to Station" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMW-cF-5mI">
-                                <rect key="frame" x="0.0" y="50.5" width="375.5" height="21.5"/>
+                                <rect key="frame" x="0.0" y="51" width="375.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩99,323 / night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8n-Oh-f1s" customClass="PriceLabel" customModule="AirbnbApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="76" width="122.5" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩99,323 / night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="K8n-Oh-f1s" customClass="PriceLabel" customModule="AirbnbApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="77" width="165.5" height="24.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="K8n-Oh-f1s" firstAttribute="width" secondItem="WGr-q7-Mzh" secondAttribute="width" multiplier="0.4" id="1F4-jw-dzq"/>
+                            <constraint firstItem="264-Ef-QMx" firstAttribute="width" relation="lessThanOrEqual" secondItem="WGr-q7-Mzh" secondAttribute="width" multiplier="0.8" id="JFE-BW-Z5D"/>
+                        </constraints>
                     </stackView>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5R-JP-WcA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="248.5"/>
@@ -101,14 +105,14 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="WGr-q7-Mzh" secondAttribute="trailing" id="1th-8B-jkA"/>
                 <constraint firstAttribute="trailing" secondItem="l2N-sy-TGs" secondAttribute="trailing" constant="8" id="2eg-xd-nun"/>
+                <constraint firstItem="WGr-q7-Mzh" firstAttribute="top" secondItem="o5R-JP-WcA" secondAttribute="bottom" constant="12" id="7aP-GQ-AlL"/>
                 <constraint firstItem="WGr-q7-Mzh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Gf-3P-JBq"/>
                 <constraint firstItem="l2N-sy-TGs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="91U-QR-q8T"/>
                 <constraint firstItem="7OR-TE-P7o" firstAttribute="centerX" secondItem="o5R-JP-WcA" secondAttribute="centerX" id="Aay-C3-oHl"/>
                 <constraint firstItem="o5R-JP-WcA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="M6h-WT-lea"/>
                 <constraint firstItem="7OR-TE-P7o" firstAttribute="bottom" secondItem="o5R-JP-WcA" secondAttribute="bottom" id="XjZ-aW-9r7"/>
                 <constraint firstItem="o5R-JP-WcA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XoW-QX-mFE"/>
-                <constraint firstItem="WGr-q7-Mzh" firstAttribute="top" secondItem="o5R-JP-WcA" secondAttribute="bottom" constant="8" id="gms-Mw-AYn"/>
-                <constraint firstAttribute="bottom" secondItem="WGr-q7-Mzh" secondAttribute="bottom" constant="8" id="jxx-pp-ofb"/>
+                <constraint firstAttribute="bottom" secondItem="WGr-q7-Mzh" secondAttribute="bottom" id="hlK-7s-6OC"/>
                 <constraint firstAttribute="trailing" secondItem="o5R-JP-WcA" secondAttribute="trailing" id="s0h-ZM-hWa"/>
             </constraints>
             <size key="customSize" width="370" height="362"/>

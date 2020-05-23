@@ -3,6 +3,7 @@ import UIKit
 class StayListViewController: UIViewController {
     
     private var searchFieldView: SearchFieldView!
+    private var seperatorView: SeperatorView!
     private var searchFilterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
     private var mapButtonView: MapButtonView!
@@ -27,6 +28,7 @@ class StayListViewController: UIViewController {
         view.backgroundColor = .white
 
         searchFieldView = SearchFieldView.loadFromXib()
+        seperatorView = SeperatorView()
         searchFilterView = SearchFilterView.loadFromXib()
         stayListCollectionView = StayListCollectionView()
         mapButtonView = MapButtonView.loadFromXib()
@@ -52,6 +54,7 @@ class StayListViewController: UIViewController {
 extension StayListViewController {
     private func configureLayout() {
         view.addSubviews(searchFieldView,
+                         seperatorView,
                          searchFilterView,
                          stayListCollectionView,
                          mapButtonView
@@ -62,34 +65,49 @@ extension StayListViewController {
                                      leadingAnchor: view.leadingAnchor,
                                      bottomAnchor: nil, trailingAnchor: view.trailingAnchor,
                                      padding: .init(top: 16,
+                                                    left: sidePadding + 16,
+                                                    bottom: 0,
+                                                    right: sidePadding + 16),
+                                     size: .init(width: 0,
+                                                 height: SearchFieldView.height))
+        seperatorView.constraints(topAnchor: searchFieldView.bottomAnchor,
+                                  leadingAnchor: view.leadingAnchor,
+                                  bottomAnchor: nil,
+                                  trailingAnchor: view.trailingAnchor,
+                                  padding: .init(top: 12,
+                                                 left: 0,
+                                                 bottom: 0,
+                                                 right: 0),
+                                  size: .init(width: 0,
+                                              height: 0.5))
+        searchFilterView.constraints(topAnchor: searchFieldView.bottomAnchor,
+                                     leadingAnchor: view.leadingAnchor,
+                                     bottomAnchor: nil,
+                                     trailingAnchor: view.trailingAnchor,
+                                     padding: .init(top: 24,
                                                     left: sidePadding,
                                                     bottom: 0,
                                                     right: sidePadding),
-                                     size: .init(width: 0, height: 48))
-        searchFilterView.constraints(topAnchor: searchFieldView.bottomAnchor,
-                                     leadingAnchor: searchFieldView.leadingAnchor,
-                                     bottomAnchor: nil,
-                                     trailingAnchor: searchFieldView.trailingAnchor,
-                                     padding: .init(top: 8,
-                                                    left: 0,
-                                                    bottom: 0,
-                                                    right: 0),
-                                     size: .init(width: 0, height: 44))
+                                     size: .init(width: 0,
+                                                 height: SearchFilterView.height))
         stayListCollectionView.constraints(topAnchor: searchFilterView.bottomAnchor,
-                                         leadingAnchor: searchFieldView.leadingAnchor,
+                                         leadingAnchor: view.leadingAnchor,
                                          bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
-                                         trailingAnchor: searchFieldView.trailingAnchor,
+                                         trailingAnchor: view.trailingAnchor,
                                          padding: .init(top: 12,
-                                                        left: 0,
+                                                        left: sidePadding,
                                                         bottom: 0,
-                                                        right: 0))
-
+                                                        right: sidePadding))
         mapButtonView.constraints(topAnchor: nil,
                                   leadingAnchor: nil,
                                   bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
                                   trailingAnchor: nil,
-                                  padding: .init(top: 0, left: 0, bottom: 20, right: 0),
-                                  size: CGSize(width: 80, height: 40))
+                                  padding: .init(top: 0,
+                                                 left: 0,
+                                                 bottom: 20,
+                                                 right: 0),
+                                  size: CGSize(width: MapButtonView.width,
+                                               height: MapButtonView.height))
         mapButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
     }
 }
