@@ -6,8 +6,8 @@ class StayListViewController: UIViewController {
     private var seperatorView: SeperatorView!
     private var searchFilterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
+    private var stayListViewModel: StayListViewModel!
     private var mapButtonView: MapButtonView!
-    private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
 
     override func viewDidLoad() {
@@ -15,13 +15,19 @@ class StayListViewController: UIViewController {
         
         configureUI()
         configureLayout()
+        configureStayListViewModel()
         configureCollectionView()
         configureTextFieldDelegate()
     }
     
+    private func configureStayListViewModel() {
+        stayListViewModel = StayListViewModel(changedHandler: { [weak self] (_) in
+            self?.stayListCollectionView.reloadData()
+        })
+    }
+    
     private func configureCollectionView() {
-        stayListCollectionViewDataSource = StayListCollectionViewDataSource()
-        stayListCollectionView.dataSource = stayListCollectionViewDataSource
+        stayListCollectionView.dataSource = stayListViewModel
     }
     
     private func configureUI() {

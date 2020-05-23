@@ -15,7 +15,6 @@
 		384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E382473F50F0051528B /* UIView+addSubviews.swift */; };
 		384C0E3C2473F62A0051528B /* StayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E3A2473F62A0051528B /* StayCell.swift */; };
 		384C0E3D2473F62A0051528B /* StayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384C0E3B2473F62A0051528B /* StayCell.xib */; };
-		384C0E4024742B7D0051528B /* StayListCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E3F24742B7D0051528B /* StayListCollectionViewDataSource.swift */; };
 		3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859747E2478FF98004A358C /* ThumbImageView.swift */; };
 		385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE424728EC8009E2E2B /* AppDelegate.swift */; };
 		385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BE624728EC8009E2E2B /* SceneDelegate.swift */; };
@@ -31,6 +30,7 @@
 		38F1F89224795E0400454668 /* Stay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1F89124795E0400454668 /* Stay.swift */; };
 		38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1F89324795F5200454668 /* ViewModelBinding.swift */; };
 		38F1F89624795FF100454668 /* StayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1F89524795FF100454668 /* StayViewModel.swift */; };
+		38F1F8982479614500454668 /* StayListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1F8972479614500454668 /* StayListViewModel.swift */; };
 		8D328443247647900078678A /* ViewFromXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D328442247647900078678A /* ViewFromXib.swift */; };
 		8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */; };
 		8D63C75B2476CF4E0074BF0F /* MapButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */; };
@@ -62,7 +62,6 @@
 		384C0E382473F50F0051528B /* UIView+addSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviews.swift"; sourceTree = "<group>"; };
 		384C0E3A2473F62A0051528B /* StayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCell.swift; sourceTree = "<group>"; };
 		384C0E3B2473F62A0051528B /* StayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayCell.xib; sourceTree = "<group>"; };
-		384C0E3F24742B7D0051528B /* StayListCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		3859747E2478FF98004A358C /* ThumbImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbImageView.swift; sourceTree = "<group>"; };
 		385D8BE124728EC8009E2E2B /* AirbnbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385D8BE424728EC8009E2E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		38F1F89124795E0400454668 /* Stay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stay.swift; sourceTree = "<group>"; };
 		38F1F89324795F5200454668 /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
 		38F1F89524795FF100454668 /* StayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayViewModel.swift; sourceTree = "<group>"; };
+		38F1F8972479614500454668 /* StayListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListViewModel.swift; sourceTree = "<group>"; };
 		8D328442247647900078678A /* ViewFromXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromXib.swift; sourceTree = "<group>"; };
 		8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldDelegate.swift; sourceTree = "<group>"; };
 		8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButtonView.xib; sourceTree = "<group>"; };
@@ -182,8 +182,8 @@
 		384C0E3E24742B660051528B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				384C0E3F24742B7D0051528B /* StayListCollectionViewDataSource.swift */,
 				38F1F89324795F5200454668 /* ViewModelBinding.swift */,
+				38F1F8972479614500454668 /* StayListViewModel.swift */,
 				38F1F89524795FF100454668 /* StayViewModel.swift */,
 			);
 			path = ViewModels;
@@ -383,10 +383,10 @@
 				384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
 				3839C7B02477D6760039BB19 /* SeperatorView.swift in Sources */,
-				384C0E4024742B7D0051528B /* StayListCollectionViewDataSource.swift in Sources */,
 				384C0E3C2473F62A0051528B /* StayCell.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
 				384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */,
+				38F1F8982479614500454668 /* StayListViewModel.swift in Sources */,
 				8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */,
 				38F1F89624795FF100454668 /* StayViewModel.swift in Sources */,
 				8DCA197324754D5A00B3C167 /* SearchFilterView.swift in Sources */,
