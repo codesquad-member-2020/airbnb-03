@@ -83,8 +83,8 @@ create table if not exists images
 create table if not exists calender
 (
     id               INT AUTO_INCREMENT,
-    is_available     boolean,
-    reservation_date DATETIME,
+    is_available     BOOLEAN,
+    reservation_date DATE,
     properties_id    INT REFERENCES properties (id),
     primary key (id)
 );

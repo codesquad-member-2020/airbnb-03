@@ -1,10 +1,7 @@
 package com.airbnb3.codesquad.airbnb3.oauth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
@@ -21,4 +18,10 @@ public class GithubUserAlex {
     @JsonProperty("email")
     private String email;
 
+    @Builder
+    public GithubUserAlex(String githubId, String userId, String email) {
+        this.githubId = githubId;
+        this.userId = userId;
+        this.email = email;
+    }
 }

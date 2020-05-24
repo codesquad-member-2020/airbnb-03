@@ -7,13 +7,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
+
 @Service
 public class AirBnbService {
     @Autowired
     PropertiesDaoAlex propertiesDao;
 
     public List<PropertiesDtoAlex> stayedProperties(int pageNumber) {
-        int propertyRange = pageNumber*20;
+        int propertyRange = pageNumber * PAGE_VIEW_ITEM_COUNT;
         return propertiesDao.getStayedProperties(propertyRange);
     }
 }
