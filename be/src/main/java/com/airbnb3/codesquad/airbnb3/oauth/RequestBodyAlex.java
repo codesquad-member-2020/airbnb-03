@@ -8,9 +8,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @Builder
-public class RequestBody {
+public class RequestBodyAlex {
 
     @JsonProperty("client_id")
     private String clientId;
