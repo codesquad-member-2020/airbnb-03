@@ -1,10 +1,12 @@
 package com.airbnb3.codesquad.airbnb3.service;
 
+import com.airbnb3.codesquad.airbnb3.dao.UserDaoAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.GithubAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.GithubUserAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.RequestBodyAlex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,9 @@ import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsOAuthAlex.*;
 @Service
 public class LoginServiceAlex {
     private static final Logger logger = LoggerFactory.getLogger(LoginServiceAlex.class);
+
+    @Autowired
+    UserDaoAlex userDaoAlex;
 
     @Value("${GITHUB_CLIENT_ID}")
     private String GITHUB_CLIENT_ID;
@@ -42,5 +47,9 @@ public class LoginServiceAlex {
         HttpEntity<?> httpEntity = new HttpEntity<>(headers);
         ResponseEntity<GithubUserAlex> responseEntity = new RestTemplate().exchange(GITHUB_USER_INFO_URL, HttpMethod.GET, httpEntity, GithubUserAlex.class);
         return responseEntity.getBody();
+    }
+
+    public void saveUserInfo(GithubUserAlex userInfo) {
+        if (!userDaoAlex.checkUserInfo(userInfo.getGithubId())) userDaoAlex.saveUserInfo(userInfo);
     }
 }

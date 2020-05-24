@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
@@ -32,6 +33,7 @@ public class LoginControllerAlex {
         logger.info("Github AccessToekn, TokenType, Scope Data : {}", github.toString());
         GithubUserAlex githubUser = loginService.requestUserInfo(github.getAccessToken());
         logger.info("Github User Id : {}", githubUser.toString());
+        loginService.saveUserInfo(githubUser);
 
         Cookie cookie = new Cookie(USER_ID, githubUser.getUserId());
         cookie.setMaxAge(EXPIRE_TIME);
@@ -40,6 +42,7 @@ public class LoginControllerAlex {
         return new ResponseEntity(HttpStatus.FOUND);
     }
 
+    @CrossOrigin(origins = "https://github.com/login/oauth/authorize?client_id=91882bf66676085caab9&scope=user",allowCredentials = "true")
     @GetMapping("/github/login")
     public RedirectView loginGithubOauth() {
         return new RedirectView(OAUTH_URL);

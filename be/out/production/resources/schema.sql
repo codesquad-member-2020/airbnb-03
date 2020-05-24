@@ -4,7 +4,7 @@ drop table if exists user;
 drop table if exists detail;
 drop table if exists bookmarks;
 drop table if exists images;
-
+drop table if exists calender;
 create table if not exists properties
 (
     id                INT,
@@ -77,5 +77,14 @@ create table if not exists images
     id            INT AUTO_INCREMENT,
     image_url     VARCHAR(256),
     properties_id INT REFERENCES properties (id),
+    primary key (id)
+);
+
+create table if not exists calender
+(
+    id               INT AUTO_INCREMENT,
+    is_available     boolean,
+    reservation_date DATETIME,
+    properties_id    INT REFERENCES properties (id),
     primary key (id)
 );
