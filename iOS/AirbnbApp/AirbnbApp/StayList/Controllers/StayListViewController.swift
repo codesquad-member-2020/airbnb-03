@@ -3,7 +3,7 @@ import UIKit
 class StayListViewController: UIViewController {
     
     private var searchFieldView: SearchFieldView!
-    private var seperatorView: SeperatorView!
+    private var separatorView: SeparatorView!
     private var searchFilterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
     private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
@@ -65,7 +65,7 @@ class StayListViewController: UIViewController {
         view.backgroundColor = .white
 
         searchFieldView = SearchFieldView.loadFromXib()
-        seperatorView = SeperatorView()
+        separatorView = SeparatorView()
         searchFilterView = SearchFilterView.loadFromXib()
         stayListCollectionView = StayListCollectionView()
         mapButtonView = MapButtonView.loadFromXib()
@@ -92,7 +92,7 @@ class StayListViewController: UIViewController {
 extension StayListViewController {
     private func configureLayout() {
         view.addSubviews(searchFieldView,
-                         seperatorView,
+                         separatorView,
                          searchFilterView,
                          stayListCollectionView,
                          mapButtonView,
@@ -109,7 +109,7 @@ extension StayListViewController {
                                                     right: sidePadding + 16),
                                      size: .init(width: 0,
                                                  height: SearchFieldView.height))
-        seperatorView.constraints(topAnchor: searchFieldView.bottomAnchor,
+        separatorView.constraints(topAnchor: searchFieldView.bottomAnchor,
                                   leadingAnchor: view.leadingAnchor,
                                   bottomAnchor: nil,
                                   trailingAnchor: view.trailingAnchor,
