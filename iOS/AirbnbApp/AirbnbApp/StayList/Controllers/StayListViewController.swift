@@ -6,7 +6,7 @@ class StayListViewController: UIViewController {
     private var seperatorView: SeperatorView!
     private var searchFilterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
-    private var stayListViewModel: StayListViewModel!
+    private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
     private var mapButtonView: MapButtonView!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
     private var loadingView: LoadingView!
@@ -16,7 +16,7 @@ class StayListViewController: UIViewController {
         
         configureUI()
         configureLayout()
-        configureStayListViewModel()
+        configureStayListCollectionViewDataSourceHandler()
         configureCollectionView()
         configureTextFieldDelegate()
         fetchFakeStayList()
@@ -35,12 +35,12 @@ class StayListViewController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {
           (timer) in
-            self.stayListViewModel.configure(with: fakeStays)
+            self.stayListCollectionViewDataSource.configure(with: fakeStays)
         }
     }
     
-    private func configureStayListViewModel() {
-        stayListViewModel = StayListViewModel(changedHandler: { [weak self] (_) in
+    private func configureStayListCollectionViewDataSourceHandler() {
+        stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
             DispatchQueue.main.async {
                 self?.stayListCollectionView.reloadData()
                 self?.dismissLoadingView()
@@ -58,7 +58,7 @@ class StayListViewController: UIViewController {
     }
     
     private func configureCollectionView() {
-        stayListCollectionView.dataSource = stayListViewModel
+        stayListCollectionView.dataSource = stayListCollectionViewDataSource
     }
     
     private func configureUI() {
