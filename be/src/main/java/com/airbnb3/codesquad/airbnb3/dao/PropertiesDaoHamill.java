@@ -1,4 +1,4 @@
 package com.airbnb3.codesquad.airbnb3.dao;
 
-public class PropertiesDao {
+public class PropertiesDaoHamill {
 }
