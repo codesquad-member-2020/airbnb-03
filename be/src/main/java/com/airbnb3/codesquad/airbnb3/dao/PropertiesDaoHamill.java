@@ -21,7 +21,8 @@ public class PropertiesDaoHamill {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<PropertiesDtoHamill> findAllProperties(Integer offset, Double priceMin, Double priceMax) {
+    public List<PropertiesDtoHamill> findAllProperties(Integer offset, Double priceMin, Double priceMax,
+                                                       Integer adults, Integer children) {
         if (offset == null) {
             offset = 20;
         }
@@ -34,10 +35,21 @@ public class PropertiesDaoHamill {
             priceMax = 999.00;
         }
 
+        if (adults == null) {
+            adults = 0;
+        }
+
+        if (children == null) {
+            children = 0;
+        }
+
+        Integer accommodates = adults + children;
+
         return jdbcTemplate.query(
                 "SELECT p.id, p.title, p.state, p.city, p.latitude, p.longitude, p.reservable," +
                         "p.saved,p.host_type,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(i.image_url) AS image " +
-                        "FROM properties p LEFT JOIN images i ON p.id = i.properties_id WHERE p.price <= ? AND p.price >= ? GROUP BY p.id LIMIT ?",
+                        "FROM properties p LEFT JOIN images i ON p.id = i.properties_id LEFT JOIN detail d ON p.id = d.id " +
+                        "WHERE p.price <= ? AND p.price >= ? AND d.accommodates >= ? GROUP BY p.id LIMIT ?",
                 (rs, rowNum) ->
                         PropertiesDtoHamill.builder()
                                            .id(rs.getLong("id"))
@@ -55,7 +67,7 @@ public class PropertiesDaoHamill {
                                            .numberOfReviews(rs.getInt("number_of_reviews"))
                                            .images(imageParser(rs.getString("image")))
                                            .build()
-                , priceMax, priceMin, offset);
+                , priceMax, priceMin, accommodates, offset);
     }
 
     private List<String> imageParser(String images) {

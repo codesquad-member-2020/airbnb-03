@@ -26,10 +26,12 @@ public class AirbnbControllerHamill {
 
     @GetMapping("/main")
     public ResponseEntity<List<PropertiesDtoHamill>> findAllProperties(
-            @RequestParam(value = "page", required = false) Integer offset,
+            @RequestParam(value = "offset", required = false) Integer offset,
             @RequestParam(value = "price_min", required = false) Double priceMin,
-            @RequestParam(value = "price_max", required = false) Double priceMax) {
-        return new ResponseEntity<>(airbnbServiceHamill.findAllProperties(offset,priceMin, priceMax), HttpStatus.OK);
+            @RequestParam(value = "price_max", required = false) Double priceMax,
+            @RequestParam(value = "adults", required = false) Integer adults,
+            @RequestParam(value = "children", required = false) Integer children) {
+        return new ResponseEntity<>(airbnbServiceHamill.findAllProperties(offset,priceMin, priceMax, adults, children), HttpStatus.OK);
     }
 
     @GetMapping("/detail/{propertiesId}")
