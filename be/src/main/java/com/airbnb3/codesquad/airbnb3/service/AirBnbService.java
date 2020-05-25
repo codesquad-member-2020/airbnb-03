@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
 
 @Service
 public class AirBnbService {
+
     @Autowired
     PropertiesDaoAlex propertiesDao;
 
@@ -18,4 +20,8 @@ public class AirBnbService {
         int propertyRange = pageNumber * PAGE_VIEW_ITEM_COUNT;
         return propertiesDao.getStayedProperties(propertyRange);
     }
+//
+//    public List<PropertiesDtoAlex> filterdProperties() {
+//
+//    }
 }

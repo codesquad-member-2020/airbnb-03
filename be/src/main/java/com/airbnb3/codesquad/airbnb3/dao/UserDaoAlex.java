@@ -18,8 +18,8 @@ public class UserDaoAlex {
     }
 
     public boolean checkUserInfo(String githubId) {
-        String sql = "SELECT EXISTS(SELECT id FROM user WHERE id = ?) AS id_check;";
-        return jdbcTemplate.queryForObject(sql, new Object[]{githubId},(rs, rowNum) -> rs.getBoolean("id_check"));
+        String sql = "SELECT EXISTS(SELECT id FROM user WHERE id = ?) AS id_check";
+        return jdbcTemplate.queryForObject(sql, new Object[]{githubId}, (rs, rowNum) -> rs.getBoolean("id_check"));
     }
 
 }

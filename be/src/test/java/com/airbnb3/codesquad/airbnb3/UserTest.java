@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import sun.jvm.hotspot.utilities.Assert;
 
 @SpringBootTest
 public class UserTest {
@@ -17,13 +18,12 @@ public class UserTest {
     private UserDaoAlex userDaoAlex;
 
     @Test
-    public void userIdCheck() {
+    public void userIdCheck() throws Exception{
         logger.info("User Check Test!!!!");
         String testId = "12345";
         GithubUserAlex testUser = GithubUserAlex.builder().githubId(testId).userId("testUser").email("testEmail@mail.com").build();
         logger.info("Before TEST ID : {} RESULT : {}",testId,userDaoAlex.checkUserInfo(testId));
         userDaoAlex.saveUserInfo(testUser);
-        logger.info("After TEST ID : {} RESULT : {}",testId,userDaoAlex.checkUserInfo(testId));
-
+        logger.info("After TEST ID : {} RESULT : {}", testId, userDaoAlex.checkUserInfo(testId));
     }
 }

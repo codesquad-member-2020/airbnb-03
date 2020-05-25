@@ -36,8 +36,8 @@ public class LoginServiceAlex {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<?> httpEntity = new HttpEntity<>(requestBody,headers);
-        ResponseEntity<GithubAlex> responseEntity = new RestTemplate().postForEntity(GITHUB_ACCESS_TOKEN_URL,httpEntity,GithubAlex.class);
+        HttpEntity<?> httpEntity = new HttpEntity<>(requestBody, headers);
+        ResponseEntity<GithubAlex> responseEntity = new RestTemplate().postForEntity(GITHUB_ACCESS_TOKEN_URL, httpEntity, GithubAlex.class);
         return responseEntity.getBody();
     }
 

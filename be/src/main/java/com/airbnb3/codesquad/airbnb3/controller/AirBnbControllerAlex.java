@@ -23,4 +23,10 @@ public class AirBnbControllerAlex {
     public ResponseEntity<List<PropertiesDtoAlex>> stayedPage(@PathVariable("pageNum") int pageNum) {
         return new ResponseEntity<>(airBnbService.stayedProperties(pageNum), HttpStatus.OK);
     }
+
+//    @GetMapping()
+//    public void filterdPage(@PathVariable(value = "guest_count",required = false) Integer guestCount,
+//                            @PathVariable(value = "min_price")) {
+//
+//    }
 }

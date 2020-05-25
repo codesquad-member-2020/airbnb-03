@@ -28,8 +28,8 @@ create table if not exists properties
 create table if not exists bookings
 (
     id                INT AUTO_INCREMENT,
-    check_in_date     DATETIME,
-    check_out_date    DATETIME,
+    check_in_date     DATE,
+    check_out_date    DATE,
     booking_date      DATETIME,
     cleaning_fee      DECIMAL(10, 3),
     service_fee       DECIMAL(10, 3),
@@ -82,9 +82,11 @@ create table if not exists images
 
 create table if not exists calender
 (
-    id               INT AUTO_INCREMENT,
-    is_available     BOOLEAN,
-    reservation_date DATE,
-    properties_id    INT REFERENCES properties (id),
+    id            INT AUTO_INCREMENT,
+    is_available  BOOLEAN,
+    year          INT,
+    month         INT,
+    day           INT,
+    properties_id INT REFERENCES properties (id),
     primary key (id)
 );

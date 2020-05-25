@@ -42,9 +42,9 @@ public class LoginControllerAlex {
         return new ResponseEntity(HttpStatus.FOUND);
     }
 
-    @CrossOrigin(origins = "https://github.com/login/oauth/authorize?client_id=91882bf66676085caab9&scope=user",allowCredentials = "true")
+    @CrossOrigin(origins = OAUTH_URL + OAUTH_SCOPE, allowCredentials = "true")
     @GetMapping("/github/login")
     public RedirectView loginGithubOauth() {
-        return new RedirectView(OAUTH_URL);
+        return new RedirectView(OAUTH_URL + OAUTH_SCOPE);
     }
 }
