@@ -1,6 +1,7 @@
 package com.airbnb3.codesquad.airbnb3.service;
 
 import com.airbnb3.codesquad.airbnb3.dao.PropertiesDaoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.PropertiesDetailDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +22,10 @@ public class AirbnbServiceHamill {
 
     public List<PropertiesDtoHamill> findAllProperties(Integer page) {
         return propertiesDaoHamill.findAllProperties(page);
+    }
+
+    public PropertiesDetailDtoHamill findByPropertiesId(int propertiesId) {
+        return propertiesDaoHamill.findByPropertiesId(propertiesId);
     }
 }
 
