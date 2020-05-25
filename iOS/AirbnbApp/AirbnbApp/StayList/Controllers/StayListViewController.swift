@@ -7,6 +7,7 @@ class StayListViewController: UIViewController {
     private var searchFilterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
     private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
+    private var stayListCollectionViewDelegate: StayListCollectionViewDelegate!
     private var mapButtonView: MapButtonView!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
     private var loadingView: LoadingView!
@@ -16,7 +17,7 @@ class StayListViewController: UIViewController {
         
         configureUI()
         configureLayout()
-        configureStayListCollectionViewDataSourceHandler()
+        configureStayListCollectionViewHandlers()
         configureCollectionView()
         configureTextFieldDelegate()
         fetchFakeStayList()
@@ -39,12 +40,17 @@ class StayListViewController: UIViewController {
         }
     }
     
-    private func configureStayListCollectionViewDataSourceHandler() {
+    private func configureStayListCollectionViewHandlers() {
         stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
             DispatchQueue.main.async {
                 self?.stayListCollectionView.reloadData()
                 self?.dismissLoadingView()
             }
+        })
+
+        stayListCollectionViewDelegate = StayListCollectionViewDelegate(handlerWhenSelected: { [weak self] in
+            let detailViewController = StayDetailViewController()
+            self?.present(detailViewController, animated: true, completion: nil)
         })
     }
     
@@ -59,6 +65,9 @@ class StayListViewController: UIViewController {
     
     private func configureCollectionView() {
         stayListCollectionView.dataSource = stayListCollectionViewDataSource
+
+        // FIXME: delegate 지정하면 셀 크기가 이상하게 바뀜
+        stayListCollectionView.delegate = stayListCollectionViewDelegate
     }
     
     private func configureUI() {
