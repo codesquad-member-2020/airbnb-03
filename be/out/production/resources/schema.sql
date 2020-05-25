@@ -11,7 +11,6 @@ create table if not exists properties
     title             VARCHAR(64),
     state             VARCHAR(64),
     city              VARCHAR(64),
-    address           VARCHAR(128) DEFAULT 'Not Address',
     latitude          DOUBLE,
     longitude         DOUBLE,
     reservable        BOOLEAN,
