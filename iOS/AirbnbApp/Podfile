@@ -1,0 +1,16 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.2'
+
+target 'AirbnbApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AirbnbApp
+  pod 'Alamofire', '~> 5.2'
+
+  target 'AirbnbAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
