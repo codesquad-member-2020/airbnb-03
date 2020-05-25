@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,8 @@
 		8D63C75B2476CF4E0074BF0F /* MapButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */; };
 		8D63C75D2476CFA10074BF0F /* MapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D63C75C2476CFA10074BF0F /* MapButtonView.swift */; };
 		8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */; };
+		8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */; };
+		8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
 		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
 		8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA197024754B7900B3C167 /* SearchFilterView.xib */; };
@@ -94,6 +96,8 @@
 		8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButtonView.xib; sourceTree = "<group>"; };
 		8D63C75C2476CFA10074BF0F /* MapButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapButtonView.swift; sourceTree = "<group>"; };
 		8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListViewController.swift; sourceTree = "<group>"; };
+		8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDetailViewController.swift; sourceTree = "<group>"; };
+		8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayDetailViewController.xib; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
 		8DCA197024754B7900B3C167 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
@@ -132,7 +136,6 @@
 				51291177216A70DD7B1C174C /* Pods-AirbnbAppTests.debug.xcconfig */,
 				F0B4FABD941046CDEC24AF71 /* Pods-AirbnbAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -238,6 +241,7 @@
 			children = (
 				8D8FE71B2473CF23008FF0AF /* TabBar */,
 				8D8FE71C2473CF3C008FF0AF /* StayList */,
+				8D9B7A0D247C066300D9A99D /* StayDetail */,
 				384C0E322473D9380051528B /* Extensions */,
 				385D8BE424728EC8009E2E2B /* AppDelegate.swift */,
 				385D8BE624728EC8009E2E2B /* SceneDelegate.swift */,
@@ -301,6 +305,15 @@
 				384C0E352473E04C0051528B /* Views */,
 			);
 			path = StayList;
+			sourceTree = "<group>";
+		};
+		8D9B7A0D247C066300D9A99D /* StayDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */,
+				8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */,
+			);
+			path = StayDetail;
 			sourceTree = "<group>";
 		};
 		BB525B3078B278E3107AD411 /* Frameworks */ = {
@@ -400,6 +413,7 @@
 				385D8BF124728ECC009E2E2B /* LaunchScreen.storyboard in Resources */,
 				8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */,
 				385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */,
+				8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */,
 				384C0E3D2473F62A0051528B /* StayCell.xib in Resources */,
 				8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */,
 			);
@@ -495,6 +509,7 @@
 				8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */,
 				8D328443247647900078678A /* ViewFromXib.swift in Sources */,
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
+				8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */,
 				38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */,
 				384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */,
 				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
