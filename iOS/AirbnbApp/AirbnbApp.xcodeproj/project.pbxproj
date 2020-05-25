@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,10 +24,12 @@
 		385D8BFC24728ECC009E2E2B /* AirbnbAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BFB24728ECC009E2E2B /* AirbnbAppTests.swift */; };
 		3869C446247BB9AC00A16C6D /* StayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3869C445247BB9AC00A16C6D /* StayList.swift */; };
 		38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863E242478F6AB00D8C75C /* ThumbImagePagingView.swift */; };
+		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
 		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
 		38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */; };
 		38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */; };
+		38DC238B247BDAE200DC3BCC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC238A247BDAE200DC3BCC /* NetworkManager.swift */; };
 		38EB9D8F2479A48100236DB4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB9D8E2479A48100236DB4 /* LoadingView.swift */; };
 		38F1F89224795E0400454668 /* Stay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1F89124795E0400454668 /* Stay.swift */; };
 		38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1F89324795F5200454668 /* ViewModelBinding.swift */; };
@@ -78,10 +80,12 @@
 		385D8BFD24728ECC009E2E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3869C445247BB9AC00A16C6D /* StayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayList.swift; sourceTree = "<group>"; };
 		38863E242478F6AB00D8C75C /* ThumbImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbImagePagingView.swift; sourceTree = "<group>"; };
+		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
 		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
 		38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLeadingImage.swift; sourceTree = "<group>"; };
 		38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHostLabel.swift; sourceTree = "<group>"; };
+		38DC238A247BDAE200DC3BCC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		38EB9D8E2479A48100236DB4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		38F1F89124795E0400454668 /* Stay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stay.swift; sourceTree = "<group>"; };
 		38F1F89324795F5200454668 /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
@@ -132,7 +136,6 @@
 				51291177216A70DD7B1C174C /* Pods-AirbnbAppTests.debug.xcconfig */,
 				F0B4FABD941046CDEC24AF71 /* Pods-AirbnbAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -238,6 +241,8 @@
 			children = (
 				8D8FE71B2473CF23008FF0AF /* TabBar */,
 				8D8FE71C2473CF3C008FF0AF /* StayList */,
+				38DC2389247BDAD100DC3BCC /* Network */,
+				38AEA754247BF7400058050D /* UseCases */,
 				384C0E322473D9380051528B /* Extensions */,
 				385D8BE424728EC8009E2E2B /* AppDelegate.swift */,
 				385D8BE624728EC8009E2E2B /* SceneDelegate.swift */,
@@ -264,6 +269,22 @@
 				3859747E2478FF98004A358C /* ThumbImageView.swift */,
 			);
 			path = ThumbImagePaging;
+			sourceTree = "<group>";
+		};
+		38AEA754247BF7400058050D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				38AEA755247BF7590058050D /* StayListUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		38DC2389247BDAD100DC3BCC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				38DC238A247BDAE200DC3BCC /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		38F1F89024795DED00454668 /* Model */ = {
@@ -485,6 +506,7 @@
 			files = (
 				384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
+				38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */,
 				3839C7B02477D6760039BB19 /* SeperatorView.swift in Sources */,
 				384C0E3C2473F62A0051528B /* StayCell.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
@@ -497,6 +519,7 @@
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
 				38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */,
 				384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */,
+				38DC238B247BDAE200DC3BCC /* NetworkManager.swift in Sources */,
 				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,
