@@ -71,12 +71,12 @@ create table if not exists detail
     service_fee                 DOUBLE,
     cleaning_fee                DOUBLE,
     tax                         DOUBLE,
-    review_scores_accuracy      INT,
-    review_scores_cleanliness   INT,
-    review_scores_checkin       INT,
-    review_scores_communication INT,
-    review_scores_location      INT,
-    review_scores_value         INT,
+    review_scores_accuracy      DOUBLE,
+    review_scores_cleanliness   DOUBLE,
+    review_scores_checkin       DOUBLE,
+    review_scores_communication DOUBLE,
+    review_scores_location      DOUBLE,
+    review_scores_value         DOUBLE,
     primary key (id)
 );
 
