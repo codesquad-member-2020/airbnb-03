@@ -21,24 +21,29 @@ public class PropertiesDaoHamill {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<PropertiesDtoHamill> findAllProperties(Integer page) {
-        if (page == null) {
-            page = 20;
-        } else if (page >= 1) {
-            page = page * 20;
+    public List<PropertiesDtoHamill> findAllProperties(Integer offset, Double priceMin, Double priceMax) {
+        if (offset == null) {
+            offset = 20;
+        }
+
+        if (priceMin == null) {
+            priceMin = 28.00;
+        }
+
+        if (priceMax == null) {
+            priceMax = 999.00;
         }
 
         return jdbcTemplate.query(
-                "SELECT p.id, p.title, p.state, p.city, p.address, p.latitude, p.longitude, p.reservable," +
+                "SELECT p.id, p.title, p.state, p.city, p.latitude, p.longitude, p.reservable," +
                         "p.saved,p.host_type,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(i.image_url) AS image " +
-                        "FROM properties p LEFT JOIN images i ON p.id = i.properties_id WHERE p.id < ? GROUP BY p.id",
+                        "FROM properties p LEFT JOIN images i ON p.id = i.properties_id WHERE p.price <= ? AND p.price >= ? GROUP BY p.id LIMIT ?",
                 (rs, rowNum) ->
                         PropertiesDtoHamill.builder()
                                            .id(rs.getLong("id"))
                                            .title(rs.getString("title"))
                                            .state(rs.getString("state"))
                                            .city(rs.getString("city"))
-                                           .address(rs.getString("address"))
                                            .latitude(rs.getDouble("latitude"))
                                            .longitude(rs.getDouble("longitude"))
                                            .reservable(rs.getBoolean("reservable"))
@@ -50,7 +55,7 @@ public class PropertiesDaoHamill {
                                            .numberOfReviews(rs.getInt("number_of_reviews"))
                                            .images(imageParser(rs.getString("image")))
                                            .build()
-                , page);
+                , priceMax, priceMin, offset);
     }
 
     private List<String> imageParser(String images) {

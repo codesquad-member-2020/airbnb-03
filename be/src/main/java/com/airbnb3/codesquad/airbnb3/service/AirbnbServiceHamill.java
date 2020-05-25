@@ -20,8 +20,8 @@ public class AirbnbServiceHamill {
         this.propertiesDaoHamill = propertiesDaoHamill;
     }
 
-    public List<PropertiesDtoHamill> findAllProperties(Integer page) {
-        return propertiesDaoHamill.findAllProperties(page);
+    public List<PropertiesDtoHamill> findAllProperties(Integer offset, Double priceMin, Double priceMax) {
+        return propertiesDaoHamill.findAllProperties(offset, priceMin, priceMax);
     }
 
     public PropertiesDetailDtoHamill findByPropertiesId(int propertiesId) {
