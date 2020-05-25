@@ -22,12 +22,9 @@ public class AirbnbControllerHamill {
         this.airbnbServiceHamill = airbnbServiceHamill;
     }
 
-    @GetMapping("")
-    public ResponseEntity<List<PropertiesDtoHamill>> findAllProperties(@RequestParam("page") int page,
-                                                                       @RequestParam("list") int list) {
-        logger.info("##### list : {}", list);
+    @GetMapping("main")
+    public ResponseEntity<List<PropertiesDtoHamill>> findAllProperties(
+            @RequestParam(value = "page", required = false) Integer page) {
         return new ResponseEntity<>(airbnbServiceHamill.findAllProperties(page), HttpStatus.OK);
     }
-
-
 }

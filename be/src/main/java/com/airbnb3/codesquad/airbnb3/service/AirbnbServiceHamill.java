@@ -19,7 +19,11 @@ public class AirbnbServiceHamill {
         this.propertiesDaoHamill = propertiesDaoHamill;
     }
 
-    public List<PropertiesDtoHamill> findAllProperties(int page) {
+    public List<PropertiesDtoHamill> findAllProperties(Integer page) {
         return propertiesDaoHamill.findAllProperties(page);
     }
 }
+
+//    Integer page, String checkin, String checkout, Integer adults, Integer children,
+//        Integer infants, Integer priceMin, Integer priceMax
+//, checkin, checkout, adults, children, infants, priceMin, priceMax

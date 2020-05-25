@@ -20,7 +20,13 @@ public class PropertiesDaoHamill {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<PropertiesDtoHamill> findAllProperties(int page) {
+    public List<PropertiesDtoHamill> findAllProperties(Integer page) {
+        if (page == null) {
+            page = 20;
+        } else if (page >= 1) {
+            page = page * 20;
+        }
+
         return jdbcTemplate.query(
                         "SELECT p.id, p.title, p.state, p.city, p.address, p.latitude, p.longitude, p.reservable," +
                         "p.saved,p.host_type,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(i.image_url) AS image " +
