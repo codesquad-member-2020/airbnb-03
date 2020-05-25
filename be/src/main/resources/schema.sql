@@ -91,7 +91,7 @@ create table if not exists bookmarks
 create table if not exists images
 (
     id            INT AUTO_INCREMENT,
-    image_url     VARCHAR(128),
+    image_url     VARCHAR(256),
     properties_id INT REFERENCES properties (id),
     primary key (id)
 );
