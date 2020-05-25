@@ -17,6 +17,10 @@ final class StayViewModel: ViewModelBinding {
         changedHandler(stay)
     }
     
+    func updateCell(_ cell: StayCell) {
+        cell.update(with: stay)
+    }
+    
     func updateNotify(handler changedHandler: @escaping Handler) {
         self.changedHandler = changedHandler
     }

@@ -2,22 +2,22 @@ import UIKit
 
 final class StayListViewModel: NSObject, ViewModelBinding {
     
-    typealias Key = StayList
+    typealias Key = StayViewModels
     
-    private var stayList: StayList {
+    private var stayViewModels: StayViewModels {
         didSet {
-            changedHandler(stayList)
+            changedHandler(stayViewModels)
         }
     }
     private var changedHandler: Handler
     
-    init(with stayList: Key = StayList(), changedHandler: @escaping Handler = { _ in }) {
-        self.stayList = stayList
+    init(with stayList: Key = StayViewModels(), changedHandler: @escaping Handler = { _ in }) {
+        self.stayViewModels = stayList
         self.changedHandler = changedHandler
     }
     
-    func configureStayList(_ stayList: [Stay]) {
-        self.stayList = StayList(stayList)
+    func configure(with stays: [Stay]) {
+        self.stayViewModels = StayViewModels(with: stays)
     }
     
     func updateNotify(handler: @escaping Handler) {
@@ -27,13 +27,14 @@ final class StayListViewModel: NSObject, ViewModelBinding {
 
 extension StayListViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stayList.numberOfStay
+        return stayViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StayCell.reuseIdentifier, for: indexPath) as! StayCell
-        let stay = stayList[indexPath]
-        cell.configureViewModel(with: stay)
+        let stayViewModel = stayViewModels[indexPath]
+        stayViewModel.updateCell(cell)
+        #warning("update images with urls")
         return cell
     }
 }
