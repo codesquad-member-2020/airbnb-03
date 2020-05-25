@@ -6,21 +6,58 @@ class StayListViewController: UIViewController {
     private var seperatorView: SeperatorView!
     private var searchFilterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
-    private var mapButtonView: MapButtonView!
     private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
+    private var mapButtonView: MapButtonView!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
+    private var loadingView: LoadingView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
         configureLayout()
+        configureStayListCollectionViewDataSourceHandler()
         configureCollectionView()
         configureTextFieldDelegate()
+        fetchFakeStayList()
+    }
+    
+    private func fetchFakeStayList() {
+        loadingView.startLoadingAnimation()
+        var fakeStays = [Stay]()
+        for _ in 0..<19 {
+            let randomDouble = (Double(Int.random(in: 0...99)) * 0.01)
+            let fakeStay = Stay(id: 1, images: ["https://airbnb-codesquad.s3.ap-northeast-2.amazonaws.com/1.jpg",
+            "https://airbnb-codesquad.s3.ap-northeast-2.amazonaws.com/2.jpg",
+            "https://airbnb-codesquad.s3.ap-northeast-2.amazonaws.com/3.jpg"], saved: false, reviewAverage: Double(Int.random(in: 2...4)) + randomDouble, numberOfReviews: Int.random(in: 10...999), hostType: "", placeType: "Entire Apartment", city: "Upper East Side", state: "Korea", title: "해운대/펜트하우스/더탑플로어", price: Int.random(in: 100...9999), latitude: "", longitude: "")
+            fakeStays.append(fakeStay)
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {
+          (timer) in
+            self.stayListCollectionViewDataSource.configure(with: fakeStays)
+        }
+    }
+    
+    private func configureStayListCollectionViewDataSourceHandler() {
+        stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
+            DispatchQueue.main.async {
+                self?.stayListCollectionView.reloadData()
+                self?.dismissLoadingView()
+            }
+        })
+    }
+    
+    private func dismissLoadingView() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.loadingView.alpha = 0
+        }) { (_) in
+            self.loadingView.stopLoadingAnimation()
+            self.loadingView.isHidden = true
+        }
     }
     
     private func configureCollectionView() {
-        stayListCollectionViewDataSource = StayListCollectionViewDataSource()
         stayListCollectionView.dataSource = stayListCollectionViewDataSource
     }
     
@@ -32,6 +69,7 @@ class StayListViewController: UIViewController {
         searchFilterView = SearchFilterView.loadFromXib()
         stayListCollectionView = StayListCollectionView()
         mapButtonView = MapButtonView.loadFromXib()
+        loadingView = LoadingView()
     }
 
     private func configureTextFieldDelegate() {
@@ -57,7 +95,8 @@ extension StayListViewController {
                          seperatorView,
                          searchFilterView,
                          stayListCollectionView,
-                         mapButtonView
+                         mapButtonView,
+                         loadingView
         )
         
         let sidePadding: CGFloat = 24.0
@@ -109,5 +148,9 @@ extension StayListViewController {
                                   size: CGSize(width: MapButtonView.width,
                                                height: MapButtonView.height))
         mapButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        loadingView.constraints(topAnchor: stayListCollectionView.topAnchor,
+                                     leadingAnchor: stayListCollectionView.leadingAnchor,
+                                     bottomAnchor: stayListCollectionView.bottomAnchor,
+                                     trailingAnchor: stayListCollectionView.trailingAnchor)
     }
 }

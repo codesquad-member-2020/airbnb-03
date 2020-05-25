@@ -13,14 +13,17 @@ class StayCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: PriceLabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        reviewLabel.updateWith(reviewAverage: 4.67, numberOfReviews: 47)
-        placeTypeAndCityLabel.updateWith(type: "Entire Apartment", city: "Upper East Side")
-        titleLabel.text = "Modern luxury studio in Gangnam! 5sec to Station"
-        priceLabel.updateWith(price: 1890)
-        thumbImagePagingView.configureStackView(numberOfImage: 7)
+    func update(with stay: Stay) {
+        self.reviewLabel.updateWith(reviewAverage: stay.reviewAverage,
+                                    numberOfReviews: stay.numberOfReviews)
+        self.placeTypeAndCityLabel.updateWith(type: stay.placeType,
+                                              city: stay.city)
+        self.titleLabel.text = stay.title
+        self.priceLabel.updateWith(price: stay.price)
+        self.thumbImagePagingView.configureStackView(numberOfImage: stay.images.count)
+        self.superHostLabel.isHidden = stay.hostType != "super"
+        #warning("update SaveButton status")
+        #warning("Fetch thumbnail images")
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
