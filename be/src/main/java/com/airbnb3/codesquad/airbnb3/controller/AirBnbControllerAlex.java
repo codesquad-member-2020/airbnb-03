@@ -39,4 +39,9 @@ public class AirBnbControllerAlex {
     public ResponseEntity<DetailDtoAlex> detailPage(@PathVariable("id") Long id) {
         return new ResponseEntity<>(airBnbService.detailProperties(id),HttpStatus.OK);
     }
+
+    @GetMapping("/map")
+    public ResponseEntity<Object> mapRequest(@RequestParam(value = "latitude") String latitude, @RequestParam(value = "longitude") String longitude) {
+        return new ResponseEntity<>("TEST",HttpStatus.OK);
+    }
 }
