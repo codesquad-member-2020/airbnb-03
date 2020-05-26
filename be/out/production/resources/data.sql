@@ -19,3 +19,5 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 (image_url,properties_id);
+
+

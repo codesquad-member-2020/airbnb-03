@@ -1,9 +1,10 @@
-drop table if exists properties;
-drop table if exists bookings;
-drop table if exists user;
-drop table if exists detail;
-drop table if exists bookmarks;
+drop table if exists calendar;
 drop table if exists images;
+drop table if exists bookmarks;
+drop table if exists detail;
+drop table if exists user;
+drop table if exists bookings;
+drop table if exists properties;
 
 create table if not exists properties
 (
@@ -95,7 +96,7 @@ create table if not exists images
     primary key (id)
 );
 
-create table if not exists calender
+create table if not exists calendar
 (
     id               INT AUTO_INCREMENT,
     reservation_date DATE,

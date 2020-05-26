@@ -48,7 +48,9 @@ public class PropertiesDaoHamill {
                         "FROM properties p\n" +
                         "         LEFT JOIN images i ON p.id = i.properties_id\n" +
                         "         LEFT JOIN detail d ON p.id = d.id\n" +
+                        "         LEFT JOIN calendar c ON p.id = c.properties_id\n" +
                         "WHERE (p.price BETWEEN ? AND ?)\n" +
+                        "  AND p.id NOT IN (SELECT DISTINCT properties_id FROM calendar WHERE reservation_date BETWEEN ? AND ?)\n" +
                         "  AND d.accommodates >= ?\n" +
                         "GROUP BY p.id\n" +
                         "LIMIT ?";
@@ -72,7 +74,7 @@ public class PropertiesDaoHamill {
                                            .numberOfReviews(rs.getInt("number_of_reviews"))
                                            .images(imageParser(rs.getString("image")))
                                            .build()
-                , priceMin, priceMax, accommodates, offset);
+                , priceMin, priceMax, checkIn, checkOut, accommodates, offset);
     }
 
     private List<String> imageParser(String images) {

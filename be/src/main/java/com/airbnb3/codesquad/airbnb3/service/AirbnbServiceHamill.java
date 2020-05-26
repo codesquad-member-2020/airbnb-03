@@ -24,11 +24,14 @@ public class AirbnbServiceHamill {
         this.propertiesDaoHamill = propertiesDaoHamill;
     }
 
-    public List<PropertiesDtoHamill> findAllProperties(String offset, String priceMin, String priceMax, String checkIn,
-                                                       String checkOut, String adults, String children) {
+    public List<PropertiesDtoHamill> findAllProperties(String offset, String priceMin, String priceMax,
+                                                       String checkIn, String checkOut, String adults, String children) {
 
+        Integer IntegerTypeOffset = parseStringToIntegerOffset(offset);
         Double DoubleTypePriceMin = parseStringToDoublePriceMin(priceMin);
         Double DoubleTypePriceMax = parseStringToDoublePriceMax(priceMax);
+        Date DateTypeCheckIn = parseStringToDateCheckIn(checkIn);
+        Date DateTypeCheckOut = parseStringToDateCheckOut(checkOut);
         Integer accommodates = parseStringToIntegerAdults(adults) + parseStringToIntegerChildren(children);
 
         if (DoubleTypePriceMin > DoubleTypePriceMax) {
@@ -37,13 +40,14 @@ public class AirbnbServiceHamill {
             DoubleTypePriceMin = tmp;
         }
 
-        return propertiesDaoHamill.findAllProperties(
-                parseStringToIntegerOffset(offset),
-                DoubleTypePriceMin,
-                DoubleTypePriceMax,
-                parseStringToDateCheckIn(checkIn),
-                parseStringToDateCheckOut(checkOut),
-                accommodates);
+        if(DateTypeCheckIn.compareTo(DateTypeCheckOut) > 0) {
+            Date tmp = DateTypeCheckOut;
+            DateTypeCheckOut = DateTypeCheckIn;
+            DateTypeCheckIn = tmp;
+        }
+
+        return propertiesDaoHamill.findAllProperties(IntegerTypeOffset, DoubleTypePriceMin, DoubleTypePriceMax,
+                                                    DateTypeCheckIn, DateTypeCheckOut, accommodates);
     }
 
     public PropertiesDetailDtoHamill findByPropertiesId(int propertiesId) {
@@ -98,7 +102,6 @@ public class AirbnbServiceHamill {
     private Date parseStringToDateCheckIn(String date) {
 
         if (date == null) {
-            logger.info("##### current time: {}",Date.valueOf(LocalDate.now()));
             return Date.valueOf(LocalDate.now());
         }
 
@@ -111,7 +114,6 @@ public class AirbnbServiceHamill {
     private Date parseStringToDateCheckOut(String date) {
 
         if (date == null) {
-            logger.info("##### end time: {}",Date.valueOf(LocalDate.of(2021,6,4)));
             return Date.valueOf(LocalDate.of(2021,6,4));
         }
 
