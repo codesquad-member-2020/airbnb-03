@@ -27,17 +27,23 @@ public class AirbnbServiceHamill {
     public List<PropertiesDtoHamill> findAllProperties(String offset, String priceMin, String priceMax, String checkIn,
                                                        String checkOut, String adults, String children) {
 
-        Integer IntegerTypeOffset = parseStringToIntegerOffset(offset);
         Double DoubleTypePriceMin = parseStringToDoublePriceMin(priceMin);
         Double DoubleTypePriceMax = parseStringToDoublePriceMax(priceMax);
-        Date DateTypeCheckIn = parseStringToDateCheckIn(checkIn);
-        Date DateTypeCheckOut = parseStringToDateCheckOut(checkOut);
-        Integer IntegerTypeAdults = parseStringToIntegerAdults(adults);
-        Integer IntegerTypeChildren = parseStringToIntegerChildren(children);
-        Integer accommodates = IntegerTypeAdults + IntegerTypeChildren;
+        Integer accommodates = parseStringToIntegerAdults(adults) + parseStringToIntegerChildren(children);
+
+        if (DoubleTypePriceMin > DoubleTypePriceMax) {
+            Double tmp = DoubleTypePriceMax;
+            DoubleTypePriceMax = DoubleTypePriceMin;
+            DoubleTypePriceMin = tmp;
+        }
 
         return propertiesDaoHamill.findAllProperties(
-                IntegerTypeOffset, DoubleTypePriceMin, DoubleTypePriceMax, DateTypeCheckIn, DateTypeCheckOut, accommodates);
+                parseStringToIntegerOffset(offset),
+                DoubleTypePriceMin,
+                DoubleTypePriceMax,
+                parseStringToDateCheckIn(checkIn),
+                parseStringToDateCheckOut(checkOut),
+                accommodates);
     }
 
     public PropertiesDetailDtoHamill findByPropertiesId(int propertiesId) {
@@ -89,7 +95,6 @@ public class AirbnbServiceHamill {
             return Double.parseDouble(DEFAULT_MAX_PRICE);
         }
     }
-
     private Date parseStringToDateCheckIn(String date) {
 
         if (date == null) {
@@ -113,10 +118,9 @@ public class AirbnbServiceHamill {
         try {
             return Date.valueOf(date);
         } catch(IllegalArgumentException e) {
-            return Date.valueOf(date);
+            return Date.valueOf(LocalDate.of(2021,6,4));
         }
     }
-
     private Integer parseStringToIntegerAdults(String adults) {
 
         if (adults == null) {

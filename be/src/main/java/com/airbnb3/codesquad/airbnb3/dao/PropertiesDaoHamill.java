@@ -30,12 +30,31 @@ public class PropertiesDaoHamill {
         logger.info("#### checkIn: {}", checkIn);
         logger.info("#### checkOut: {}", checkOut);
         logger.info("#### accommodates: {}", accommodates);
+        String sql =
+                "SELECT p.id,\n" +
+                        "       p.title,\n" +
+                        "       p.state,\n" +
+                        "       p.city,\n" +
+                        "       p.latitude,\n" +
+                        "       p.longitude,\n" +
+                        "       p.reservable,\n" +
+                        "       p.saved,\n" +
+                        "       p.host_type,\n" +
+                        "       p.price,\n" +
+                        "       p.place_type,\n" +
+                        "       p.review_average,\n" +
+                        "       p.number_of_reviews,\n" +
+                        "       GROUP_CONCAT(i.image_url) AS image\n" +
+                        "FROM properties p\n" +
+                        "         LEFT JOIN images i ON p.id = i.properties_id\n" +
+                        "         LEFT JOIN detail d ON p.id = d.id\n" +
+                        "WHERE (p.price BETWEEN ? AND ?)\n" +
+                        "  AND d.accommodates >= ?\n" +
+                        "GROUP BY p.id\n" +
+                        "LIMIT ?";
 
         return jdbcTemplate.query(
-                "SELECT p.id, p.title, p.state, p.city, p.latitude, p.longitude, p.reservable," +
-                        "p.saved,p.host_type,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(i.image_url) AS image " +
-                        "FROM properties p LEFT JOIN images i ON p.id = i.properties_id LEFT JOIN detail d ON p.id = d.id " +
-                        "WHERE p.price <= ? AND p.price >= ? AND d.accommodates >= ? GROUP BY p.id LIMIT ?",
+                sql,
                 (rs, rowNum) ->
                         PropertiesDtoHamill.builder()
                                            .id(rs.getLong("id"))
@@ -53,7 +72,7 @@ public class PropertiesDaoHamill {
                                            .numberOfReviews(rs.getInt("number_of_reviews"))
                                            .images(imageParser(rs.getString("image")))
                                            .build()
-                , priceMax, priceMin, accommodates, offset);
+                , priceMin, priceMax, accommodates, offset);
     }
 
     private List<String> imageParser(String images) {
