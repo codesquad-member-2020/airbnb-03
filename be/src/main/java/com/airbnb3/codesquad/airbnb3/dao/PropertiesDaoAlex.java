@@ -3,8 +3,13 @@ package com.airbnb3.codesquad.airbnb3.dao;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,20 +17,26 @@ import java.util.List;
 public class PropertiesDaoAlex {
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    NamedParameterJdbcTemplate jdbcTemplate;
 
-    public List<PropertiesDtoAlex> getStayedProperties(int propertyRange) {
-        String sql = "select p.id,p.title,p.state,p.city,p.address,p.latitude,p.longitude,p.reservable," +
-                "p.saved,p.host_type,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(i.image_url) AS image " +
-                "FROM properties p LEFT JOIN images i ON p.id = i.properties_id WHERE p.id < ? GROUP BY p.id;";
+    public List<PropertiesDtoAlex> getStayedProperties(int propertyRange, int accommodates) {
+        String sql = "select p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,p.host_type,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(i.image_url) AS image " +
+                "FROM properties p LEFT JOIN images i ON p.id = i.properties_id " +
+                "LEFT JOIN detail t ON t.id = p.id WHERE t.accommodates > :accommodates " +
+                "GROUP BY p.id LIMIT :propertyRange";
 
-        return jdbcTemplate.query(sql, new Object[]{propertyRange}, (rs, rowNum) ->
-                PropertiesDtoAlex.builder()
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource()
+                .addValue("propertyRange", propertyRange)
+                .addValue("accommodates", accommodates);
+
+        return jdbcTemplate.query(sql, parameterSource, new RowMapper<PropertiesDtoAlex>() {
+            @Override
+            public PropertiesDtoAlex mapRow(ResultSet rs, int rowNum) throws SQLException {
+                return PropertiesDtoAlex.builder()
                         .id(rs.getLong("id"))
                         .title(rs.getString("title"))
                         .state(rs.getString("state"))
                         .city(rs.getString("city"))
-                        .address(rs.getString("address"))
                         .latitude(rs.getDouble("latitude"))
                         .longitude(rs.getDouble("longitude"))
                         .reservable(rs.getBoolean("reservable"))
@@ -36,7 +47,9 @@ public class PropertiesDaoAlex {
                         .reviewAverage(rs.getDouble("review_average"))
                         .numberOfReviews(rs.getInt("number_of_reviews"))
                         .images(imageParser(rs.getString("image")))
-                        .build());
+                        .build();
+            }
+        });
     }
 
     private List<String> imageParser(String images) {
@@ -44,3 +57,4 @@ public class PropertiesDaoAlex {
         return Arrays.asList(image);
     }
 }
+

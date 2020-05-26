@@ -28,14 +28,13 @@ public class PropertiesDtoAlex {
     private List<String> images;
 
     @Builder
-    public PropertiesDtoAlex(Long id, String title, String state, String city, String address,
+    public PropertiesDtoAlex(Long id, String title, String state, String city,
                              Double latitude, Double longitude, Boolean reservable, Boolean saved,
                              String hostType, Double price, String placeType, Double reviewAverage, Integer numberOfReviews, List<String> images) {
         this.id = id;
         this.title = title;
         this.state = state;
         this.city = city;
-        this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
         this.reservable = reservable;

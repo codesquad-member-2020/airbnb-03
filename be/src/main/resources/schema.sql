@@ -5,23 +5,22 @@ drop table if exists detail;
 drop table if exists bookmarks;
 drop table if exists images;
 drop table if exists calender;
+
 create table if not exists properties
 (
     id                INT,
     title             VARCHAR(64),
     state             VARCHAR(64),
     city              VARCHAR(64),
-    address           VARCHAR(128) DEFAULT 'Not Address',
     latitude          DOUBLE,
     longitude         DOUBLE,
     reservable        BOOLEAN,
     saved             BOOLEAN,
-    host_type         VARCHAR(32)  DEFAULT 'Not Tag',
+    host_type         VARCHAR(32) DEFAULT 'Not Tag',
     price             DECIMAL(10, 3),
     place_type        VARCHAR(32),
     review_average    DECIMAL(3, 2),
     number_of_reviews INT,
-    user_id           INT REFERENCES user (id),
     primary key (id)
 );
 
@@ -71,12 +70,12 @@ create table if not exists detail
     service_fee                 DOUBLE,
     cleaning_fee                DOUBLE,
     tax                         DOUBLE,
-    review_scores_accuracy      DOUBLE,
-    review_scores_cleanliness   DOUBLE,
-    review_scores_checkin       DOUBLE,
-    review_scores_communication DOUBLE,
-    review_scores_location      DOUBLE,
-    review_scores_value         DOUBLE,
+    review_scores_accuracy      DECIMAL(2, 1),
+    review_scores_cleanliness   DECIMAL(2, 1),
+    review_scores_checkin       DECIMAL(2, 1),
+    review_scores_communication DECIMAL(2, 1),
+    review_scores_location      DECIMAL(2, 1),
+    review_scores_value         DECIMAL(2, 1),
     primary key (id)
 );
 
