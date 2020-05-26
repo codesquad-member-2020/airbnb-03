@@ -25,16 +25,11 @@ public class AirBnbControllerAlex {
             @RequestParam(value = "adult", required = false, defaultValue = "1") Integer adult,
             @RequestParam(value = "children", required = false, defaultValue = "0") Integer children,
             @RequestParam(value = "infants", required = false, defaultValue = "0") Integer infants,
-            @RequestParam(value = "checkin", required = false) Date checkIn,
-            @RequestParam(value = "checkout", required = false) Date checkOut,
+            @RequestParam(value = "checkin", required = false) String checkIn,
+            @RequestParam(value = "checkout", required = false) String checkOut,
             @RequestParam(value = "price_min", required = false) Double minPrice,
             @RequestParam(value = "price_max", required = false) Double maxPrice
     ) {
-        return new ResponseEntity<>(airBnbService.stayedProperties(pageNum,adult,children,infants), HttpStatus.OK);
+        return new ResponseEntity<>(airBnbService.stayedProperties(pageNum, adult, children, infants,checkIn,checkOut), HttpStatus.OK);
     }
-//    @GetMapping()
-//    public void filterdPage(@PathVariable(value = "guest_count",required = false) Integer guestCount,
-//                            @PathVariable(value = "min_price")) {
-//
-//    }
 }
