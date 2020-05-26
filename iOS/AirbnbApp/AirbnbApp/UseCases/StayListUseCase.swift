@@ -8,13 +8,8 @@ final class StayListUseCase {
         NetworkManager.getResource(from: url) { (result) in
             switch result {
             case .success(let data):
-                do {
-                    let decodedData = try JSONDecoder().decode([Stay].self, from: data)
-                    completionHandler(.success(decodedData))
-                } catch {
-                    print(error)
-                    return
-                }
+                guard let decodedData = try? JSONDecoder().decode([Stay].self, from: data) else { return }
+                completionHandler(.success(decodedData))
             case .failure(let error):
                 completionHandler(.failure(error))
             }

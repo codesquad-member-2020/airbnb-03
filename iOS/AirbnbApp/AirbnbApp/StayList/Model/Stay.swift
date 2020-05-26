@@ -12,6 +12,6 @@ struct Stay: Decodable {
     let state: String
     let title: String
     let price: Int
-    let latitude: String
-    let longitude: String
+    let latitude: Double
+    let longitude: Double
 }

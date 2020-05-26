@@ -19,23 +19,22 @@ class StayListViewController: UIViewController {
         configureStayListCollectionViewDataSourceHandler()
         configureCollectionView()
         configureTextFieldDelegate()
-        fetchFakeStayList()
+        
+        fetchStayList()
     }
     
-    private func fetchFakeStayList() {
+    private func fetchStayList() {
         loadingView.startLoadingAnimation()
-        var fakeStays = [Stay]()
-        for _ in 0..<19 {
-            let randomDouble = (Double(Int.random(in: 0...99)) * 0.01)
-            let fakeStay = Stay(id: 1, images: ["https://airbnb-codesquad.s3.ap-northeast-2.amazonaws.com/1.jpg",
-            "https://airbnb-codesquad.s3.ap-northeast-2.amazonaws.com/2.jpg",
-            "https://airbnb-codesquad.s3.ap-northeast-2.amazonaws.com/3.jpg"], saved: false, reviewAverage: Double(Int.random(in: 2...4)) + randomDouble, numberOfReviews: Int.random(in: 10...999), hostType: "", placeType: "Entire Apartment", city: "Upper East Side", state: "Korea", title: "해운대/펜트하우스/더탑플로어", price: Int.random(in: 100...9999), latitude: "", longitude: "")
-            fakeStays.append(fakeStay)
-        }
-        
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {
-          (timer) in
-            self.stayListCollectionViewDataSource.configure(with: fakeStays)
+        StayListUseCase.getStayList { (result) in
+            switch result {
+            case .success(let stayList):
+                DispatchQueue.main.async {
+                    self.stayListCollectionViewDataSource.configure(with: stayList)
+                }
+            case .failure(let error):
+                #warning("Handling fetching stay list error")
+                break
+            }
         }
     }
     
