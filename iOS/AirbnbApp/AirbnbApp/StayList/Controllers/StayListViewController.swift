@@ -89,7 +89,7 @@ class StayListViewController: UIViewController {
     @IBAction func mapButtonTouched(_ sender: Any) {
         #warning("동작 확인용 VC")
         let viewController = UIViewController()
-        viewController.modalPresentationStyle = .automatic // .fullScreen
+        viewController.modalPresentationStyle = .automatic // .fullScreen으로 변경할 것
         viewController.view.backgroundColor = .systemTeal
         present(viewController, animated: true)
     }

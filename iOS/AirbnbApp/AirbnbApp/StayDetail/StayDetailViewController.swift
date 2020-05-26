@@ -10,6 +10,5 @@ class StayDetailViewController: UIViewController {
         stackView.addArrangedSubview(detailSectionView)
     }
 
-
     // MARK: - Navigation
 }
