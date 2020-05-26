@@ -18,13 +18,16 @@ public class AirBnbService {
     @Autowired
     PropertiesDaoAlex propertiesDao;
 
-    //, Double minPrice, Double maxPrice
-    public List<PropertiesDtoAlex> stayedProperties(Integer pageNumber, Integer adult, Integer children, Integer infants, String checkIn, String checkOut) {
+    //
+    public List<PropertiesDtoAlex> stayedProperties(Integer pageNumber, Integer adults, Integer children,
+                                                    Integer infants, String checkIn, String checkOut, String minRange, String maxRange) {
         int propertyRange = pageNumber * PAGE_VIEW_ITEM_COUNT;
-        int accommodates = adult + children;
+        int accommodates = adults + children;
         Date checkInDate = parseStringToDate(checkIn);
         Date checkOutDate = parseStringToDate(checkOut);
-        return propertiesDao.getStayedProperties(propertyRange, accommodates,checkInDate,checkOutDate);
+        Double minPrice = parseStringToMinDouble(minRange);
+        Double maxPrice = parseStringToMaxDouble(maxRange);
+        return propertiesDao.getStayedProperties(propertyRange, accommodates, checkInDate, checkOutDate, minPrice, maxPrice);
     }
 
     private Date parseStringToDate(String date) {
@@ -32,6 +35,22 @@ public class AirBnbService {
             return Date.valueOf(date);
         } catch (IllegalArgumentException e) {
             return Date.valueOf(LocalDate.now());
+        }
+    }
+
+    private Double parseStringToMinDouble(String price) {
+        try {
+            return Double.parseDouble(price);
+        } catch (IllegalArgumentException e) {
+            return DEFAULT_MIN_PRICE;
+        }
+    }
+
+    private Double parseStringToMaxDouble(String price) {
+        try {
+            return Double.parseDouble(price);
+        } catch (IllegalArgumentException e) {
+            return DEFAULT_MAX_PRICE;
         }
     }
 }

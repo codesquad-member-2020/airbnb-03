@@ -22,14 +22,14 @@ public class AirBnbControllerAlex {
     @GetMapping("/main")
     public ResponseEntity<List<PropertiesDtoAlex>> stayedPage(
             @RequestParam(value = "offset", required = false, defaultValue = "1") Integer pageNum,
-            @RequestParam(value = "adult", required = false, defaultValue = "1") Integer adult,
+            @RequestParam(value = "adults", required = false, defaultValue = "1") Integer adults,
             @RequestParam(value = "children", required = false, defaultValue = "0") Integer children,
             @RequestParam(value = "infants", required = false, defaultValue = "0") Integer infants,
             @RequestParam(value = "checkin", required = false) String checkIn,
             @RequestParam(value = "checkout", required = false) String checkOut,
-            @RequestParam(value = "price_min", required = false) Double minPrice,
-            @RequestParam(value = "price_max", required = false) Double maxPrice
+            @RequestParam(value = "price_min", required = false, defaultValue = "min") String minRange,
+            @RequestParam(value = "price_max", required = false, defaultValue = "max") String maxRange
     ) {
-        return new ResponseEntity<>(airBnbService.stayedProperties(pageNum, adult, children, infants,checkIn,checkOut), HttpStatus.OK);
+        return new ResponseEntity<>(airBnbService.stayedProperties(pageNum, adults, children, infants, checkIn, checkOut, minRange, maxRange), HttpStatus.OK);
     }
 }
