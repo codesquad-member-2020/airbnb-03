@@ -21,7 +21,7 @@ public class DetailDaoAlex {
     NamedParameterJdbcTemplate jdbcTemplate;
 
     public DetailDtoAlex getDetailProperties(Long id) {
-        String sql = "SELECT p.id,p.city,p.state,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,p.host_type,p.price,p.place_type,p.review_average,p.number_of_reviews,GROUP_CONCAT(i.image_url) AS image," +
+        String sql = "SELECT p.id,p.city,p.state,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,p.price,p.place_type,p.review_average,p.number_of_reviews,GROUP_CONCAT(i.image_url) AS image," +
                 "d.summary,d.space,d.city_overview,d.notes,d.transit,d.host_name,d.host_since,d.host_location,d.host_about,d.address,d.accommodates,d.bathrooms,d.bedrooms,d.beds,d.bed_type,d.amenities,d.service_fee,d.cleaning_fee,d.tax,d.review_scores_accuracy,d.review_scores_cleanliness,d.review_scores_checkin,d.review_scores_communication,d.review_scores_location,d.review_scores_value " +
                 "FROM properties p LEFT JOIN detail d ON p.id = d.id LEFT JOIN images i ON p.id = i.properties_id WHERE p.id = :id";
 
@@ -42,7 +42,7 @@ public class DetailDaoAlex {
                                 .hostLocatison(rs.getString("host_location"))
                                 .hostName(rs.getString("host_name"))
                                 .hostSince(rs.getString("host_since"))
-                                .hostType(rs.getString("host_type"))
+                                .isSuperHost(rs.getBoolean("is_super_host"))
                                 .notes(rs.getString("notes"))
                                 .build())
                         .locationInfo(LocationDto.builder()

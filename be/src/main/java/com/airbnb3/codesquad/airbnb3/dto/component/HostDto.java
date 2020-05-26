@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class HostDto {
-    private String hostType;
+    private Boolean isSuperHost;
     private String notes;
     private String hostName;
     private String hostSince;
@@ -15,8 +15,8 @@ public class HostDto {
     private String hostAbout;
 
     @Builder
-    public HostDto(String hostType, String notes, String hostName, String hostSince, String hostLocatison, String hostAbout) {
-        this.hostType = hostType;
+    public HostDto(Boolean isSuperHost, String notes, String hostName, String hostSince, String hostLocatison, String hostAbout) {
+        this.isSuperHost = isSuperHost;
         this.notes = notes;
         this.hostName = hostName;
         this.hostSince = hostSince;
