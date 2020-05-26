@@ -32,10 +32,27 @@ class StayListViewController: UIViewController {
                     self.stayListCollectionViewDataSource.configure(with: stayList)
                 }
             case .failure(let error):
-                #warning("Handling fetching stay list error")
-                break
+                DispatchQueue.main.async {
+                    self.presentAlertController(with: error)
+                }
             }
         }
+    }
+    
+    private func presentAlertController(with error: Error) {
+        let message = error.localizedDescription.components(separatedBy: ": ").last
+        let alertController = UIAlertController(title: "Network Error",
+                                                message: message,
+                                                preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { (_) in
+            self.fetchStayList()
+        }
+        let doneAction = UIAlertAction(title: "Done", style: .default) { (_) in
+            self.loadingView.stopLoadingAnimation()
+        }
+        alertController.addAction(retryAction)
+        alertController.addAction(doneAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     private func configureStayListCollectionViewDataSourceHandler() {
