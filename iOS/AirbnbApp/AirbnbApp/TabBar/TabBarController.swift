@@ -2,7 +2,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    private var stayListViewController: StayListViewController!
+    private var navViewController: UINavigationController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +19,10 @@ class TabBarController: UITabBarController {
     }
     
     private func configureTabBarControllers() {
-        stayListViewController = StayListViewController()
-
-        viewControllers = [stayListViewController]
+        navViewController = UINavigationController(rootViewController: StayListViewController())
+        viewControllers = [navViewController]
 
         let item = UITabBarItem(title: "EXPLORE", image: UIImage(systemName: "magnifyingglass"), tag: 0)
-        stayListViewController.tabBarItem = item
+        navViewController.tabBarItem = item
     }
 }

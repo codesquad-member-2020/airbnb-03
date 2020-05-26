@@ -1,12 +1,13 @@
 import UIKit
 
 class StayDetailViewController: UIViewController {
+    @IBOutlet weak var stackView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let detailSectionView = DetailSectionView.loadFromXib()
-        view.addSubview(detailSectionView)
+        stackView.addArrangedSubview(detailSectionView)
     }
 
 

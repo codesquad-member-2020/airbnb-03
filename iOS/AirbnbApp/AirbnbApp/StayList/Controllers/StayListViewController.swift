@@ -50,7 +50,7 @@ class StayListViewController: UIViewController {
 
         stayListCollectionViewDelegate = StayListCollectionViewDelegate(handlerWhenSelected: { [weak self] in
             let detailViewController = StayDetailViewController()
-            self?.present(detailViewController, animated: true, completion: nil)
+            self?.navigationController?.pushViewController(detailViewController, animated: true)
         })
     }
     

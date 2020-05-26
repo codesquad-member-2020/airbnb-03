@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StayDetailViewController" customModule="AirbnbApp" customModuleProvider="target">
             <connections>
+                <outlet property="stackView" destination="nIX-aF-DtO" id="NdW-G1-dat"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
