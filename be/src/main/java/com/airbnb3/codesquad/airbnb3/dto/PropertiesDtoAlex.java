@@ -1,21 +1,19 @@
 package com.airbnb3.codesquad.airbnb3.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 public class PropertiesDtoAlex {
+
     private Long id;
     private String title;
     private String state;
     private String city;
-    private String address;
     private Double latitude;
     private Double longitude;
     private Boolean reservable;

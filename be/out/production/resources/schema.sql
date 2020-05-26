@@ -16,7 +16,7 @@ create table if not exists properties
     longitude         DOUBLE,
     reservable        BOOLEAN,
     saved             BOOLEAN,
-    host_type         VARCHAR(32) DEFAULT 'Not Tag',
+    host_type         VARCHAR(32)  DEFAULT 'Not Tag',
     price             DECIMAL(10, 3),
     place_type        VARCHAR(32),
     review_average    DECIMAL(3, 2),
