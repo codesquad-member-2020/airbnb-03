@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,29 +22,14 @@ public class PropertiesDaoHamill {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<PropertiesDtoHamill> findAllProperties(Integer offset, Double priceMin, Double priceMax,
-                                                       Integer adults, Integer children) {
-        if (offset == null) {
-            offset = 20;
-        }
-
-        if (priceMin == null) {
-            priceMin = 28.00;
-        }
-
-        if (priceMax == null) {
-            priceMax = 999.00;
-        }
-
-        if (adults == null) {
-            adults = 0;
-        }
-
-        if (children == null) {
-            children = 0;
-        }
-
-        Integer accommodates = adults + children;
+    public List<PropertiesDtoHamill> findAllProperties(
+            Integer offset, Double priceMin, Double priceMax, Date checkIn, Date checkOut, Integer accommodates) {
+        logger.info("#### offset: {}", offset);
+        logger.info("#### priceMin: {}", priceMin);
+        logger.info("#### priceMax: {}", priceMax);
+        logger.info("#### checkIn: {}", checkIn);
+        logger.info("#### checkOut: {}", checkOut);
+        logger.info("#### accommodates: {}", accommodates);
 
         return jdbcTemplate.query(
                 "SELECT p.id, p.title, p.state, p.city, p.latitude, p.longitude, p.reservable," +

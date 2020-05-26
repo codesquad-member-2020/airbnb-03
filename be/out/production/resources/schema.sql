@@ -94,3 +94,11 @@ create table if not exists images
     properties_id INT REFERENCES properties (id),
     primary key (id)
 );
+
+create table if not exists calender
+(
+    id               INT AUTO_INCREMENT,
+    reservation_date DATE,
+    properties_id    INT REFERENCES properties (id),
+    primary key (id)
+);
