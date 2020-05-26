@@ -22,7 +22,7 @@ public class DetailDaoAlex {
 
     public DetailDtoAlex getDetailProperties(Long id) {
         String sql = "SELECT p.id,p.city,p.state,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,p.price,p.place_type,p.review_average,p.number_of_reviews,GROUP_CONCAT(i.image_url) AS image," +
-                "d.summary,d.space,d.city_overview,d.notes,d.transit,d.host_name,d.host_since,d.host_location,d.host_about,d.address,d.accommodates,d.bathrooms,d.bedrooms,d.beds,d.bed_type,d.amenities,d.service_fee,d.cleaning_fee,d.tax,d.review_scores_accuracy,d.review_scores_cleanliness,d.review_scores_checkin,d.review_scores_communication,d.review_scores_location,d.review_scores_value " +
+                "d.summary,d.space,d.city_overview,d.notes,d.transit,d.host_name,d.host_since,d.host_location,d.host_about,d.address,d.accommodates,d.bathrooms,d.bedrooms,d.beds,d.bed_type,REPLACE(d.amenities,'\"','') AS amenity,d.service_fee,d.cleaning_fee,d.tax,d.review_scores_accuracy,d.review_scores_cleanliness,d.review_scores_checkin,d.review_scores_communication,d.review_scores_location,d.review_scores_value " +
                 "FROM properties p LEFT JOIN detail d ON p.id = d.id LEFT JOIN images i ON p.id = i.properties_id WHERE p.id = :id";
 
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
@@ -70,7 +70,7 @@ public class DetailDaoAlex {
                                 .build())
                         .roomInfo(RoomDto.builder()
                                 .accommodates(rs.getInt("accommodates"))
-                                .amenities(rs.getString("amenities"))
+                                .amenities(rs.getString("amenity"))
                                 .bathrooms(rs.getInt("bathrooms"))
                                 .bedrooms(rs.getInt("bedrooms"))
                                 .beds(rs.getInt("beds"))
@@ -81,46 +81,4 @@ public class DetailDaoAlex {
                                 .build())
                         .build());
     }
-
-
-    //DetailDtoAlex.builder()
-    //                .id(rs.getLong("id"))
-    //                .title(rs.getString("title"))
-    //                .address(rs.getString("address"))
-    //                .latitude(rs.getDouble("latitude"))
-    //                .longitude(rs.getDouble("longitude"))
-    //                .reservable(rs.getBoolean("reservable"))
-    //                .saved(rs.getBoolean("saved"))
-    //                .hostType(rs.getString("host_type"))
-    //                .price(rs.getDouble("price"))
-    //                .serviceFee(rs.getDouble("service_fee"))
-    //                .cleaningFee(rs.getDouble("cleaning_fee"))
-    //                .tax(rs.getDouble("tax"))
-    //                .placeType(rs.getString("place_type"))
-    //                .reviewAverage(rs.getDouble("review_average"))
-    //                .numberOfReviews(rs.getInt("number_of_reviews"))
-    //                .images(Arrays.asList(rs.getString("image").split(",")))
-    //                .summary(rs.getString("summary"))
-    //                .space(rs.getString("space"))
-    //                .cityOverView(rs.getString("city_over_view"))
-    //                .notes(rs.getString("notes"))
-    //                .transit(rs.getString("transit"))
-    //                .hostName(rs.getString("host_name"))
-    //                .hostSince(Date.valueOf(rs.getString("host_since")))
-    //                .hostLocation(rs.getString("host_location"))
-    //                .hostAbout(rs.getString("host_about"))
-    //                .accommodates(rs.getInt("accommodates"))
-    //                .bathrooms(rs.getInt("bathrooms"))
-    //                .bedrooms(rs.getInt("bedrooms"))
-    //                .beds(rs.getInt("beds"))
-    //                .bedType(rs.getString("bed_type"))
-    //                .amenities(rs.getString("amenities"))
-    //                .reviewScoresAccuracy(format.format(rs.getDouble("review_scores_accuracy")))
-    //                .reviewScoresCleanliness(format.format(rs.getDouble("review_scores_cleanliness")))
-    //                .reviewScoresCheckin(format.format(rs.getDouble("review_scores_checkin")))
-    //                .reviewScoresCommunication(format.format(rs.getDouble("review_scores_communication")))
-    //                .reviewScoresLocation(format.format(rs.getDouble("review_scores_location")))
-    //                .reviewScoresValue(format.format(rs.getDouble("review_scores_value")))
-    //                .city(rs.getString("city"))
-    //                .state(rs.getString("state"))
 }

@@ -7,7 +7,6 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 public class PropertiesDtoAlex {
 
     private Long id;
