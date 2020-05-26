@@ -65,8 +65,6 @@ class StayListViewController: UIViewController {
     
     private func configureCollectionView() {
         stayListCollectionView.dataSource = stayListCollectionViewDataSource
-
-        // FIXME: delegate 지정하면 셀 크기가 이상하게 바뀜
         stayListCollectionView.delegate = stayListCollectionViewDelegate
     }
     
