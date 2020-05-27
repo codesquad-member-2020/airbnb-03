@@ -40,7 +40,7 @@ public class PropertiesDaoHamill {
                         "       p.longitude,\n" +
                         "       p.reservable,\n" +
                         "       p.saved,\n" +
-                        "       p.host_type,\n" +
+                        "       CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,\n" +
                         "       p.price,\n" +
                         "       p.place_type,\n" +
                         "       p.review_average,\n" +
@@ -68,7 +68,7 @@ public class PropertiesDaoHamill {
                                            .longitude(rs.getDouble("longitude"))
                                            .reservable(rs.getBoolean("reservable"))
                                            .saved(rs.getBoolean("saved"))
-                                           .hostType(rs.getString("host_type"))
+                                           .isSuperHost(rs.getBoolean("is_super_host"))
                                            .price(rs.getDouble("price"))
                                            .placeType(rs.getString("place_type"))
                                            .reviewAverage(rs.getDouble("review_average"))
