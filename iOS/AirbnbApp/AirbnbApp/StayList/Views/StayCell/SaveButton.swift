@@ -9,7 +9,7 @@ final class SaveButton: UIButton {
     private let savedColor: UIColor? = UIColor(named: "save.fill")
     private let notSavedColor: UIColor = UIColor.darkGray
     private let imageViewHeight: CGFloat = 18.0
-    private var saved: Bool = false
+    private(set) var saved: Bool = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +19,11 @@ final class SaveButton: UIButton {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
+    }
+    
+    func toggle() {
+        saved = !saved
+        updateImage(with: saved)
     }
     
     func updateImage(with saved: Bool) {
