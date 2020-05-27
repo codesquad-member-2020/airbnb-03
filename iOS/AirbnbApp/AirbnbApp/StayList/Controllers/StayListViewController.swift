@@ -113,8 +113,11 @@ class StayListViewController: UIViewController {
 
 extension StayListViewController: StayListCollectionViewTapDelegate {
     func didTapCell(at indexPath: IndexPath) {
-        let detailViewController = StayDetailViewController()
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        stayListCollectionViewDataSource.idForCell(at: indexPath) { [weak self] (id) in
+            let detailViewController = StayDetailViewController()
+            #warning("Request detail data")
+            self?.navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
 }
 
