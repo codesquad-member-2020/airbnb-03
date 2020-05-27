@@ -14,19 +14,24 @@ class StayCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: PriceLabel!
     
     func update(with stay: Stay) {
-        self.reviewLabel.updateWith(reviewAverage: stay.reviewAverage,
+        reviewLabel.updateWith(reviewAverage: stay.reviewAverage,
                                     numberOfReviews: stay.numberOfReviews)
-        self.placeTypeAndCityLabel.updateWith(type: stay.placeType,
+        placeTypeAndCityLabel.updateWith(type: stay.placeType,
                                               city: stay.city)
-        self.titleLabel.text = stay.title
-        self.priceLabel.updateWith(price: stay.price)
-        self.thumbImagePagingView.configureStackView(numberOfImage: stay.images.count)
-        self.superHostLabel.isHidden = stay.hostType != "super"
+        titleLabel.text = stay.title
+        priceLabel.updateWith(price: stay.price)
+        thumbImagePagingView.configureStackView(numberOfImage: stay.images.count)
+        superHostLabel.isHidden = stay.hostType != "super"
         #warning("update SaveButton status")
     }
     
     func updateImage(at index: Int, data: Data) {
         thumbImagePagingView.updateImage(at: index, data: data)
+    }
+    
+    override func prepareForReuse() {
+        superHostLabel.isHidden = true
+        thumbImagePagingView.prepareForReuse()
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
