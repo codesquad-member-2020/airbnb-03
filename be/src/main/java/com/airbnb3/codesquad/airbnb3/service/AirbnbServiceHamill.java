@@ -64,7 +64,7 @@ public class AirbnbServiceHamill {
             if (Integer.parseInt(offset) < 0) {
                 return Integer.parseInt(DEFAULT_OFFSET);
             }
-            return Integer.parseInt(offset);
+            return Integer.parseInt(offset) * 20;
         } catch (IllegalArgumentException e) {
             return Integer.parseInt(DEFAULT_OFFSET);
         }
