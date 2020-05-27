@@ -65,27 +65,41 @@
                             <constraint firstItem="264-Ef-QMx" firstAttribute="width" relation="lessThanOrEqual" secondItem="WGr-q7-Mzh" secondAttribute="width" multiplier="0.8" id="JFE-BW-Z5D"/>
                         </constraints>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2N-sy-TGs">
-                        <rect key="frame" x="382" y="8" width="24" height="24"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jf-Nh-Hub" customClass="SaveButtonBackgroundView" customModule="AirbnbApp" customModuleProvider="target">
+                        <rect key="frame" x="370" y="12" width="32" height="32"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2N-sy-TGs">
+                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="1" minY="2" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zhk-eB-sFS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="l2N-sy-TGs" secondAttribute="height" multiplier="1:1" id="2W3-zJ-bnV"/>
-                            <constraint firstAttribute="width" constant="24" id="bG3-T4-ip3"/>
+                            <constraint firstItem="l2N-sy-TGs" firstAttribute="top" secondItem="5Jf-Nh-Hub" secondAttribute="top" id="1yi-eO-X7j"/>
+                            <constraint firstItem="l2N-sy-TGs" firstAttribute="centerX" secondItem="5Jf-Nh-Hub" secondAttribute="centerX" id="dPW-SY-fAz"/>
+                            <constraint firstAttribute="width" constant="32" id="dkH-Wk-udP"/>
+                            <constraint firstItem="l2N-sy-TGs" firstAttribute="leading" secondItem="5Jf-Nh-Hub" secondAttribute="leading" id="gh0-Hf-nMm"/>
+                            <constraint firstAttribute="width" secondItem="5Jf-Nh-Hub" secondAttribute="height" multiplier="1:1" id="heN-My-DL3"/>
+                            <constraint firstItem="l2N-sy-TGs" firstAttribute="centerY" secondItem="5Jf-Nh-Hub" secondAttribute="centerY" id="m4G-VU-a8S"/>
+                            <constraint firstAttribute="trailing" secondItem="l2N-sy-TGs" secondAttribute="trailing" id="rya-EJ-rV2"/>
+                            <constraint firstAttribute="bottom" secondItem="l2N-sy-TGs" secondAttribute="bottom" id="vS7-tC-Bzm"/>
                         </constraints>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" image="heart" catalog="system"/>
-                        <connections>
-                            <action selector="saveButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zhk-eB-sFS"/>
-                        </connections>
-                    </button>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="WGr-q7-Mzh" secondAttribute="trailing" id="1th-8B-jkA"/>
-                <constraint firstAttribute="trailing" secondItem="l2N-sy-TGs" secondAttribute="trailing" constant="8" id="2eg-xd-nun"/>
                 <constraint firstItem="WGr-q7-Mzh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Gf-3P-JBq"/>
-                <constraint firstItem="l2N-sy-TGs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="91U-QR-q8T"/>
+                <constraint firstAttribute="trailing" secondItem="5Jf-Nh-Hub" secondAttribute="trailing" constant="12" id="P2Q-qs-x66"/>
                 <constraint firstAttribute="trailing" secondItem="Jms-4T-OYY" secondAttribute="trailing" id="TsZ-ej-J0U"/>
                 <constraint firstItem="WGr-q7-Mzh" firstAttribute="top" secondItem="Jms-4T-OYY" secondAttribute="bottom" constant="8" symbolic="YES" id="Ug3-NH-JF0"/>
+                <constraint firstItem="5Jf-Nh-Hub" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="XeV-ZP-Kx1"/>
                 <constraint firstItem="Jms-4T-OYY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hf3-zD-qpZ"/>
                 <constraint firstAttribute="bottom" secondItem="WGr-q7-Mzh" secondAttribute="bottom" id="hlK-7s-6OC"/>
                 <constraint firstItem="Jms-4T-OYY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vmJ-Ze-ooW"/>
@@ -104,6 +118,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="save" width="17" height="16"/>
     </resources>
 </document>
