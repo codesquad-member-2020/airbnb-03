@@ -1,4 +1,4 @@
-package com.airbnb3.codesquad.airbnb3.dto.component;
+package com.airbnb3.codesquad.airbnb3.dto.composition;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -9,15 +9,15 @@ import lombok.Setter;
 public class ReviewDto {
     private Double reviewAverage;
     private Integer numberOfReviews;
-    private String reviewScoresAccuracy;
-    private String reviewScoresCleanliness;
-    private String reviewScoresCheckin;
-    private String reviewScoresCommunication;
-    private String reviewScoresLocation;
-    private String reviewScoresValue;
+    private Double reviewScoresAccuracy;
+    private Double reviewScoresCleanliness;
+    private Double reviewScoresCheckin;
+    private Double reviewScoresCommunication;
+    private Double reviewScoresLocation;
+    private Double reviewScoresValue;
 
     @Builder
-    public ReviewDto(Double reviewAverage, Integer numberOfReviews, String reviewScoresAccuracy, String reviewScoresCleanliness, String reviewScoresCheckin, String reviewScoresCommunication, String reviewScoresLocation, String reviewScoresValue) {
+    public ReviewDto(Double reviewAverage, Integer numberOfReviews, Double reviewScoresAccuracy, Double reviewScoresCleanliness, Double reviewScoresCheckin, Double reviewScoresCommunication, Double reviewScoresLocation, Double reviewScoresValue) {
         this.reviewAverage = reviewAverage;
         this.numberOfReviews = numberOfReviews;
         this.reviewScoresAccuracy = reviewScoresAccuracy;

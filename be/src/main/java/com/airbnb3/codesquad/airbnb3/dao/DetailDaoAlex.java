@@ -1,7 +1,7 @@
 package com.airbnb3.codesquad.airbnb3.dao;
 
 import com.airbnb3.codesquad.airbnb3.dto.*;
-import com.airbnb3.codesquad.airbnb3.dto.component.*;
+import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,12 +61,12 @@ public class DetailDaoAlex {
                         .reviewInfo(ReviewDto.builder()
                                 .reviewAverage(rs.getDouble("review_average"))
                                 .numberOfReviews(rs.getInt("number_of_reviews"))
-                                .reviewScoresAccuracy(format.format(rs.getDouble("review_scores_accuracy")))
-                                .reviewScoresCheckin(format.format(rs.getDouble("review_scores_checkin")))
-                                .reviewScoresCleanliness(format.format(rs.getDouble("review_scores_cleanliness")))
-                                .reviewScoresCommunication(format.format(rs.getDouble("review_scores_communication")))
-                                .reviewScoresLocation(format.format(rs.getDouble("review_scores_location")))
-                                .reviewScoresValue(format.format(rs.getDouble("review_scores_value")))
+                                .reviewScoresAccuracy(rs.getDouble("review_scores_accuracy"))
+                                .reviewScoresCheckin(rs.getDouble("review_scores_checkin"))
+                                .reviewScoresCleanliness(rs.getDouble("review_scores_cleanliness"))
+                                .reviewScoresCommunication(rs.getDouble("review_scores_communication"))
+                                .reviewScoresLocation(rs.getDouble("review_scores_location"))
+                                .reviewScoresValue(rs.getDouble("review_scores_value"))
                                 .build())
                         .roomInfo(RoomDto.builder()
                                 .accommodates(rs.getInt("accommodates"))

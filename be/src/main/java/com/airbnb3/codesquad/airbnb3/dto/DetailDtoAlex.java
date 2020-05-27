@@ -1,6 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.dto;
 
-import com.airbnb3.codesquad.airbnb3.dto.component.*;
+import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import lombok.*;
 
 import java.util.List;

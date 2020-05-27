@@ -31,6 +31,11 @@ public class AirBnbControllerAlex {
             @RequestParam(value = "checkout", required = false) String checkOut,
             @RequestParam(value = "price_min", required = false, defaultValue = "min") String minRange,
             @RequestParam(value = "price_max", required = false, defaultValue = "max") String maxRange
+//            @RequestParam(value = "min_lat", required = false, defaultValue = "max") String maxRange
+//            @RequestParam(value = "min_long", required = false, defaultValue = "max") String maxRange
+//            @RequestParam(value = "max_lat", required = false, defaultValue = "max") String maxRange
+//            @RequestParam(value = "max_long", required = false, defaultValue = "max") String maxRange
+
     ) {
         return new ResponseEntity<>(airBnbService.stayedProperties(pageNum, adults, children, checkIn, checkOut, minRange, maxRange), HttpStatus.OK);
     }
@@ -42,6 +47,11 @@ public class AirBnbControllerAlex {
 
     @GetMapping("/map")
     public ResponseEntity<Object> mapRequest(@RequestParam(value = "latitude") String latitude, @RequestParam(value = "longitude") String longitude) {
+        return new ResponseEntity<>("TEST",HttpStatus.OK);
+    }
+
+    @GetMapping("/booking")
+    public ResponseEntity<Object> bookingRequest() {
         return new ResponseEntity<>("TEST",HttpStatus.OK);
     }
 }

@@ -1,4 +1,4 @@
-package com.airbnb3.codesquad.airbnb3.dto.component;
+package com.airbnb3.codesquad.airbnb3.dto.composition;
 
 import lombok.Builder;
 import lombok.Getter;
