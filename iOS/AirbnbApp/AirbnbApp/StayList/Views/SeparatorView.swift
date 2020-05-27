@@ -1,6 +1,6 @@
 import UIKit
 
-class SeperatorView: UIView {
+class SeparatorView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
