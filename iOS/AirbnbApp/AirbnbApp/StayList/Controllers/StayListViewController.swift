@@ -3,10 +3,11 @@ import UIKit
 class StayListViewController: UIViewController {
     
     private var searchFieldView: SearchFieldView!
-    private var seperatorView: SeperatorView!
+    private var separatorView: SeparatorView!
     private var searchFilterView: SearchFilterView!
     private var stayListCollectionView: StayListCollectionView!
     private var stayListCollectionViewDataSource: StayListCollectionViewDataSource!
+    private var stayListCollectionViewDelegate: StayListCollectionViewDelegate!
     private var mapButtonView: MapButtonView!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
     private var loadingView: LoadingView!
@@ -16,7 +17,7 @@ class StayListViewController: UIViewController {
         
         configureUI()
         configureLayout()
-        configureStayListCollectionViewDataSourceHandler()
+        configureStayListCollectionViewHandlers()
         configureCollectionView()
         configureTextFieldDelegate()
         
@@ -55,12 +56,17 @@ class StayListViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    private func configureStayListCollectionViewDataSourceHandler() {
+    private func configureStayListCollectionViewHandlers() {
         stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
             DispatchQueue.main.async {
                 self?.stayListCollectionView.reloadData()
                 self?.dismissLoadingView()
             }
+        })
+
+        stayListCollectionViewDelegate = StayListCollectionViewDelegate(handlerWhenSelected: { [weak self] in
+            let detailViewController = StayDetailViewController()
+            self?.navigationController?.pushViewController(detailViewController, animated: true)
         })
     }
     
@@ -75,13 +81,14 @@ class StayListViewController: UIViewController {
     
     private func configureCollectionView() {
         stayListCollectionView.dataSource = stayListCollectionViewDataSource
+        stayListCollectionView.delegate = stayListCollectionViewDelegate
     }
     
     private func configureUI() {
         view.backgroundColor = .white
 
         searchFieldView = SearchFieldView.loadFromXib()
-        seperatorView = SeperatorView()
+        separatorView = SeparatorView()
         searchFilterView = SearchFilterView.loadFromXib()
         stayListCollectionView = StayListCollectionView()
         mapButtonView = MapButtonView.loadFromXib()
@@ -98,7 +105,7 @@ class StayListViewController: UIViewController {
     @IBAction func mapButtonTouched(_ sender: Any) {
         #warning("동작 확인용 VC")
         let viewController = UIViewController()
-        viewController.modalPresentationStyle = .automatic // .fullScreen
+        viewController.modalPresentationStyle = .automatic // .fullScreen으로 변경할 것
         viewController.view.backgroundColor = .systemTeal
         present(viewController, animated: true)
     }
@@ -108,7 +115,7 @@ class StayListViewController: UIViewController {
 extension StayListViewController {
     private func configureLayout() {
         view.addSubviews(searchFieldView,
-                         seperatorView,
+                         separatorView,
                          searchFilterView,
                          stayListCollectionView,
                          mapButtonView,
@@ -125,7 +132,7 @@ extension StayListViewController {
                                                     right: sidePadding + 16),
                                      size: .init(width: 0,
                                                  height: SearchFieldView.height))
-        seperatorView.constraints(topAnchor: searchFieldView.bottomAnchor,
+        separatorView.constraints(topAnchor: searchFieldView.bottomAnchor,
                                   leadingAnchor: view.leadingAnchor,
                                   bottomAnchor: nil,
                                   trailingAnchor: view.trailingAnchor,
