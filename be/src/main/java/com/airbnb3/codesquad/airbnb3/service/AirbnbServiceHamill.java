@@ -120,7 +120,7 @@ public class AirbnbServiceHamill {
         try {
             return Date.valueOf(date);
         } catch(IllegalArgumentException e) {
-            return Date.valueOf(LocalDate.of(2021,6,4));
+            return Date.valueOf(LocalDate.now().plusDays(2));
         }
     }
     private Integer parseStringToIntegerAdults(String adults) {
