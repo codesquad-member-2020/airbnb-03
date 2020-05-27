@@ -22,7 +22,7 @@ final class ThumbImageView: UIImageView {
     private func configureUI() {
         backgroundColor = UIColor(named: "thumb.image.background")
         translatesAutoresizingMaskIntoConstraints = false
-        contentMode = .scaleAspectFit
+        contentMode = .scaleAspectFill
         clipsToBounds = true
     }
     
