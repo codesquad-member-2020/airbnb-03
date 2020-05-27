@@ -9,6 +9,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -18,7 +19,8 @@ public class SimpleCorsFilter implements Filter {
 
     private final Logger log = LoggerFactory.getLogger(SimpleCorsFilter.class);
 
-    public SimpleCorsFilter() {}
+    public SimpleCorsFilter() {
+    }
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {

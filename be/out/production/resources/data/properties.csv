@@ -1,4 +1,5 @@
 id,host_type,title,city,state,latitude,longitude,reservable,price,place_type,review_average,number_of_reviews,saved
+<<<<<<< HEAD
 1,super,Bright & Airy Queen Anne Apartment,Seattle,WA,47.63912312,-122.3656665,1,150,Entire home/apt,4.5,43,0
 2,super,Tiny Garden cabin on Queen Anne  ,Seattle,WA,47.64016054,-122.375856,1,60,Private room,1.43,173,0
 3,super,Airy + Bright Queen Anne Apartment,Seattle,WA,47.63749172,-122.3668886,1,150,Entire home/apt,3.34,32,0
@@ -614,3 +615,620 @@ id,host_type,title,city,state,latitude,longitude,reservable,price,place_type,rev
 613,normal,Beautiful Craftsman - Fremont 3 Bed,Seattle,WA,47.6620365,-122.3504849,1,175,Entire home/apt,3.66,29,0
 614,normal,Fremont Farmhouse,Seattle,WA,47.65420514,-122.3526037,1,154,Entire home/apt,3.54,5,0
 615,normal,Portage Bay View!-One Bedroom Apt,Seattle,WA,47.64955163,-122.3183086,1,79,Entire home/apt,1.14,2,0
+=======
+1,super,Bright & Airy Queen Anne Apartment,Seattle,WA,47.63912312,-122.3656665,1,150.00,Entire home/apt,4.50,43,0
+2,super,Tiny Garden cabin on Queen Anne  ,Seattle,WA,47.64016054,-122.375856,1,60.00,Private room,1.43,173,0
+3,super,Airy + Bright Queen Anne Apartment,Seattle,WA,47.63749172,-122.3668886,1,150.00,Entire home/apt,3.34,32,0
+4,normal,Stunning 6 bd in THE BEST Location!,Seattle,WA,47.63920266,-122.3658627,1,461.00,Entire home/apt,2.15,18,1
+5,normal,Park Life in Lower Queen Anne,Seattle,WA,47.62620037,-122.3666019,1,66.00,Private room,1.24,84,0
+6,super,Micro Gypsy Wagon on Queen Anne,Seattle,WA,47.63926602,-122.3747258,1,45.00,Private room,3.38,80,0
+7,normal,Queen Anne 3 bed near everything,Seattle,WA,47.63508504,-122.3644435,1,325.00,Entire home/apt,0.06,68,0
+8,normal,Walker's Dream on Queen Anne Hill,Seattle,WA,47.63800138,-122.3610048,1,110.00,Entire home/apt,2.69,71,1
+9,normal,Located in the heart of Queen Anne,Seattle,WA,47.63751735,-122.3608117,1,145.00,Entire home/apt,2.01,44,0
+10,super,Suite Garage on Queen Anne,Seattle,WA,47.64105215,-122.3750817,1,90.00,Entire home/apt,1.41,109,0
+11,super,Hand crafted Gypsy Wagon with heart,Seattle,WA,47.64152493,-122.3761504,1,60.00,Private room,0.51,191,0
+12,super,Plum Modern - 5 bdrm Tranquility,Seattle,WA,47.67362807,-122.389302,1,465.00,Entire home/apt,0.25,5,1
+13,normal,1BR-Ultra Hip Ballard-Walk to Bars!,Seattle,WA,47.66845996,-122.379516,1,175.00,Entire home/apt,2.73,5,0
+14,normal,**Be in the MIDDLE OF EVERYTHING!*,Seattle,WA,47.667933,-122.3786525,1,47.00,Private room,1.10,23,0
+15,normal,"Cozy Private Room, Bath and Patio",Seattle,WA,47.67011138,-122.3938693,1,55.00,Private room,0.81,86,0
+16,super,Plum Apartment,Seattle,WA,47.67175997,-122.3900201,1,134.00,Entire home/apt,4.07,40,1
+17,super,Condo in Hip Ballard WALK,Seattle,WA,47.67228446,-122.3823135,1,145.00,Entire home/apt,4.04,14,0
+18,super, Ballard Garden Apartment,Seattle,WA,47.67260212,-122.3884415,1,120.00,Entire home/apt,2.71,25,0
+19,normal,Charming 1919 cottage in Ballard,Seattle,WA,47.67155977,-122.382704,1,115.00,Entire home/apt,1.48,44,0
+20,super,Private room blocks to DT Ballard,Seattle,WA,47.66939869,-122.389254,1,80.00,Private room,1.56,56,1
+21,super,Odd Lodging in the Heart of Ballard,Seattle,WA,47.66746398,-122.3782553,1,75.00,Entire home/apt,4.54,79,0
+22,super,Cozy Room in Heart of Ballard,Seattle,WA,47.67181197,-122.3889813,1,57.00,Private room,0.45,50,0
+23,normal, Sunny Ballard Digs,Seattle,WA,47.67053238,-122.3653185,1,99.00,Entire home/apt,1.13,38,0
+24,super,A Friendly Place in Ballard,Seattle,WA,47.67269174,-122.3735586,1,70.00,Private room,4.43,19,1
+25,normal,Gorgeous Townhome Private Room,Seattle,WA,47.67388232,-122.3746263,1,35.00,Private room,4.62,7,0
+26,normal,Gorgeous Townhome Main Bdrm+Balcony,Seattle,WA,47.67228263,-122.3731616,1,45.00,Private room,0.86,2,0
+27,super,Ballard 1903 Modern Cottage,Seattle,WA,47.66454921,-122.3682089,1,149.00,Entire home/apt,0.92,85,0
+28,normal,Townhome Top Floor 2 Bedrms+Balcony,Seattle,WA,47.67358404,-122.3738143,1,80.00,Private room,1.88,2,1
+29,normal,Vintage Ballard Charm,Seattle,WA,47.66934139,-122.3662641,1,99.00,Entire home/apt,1.46,111,0
+30,normal,Private garden room in hip Ballard,Seattle,WA,47.67431327,-122.3679688,1,75.00,Private room,4.78,9,0
+31,normal,Crow's Nest Cottage,Seattle,WA,47.66365131,-122.3620818,1,150.00,Entire home/apt,3.41,1,0
+32,normal,Master Suite - Private Entrance,Seattle,WA,47.64359973,-122.3446299,1,115.00,Private room,3.96,13,1
+33,super,Hilltop House - 3 Bd Great Location,Seattle,WA,47.63152636,-122.3562828,1,250.00,Entire home/apt,4.31,98,0
+34,super,Seattle + free parking + quiet,Seattle,WA,47.63544456,-122.3555166,1,98.00,Entire home/apt,3.67,139,0
+35,normal,Quiet apartment Queen Anne,Seattle,WA,47.63507293,-122.3545941,1,150.00,Entire home/apt,1.06,5,0
+36,super,"View, Location and Plenty of Space",Seattle,WA,47.6305064,-122.3450221,1,149.00,Entire home/apt,4.08,31,1
+37,super,The Gallery - Lake Union View Room,Seattle,WA,47.64011972,-122.3445298,1,90.00,Private room,4.97,36,0
+38,super,Queen Anne Mother-In-Law 1br/1bath,Seattle,WA,47.63192143,-122.3485203,1,110.00,Entire home/apt,4.89,61,0
+39,normal,Modern Seattle Apartment with gym!,Seattle,WA,47.64154276,-122.3446612,1,90.00,Entire home/apt,4.78,50,0
+40,super,Le Penthouse,Seattle,WA,47.64236917,-122.3440864,1,165.00,Entire home/apt,4.86,26,1
+41,normal,Classy Seattle Apartment and gym,Seattle,WA,47.64103958,-122.3444038,1,103.00,Entire home/apt,0.90,49,0
+42,normal,Cute & Tidy by Seattle Center!,Seattle,WA,47.63111242,-122.3439642,1,120.00,Entire home/apt,3.04,59,0
+43,normal,Designer 2 Bdrm Fremont/Wallingford,Seattle,WA,47.66144065,-122.343953,1,149.00,Entire home/apt,2.06,11,0
+44,normal,Wallingford Private 1BD Apartment,Seattle,WA,47.65317216,-122.3372994,1,95.00,Entire home/apt,4.24,79,1
+45,super,Sunny Bedroom w/View: Wallingford,Seattle,WA,47.65389856,-122.3380692,1,105.00,Private room,3.24,13,0
+46,super,GreenLake - Modern and Convenient,Seattle,WA,47.67150263,-122.3278906,1,130.00,Entire home/apt,1.85,14,0
+47,normal,Chic In City  Basement Apartment,Seattle,WA,47.66546743,-122.3235737,1,110.00,Entire home/apt,0.13,27,0
+48,normal,Charming Wallingford Apartment,Seattle,WA,47.65588494,-122.332136,1,110.00,Entire home/apt,1.25,97,1
+49,normal,Cozy 1BD Apartment in Wallingford.,Seattle,WA,47.65163619,-122.3386218,1,104.00,Entire home/apt,1.08,15,0
+50,super,Contemporary 2 Bedroom Apartment,Seattle,WA,47.66585564,-122.3226907,1,135.00,Entire home/apt,2.11,71,0
+51,normal,Lake Union Hacker House - 3FL 4p 2U,Seattle,WA,47.65097251,-122.3308842,1,40.00,Shared room,4.02,7,0
+52,normal,Lake Union Hacker House - 2FL 4p 2U,Seattle,WA,47.65002387,-122.3328031,1,40.00,Shared room,2.89,1,1
+53,normal,Lake Union Hacker House - 2FL 4p 1U,Seattle,WA,47.65021119,-122.3320348,1,40.00,Shared room,4.36,6,0
+54,normal,Family-Ready Craftsman Home,Seattle,WA,47.65767236,-122.3258483,1,575.00,Entire home/apt,4.91,5,0
+55,normal,Lake Union Hacker House - 3FL 4p 1U,Seattle,WA,47.65020661,-122.3311043,1,40.00,Shared room,0.63,4,0
+56,normal,Wallingford Terrace Sky,Seattle,WA,47.65372,-122.3383883,1,70.00,Entire home/apt,2.32,12,1
+57,super,Sunny Corner Apartment Wallingford,Seattle,WA,47.6593428,-122.3319395,1,110.00,Entire home/apt,2.06,25,0
+58,normal,Lake Union Hacker House - 1FL 4p 2U,Seattle,WA,47.65094245,-122.3325889,1,40.00,Shared room,3.41,6,0
+59,normal,Walkable bungalow with private yard,Seattle,WA,47.65355382,-122.3289685,1,215.00,Entire home/apt,2.07,5,0
+60,normal,"Bright, Modern, Seattle Classic.",Seattle,WA,47.66432019,-122.3291753,1,130.00,Entire home/apt,2.02,2,1
+61,normal,Lake Union Hacker House - 3FL 4p 1L,Seattle,WA,47.65084966,-122.3329107,1,40.00,Shared room,3.41,5,0
+62,normal,Lake Union Hacker House - 1FL 4p 1L,Seattle,WA,47.64989806,-122.3312562,1,40.00,Shared room,1.10,7,0
+63,super,Mid-century Duplex in Wallingford,Seattle,WA,47.65899259,-122.3246634,1,160.00,Entire home/apt,3.33,30,0
+64,normal,"Quiet Greenlake house, large room",Seattle,WA,47.66642488,-122.3349052,1,55.00,Private room,1.15,16,1
+65,normal,"S.Wallingford, walk to UW, parking",Seattle,WA,47.65708273,-122.3265511,1,95.00,Entire home/apt,4.42,17,0
+66,normal,Lake Union Hacker House - 2FL 4p 1L,Seattle,WA,47.65099402,-122.332345,1,40.00,Shared room,2.95,4,0
+67,normal,Clean and Simple Green Lake Studio,Seattle,WA,47.66752608,-122.3289111,1,145.00,Entire home/apt,0.38,44,0
+68,super,"3br/3ba.  modern, roof deck, garage",Seattle,WA,47.65410157,-122.3385109,1,254.00,Entire home/apt,3.65,70,1
+69,normal, Cozy City Bedroom and Den,Seattle,WA,47.65668734,-122.3265699,1,65.00,Private room,1.24,36,0
+70,super,Cozy 1BD in Fremont/Wallingford!,Seattle,WA,47.66198074,-122.3460958,1,85.00,Entire home/apt,4.33,10,0
+71,normal,Lake Union Hacker House - 1FL 2p U,Seattle,WA,47.65127573,-122.3327965,1,40.00,Shared room,1.17,3,0
+72,super,Relax with a CANNACATION!,Seattle,WA,47.66440368,-122.3381274,1,120.00,Entire home/apt,3.23,44,1
+73,super,Panoramic Water Views - 6bd/3ba,Seattle,WA,47.64923604,-122.3321802,1,490.00,Entire home/apt,4.63,24,0
+74,normal,New! Bright Queen Anne Studio,Seattle,WA,47.65349156,-122.3697413,1,80.00,Entire home/apt,3.55,21,0
+75,super,5 star Luxury + Urban Tranquility,Seattle,WA,47.64491325,-122.3734628,1,145.00,Entire home/apt,3.33,23,0
+76,normal,Perfect Seattle Room + Bathroom,Seattle,WA,47.64519299,-122.3758195,1,53.00,Private room,3.95,27,1
+77,super,Comfy Queen Anne Digs,Seattle,WA,47.65017304,-122.3676004,1,89.00,Entire home/apt,1.30,52,0
+78,normal,"Queen Anne, Seattle",Seattle,WA,47.64719277,-122.3589062,1,99.00,Private room,4.22,1,0
+79,super,Queen Breeze B&B,Seattle,WA,47.64314986,-122.3589524,1,150.00,Entire home/apt,3.62,9,0
+80,normal,Guest Bedroom near Greenlake,Seattle,WA,47.67491184,-122.3252381,1,55.00,Private room,4.22,11,1
+81,normal,Large Luxury Lakeside Seattle Home,Seattle,WA,47.68354474,-122.3309111,1,550.00,Entire home/apt,1.64,5,0
+82,super,Craftsman Home 1 block from Lake!,Seattle,WA,47.67659659,-122.3307759,1,79.00,Entire home/apt,3.20,92,0
+83,super,Sweet & Cozy Apartment @ Green Lake,Seattle,WA,47.68833693,-122.3439074,1,75.00,Entire home/apt,4.57,78,0
+84,normal,3 bdrm Craftsman home on Greenlake,Seattle,WA,47.67478054,-122.3246218,1,225.00,Entire home/apt,2.49,2,1
+85,normal,Miradina Al Lago,Seattle,WA,47.68472182,-122.3388215,1,110.00,Private room,0.81,60,0
+86,normal,"Modern, Sunny 3BR/3B Greenlake Home",Seattle,WA,47.68890691,-122.3340131,1,325.00,Entire home/apt,3.64,6,0
+87,normal,70' Yacht  on south Lake  Union,Seattle,WA,47.63167352,-122.3405082,1,775.00,Entire home/apt,2.55,9,0
+88,normal,Modern 2BR in Seattle Urban Oasis,Seattle,WA,47.61375392,-122.3004575,1,125.00,Entire home/apt,1.13,132,1
+89,super,"TL ""Boston"": renovated 2 bed/2 bath",Seattle,WA,47.62091627,-122.2979149,1,250.00,Entire home/apt,3.17,7,0
+90,normal,Centrally located private room,Seattle,WA,47.60327025,-122.3021606,1,65.00,Private room,4.51,16,0
+91,normal,Centrally located sanctuary,Seattle,WA,47.60957776,-122.2988641,1,160.00,Entire home/apt,3.34,15,0
+92,normal,Central District Bungalow ,Seattle,WA,47.60526922,-122.2987883,1,75.00,Private room,3.12,6,1
+93,normal,NEW! - Capitol Hill Apt 1100 sq ft,Seattle,WA,47.61481815,-122.3003435,1,99.00,Entire home/apt,0.09,66,0
+94,normal,Private Cottage,Seattle,WA,47.60846512,-122.2968542,1,73.00,Entire home/apt,0.56,6,0
+95,normal,The Green House in Madison Valley,Seattle,WA,47.62013918,-122.2963572,1,170.00,Entire home/apt,1.04,27,0
+96,super,"TL ""Vermont"": newly renovated 1 bed",Seattle,WA,47.62088255,-122.2977449,1,150.00,Entire home/apt,2.84,10,1
+97,normal,Stylish Central District 2 Bedroom,Seattle,WA,47.6101556,-122.3024077,1,99.00,Entire home/apt,2.66,10,0
+98,super,Stylish & Cozy Apt in Urban Seattle,Seattle,WA,47.60810282,-122.2970611,1,120.00,Entire home/apt,0.68,27,0
+99,super,The Chalet: Modern 2 bed craftsman,Seattle,WA,47.61710244,-122.2965592,1,150.00,Entire home/apt,1.70,4,0
+100,super,Chill Central District 2BR,Seattle,WA,47.60907002,-122.2961326,1,125.00,Entire home/apt,4.36,31,1
+101,super,Cozy Private Home near the Lake #1,Seattle,WA,47.61632845,-122.2954818,1,69.00,Private room,0.42,29,0
+102,super,Charming Apartment in Madrona,Seattle,WA,47.60814372,-122.2919629,1,75.00,Entire home/apt,1.92,63,0
+103,normal,Awesome Studio In Heart of Seattle,Seattle,WA,47.61853609,-122.2957238,1,135.00,Entire home/apt,2.87,26,0
+104,normal,Sweet and Cozy Madrona Apartment,Seattle,WA,47.61593276,-122.2853141,1,95.00,Entire home/apt,0.46,65,1
+105,normal,Madrona Casita,Seattle,WA,47.60808439,-122.2943425,1,90.00,Entire home/apt,3.18,19,0
+106,super,Seattle Above Lake Washington,Seattle,WA,47.61553436,-122.2830025,1,115.00,Entire home/apt,0.51,11,0
+107,normal,"2 Baths W/D,View walk UW (302)",Seattle,WA,47.66415028,-122.3039721,1,145.00,Entire home/apt,1.24,10,0
+108,normal,Amazing English Tudor Home Near UW,Seattle,WA,47.66940738,-122.3083482,1,150.00,Entire home/apt,4.91,3,1
+109,normal,Private bath walk UW U Village(202),Seattle,WA,47.66404593,-122.3035321,1,65.00,Private room,2.39,2,0
+110,normal,French Country Room w/Breakfast,Seattle,WA,47.66664004,-122.3164824,1,47.00,Private room,3.45,28,0
+111,normal,Sunny rooftop U district studio!,Seattle,WA,47.6589087,-122.3147936,1,88.00,Entire home/apt,2.21,18,0
+112,normal,Center UW Comfy Quiet & View (302),Seattle,WA,47.66218141,-122.3133911,1,98.00,Entire home/apt,4.97,9,1
+113,normal,Steps to UW Wood Floor Remodeled 12,Seattle,WA,47.65732954,-122.3178094,1,75.00,Entire home/apt,4.41,1,0
+114,normal,Elegant Tangerine Room w/Breakfast,Seattle,WA,47.66695593,-122.3155975,1,40.00,Private room,2.75,30,0
+115,normal,Great Location HEART of UW Studio,Seattle,WA,47.65707082,-122.3142602,1,85.00,Entire home/apt,3.15,7,0
+116,normal,UNIVERSITY DISTRC CHARMER (Sleep10),Seattle,WA,47.66494949,-122.3211328,1,275.00,Entire home/apt,2.61,17,1
+117,normal,Remodeled Walk to UW/View/Serene #F,Seattle,WA,47.66701648,-122.3044009,1,105.00,Entire home/apt,2.01,29,0
+118,normal,Spacious Fast Internet Walk to UW43,Seattle,WA,47.65917007,-122.3165354,1,78.00,Entire home/apt,3.59,7,0
+119,normal,Lovely 1 bedroom apartment,Seattle,WA,47.66456191,-122.3083994,1,150.00,Entire home/apt,1.48,8,0
+120,normal,Steps to UW spacious New carpet 33,Seattle,WA,47.65892905,-122.3163078,1,95.00,Entire home/apt,3.86,3,1
+121,normal,"Center UW, Comfy, Clean &View (204)",Seattle,WA,47.66169364,-122.3129142,1,98.00,Entire home/apt,3.61,15,0
+122,normal,"Spacious,modernU Village W/D (304)",Seattle,WA,47.6643652,-122.3032258,1,110.00,Entire home/apt,4.52,13,0
+123,normal,"Super comfortable, UW (44)",Seattle,WA,47.65962584,-122.3174207,1,105.00,Entire home/apt,4.83,25,0
+124,normal,New carpet Walk to UW. Quiet Top 50,Seattle,WA,47.65753036,-122.3178532,1,85.00,Entire home/apt,2.03,17,1
+125,normal,Center UW Comfy Wood Floor (216),Seattle,WA,47.66145428,-122.3129249,1,95.00,Entire home/apt,1.54,1,0
+126,normal,The Pink Room w/Breakfast,Seattle,WA,47.66667724,-122.3163437,1,45.00,Private room,1.38,28,0
+127,super,Great Location Near the University,Seattle,WA,47.66818255,-122.3173717,1,112.00,Entire home/apt,2.93,40,0
+128,normal,"3 Min walk to UW, Large Quiet (51)",Seattle,WA,47.65712478,-122.3178221,1,85.00,Entire home/apt,2.41,8,1
+129,normal,The Yellow Room w/Breakfast,Seattle,WA,47.66709569,-122.3168086,1,41.00,Private room,3.71,15,0
+130,normal,Across St. UW Tower Hotel Deca 206,Seattle,WA,47.66250162,-122.3134163,1,70.00,Entire home/apt,1.94,1,0
+131,normal,Center UW Quiet Comfy shortwalk 308,Seattle,WA,47.66125018,-122.3143933,1,110.00,Entire home/apt,2.94,5,0
+132,normal,3 BR/1 BA Seattle Cottage,Seattle,WA,47.67119879,-122.3150932,1,125.00,Entire home/apt,4.53,10,1
+133,normal,Center UW Comfy Quiet & View (306),Seattle,WA,47.66132295,-122.3149835,1,90.00,Entire home/apt,0.60,6,0
+134,normal,Center UW Blast Internet New #102,Seattle,WA,47.66116769,-122.3146512,1,85.00,Entire home/apt,2.60,12,0
+135,normal,Remodeled wood Floor walk to UW 101,Seattle,WA,47.66101092,-122.3137344,1,88.00,Entire home/apt,2.57,12,0
+136,normal,Serene W/D  walk toUW/U Village 404,Seattle,WA,47.6626723,-122.3043698,1,92.00,Entire home/apt,4.39,1,1
+137,normal,Center UW Blast Internet New #102,Seattle,WA,47.66148495,-122.3156934,1,70.00,Entire home/apt,1.66,1,0
+138,normal,Center UW Good WiFi Comfy 217,Seattle,WA,47.66129401,-122.313182,1,93.00,Entire home/apt,4.79,2,0
+139,normal,Blue Nautical Room w/Breakfast,Seattle,WA,47.66871493,-122.3163162,1,40.00,Private room,2.29,23,0
+140,normal,Interns-New available Walk to UW 41,Seattle,WA,47.65836316,-122.3180063,1,90.00,Entire home/apt,4.58,9,1
+141,normal,Charming 1920s Unit in U-District,Seattle,WA,47.66044158,-122.3137683,1,115.00,Entire home/apt,4.40,14,0
+142,normal,View Emerald City Jewel Apt UW 1BD,Seattle,WA,47.65877003,-122.3136904,1,89.00,Entire home/apt,4.14,124,0
+143,normal,"Center UW, Convenient  Comfy  (212)",Seattle,WA,47.66154612,-122.3147937,1,85.00,Entire home/apt,0.95,5,0
+144,normal,Remodeled Hardwood 3 min walk UW 37,Seattle,WA,47.65856121,-122.3160866,1,105.00,Entire home/apt,3.63,3,1
+145,normal,New Spacious Private Home UW Lake U,Seattle,WA,47.65665819,-122.3203138,1,92.00,Entire home/apt,2.21,34,0
+146,normal,"2 Baths W/D,View,  Walk UW (402)",Seattle,WA,47.6623606,-122.302424,1,145.00,Entire home/apt,1.37,7,0
+147,normal,View Walk to UW Village 2B 2B (402),Seattle,WA,47.66321788,-122.3043709,1,150.00,Entire home/apt,3.13,8,0
+148,normal,Center UW Comfy  New kitchen 103,Seattle,WA,47.66313458,-122.3145582,1,98.00,Entire home/apt,1.04,2,1
+149,normal,University District One Bedroom,Seattle,WA,47.66396766,-122.3065185,1,110.00,Entire home/apt,3.28,7,0
+150,normal,"Cool, Fast WIFI walk to UW (14)",Seattle,WA,47.65860891,-122.317713,1,95.00,Entire home/apt,0.50,23,0
+151,normal,Hardwood Clean Quiet Walk to UW (52,Seattle,WA,47.65697036,-122.3157798,1,105.00,Entire home/apt,1.79,5,0
+152,normal,2 Ba/2 Br Fast Wifi Walk to UW (35),Seattle,WA,47.65747556,-122.3175427,1,150.00,Entire home/apt,2.46,1,1
+153,normal,Garden Apartment in Madison Valley,Seattle,WA,47.6201619,-122.2958143,1,128.00,Entire home/apt,2.63,158,0
+154,super,Charming and Private-AAA Location,Seattle,WA,47.62543446,-122.2904389,1,168.00,Entire home/apt,0.92,75,0
+155,super,Madison Valley Garden Cottage,Seattle,WA,47.62302601,-122.2952981,1,80.00,Entire home/apt,3.01,25,0
+156,normal,Mini-apt Seattle w/ bkyard oasis!,Seattle,WA,47.62250279,-122.2956157,1,105.00,Entire home/apt,3.69,28,1
+157,normal,Cozy Suite Near Capitol Hill & Lake,Seattle,WA,47.6241695,-122.2930447,1,50.00,Private room,2.73,2,0
+158,normal,1BR Apt w/ Kitchen & Huge Backyard,Seattle,WA,47.60518579,-122.3123022,1,85.00,Entire home/apt,0.64,74,0
+159,super,Modern/Minimalist Apt next2 dwntown,Seattle,WA,47.60308859,-122.305234,1,79.00,Entire home/apt,0.50,104,0
+160,super,Three Floors & Rooftop Deck Central,Seattle,WA,47.60581271,-122.3040398,1,330.00,Entire home/apt,0.79,4,1
+161,super,Special Events Venue and Guesthouse,Seattle,WA,47.60679614,-122.3090857,1,350.00,Entire home/apt,3.19,7,0
+162,super,Central Dist King Bd & Ensuite Bath,Seattle,WA,47.60440567,-122.3054291,1,130.00,Private room,2.44,5,0
+163,normal,Sunny Capitol Hill Room in 4plex,Seattle,WA,47.61173102,-122.3082675,1,80.00,Private room,2.37,3,0
+164,super,Private Bed/bath in Home: green (A),Seattle,WA,47.61600214,-122.3080604,1,72.00,Private room,1.78,94,1
+165,super," Cherry Hill Cozy, Budget Loft-Bed ",Seattle,WA,47.60620715,-122.3068346,1,58.00,Private room,1.31,68,0
+166,super,Near Seattle University on Cap Hill,Seattle,WA,47.6097965,-122.3153297,1,100.00,Private room,1.47,4,0
+167,super,Private room/bath just for you!,Seattle,WA,47.60415027,-122.3032345,1,69.00,Private room,1.74,29,0
+168,super,Cozy 2BD Seattle Home w/ Hot Tub,Seattle,WA,47.61122138,-122.3069443,1,165.00,Entire home/apt,2.94,47,1
+169,super,Victorian Charm on Cherry Hill,Seattle,WA,47.60794615,-122.3075402,1,70.00,Private room,2.52,52,0
+170,super,Central District Simple Clean Queen,Seattle,WA,47.60409559,-122.3054089,1,105.00,Private room,1.77,8,0
+171,super,"Seattle ""Sweet Suite"" Cherry Hill ",Seattle,WA,47.6064609,-122.3074784,1,111.00,Private room,1.49,75,0
+172,super,Central Dist Townhome  2 Twin Bed/s,Seattle,WA,47.60632184,-122.3055772,1,108.00,Private room,0.85,8,1
+173,normal,Modern 4BR/3.5BA Near Downtown,Seattle,WA,47.61197874,-122.3036215,1,270.00,Entire home/apt,4.90,1,0
+174,normal,Large 4- Bed House In Ideal Seattle,Seattle,WA,47.60419373,-122.3099201,1,300.00,Entire home/apt,1.93,21,0
+175,super,"Arty ""Cedar Tree"" Room  Cherry Hill",Seattle,WA,47.60761884,-122.3083246,1,87.00,Private room,3.85,49,0
+176,normal,"Spacious, Sunlit Capitol Hill Home",Seattle,WA,47.60951889,-122.3127036,1,156.00,Entire home/apt,4.45,4,1
+177,super,Private Room in Capitol Hill,Seattle,WA,47.60712102,-122.3104627,1,90.00,Private room,4.24,32,0
+178,super,The Parsonage: Modern 3bed/3.5bath,Seattle,WA,47.61704032,-122.3028063,1,325.00,Entire home/apt,4.45,1,0
+179,super,Seclusion in the HEART of Seattle,Seattle,WA,47.61210627,-122.3041249,1,125.00,Entire home/apt,2.31,20,0
+180,super,Sparkling Modern Seattle Home,Seattle,WA,47.61237958,-122.3137424,1,200.00,Entire home/apt,4.52,40,1
+181,super,Central Cozy private full 1 BR+ apt,Seattle,WA,47.61441923,-122.3067207,1,90.00,Entire home/apt,0.75,51,0
+182,super,1 Bed+Den Eco-Retreat,Seattle,WA,47.60863925,-122.3065334,1,150.00,Entire home/apt,1.64,36,0
+183,normal,Perfect Family Vacation Home in SEA,Seattle,WA,47.6041844,-122.312639,1,150.00,Entire home/apt,2.13,7,0
+184,normal,Squire Park Lady 2-bed modern home,Seattle,WA,47.60275515,-122.3119689,1,150.00,Entire home/apt,4.67,6,1
+185,normal,Charming Madrona 1 Bedroom,Seattle,WA,47.60724932,-122.2941532,1,125.00,Entire home/apt,4.62,29,0
+186,normal,Lovely home close to town and lake,Seattle,WA,47.60393134,-122.2945169,1,199.00,Entire home/apt,2.83,9,0
+187,normal,"Lovely family home, stunning views",Seattle,WA,47.59431107,-122.2944084,1,200.00,Entire home/apt,2.03,22,0
+188,normal,Mother in Law Apartment- Queen Bed,Seattle,WA,47.60459749,-122.296725,1,85.00,Entire home/apt,2.89,5,1
+189,super,Madrona 3BR/ 2BA Charming Craftsman,Seattle,WA,47.60639203,-122.2906124,1,200.00,Entire home/apt,4.61,20,0
+190,normal,Centrally Located 3bd/2.5ba Home,Seattle,WA,47.59708807,-122.2973948,1,163.00,Entire home/apt,3.53,5,0
+191,normal,"Convenient 2 BR, 10min to Downtown",Seattle,WA,47.60568442,-122.2953598,1,135.00,Entire home/apt,0.89,32,0
+192,normal,Madrona Urban Oasis-Views & Space!!,Seattle,WA,47.60688433,-122.2872419,1,500.00,Entire home/apt,2.64,3,1
+193,normal,Spacious spot in central location,Seattle,WA,47.59495768,-122.2951655,1,80.00,Entire home/apt,1.66,40,0
+194,super,Gorgeous cottage 5 min to downtown,Seattle,WA,47.59142846,-122.3017387,1,125.00,Entire home/apt,2.00,15,0
+195,super,Private Room/Bath in Modern Home #2,Seattle,WA,47.59515922,-122.3090613,1,69.00,Private room,4.13,19,0
+196,super,"Urban cabin with loft, full kitchen",Seattle,WA,47.59958299,-122.3131538,1,95.00,Entire home/apt,3.46,38,1
+197,normal,Urban Farmhouse - Seattle Oasis,Seattle,WA,47.59639091,-122.3049055,1,168.00,Entire home/apt,2.59,1,0
+198,normal,"Quaint & Cozy, a Place to Call Home",Seattle,WA,47.59361162,-122.3097999,1,115.00,Entire home/apt,1.58,45,0
+199,super,Private Room/Bath in Modern Home #1,Seattle,WA,47.59412508,-122.3086619,1,69.00,Private room,3.96,61,0
+200,normal,1BdRm 3bds w/AC fits 6snug Near DT,Seattle,WA,47.58172347,-122.2989805,1,79.00,Entire home/apt,2.77,64,1
+201,normal,Luxurious Seattle Apartment,Seattle,WA,47.60777108,-122.3396398,1,99.00,Entire home/apt,2.82,43,0
+202,super,Lake Union City Cabin,Seattle,WA,47.64482057,-122.3274884,1,135.00,Entire home/apt,2.18,16,0
+203,normal,Charming Eastlake Bungalow,Seattle,WA,47.64208137,-122.3246051,1,75.00,Entire home/apt,4.42,9,0
+204,super,"Lake Union view ""Sky Cabin"" apt.",Seattle,WA,47.64338999,-122.3258219,1,138.00,Entire home/apt,3.48,188,1
+205,normal,Spanish Deco Lakeside Apartment,Seattle,WA,47.6405253,-122.3285206,1,129.00,Entire home/apt,2.82,3,0
+206,normal,Charming Eastlake Townhouse ,Seattle,WA,47.64050458,-122.3282016,1,135.00,Entire home/apt,2.75,2,0
+207,super,Clean+Comfy Eastlake/Lk Union 1BR,Seattle,WA,47.63897301,-122.3248878,1,95.00,Entire home/apt,4.80,47,0
+208,normal,Lake Union Tranquil Retreat,Seattle,WA,47.64793265,-122.3233427,1,85.00,Entire home/apt,4.44,22,1
+209,super,"Lake Union view ""Garden Apartment""",Seattle,WA,47.64454557,-122.3255229,1,115.00,Entire home/apt,0.70,146,0
+210,normal,NEW 1 BD listing CENTRAL/MODERN,Seattle,WA,47.64425525,-122.3261722,1,134.00,Entire home/apt,1.65,6,0
+211,normal,Incredible View Lake Union Condo!,Seattle,WA,47.64687986,-122.3241736,1,125.00,Entire home/apt,0.57,34,0
+212,normal,South Lake Union Penthouse,Seattle,WA,47.6208625,-122.3389661,1,550.00,Entire home/apt,0.53,7,1
+213,normal,94 walk-score elegant SLU Apt. room,Seattle,WA,47.62175656,-122.3296963,1,75.00,Private room,1.18,4,0
+214,normal,South Lake Union Penthouse Room,Seattle,WA,47.62096789,-122.3377744,1,220.00,Private room,4.79,12,0
+215,super,"Super location, 3.5ba, Free Parking",Seattle,WA,47.65103145,-122.3850038,1,333.00,Entire home/apt,3.32,29,0
+216,normal,Light-filled 2BR/1BA Home Magnolia,Seattle,WA,47.64899205,-122.397112,1,200.00,Entire home/apt,3.33,7,1
+217,normal,Bright Quiet Room Close to Downtown,Seattle,WA,47.64987479,-122.3835612,1,40.00,Private room,4.76,58,0
+218,normal,Seattle Discovery Birdhouse,Seattle,WA,47.65312176,-122.4098169,1,88.00,Private room,3.99,71,0
+219,normal,Magnolia View Retreat,Seattle,WA,47.64012727,-122.4027391,1,250.00,Entire home/apt,0.77,4,0
+220,normal,100% Walk Score 1-BR Downtown,Seattle,WA,47.61537863,-122.3352588,1,999.00,Entire home/apt,1.04,54,1
+221,normal,99% walkscore Water View + FREE CAR,Seattle,WA,47.6146353,-122.3454,1,105.00,Entire home/apt,3.36,6,0
+222,normal,POSH URBAN GETAWAY | WATERFRONT,Seattle,WA,47.6138396,-122.349435,1,128.00,Entire home/apt,3.70,67,0
+223,super,Cozy 1 BD in Belltown,Seattle,WA,47.6172487,-122.3472461,1,100.00,Entire home/apt,1.27,61,0
+224,normal,Downtown Apartment by Pike Place,Seattle,WA,47.61269735,-122.3415262,1,140.00,Entire home/apt,3.75,13,1
+225,super,Aunt Sally's Studio-GREAT Location!,Seattle,WA,47.61758375,-122.3533028,1,93.00,Entire home/apt,4.35,49,0
+226,super,Cozy Charmer Steps To Pike Place,Seattle,WA,47.61423956,-122.3489068,1,155.00,Entire home/apt,1.97,14,0
+227,normal,"Studio Apt., Belltown, Seattle",Seattle,WA,47.61504932,-122.3429315,1,100.00,Entire home/apt,3.50,28,0
+228,normal,Beautiful downtown Apt. Top floor,Seattle,WA,47.61582776,-122.3407773,1,125.00,Entire home/apt,4.82,13,1
+229,super,Charming Suite Near Space Needle!,Seattle,WA,47.61476068,-122.347023,1,135.00,Entire home/apt,3.83,20,0
+230,normal,BRAND NEW WTRFNT nxt2 PIKE PLACE!,Seattle,WA,47.61365588,-122.3475903,1,155.00,Entire home/apt,2.50,71,0
+231,normal,Sound View Condo in Seattle,Seattle,WA,47.61734292,-122.3561681,1,150.00,Entire home/apt,4.10,2,0
+232,super,Seattle Dwntn Apt near Space Needle,Seattle,WA,47.61830941,-122.3464812,1,130.00,Entire home/apt,2.28,12,1
+233,normal,Stunning  2 BR Belltown Luxury 007,Seattle,WA,47.61489769,-122.3406608,1,169.00,Entire home/apt,1.35,16,0
+234,normal,BEST (historic) locat A/C FREE prkg,Seattle,WA,47.6152136,-122.3476362,1,125.00,Entire home/apt,1.15,67,0
+235,super,Lovely 2BD in the Heart of the City,Seattle,WA,47.615434,-122.3485208,1,175.00,Entire home/apt,4.20,24,0
+236,normal,"2BR VIEW! 98% Walk Score, FREE pkg!",Seattle,WA,47.6132476,-122.3489803,1,183.00,Entire home/apt,0.00,7,1
+237,super,Modern Condo Style with Great Views,Seattle,WA,47.61597692,-122.3480447,1,169.00,Entire home/apt,0.50,15,0
+238,normal,Lovely Studio Apt in D.T. Seattle !,Seattle,WA,47.61687816,-122.3484842,1,115.00,Entire home/apt,1.04,115,0
+239,normal,PERFECT downtown Seattle location!,Seattle,WA,47.6114921,-122.341192,1,165.00,Entire home/apt,1.03,4,0
+240,normal,Gorgeous Downtown Apartment,Seattle,WA,47.61227626,-122.3437812,1,145.00,Entire home/apt,1.36,45,1
+241,normal,2-bdrm Downtown Seattle,Seattle,WA,47.61558797,-122.3488223,1,250.00,Entire home/apt,1.37,68,0
+242,normal,Downtown Seattle 2BR View Home,Seattle,WA,47.60148596,-122.325866,1,69.00,Entire home/apt,0.50,84,0
+243,normal,2bdrm close to stadiums/light rail!,Seattle,WA,47.59964084,-122.3250541,1,250.00,Entire home/apt,1.16,3,0
+244,normal,"Seattle Downtown Core, Pike Market",Seattle,WA,47.60970346,-122.33626,1,159.00,Entire home/apt,3.54,57,1
+245,normal,P6 Zen Retreat: Winter promo,Seattle,WA,47.61165911,-122.3310871,1,151.00,Entire home/apt,1.14,19,0
+246,normal,Welcome to 2BD Downtown Seattle!,Seattle,WA,47.61288424,-122.3306759,1,175.00,Entire home/apt,3.27,17,0
+247,super,View Apt Near Pike Place Market 1BD,Seattle,WA,47.60983582,-122.334797,1,100.00,Entire home/apt,4.40,33,0
+248,normal,Downtown H2O View Hi Rise 25th Fl#3,Seattle,WA,47.61254733,-122.3333306,1,110.00,Entire home/apt,1.78,18,1
+249,normal,Amazing Downtown Views!,Seattle,WA,47.61275933,-122.3324432,1,129.00,Entire home/apt,2.06,32,0
+250,normal,BRAND NEW 98 walkscore H20 views!!,Seattle,WA,47.6125485,-122.3316295,1,89.00,Entire home/apt,4.31,3,0
+251,normal,Gorgeous Downtown/Convention Condo,Seattle,WA,47.61312538,-122.3307178,1,175.00,Entire home/apt,1.64,37,0
+252,normal,Downtown Seattle Pike Place Market,Seattle,WA,47.60933289,-122.3354745,1,135.00,Entire home/apt,1.06,74,1
+253,super,Nice 2BD/2BA Downtown & Conv Center,Seattle,WA,47.61306311,-122.3306518,1,225.00,Entire home/apt,0.30,18,0
+254,normal,View 1bd Luxury Downtown Hi Rise#2,Seattle,WA,47.61206693,-122.3332126,1,110.00,Entire home/apt,1.81,10,0
+255,normal,P2 Cosmo living: Winter promo,Seattle,WA,47.6109654,-122.3290725,1,151.00,Entire home/apt,3.75,54,0
+256,normal,"2 Bedroom, 2 Bath, Downtown Seattle",Seattle,WA,47.61317623,-122.329084,1,175.00,Entire home/apt,2.99,27,1
+257,normal,"Comfy Studio, Downtown, Affordable",Seattle,WA,47.61263327,-122.329442,1,115.00,Entire home/apt,3.83,9,0
+258,normal,Beautiful Modern Downtwn/Convention,Seattle,WA,47.61132764,-122.3306001,1,185.00,Entire home/apt,2.97,4,0
+259,normal,Large Downtown 2 Bedroom Condo,Seattle,WA,47.61136874,-122.3288525,1,175.00,Entire home/apt,1.23,18,0
+260,normal,Studio in the BEST location!,Seattle,WA,47.60953835,-122.3301785,1,75.00,Entire home/apt,1.37,43,1
+261,normal,In the Heart of Seattle,Seattle,WA,47.61089995,-122.3252088,1,87.00,Private room,3.82,71,0
+262,normal,Urban Capitol Hill Retreat,Seattle,WA,47.61317414,-122.3244904,1,100.00,Private room,0.02,6,0
+263,normal,Light & Modern Downtown Conv Ctr ,Seattle,WA,47.61245626,-122.3301414,1,129.00,Entire home/apt,0.68,154,0
+264,normal,"Shared central studio, real bed",Seattle,WA,47.60841879,-122.3242005,1,85.00,Shared room,0.60,16,1
+265,normal,Room with a View - IBD Penthouse,Seattle,WA,47.61172003,-122.3304252,1,195.00,Entire home/apt,2.00,14,0
+266,normal,Bohemian Studio Near Downtown,Seattle,WA,47.60795126,-122.3282375,1,100.00,Entire home/apt,1.56,45,0
+267,normal,P3 Throwback w/ style: Winter promo,Seattle,WA,47.6118662,-122.328552,1,121.00,Entire home/apt,0.11,66,0
+268,normal,"Serene&Central, 1BR&Pullout&Parking",Seattle,WA,47.6131384,-122.3251616,1,120.00,Entire home/apt,2.67,26,1
+269,super,"Downtown 1BR, Close to everything",Seattle,WA,47.61145049,-122.331084,1,110.00,Entire home/apt,2.92,53,0
+270,normal,"2BD, 1.5 Bath View Penthouse",Seattle,WA,47.61246835,-122.3300531,1,215.00,Entire home/apt,2.85,12,0
+271,normal,The Nest in the Heart of the City,Seattle,WA,47.61148112,-122.3291211,1,175.00,Entire home/apt,2.75,75,0
+272,super,Mt. Rainier view Pike Street,Seattle,WA,47.61365054,-122.3210146,1,120.00,Entire home/apt,4.81,36,1
+273,normal,P4 Metro living: Winter promo,Seattle,WA,47.61259702,-122.3298757,1,151.00,Entire home/apt,0.42,39,0
+274,normal,Bright&Sweet next to Convention Ctr,Seattle,WA,47.61288549,-122.3292414,1,175.00,Entire home/apt,2.19,21,0
+275,normal,"Downtown, 1BD, close to everything",Seattle,WA,47.61158121,-122.3293835,1,140.00,Entire home/apt,0.98,3,0
+276,normal,"Explore Downtown Seattle, 1BD",Seattle,WA,47.61143729,-122.3287667,1,140.00,Entire home/apt,4.44,8,1
+277,normal,2BR Downtown Penthouse Condo,Seattle,WA,47.61168312,-122.3287378,1,179.00,Entire home/apt,4.77,57,0
+278,normal,Midcentury Studio Close to Downtown,Seattle,WA,47.61041858,-122.3254524,1,120.00,Entire home/apt,2.91,1,0
+279,normal,Modern 2BR/2BA By ConventionCenter,Seattle,WA,47.61169622,-122.3292941,1,245.00,Entire home/apt,3.10,18,0
+280,normal,Modern Studio in Capitol/First Hill,Seattle,WA,47.6071263,-122.320032,1,145.00,Entire home/apt,1.42,11,1
+281,normal,"""1898"" a FirstHill Victorian 3bdrm",Seattle,WA,47.60327559,-122.3203899,1,165.00,Entire home/apt,4.58,5,0
+282,normal,Seattle Downtown Studio,Seattle,WA,47.6022024,-122.3350628,1,95.00,Entire home/apt,2.55,11,0
+283,normal,2 BR townhouse in Morgan Junction,Seattle,WA,47.54593207,-122.3826213,1,153.00,Entire home/apt,1.96,8,0
+284,normal,The Decisive Moment Garden Studio,Seattle,WA,47.52920009,-122.38564,1,85.00,Entire home/apt,0.23,9,1
+285,normal,Spacious Studio Near Lincoln Park,Seattle,WA,47.53570065,-122.3863124,1,80.00,Entire home/apt,1.05,92,0
+286,super,Cozy West Seattle Studio cottage,Seattle,WA,47.51286492,-122.3790334,1,100.00,Entire home/apt,1.22,11,0
+287,normal,VACATION HOUSE WEST SEATTLE ,Seattle,WA,47.50508834,-122.3782388,1,200.00,Entire home/apt,4.69,29,0
+288,super,Alki Beach with Stunning Views,Seattle,WA,47.57189115,-122.4073906,1,100.00,Entire home/apt,4.01,27,1
+289,normal,Alki Beach Bungalow-1 Blk to Beach!,Seattle,WA,47.57450452,-122.4129798,1,249.00,Entire home/apt,2.80,8,0
+290,normal,"Alki Beach, Mid-Century Room",Seattle,WA,47.57865215,-122.4051882,1,100.00,Private room,3.51,3,0
+291,super,Romantic Alki Beach Cottage,Seattle,WA,47.57613116,-122.4122347,1,130.00,Entire home/apt,2.18,54,0
+292,normal,Waterfront townhome in Seattle,Seattle,WA,47.56499678,-122.4064296,1,250.00,Entire home/apt,4.14,31,1
+293,super,Apartment Ocean and Mountain Views,Seattle,WA,47.58675627,-122.3919824,1,195.00,Entire home/apt,0.45,33,0
+294,normal,Charming Admiral District Cottage,Seattle,WA,47.58044918,-122.3968706,1,100.00,Entire home/apt,2.44,18,0
+295,super,Yurt Glamping in an Urban Oasis,Seattle,WA,47.58403666,-122.3866704,1,100.00,Entire home/apt,4.14,25,0
+296,normal,Coveted West Seattle Neighborhood,Seattle,WA,47.57290027,-122.3859377,1,225.00,Entire home/apt,3.32,3,1
+297,normal,Classic Tudor - Quiet & Convenient,West Seattle,WA,47.57190255,-122.3789319,1,90.00,Private room,0.99,20,0
+298,normal,Modern Beach Studio with 180 VIEW,Seattle,WA,47.58274073,-122.3980841,1,99.00,Entire home/apt,0.82,105,0
+299,super,"Skylights, Privacy & Convenience",Seattle,WA,47.57658172,-122.3886758,1,89.00,Entire home/apt,3.76,15,0
+300,super,Quiet Studio has a Spectacular view,Seattle,WA,47.58495099,-122.3816172,1,90.00,Private room,4.55,23,1
+301,super,1 Bedroom Studio with a serene view,Seattle,WA,47.58273995,-122.3810727,1,90.00,Entire home/apt,3.45,34,0
+302,normal,"""THE 5-STAR HOUSE""",Seattle,WA,47.69989837,-122.3661418,1,65.00,Private room,1.25,22,0
+303,super,Guest Room -Cute North Seattle Home,Seattle,WA,47.70006051,-122.3743716,1,69.00,Private room,0.88,17,0
+304,normal,Delightful Spacious Apartment,Seattle,WA,47.69335529,-122.3731757,1,100.00,Entire home/apt,1.28,80,1
+305,normal,"""THE 5-STAR HOUSE""",Seattle,WA,47.70155129,-122.3665113,1,65.00,Private room,3.05,37,0
+306,super,The Coolest Tangerine Dream MIL! ,Seattle,WA,47.55670065,-122.3849735,1,125.00,Entire home/apt,4.51,14,0
+307,super,The Adorable Sweet Orange Craftsman,Seattle,WA,47.55538926,-122.3847386,1,165.00,Entire home/apt,3.35,26,0
+308,normal,Storybook BnB - Private Studio,Seattle,WA,47.55335676,-122.3790013,1,85.00,Entire home/apt,2.24,6,1
+309,super,Heart of W Seattle w/ Skyline View!,Seattle,WA,47.55925585,-122.3845558,1,136.00,Entire home/apt,4.43,12,0
+310,normal,Modern West Seattle Cottage,Seattle,WA,47.56639268,-122.3781462,1,139.00,Entire home/apt,3.92,17,0
+311,normal,Contemporary New Townhome/House,Seattle,WA,47.56724121,-122.3863867,1,215.00,Entire home/apt,4.81,2,0
+312,normal,Charming West Seattle apartment ,Seattle,WA,47.56412465,-122.3785073,1,99.00,Entire home/apt,4.13,26,1
+313,normal,West Seattle Mid-Century Modern,Seattle,WA,47.56272304,-122.3952384,1,165.00,Entire home/apt,3.60,4,0
+314,normal,Modern home in West Seattle!,Seattle,WA,47.56523793,-122.3872351,1,150.00,Entire home/apt,0.15,5,0
+315,normal,Spacious West Seattle Cottage,Seattle,WA,47.56460285,-122.3770466,1,249.00,Entire home/apt,4.12,2,0
+316,normal,Vibrant Two-Bedroom Apartment,Seattle,WA,47.56618454,-122.3790076,1,129.00,Entire home/apt,4.56,14,1
+317,normal,*Beautiful Views West Seattle Home*,Seattle,WA,47.56164625,-122.3970726,1,250.00,Entire home/apt,3.50,1,0
+318,normal,West Seattle Home near Junction,Seattle,WA,47.56280118,-122.3870543,1,99.00,Private room,3.79,8,0
+319,super,Rooftop Room with a View !,Seattle,WA,47.63972336,-122.3764221,1,53.00,Private room,3.39,26,0
+320,super,Modern Oasis in Magnolia,Seattle,WA,47.63920028,-122.3866156,1,150.00,Entire home/apt,3.35,12,1
+321,super,Seattle Studio-Private Kitchen&Bath,Seattle,WA,47.55427231,-122.3126487,1,65.00,Entire home/apt,1.51,33,0
+322,normal,"Private, Spacious, Studio",Seattle,WA,47.5572751,-122.3133453,1,58.00,Entire home/apt,1.73,37,0
+323,normal,Seattle House - Location & Privacy,Seattle,WA,47.56137576,-122.3174105,1,199.00,Entire home/apt,3.90,21,0
+324,normal,Cute Home w/ Easy Ride to Downtown,Seattle,WA,47.55219473,-122.3051774,1,45.00,Private room,4.99,82,1
+325,super,Private Beacon Hill Studio w/Bath,Seattle,WA,47.54712359,-122.3013946,1,69.00,Entire home/apt,2.11,15,0
+326,normal,Prime Seattle Craftsman Home - 3Bed,Seattle,WA,47.52566156,-122.2811555,1,175.00,Entire home/apt,0.15,56,0
+327,normal,Clean and comfy 2+1/2 bedroom Home,Seattle,WA,47.68438657,-122.3608698,1,125.00,Entire home/apt,3.74,15,0
+328,super,Urban homestead close to everything,Seattle,WA,47.69457431,-122.3579594,1,105.00,Entire home/apt,4.06,14,1
+329,super,Quiet apt near Greenlake & downtown,Seattle,WA,47.68926864,-122.3541404,1,85.00,Entire home/apt,0.84,16,0
+330,normal,Sunny Greenlake home with a view,Seattle,WA,47.68638397,-122.3451062,1,175.00,Entire home/apt,3.22,5,0
+331,super,Urban homestead room for 1 or 2,Seattle,WA,47.69400199,-122.3599532,1,42.00,Private room,4.07,16,0
+332,super,"A Touch of Europe, I Welcome You!!",Seattle,WA,47.69722467,-122.3487616,1,60.00,Private room,4.66,29,1
+333,normal,Seattle Pet/Family Friendly Living,Seattle,WA,47.70478893,-122.346402,1,67.00,Entire home/apt,2.07,21,0
+334,normal,Spacious private bedroom and bath,Seattle,WA,47.69393723,-122.3630705,1,95.00,Private room,2.57,26,0
+335,normal,Greenwood Condo,Seattle,WA,47.70176565,-122.3544354,1,115.00,Entire home/apt,4.56,3,0
+336,normal,Greenlake Sky Loft,Seattle,WA,47.68796587,-122.3500557,1,86.00,Entire home/apt,2.74,36,1
+337,normal,Spacious Apartment in Phinney Ridge,Phinney Ridge Seattle,WA,47.68471103,-122.3544243,1,60.00,Entire home/apt,1.81,11,0
+338,super,"Hip, Walkable Townhome in Seattle",Seattle,WA,47.6913726,-122.3640494,1,139.00,Entire home/apt,4.06,43,0
+339,super,Urban homestead room for 2 (queen),Seattle,WA,47.69274786,-122.3597568,1,63.00,Private room,1.75,16,0
+340,normal,Modern Greenwood 2 Bedroom,Seattle,WA,47.69576779,-122.3482073,1,135.00,Entire home/apt,4.78,20,1
+341,normal,Charming Greenwood Cottage,Seattle,WA,47.69057411,-122.3516281,1,69.00,Entire home/apt,1.38,1,0
+342,normal,Room in Vintage Whittier Heights,Seattle,WA,47.68526916,-122.3655035,1,35.00,Private room,1.89,15,0
+343,super,West Seattle Home w/Dazzling View,Seattle,WA,47.52678914,-122.3834618,1,129.00,Entire home/apt,4.58,106,0
+344,normal,Spacious Private Suite,Seattle,WA,47.52547573,-122.3885478,1,87.00,Entire home/apt,1.62,6,1
+345,normal,Cozy 1BD w/bath; parking included,Seattle,WA,47.5777947,-122.3025813,1,39.00,Private room,1.76,23,0
+346,super,Ultra-Modern Hypoallergenic Retreat,Seattle,WA,47.58623232,-122.3148062,1,126.00,Private room,3.48,14,0
+347,normal,Cozy private cottage by light rail,Seattle,WA,47.57287616,-122.3098772,1,90.00,Entire home/apt,3.14,24,0
+348,normal,1 Bdrm N. Beacon Hill Apt-East Unit,Seattle,WA,47.57272109,-122.3073474,1,69.00,Entire home/apt,0.03,18,1
+349,normal,1 Bdrm N. Beacon Hill Apt-West Unit,Seattle,WA,47.57169368,-122.3095081,1,69.00,Entire home/apt,3.78,68,0
+350,normal,2/1 Plush Modern Hilltop Retreat,Seattle,WA,47.57576948,-122.3163621,1,108.00,Entire home/apt,0.97,80,0
+351,super,Delightful Cottage near Light Rail,Seattle,WA,47.58002068,-122.3068639,1,135.00,Entire home/apt,0.43,79,0
+352,super,Best Seattle Views! Private Suite! ,Seattle,WA,47.59177919,-122.3184622,1,75.00,Private room,1.77,93,1
+353,super,Queen bed with private bathroom,Seattle,WA,47.58646053,-122.3150498,1,60.00,Private room,3.92,13,0
+354,super,Private suite with a view rooftop,Seattle,WA,47.58786144,-122.3139753,1,85.00,Private room,2.83,3,0
+355,normal,Great Value!! The Bunny Room!!,Seattle,WA,47.54538739,-122.2730233,1,39.00,Private room,0.65,12,0
+356,super,Seattle Home Close to Light Rail,Seattle,WA,47.53898625,-122.2779913,1,105.00,Entire home/apt,0.83,68,1
+357,super,Seattle Tiny House Near Light Rail,Seattle,WA,47.54048514,-122.2752942,1,105.00,Entire home/apt,3.57,39,0
+358,normal,The Carousel Room w/Breakfast,Seattle,WA,47.54515616,-122.2699404,1,34.00,Private room,3.44,11,0
+359,normal,The Family Room w/ Private Bathroom,Seattle,WA,47.5455204,-122.2698859,1,35.00,Private room,3.91,15,0
+360,normal,Amazing  Value! The Serene Room!!,Seattle,WA,47.54561306,-122.2725734,1,45.00,Private room,1.89,25,1
+361,normal, Maiden Mansion - Tiny House ,Seattle,WA,47.52553001,-122.3577343,1,99.00,Entire home/apt,1.58,54,0
+362,normal,NE of UW mother in law apartment,Seattle,WA,47.67606576,-122.2768835,1,110.00,Entire home/apt,2.54,3,0
+363,normal,View Ridge Cottage on Burke-Gilman,Seattle,WA,47.67647014,-122.2681827,1,125.00,Entire home/apt,0.49,1,0
+364,super,Bedouin paradise w/ full kitchen,Seattle,WA,47.52129351,-122.2731823,1,70.00,Private room,3.46,22,1
+365,super,Quiet retreat by waterfront park,Seattle,WA,47.52749354,-122.2609575,1,95.00,Entire home/apt,0.03,15,0
+366,super,"Cozy, convenient btw airport & city",Seattle,WA,47.51988612,-122.2740554,1,60.00,Private room,2.94,21,0
+367,super,Spacious House btw Airport and City,Seattle,WA,47.51981664,-122.2747636,1,200.00,Entire home/apt,3.28,1,0
+368,normal,Craftsman with view of Seattle ,Seattle,WA,47.51016433,-122.2604426,1,169.00,Entire home/apt,2.32,42,1
+369,normal,The Klimt Room w/Breakfast,Seattle,WA,47.51738573,-122.2614845,1,37.00,Private room,3.04,12,0
+370,normal,The Lake Washington Room w/ View,Seattle,WA,47.51882897,-122.2610564,1,39.00,Private room,3.16,23,0
+371,super,Ensuite bathroom & private entrance,Seattle,WA,47.55946045,-122.283034,1,69.00,Private room,1.82,55,0
+372,normal,Columbia City Cottage,Seattle,WA,47.56086617,-122.2861241,1,80.00,Entire home/apt,4.65,29,1
+373,normal,Home in Hillman City,Seattle,WA,47.55284232,-122.2778936,1,110.00,Entire home/apt,4.95,51,0
+374,super,Cozy Apt in Historic Columbia City,Seattle,WA,47.55634092,-122.2839689,1,90.00,Entire home/apt,2.21,38,0
+375,normal,"""Green"" House On the Light Rail",Seattle,WA,47.5635908,-122.2967805,1,40.00,Private room,3.61,18,0
+376,normal,Seward Park-Sleeps 10- Int'l Dist.,Seattle,WA,47.54771697,-122.2738361,1,195.00,Entire home/apt,2.87,7,1
+377,super,Columbia City apartment,Seattle,WA,47.56102095,-122.2794453,1,95.00,Entire home/apt,1.49,77,0
+378,normal,Near Columbia City Light Rail,Seattle,WA,47.56491769,-122.2926386,1,65.00,Private room,3.92,14,0
+379,super,Private Seattle/Columbia City MIL,Seattle,WA,47.56791474,-122.2907356,1,115.00,Entire home/apt,3.71,88,0
+380,normal,Family Home for Urban Travelers,Seattle,WA,47.56791074,-122.2933884,1,220.00,Entire home/apt,1.55,4,1
+381,super,Charming Seattle Guesthouse,Seattle,WA,47.56361066,-122.2890519,1,85.00,Entire home/apt,0.52,36,0
+382,super,Cheerful Seattle - Sunny Room,Seattle,WA,47.54847244,-122.278428,1,65.00,Private room,1.70,11,0
+383,super,Cozy charming 1 bedroom apartment,Seattle,WA,47.55463415,-122.2746246,1,65.00,Entire home/apt,3.30,27,0
+384,normal,Columbia City Live-Above Loft,Seattle,WA,47.55945175,-122.2836337,1,85.00,Private room,4.56,2,1
+385,normal,"Spacious, 3BR/1BA Home",Seattle,WA,47.561852,-122.2785647,1,199.00,Entire home/apt,4.96,7,0
+386,normal,Private Room in House on Light Rail,Seattle,WA,47.55195232,-122.2878219,1,35.00,Private room,3.54,4,0
+387,super,Urban Oasis: Cozy 1BD Apartment,Seattle,WA,47.5558581,-122.2729211,1,95.00,Entire home/apt,3.64,18,0
+388,super,Spacious 3BR/3BA Craftsman,Seattle,WA,47.57931035,-122.292886,1,150.00,Entire home/apt,0.26,19,1
+389,normal,Mt. Baker Home with Roof Top Views,Seattle,WA,47.59095882,-122.2945533,1,125.00,Private room,3.14,6,0
+390,super,'Streaming in Seattle,Seattle,WA,47.56840749,-122.2812188,1,99.00,Entire home/apt,0.53,28,0
+391,normal,Private Townhome 2 bedroom 1.5 bath,Seattle,WA,47.56486081,-122.2854456,1,126.00,Entire home/apt,3.37,7,0
+392,super,Brand New Daylight Apartment,Seattle,WA,47.56700879,-122.2811012,1,105.00,Entire home/apt,3.27,20,1
+393,normal,Relaxed sophistication in Mt. Baker,Seattle,WA,47.56904276,-122.282822,1,92.00,Entire home/apt,5.00,90,0
+394,super,Kayaks + Large Studio-Style Bedroom,Seattle,WA,47.54462235,-122.2695189,1,60.00,Private room,3.69,44,0
+395,normal,The Grand Palace Room w/Breakfast,Seattle,WA,47.54436649,-122.2685194,1,36.00,Private room,1.70,19,0
+396,normal,Seward Park Garden Retreat - 2 BR,Seattle,WA,47.5473219,-122.2716235,1,110.00,Entire home/apt,0.39,15,1
+397,super,Big Lake View Seward Park MIL,Seattle,WA,47.56816462,-122.2746487,1,100.00,Entire home/apt,2.84,31,0
+398,normal,Bird's Nest Queen Room w/Breakfast,Seattle,WA,47.54361388,-122.2678335,1,34.00,Private room,0.63,12,0
+399,normal,The Treehouse Room w/Breakfast,Seattle,WA,47.54496089,-122.2692332,1,41.00,Private room,4.87,21,0
+400,super,Spacious Lake View Retreat,Seattle,WA,47.56278257,-122.2719173,1,188.00,Entire home/apt,0.63,26,1
+401,normal,Private Mother-in-law Studio Apt,Seattle,WA,47.55708259,-122.2750457,1,85.00,Entire home/apt,1.20,6,0
+402,normal,Lake Washington home,Seattle,WA,47.54428285,-122.2643164,1,150.00,Entire home/apt,1.28,28,0
+403,super,PLAY- 3  Kayaks  Big 3 Bedroom Home,Seattle,WA,47.54672395,-122.2699026,1,160.00,Entire home/apt,3.78,1,0
+404,normal,"Light , Airy Loft + 1 bdrm & more",Seattle,WA,47.55199613,-122.2647216,1,115.00,Entire home/apt,3.71,16,1
+405,super,Park Place Apartment with a View,Seattle,WA,47.55581751,-122.2653516,1,127.00,Entire home/apt,2.00,21,0
+406,normal,The Love Room w/Breakfast,Seattle,WA,47.54559704,-122.2697924,1,35.00,Private room,2.69,12,0
+407,super,Spacious Family Home Close to Lake,Seattle,WA,47.55060543,-122.2681292,1,150.00,Entire home/apt,3.46,4,0
+408,normal,Steps to Lake Washington 3 bed/2 ba,Seattle,WA,47.55351274,-122.2616098,1,375.00,Entire home/apt,0.63,17,1
+409,normal,In-City Suite Retreat,Seattle,WA,47.56129726,-122.3624017,1,65.00,Entire home/apt,0.47,60,0
+410,normal,Modern & Cozy - Near DWTN/Stadiums,Seattle,WA,47.56685438,-122.365438,1,55.00,Private room,4.07,10,0
+411,normal,West Seattle Getaway,Seattle,WA,47.56612609,-122.3665814,1,148.00,Entire home/apt,3.36,17,0
+412,normal,Cottage on the Park - West Seattle,Seattle,WA,47.55374284,-122.3642352,1,95.00,Entire home/apt,1.15,12,1
+413,super,2 BR Craftsman West Seattle Home,Seattle,WA,47.56965759,-122.3617113,1,129.00,Entire home/apt,2.34,84,0
+414,super,Nice Cozy Futon in Mapleleaf,Seattle,WA,47.70438255,-122.3221015,1,30.00,Shared room,2.97,3,0
+415,super,Nice Mapleleaf Single Private Room,Seattle,WA,47.70437884,-122.3208569,1,55.00,Private room,4.59,11,0
+416,normal,Private Haven in Maple Leaf,Seattle,WA,47.69310154,-122.3086307,1,67.00,Entire home/apt,0.50,6,1
+417,normal,Seattle Cozy Cottage in Maple Leaf,Seattle,WA,47.69653132,-122.3172588,1,79.00,Entire home/apt,4.06,43,0
+418,super,Private Studio in Seattle,Seattle,WA,47.69276713,-122.3286453,1,80.00,Entire home/apt,1.42,72,0
+419,super,"Beautiful, Artistic Home, near UW",Seattle,WA,47.66962389,-122.2999644,1,280.00,Entire home/apt,4.96,22,0
+420,super,Brand New Ravenna Hideaway Near UW,Seattle,WA,47.67545173,-122.3014196,1,127.00,Entire home/apt,3.31,35,1
+421,normal,Charming Cottage Near UW and Ravena,Seattle,WA,47.6688381,-122.2993261,1,125.00,Entire home/apt,2.67,6,0
+422,normal,"Beautiful Modern Home in Ravenna,",Seattle,WA,47.68108641,-122.3074442,1,325.00,Entire home/apt,2.48,12,0
+423,super,"Private apartment, great location",Seattle,WA,47.66843834,-122.2985724,1,95.00,Entire home/apt,3.28,29,0
+424,normal,Spacious/Clean/walk U Village 05.5,Seattle,WA,47.66842181,-122.2987928,1,115.00,Entire home/apt,0.29,15,1
+425,normal,HOLIDAY DEAL- PRIVATE SPA - NEAR UW,Seattle,WA,47.67903263,-122.3119612,1,69.00,Private room,2.10,76,0
+426,normal,Seattle Greenlake Park,Seattle,WA,47.67847209,-122.3109531,1,28.00,Private room,4.96,8,0
+427,normal,Remodeled Craftsman House- Ravenna,Seattle,WA,47.6705636,-122.2979547,1,80.00,Entire home/apt,2.94,2,0
+428,normal,New List Green Lake & Bryant/UW (4,Seattle,WA,47.67574179,-122.290767,1,110.00,Entire home/apt,2.28,1,1
+429,normal,Beautiful Ravenna Hardwoods UW,Seattle,WA,47.68045144,-122.3112047,1,70.00,Private room,2.67,27,0
+430,normal,Bright & Lovely 3BD in Ravenna,Seattle,WA,47.6820872,-122.2990786,1,175.00,Entire home/apt,4.66,3,0
+431,normal,Beautiful Ravenna hardwood UW suite,Seattle,WA,47.67992235,-122.3103085,1,80.00,Private room,0.54,6,0
+432,normal,Seattle UW Greenlake,Seattle,WA,47.67857923,-122.3090026,1,35.00,Private room,3.27,9,1
+433,normal,West Seattle Guest House,Seattle,WA,47.54495178,-122.3582036,1,55.00,Entire home/apt,0.63,4,0
+434,super,West Seattle Greenbelt Garden Oasis,Seattle,WA,47.55102931,-122.3605848,1,90.00,Entire home/apt,3.21,58,0
+435,super,Cozy Private Bed/Bath in W Seattle,Seattle,WA,47.5514912,-122.3553173,1,70.00,Private room,1.02,37,0
+436,normal,Chic 1 Bed with Fantastic Lake View,Seattle,WA,47.65027652,-122.3191914,1,120.00,Entire home/apt,1.93,22,1
+437,normal,Elegant home in N. Capitol Hill,Seattle,WA,47.6474162,-122.3213751,1,525.00,Entire home/apt,1.27,4,0
+438,super,Fabulous Views of Lakes & Mountains,Seattle,WA,47.64574866,-122.3185807,1,750.00,Entire home/apt,3.81,13,0
+439,normal,"Portage Bay Escape, Seattle",Seattle,WA,47.64646126,-122.3170406,1,250.00,Entire home/apt,0.38,9,0
+440,normal,Sunny 1 Bedroom Eastlake Apartment,Seattle,WA,47.650442,-122.3219796,1,90.00,Entire home/apt,1.12,14,1
+441,normal,Beautiful 2 Bed w/Portage Bay Views,Seattle,WA,47.65112465,-122.3204309,1,160.00,Entire home/apt,0.42,25,0
+442,normal,City Farmhouse-Children's Hosp.- UW,Seattle,WA,47.66975239,-122.2875079,1,189.00,Entire home/apt,2.20,23,0
+443,normal,"Apt in Bryant, near UW &Children's",Seattle,WA,47.6811872,-122.2892574,1,95.00,Entire home/apt,1.28,8,0
+444,normal,"Arboretum Haven, Seattle 4BR House",Seattle,WA,47.64003067,-122.2985028,1,400.00,Entire home/apt,4.39,5,1
+445,super,Montlake Studio,Seattle,WA,47.64033435,-122.3052608,1,115.00,Entire home/apt,0.04,24,0
+446,normal,Heart of Seattle with Gorgeous View,Seattle,WA,47.62105904,-122.3282201,1,122.00,Entire home/apt,0.34,12,0
+447,super,Location! Capitol HiIl & Walkable!,Seattle,WA,47.61966389,-122.3191163,1,69.00,Private room,0.97,124,0
+448,normal,Capitol Hill Gem,Seattle,WA,47.62223016,-122.3140922,1,70.00,Entire home/apt,2.97,64,1
+449,super,Center of Pike Street,Seattle,WA,47.6131379,-122.3175377,1,149.00,Entire home/apt,3.12,43,0
+450,normal,1BR Cozy Apartment in Capitol Hill,Seattle,WA,47.61596662,-122.3269378,1,79.00,Entire home/apt,4.17,278,0
+451,normal,1BR/1BA Comfy Apt in Capitol Hill,Seattle,WA,47.61704199,-122.3268645,1,79.00,Entire home/apt,2.50,189,0
+452,super,Bright + Colorful in Capitol Hill,Seattle,WA,47.62216676,-122.3168726,1,175.00,Entire home/apt,0.17,6,1
+453,super,Charming Capitol Hill Room,Seattle,WA,47.61967738,-122.324147,1,90.00,Private room,1.89,175,0
+454,super,Suite in Capitol Hill Townhouse,Seattle,WA,47.62087465,-122.3180539,1,69.00,Private room,4.31,104,0
+455,normal,Gorgeous 1BD Apt in Capitol Hill,Seattle,WA,47.61541249,-122.3249676,1,110.00,Entire home/apt,4.59,5,0
+456,normal,Great location with 98 walk score,Seattle,WA,47.61419077,-122.3238923,1,98.00,Entire home/apt,3.14,22,1
+457,normal,Huge 2 BR Apartment - Cap Hill!,Seattle,WA,47.62545592,-122.3217415,1,325.00,Entire home/apt,4.03,23,0
+458,normal,A warm bed for your cold nights,Seattle,WA,47.61487388,-122.3141773,1,150.00,Entire home/apt,1.52,3,0
+459,normal,Master Suite B in Capitol Hill Home,Seattle,WA,47.62491803,-122.3260381,1,79.00,Private room,2.57,132,0
+460,normal,The Joy of Art (Capitol Hill),Seattle,WA,47.61794177,-122.3168816,1,79.00,Entire home/apt,3.84,5,1
+461,normal,Cap Hill - Artsy Studio 95walkscore,Seattle,WA,47.62013094,-122.3240287,1,114.00,Entire home/apt,1.46,6,0
+462,super,Capitol Hill 2 BR near Downtown,Seattle,WA,47.62066334,-122.3246612,1,100.00,Entire home/apt,3.37,12,0
+463,super,The Casbah,Seattle,WA,47.6211414,-122.3248927,1,125.00,Entire home/apt,4.17,27,0
+464,normal,Cozy Private 1BR Oasis,Seattle,WA,47.62202852,-122.3163546,1,89.00,Private room,2.56,19,1
+465,super,Seattle apartment 1BR,Seattle,WA,47.62387815,-122.3262496,1,140.00,Entire home/apt,2.71,8,0
+466,normal,The heart of Capitol Hill,Seattle,WA,47.6236286,-122.3268892,1,49.00,Entire home/apt,4.67,2,0
+467,super,Short-term stays 2br Capitol Hill,Seattle,WA,47.62112453,-122.3248723,1,150.00,Entire home/apt,2.53,5,0
+468,normal,Old World Charm in Modern Seattle,Seattle,WA,47.62659131,-122.3267556,1,115.00,Entire home/apt,1.73,17,1
+469,normal,Stay in the heart of Capitol Hill!,Seattle,WA,47.61677145,-122.3175892,1,120.00,Private room,4.51,41,0
+470,normal,Historic Heart of Capitol Hill,Seattle,WA,47.6226625,-122.327929,1,100.00,Entire home/apt,4.10,3,0
+471,normal,Renovated 1904 Capitol Hill classic,Seattle,WA,47.62425179,-122.3258175,1,260.00,Entire home/apt,0.19,23,0
+472,normal,Spacious Apartment in Capitol Hill!,Seattle,WA,47.61545123,-122.3287407,1,69.00,Entire home/apt,2.80,255,1
+473,normal,Private Room - Capitol Hill Seattle,Seattle,WA,47.62199891,-122.3222824,1,60.00,Private room,1.98,147,0
+474,normal,Musical Oasis in Cap Hill,Seattle,WA,47.61865424,-122.3142091,1,115.00,Entire home/apt,0.69,4,0
+475,normal,Private room near downtown Seattle,Seattle,WA,47.63372311,-122.322346,1,55.00,Private room,3.57,19,0
+476,normal,Modern Spacious 2BD Apt - Cap Hill,Seattle,WA,47.61503544,-122.3158878,1,600.00,Entire home/apt,4.66,1,1
+477,normal,Capitol Hill Studio Apartment,Seattle,WA,47.61705478,-122.325925,1,120.00,Entire home/apt,4.77,7,0
+478,super,Huge 2 BR/2 Bath-Heart of Cap Hill,Seattle,WA,47.62304603,-122.3204654,1,209.00,Entire home/apt,3.53,29,0
+479,normal,"MODERN, Spacious, new  LOCATION",Seattle,WA,47.62319865,-122.3252505,1,109.00,Entire home/apt,3.44,44,0
+480,normal,Prime Cap Hill w/ Fireplace & SPACE,Seattle,WA,47.61812929,-122.3148371,1,39.00,Private room,1.31,66,1
+481,normal,Stylish One Bedroom in Capitol Hill,Seattle,WA,47.61445783,-122.3142697,1,125.00,Entire home/apt,3.72,21,0
+482,normal,Bdrm in Designer's Cap Hill Apt,Seattle,WA,47.62447069,-122.3184992,1,104.00,Private room,1.52,22,0
+483,normal,Stylish Modern Loft in Capitol Hill,Seattle,WA,47.6236202,-122.3169666,1,180.00,Entire home/apt,3.96,8,0
+484,normal,Master Suite A in Capitol Hill Home,Seattle,WA,47.62563419,-122.3246633,1,79.00,Private room,1.73,67,1
+485,super,Modern 1BR/1BA with Skyline Views,Seattle,WA,47.61530315,-122.3277021,1,199.00,Entire home/apt,1.82,32,0
+486,normal,Fantastic mountain view 2-bdrm home,Seattle,WA,47.62289407,-122.325575,1,195.00,Entire home/apt,4.56,30,0
+487,normal,2BR/1BA Capitol Hill Bungalow/Loft,Seattle,WA,47.62162739,-122.3169293,1,169.00,Entire home/apt,3.10,78,0
+488,normal,Spacious Urban 1 Bedroom Condo,Seattle,WA,47.61327018,-122.32947,1,140.00,Entire home/apt,1.41,7,1
+489,normal,Charming Private 1BR Oasis,Seattle,WA,47.62205058,-122.3155991,1,89.00,Private room,2.27,38,0
+490,super,Bright + Spacious Capitol Hill Home,Seattle,WA,47.61929785,-122.3158458,1,120.00,Entire home/apt,3.07,24,0
+491,normal,"Studio Appartment, Stunning View",Seattle,WA,47.62364523,-122.3234775,1,110.00,Entire home/apt,4.18,12,0
+492,super,"Quaint, charming, updated studio",Seattle,WA,47.61436709,-122.3141281,1,126.00,Entire home/apt,2.70,29,1
+493,normal,Private 2 BR OASIS,Seattle,WA,47.61993522,-122.3183405,1,159.00,Entire home/apt,3.10,18,0
+494,super,Short-term stays in beautiful home,Seattle,WA,47.62026524,-122.3245313,1,300.00,Entire home/apt,0.31,2,0
+495,normal,Spacious 1920s Capitol Hill duplex,Seattle,WA,47.61953599,-122.3132902,1,200.00,Entire home/apt,0.35,1,0
+496,super,2 Huge Private Rooms + Common Area,Seattle,WA,47.68211267,-122.378638,1,105.00,Entire home/apt,1.38,89,1
+497,normal,Private Room & Bath in Ballard!,Seattle,WA,47.67710277,-122.3773924,1,69.00,Private room,2.35,6,0
+498,normal,"Northgate - Large, Private, Comfy",Seattle,WA,47.7125858,-122.3107041,1,60.00,Private room,0.11,4,0
+499,normal,Charming Natural Home in N. Seattle,Seattle,WA,47.71230539,-122.3114857,1,129.00,Entire home/apt,3.09,6,0
+500,normal,Urban Cottage by the Lake ,Seattle,WA,47.70245477,-122.2764195,1,119.00,Entire home/apt,1.88,37,1
+501,normal,Mathew's Beach -  Sunny Guest Suite,Seattle,WA,47.70249345,-122.2774304,1,87.00,Entire home/apt,2.34,26,0
+502,normal,NE Seattle Private Entry Studio!,Seattle,WA,47.70648992,-122.2791645,1,70.00,Private room,1.80,2,0
+503,super,Charming 1940 Ballard House,Seattle,WA,47.67959073,-122.3700101,1,140.00,Entire home/apt,0.20,19,0
+504,super,Cozy Basement Apartment in Ballard,Seattle,WA,47.68854019,-122.3668116,1,90.00,Entire home/apt,4.51,39,1
+505,super,Cozy Hip Vintage MIL Apt in Ballard,Seattle,WA,47.67720865,-122.3696957,1,115.00,Entire home/apt,0.69,119,0
+506,super,Ballard Backyard Cottage,Seattle,WA,47.67909007,-122.3696747,1,115.00,Entire home/apt,1.20,82,0
+507,normal,Private Floor in Ballard Craftsman,Seattle,WA,47.67980166,-122.3750696,1,69.00,Private room,3.06,38,0
+508,normal,Tiny House in Seattle,Seattle,WA,47.71348023,-122.2937874,1,89.00,Entire home/apt,2.31,5,1
+509,normal,"One Bedroom Apartment, Two Beds",Seattle,WA,47.72156281,-122.3076705,1,93.00,Entire home/apt,1.16,19,0
+510,normal,1st Room in Entire House! Relaxing!,Seattle,WA,47.72588166,-122.3010631,1,54.00,Private room,1.30,11,0
+511,normal,Ravenna/Roosevelt Roost,Seattle,WA,47.67432059,-122.3131459,1,110.00,Entire home/apt,2.53,12,0
+512,super,Shared Roosevelt Room,Seattle,WA,47.68527202,-122.3175512,1,33.00,Shared room,0.53,18,1
+513,super,1 Bdrm Modern Apt w/Great Location!,Seattle,WA,47.62490007,-122.3521009,1,125.00,Entire home/apt,2.21,29,0
+514,super,"""The"" Post Card View for You.",Seattle,WA,47.629268,-122.3591284,1,498.00,Entire home/apt,3.62,12,0
+515,super,Queen Anne - Comforts of home,Seattle,WA,47.62715149,-122.3574634,1,165.00,Entire home/apt,2.09,27,0
+516,normal,Bright and Sunny  1 bedroom Apt.,Seattle,WA,47.62776783,-122.3481059,1,115.00,Entire home/apt,1.25,4,1
+517,normal,"Best location, best deal in Seattle",Seattle,WA,47.62652554,-122.3528828,1,115.00,Entire home/apt,1.60,7,0
+518,normal,Spacious Seattle Center Townhouse,Seattle,WA,47.6260756,-122.344504,1,310.00,Entire home/apt,3.22,3,0
+519,normal,Waterfront/Space Needle/Dwntwn View,Seattle,WA,47.62632061,-122.357367,1,200.00,Entire home/apt,3.10,27,0
+520,normal,Private room with landscaped patio,Seattle,WA,47.62737585,-122.3442534,1,119.00,Private room,0.18,1,1
+521,normal,Modern Unit Near Seattle Center,Seattle,WA,47.62517702,-122.3620206,1,145.00,Entire home/apt,0.42,5,0
+522,super,A min away from Space Needle,Seattle,WA,47.62107188,-122.3531244,1,90.00,Entire home/apt,3.58,37,0
+523,normal,Guest House near UW,Seattle,WA,47.69544921,-122.2825625,1,100.00,Entire home/apt,4.59,3,0
+524,normal,2 BR Charming North Beach Home,Seattle,WA,47.69833693,-122.3927103,1,180.00,Entire home/apt,1.25,4,1
+525,normal,View Home in North Seattle,Seattle,WA,47.69810649,-122.3846413,1,275.00,Entire home/apt,2.98,2,0
+526,normal,Sunny Sylvan Setting N. Ballard,Seattle,WA,47.70863157,-122.3752477,1,108.00,Entire home/apt,3.49,2,0
+527,normal,Calm artist's home in Cedar Park ,Seattle,WA,47.72124669,-122.2877308,1,110.00,Entire home/apt,3.51,3,0
+528,normal,Two rooms for Family of 4 for 130!,Seattle,WA,47.71468782,-122.3546805,1,170.00,Private room,3.57,1,1
+529,normal,HotelLike with Full Kitchen/Parking,Seattle,WA,47.70506215,-122.3464841,1,78.00,Entire home/apt,2.24,2,0
+530,super,North Seattle Charmer,Seattle,WA,47.72345667,-122.3500068,1,60.00,Entire home/apt,2.82,21,0
+531,normal,"Cozy Cove, Hot tub - private bath",Seattle,WA,47.72478219,-122.3530666,1,64.00,Private room,3.71,13,0
+532,normal,3 Bed Greenwood Townhome in Seattle,Seattle,WA,47.71503286,-122.3553444,1,190.00,Entire home/apt,3.10,6,1
+533,normal,"Spacious 3 bd, 15 min to downtown",Seattle,WA,47.70757882,-122.3368082,1,200.00,Entire home/apt,1.65,3,0
+534,super,"Large, comfy, light, garden studio",Seattle,WA,47.72741971,-122.3276389,1,125.00,Entire home/apt,3.97,71,0
+535,normal,Newly remodeled 2 bed townhouse!,Seattle,WA,47.71245005,-122.3264177,1,125.00,Entire home/apt,0.24,5,0
+536,super,Modern 2 Bedroom Suite,Seattle,WA,47.69359618,-122.3404228,1,85.00,Entire home/apt,3.76,30,1
+537,normal,New apartment with all the comfort.,Seattle,WA,47.68087331,-122.3561299,1,95.00,Entire home/apt,2.07,54,0
+538,normal,Convenient Friendly Home~Ballard~M2,Seattle,WA,47.67782449,-122.3651603,1,60.00,Private room,1.92,6,0
+539,normal,Oh hey! Look another room!,Seattle,WA,47.67855174,-122.3658222,1,50.00,Private room,4.66,6,0
+540,normal,ECO PIED A TERRE-All New w/ Parking,Seattle,WA,47.67782055,-122.3616985,1,88.00,Entire home/apt,0.46,5,1
+541,normal,Elegant Townhouse in Phinney Ridge,Seattle,WA,47.67391347,-122.3554197,1,70.00,Private room,2.79,13,0
+542,normal,Phinney Ridge Bungalow,Seattle,WA,47.67773946,-122.3567107,1,175.00,Entire home/apt,3.99,12,0
+543,super,Sweet Craftsman on Phinney Ridge,Seattle,WA,47.67095719,-122.3564304,1,200.00,Entire home/apt,2.56,14,0
+544,super,"Brand New, Bright, Modern Apartment",Seattle,WA,47.67889407,-122.3560334,1,135.00,Entire home/apt,2.50,26,1
+545,super,December Special! Perfect Location!,Seattle,WA,47.67297727,-122.352263,1,155.00,Entire home/apt,1.57,15,0
+546,normal,Guest Suite 3BR/1BA/Kitchenette,Seattle,WA,47.67745585,-122.3576312,1,78.00,Entire home/apt,0.38,64,0
+547,super,Workshop Studio,Seattle,WA,47.66549323,-122.3487635,1,85.00,Entire home/apt,0.24,6,0
+548,normal,"Quiet, sunny Phinney 1BR oasis",Seattle,WA,47.68061842,-122.3532536,1,55.00,Private room,1.67,22,1
+549,normal,Charming 2 BD 1 BA Apt,Seattle,WA,47.67185678,-122.2745781,1,200.00,Entire home/apt,4.00,3,0
+550,normal,Luxury Treehouse Garden Cottage,Seattle,WA,47.66840976,-122.2702469,1,165.00,Entire home/apt,0.40,6,0
+551,normal,Charming garden retreat near UW,Seattle,WA,47.67145028,-122.2763682,1,85.00,Entire home/apt,4.85,11,0
+552,super,Your Warm  Retreat ,Seattle,WA,47.67105428,-122.2789072,1,62.00,Private room,0.44,11,1
+553,normal,Close to the UW in Laurelhurst,Seattle,WA,47.65964048,-122.2707777,1,185.00,Entire home/apt,1.70,15,0
+554,normal,Private Studio near UW & Childrens,Seattle,WA,47.66622534,-122.2767564,1,55.00,Private room,4.79,14,0
+555,normal,Private mother-in-law studio apt.,Seattle,WA,47.64767852,-122.3924742,1,110.00,Entire home/apt,2.29,12,0
+556,super,Modern Drama Above Magnolia,Seattle,WA,47.64120565,-122.3868656,1,150.00,Entire home/apt,3.82,50,1
+557,super,View Home 3.7 mi from Pike Pl. Mkt.,Seattle,WA,47.63791251,-122.3912642,1,330.00,Entire home/apt,2.03,37,0
+558,super,Modern Magnolia Atelier,Seattle,WA,47.64032523,-122.3866494,1,125.00,Entire home/apt,2.11,17,0
+559,super,"Cozy, quiet room in West Seattle",Seattle,WA,47.53463339,-122.3646802,1,72.00,Private room,4.99,34,0
+560,super,Cozy Room West Seattle,Seattle,WA,47.5460282,-122.3710802,1,49.00,Private room,4.42,13,1
+561,super,Sweet Studio -Water & Mountain view,Seattle,WA,47.54543065,-122.3978373,1,76.00,Entire home/apt,2.35,106,0
+562,normal,Oasis Near Puget Sound with Kitchen,Seattle,WA,47.5520126,-122.3936926,1,110.00,Entire home/apt,1.13,18,0
+563,normal,"Mid-Century Retreat, Saltwater View",Seattle,WA,47.55914901,-122.3975754,1,85.00,Entire home/apt,0.27,2,0
+564,normal,The Hideout at Alaska Junction,Seattle,WA,47.55872251,-122.3883222,1,109.00,Entire home/apt,3.46,9,1
+565,normal,Le Petite Retreat,Seattle,WA,47.55929524,-122.4025936,1,200.00,Entire home/apt,3.71,5,0
+566,super,Georgetown Loft Apartment,Seattle,WA,47.54624715,-122.3196416,1,99.00,Entire home/apt,2.53,6,0
+567,normal,Zen space/yoga room warm and modern,Seattle,WA,47.55004279,-122.3177987,1,75.00,Private room,3.16,20,0
+568,normal,Sweet home away from home,Seattle,WA,47.52668,-122.3160364,1,105.00,Entire home/apt,0.74,15,1
+569,super,The Mod Pod- Basement Suite,Seattle,WA,47.52543323,-122.3434649,1,150.00,Private room,3.40,26,0
+570,normal,West Seattle Highland Park Hideaway,Seattle,WA,47.51881769,-122.3525985,1,129.00,Entire home/apt,3.14,5,0
+571,normal,Down Town Madison Park Apartment,Seattle,WA,47.6340786,-122.2788966,1,95.00,Entire home/apt,0.27,3,0
+572,normal,Lakeside Suite near Beach and Shops,Seattle,WA,47.63800389,-122.277791,1,109.00,Entire home/apt,1.77,5,1
+573,normal,Cozy Lakeside Apt in Seattle,Seattle,WA,47.64020779,-122.2797482,1,70.00,Entire home/apt,1.23,33,0
+574,normal,Swanky 1 bdrm near Beach & Dining,Seattle,WA,47.63713429,-122.2767983,1,139.00,Entire home/apt,1.69,1,0
+575,normal,Private Studio apt in Capitol Hill,Seattle,WA,47.62005089,-122.3093351,1,45.00,Entire home/apt,3.46,8,0
+576,normal,Lofted urban retreat with roof deck,Seattle,WA,47.62215175,-122.3079759,1,300.00,Entire home/apt,0.98,4,1
+577,super,Urban Oasis,Seattle,WA,47.62513799,-122.3055617,1,150.00,Entire home/apt,3.58,40,0
+578,super,"TL ""Philly"": newly renovated 1 bed",Seattle,WA,47.6224711,-122.2979162,1,150.00,Entire home/apt,0.72,9,0
+579,normal,2 bedroom house w/hot tub,Seattle,WA,47.62721635,-122.2999069,1,115.00,Entire home/apt,4.31,9,0
+580,normal,"Classic home, heart of Capitol Hill",Seattle,WA,47.62304614,-122.304907,1,250.00,Entire home/apt,2.20,20,1
+581,normal,Sunny cottage style home with views,Seattle,WA,47.62162098,-122.3012953,1,125.00,Entire home/apt,1.16,1,0
+582,normal,Modern Townhouse in Capitol Hill,Seattle,WA,47.61781792,-122.3064098,1,126.00,Entire home/apt,4.35,69,0
+583,normal,Capitol Hill Carriage House,Seattle,WA,47.63077279,-122.3033232,1,125.00,Entire home/apt,3.98,13,0
+584,super,"TL ""New York"": renovated 2bed/2bath",Seattle,WA,47.62206057,-122.2986838,1,250.00,Entire home/apt,3.79,14,1
+585,normal,Quiet yet urban Capitol Hill house,Seattle,WA,47.62297658,-122.3017725,1,165.00,Entire home/apt,4.05,28,0
+586,normal,"Urban oasis, perfect for dog owners",Seattle,WA,47.62379516,-122.3021168,1,125.00,Entire home/apt,3.96,7,0
+587,normal,"Amazing Location, Luxury Townhouse!",Seattle,WA,47.61686797,-122.3107446,1,97.00,Private room,0.95,12,0
+588,super,The Aerodrome: Luxury 3bed/2.5bath,Seattle,WA,47.62111909,-122.2997382,1,450.00,Entire home/apt,0.72,23,1
+589,normal,Great Seattle Master Bed Guestroom!,Seattle,WA,47.71403266,-122.3559685,1,68.00,Private room,0.46,16,0
+590,normal,Great Seattle Queen bed guestroom!,Seattle,WA,47.71479712,-122.3558747,1,86.00,Private room,2.80,21,0
+591,normal,Super cool in artsy Fremont!,Seattle,WA,47.65429759,-122.3525885,1,84.00,Entire home/apt,0.04,84,0
+592,super,"Modern, Light-Filled Fremont Flat",Seattle,WA,47.65437102,-122.3574538,1,140.00,Entire home/apt,0.78,25,1
+593,super,"3br,modern,fire place, chef kitchen",Seattle,WA,47.65302813,-122.3426828,1,275.00,Entire home/apt,3.18,67,0
+594,normal,1907 Fremont/Ballard Home,Seattle,WA,47.65555551,-122.3591348,1,59.00,Private room,1.37,1,0
+595,normal,Artist Bungalow in Fremont,Seattle,WA,47.65717506,-122.3451076,1,200.00,Entire home/apt,3.08,4,0
+596,normal,Tree top views in artsy Fremont,Seattle,WA,47.65445182,-122.3544034,1,54.00,Private room,3.46,72,1
+597,normal,Treetop & mountain views - Fremont!,Seattle,WA,47.6548713,-122.3532555,1,50.00,Private room,0.51,58,0
+598,normal,Bungalow in beautiful Fremont,Seattle,WA,47.65667972,-122.3474003,1,68.00,Private room,1.51,35,0
+599,normal,The Fremont Flat..Luxury,Seattle,WA,47.6554117,-122.3443102,1,185.00,Entire home/apt,2.84,9,0
+600,normal,December SALE! NEW 2bed Wallingford,Seattle,WA,47.66001977,-122.3454578,1,149.00,Entire home/apt,3.00,4,1
+601,normal,Fremont Garden Apartment,Seattle,WA,47.65887304,-122.3508347,1,99.00,Entire home/apt,3.58,10,0
+602,super,Fremont Cozy Cottage,Seattle,WA,47.65898192,-122.3522756,1,95.00,Entire home/apt,3.77,58,0
+603,normal,Sweet Retreat ,Seattle,WA,47.65163995,-122.3527241,1,125.00,Entire home/apt,4.90,36,0
+604,normal,3 bedroom house in Fremont/Ballard,Seattle,WA,47.65767456,-122.358685,1,400.00,Entire home/apt,1.66,4,1
+605,normal,Charming 2 Bedroom Home in Fremont,Seattle,WA,47.65630303,-122.356368,1,225.00,Entire home/apt,2.30,8,0
+606,normal,Troll's Fremont Farmhouse DeckViews,Seattle,WA,47.65211429,-122.3456742,1,79.00,Entire home/apt,0.46,53,0
+607,super,Seattle Sojourn - Fremont Guest Apt,Seattle,WA,47.65758911,-122.3543762,1,115.00,Entire home/apt,4.00,65,0
+608,normal,Fresh Eggs in Fremont,Seattle,WA,47.65584565,-122.3564914,1,90.00,Entire home/apt,3.21,22,1
+609,normal,Cozy Modern Apartment in Fremont,Seattle,WA,47.6567386,-122.3448651,1,115.00,Entire home/apt,0.86,14,0
+610,normal,Private Suite in Fremont-Ballard,Seattle,WA,47.65914879,-122.3634656,1,85.00,Private room,0.09,11,0
+611,super,Cedar House Studio Suite in Fremont,Seattle,WA,47.66085628,-122.3524009,1,125.00,Entire home/apt,3.99,12,0
+612,normal,2 BR/1 BA Fremont Apt w/ parking,Seattle,WA,47.65315764,-122.3562852,1,100.00,Entire home/apt,0.86,10,1
+613,normal,Beautiful Craftsman - Fremont 3 Bed,Seattle,WA,47.6620365,-122.3504849,1,175.00,Entire home/apt,3.66,29,0
+614,normal,Fremont Farmhouse,Seattle,WA,47.65420514,-122.3526037,1,154.00,Entire home/apt,3.54,5,0
+615,normal,Portage Bay View!-One Bedroom Apt,Seattle,WA,47.64955163,-122.3183086,1,79.00,Entire home/apt,1.14,2,0
+>>>>>>> feat/be/geo,map-alex

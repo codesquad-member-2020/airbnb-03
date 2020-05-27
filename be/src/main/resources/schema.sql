@@ -1,10 +1,14 @@
 drop table if exists calendar;
 drop table if exists images;
+<<<<<<< HEAD
 drop table if exists bookmarks;
 drop table if exists detail;
 drop table if exists user;
 drop table if exists bookings;
 drop table if exists properties;
+=======
+drop table if exists calender;
+>>>>>>> feat/be/geo,map-alex
 
 create table if not exists properties
 (
@@ -27,8 +31,8 @@ create table if not exists properties
 create table if not exists bookings
 (
     id                INT AUTO_INCREMENT,
-    check_in_date     DATETIME,
-    check_out_date    DATETIME,
+    check_in_date     DATE,
+    check_out_date    DATE,
     booking_date      DATETIME,
     cleaning_fee      DECIMAL(10, 3),
     service_fee       DECIMAL(10, 3),
@@ -70,12 +74,12 @@ create table if not exists detail
     service_fee                 DOUBLE,
     cleaning_fee                DOUBLE,
     tax                         DOUBLE,
-    review_scores_accuracy      DECIMAL(2,1),
-    review_scores_cleanliness   DECIMAL(2,1),
-    review_scores_checkin       DECIMAL(2,1),
-    review_scores_communication DECIMAL(2,1),
-    review_scores_location      DECIMAL(2,1),
-    review_scores_value         DECIMAL(2,1),
+    review_scores_accuracy      DECIMAL(2, 1),
+    review_scores_cleanliness   DECIMAL(2, 1),
+    review_scores_checkin       DECIMAL(2, 1),
+    review_scores_communication DECIMAL(2, 1),
+    review_scores_location      DECIMAL(2, 1),
+    review_scores_value         DECIMAL(2, 1),
     primary key (id)
 );
 
@@ -96,9 +100,16 @@ create table if not exists images
     primary key (id)
 );
 
+<<<<<<< HEAD
 create table if not exists calendar
 (
     id               INT AUTO_INCREMENT,
+=======
+create table if not exists calender
+(
+    id               INT AUTO_INCREMENT,
+    is_available     BOOLEAN,
+>>>>>>> feat/be/geo,map-alex
     reservation_date DATE,
     properties_id    INT REFERENCES properties (id),
     primary key (id)
