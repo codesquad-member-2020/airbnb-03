@@ -23,7 +23,10 @@ class StayCell: UICollectionViewCell {
         self.thumbImagePagingView.configureStackView(numberOfImage: stay.images.count)
         self.superHostLabel.isHidden = stay.hostType != "super"
         #warning("update SaveButton status")
-        #warning("Fetch thumbnail images")
+    }
+    
+    func updateImage(at index: Int, data: Data) {
+        thumbImagePagingView.updateImage(at: index, data: data)
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {

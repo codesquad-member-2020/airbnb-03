@@ -26,6 +26,11 @@ final class ThumbImagePagingView: UIView {
         }
     }
     
+    func updateImage(at index: Int, data: Data) {
+        let thumbImageViews = imageStackView.arrangedSubviews as! [ThumbImageView]
+        thumbImageViews[index].image = UIImage(data: data)
+    }
+    
     private func configure() {
         configureUI()
         configureScrollViewDelegate()
