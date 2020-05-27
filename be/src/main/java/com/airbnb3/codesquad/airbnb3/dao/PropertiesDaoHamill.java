@@ -1,7 +1,8 @@
 package com.airbnb3.codesquad.airbnb3.dao;
 
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDetailDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -77,67 +78,113 @@ public class PropertiesDaoHamill {
                 , priceMin, priceMax, checkIn, checkOut, accommodates, offset);
     }
 
+    public DetailDtoHamill findByPropertiesId(int propertiesId) {
+
+        String sql =
+                "SELECT p.id,\n" +
+                        "       p.city,\n" +
+                        "       p.state,\n" +
+                        "       p.title,\n" +
+                        "       p.state,\n" +
+                        "       p.city,\n" +
+                        "       p.latitude,\n" +
+                        "       p.longitude,\n" +
+                        "       p.reservable,\n" +
+                        "       p.saved,\n" +
+                        "       CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,\n" +
+                        "       p.price,\n" +
+                        "       p.place_type,\n" +
+                        "       p.review_average,\n" +
+                        "       p.number_of_reviews,\n" +
+                        "       GROUP_CONCAT(i.image_url)                       AS image,\n" +
+                        "       d.summary,\n" +
+                        "       d.space,\n" +
+                        "       d.city_overview,\n" +
+                        "       d.notes,\n" +
+                        "       d.transit,\n" +
+                        "       d.host_name,\n" +
+                        "       d.host_since,\n" +
+                        "       d.host_location,\n" +
+                        "       d.host_about,\n" +
+                        "       d.address,\n" +
+                        "       d.accommodates,\n" +
+                        "       d.bathrooms,\n" +
+                        "       d.bedrooms,\n" +
+                        "       d.beds,\n" +
+                        "       d.bed_type,\n" +
+                        "       REPLACE(d.amenities, '\"', '')                  AS amenity,\n" +
+                        "       d.service_fee,\n" +
+                        "       d.cleaning_fee,\n" +
+                        "       d.tax,\n" +
+                        "       d.review_scores_accuracy,\n" +
+                        "       d.review_scores_cleanliness,\n" +
+                        "       d.review_scores_checkin,\n" +
+                        "       d.review_scores_communication,\n" +
+                        "       d.review_scores_location,\n" +
+                        "       d.review_scores_value\n" +
+                        "FROM properties p\n" +
+                        "         LEFT JOIN detail d ON p.id = d.id\n" +
+                        "         LEFT JOIN images i ON p.id = i.properties_id\n" +
+                        "WHERE p.id = ?";
+
+        return jdbcTemplate.queryForObject(
+                sql,
+                ((rs, rowNum) ->
+                        DetailDtoHamill.builder()
+                                       .id(rs.getLong("id"))
+                                       .title(rs.getString("title"))
+                                       .reservable(rs.getBoolean("reservable"))
+                                       .saved(rs.getBoolean("saved"))
+                                       .images(imageParser(rs.getString("image")))
+                                       .hostInfo(HostDtoHamill.builder()
+                                                              .isSuperHost(rs.getBoolean("is_super_host"))
+                                                              .notes(rs.getString("notes"))
+                                                              .hostName(rs.getString("host_name"))
+                                                              .hostSince(rs.getString("host_since"))
+                                                              .hostLocation(rs.getString("host_location"))
+                                                              .hostAbout(rs.getString("host_about"))
+                                                              .build())
+                                       .locationInfo(LocationDtoHamill.builder()
+                                                                      .address(rs.getString("address"))
+                                                                      .cityOverview(rs.getString("city_overview"))
+                                                                      .transit(rs.getString("transit"))
+                                                                      .latitude(rs.getDouble("latitude"))
+                                                                      .longitude(rs.getDouble("longitude"))
+                                                                      .build())
+                                       .priceInfo(PriceDtoHamill.builder()
+                                                                .price(rs.getDouble("price"))
+                                                                .serviceFee(rs.getDouble("service_fee"))
+                                                                .cleaningFee(rs.getDouble("cleaning_fee"))
+                                                                .tax(rs.getDouble("tax"))
+                                                                .build())
+                                       .reviewInfo(ReviewDtoHamill.builder()
+                                                                  .reviewAverage(rs.getDouble("review_average"))
+                                                                  .numberOfReviews(rs.getInt("number_of_reviews"))
+                                                                  .reviewScoresAccuracy(rs.getDouble("review_scores_accuracy"))
+                                                                  .reviewScoresCheckin(rs.getDouble("review_scores_checkin"))
+                                                                  .reviewScoresCleanliness(rs.getDouble("review_scores_cleanliness"))
+                                                                  .reviewScoresCommunication(rs.getDouble("review_scores_communication"))
+                                                                  .reviewScoresLocation(rs.getDouble("review_scores_location"))
+                                                                  .reviewScoresValue(rs.getDouble("review_scores_value"))
+                                                                  .build())
+                                       .roomInfo(RoomDtoHamill.builder()
+                                                              .accommodates(rs.getInt("accommodates"))
+                                                              .amenities(rs.getString("amenity"))
+                                                              .bathrooms(rs.getInt("bathrooms"))
+                                                              .bedrooms(rs.getInt("bedrooms"))
+                                                              .beds(rs.getInt("beds"))
+                                                              .bedType(rs.getString("bed_type"))
+                                                              .placeType(rs.getString("place_type"))
+                                                              .space(rs.getString("space"))
+                                                              .summary(rs.getString("summary"))
+                                                              .build())
+                                       .build()
+                )
+                , propertiesId);
+    }
+
     private List<String> imageParser(String images) {
         String[] image = images.split(",");
         return Arrays.asList(image);
-    }
-
-    public PropertiesDetailDtoHamill findByPropertiesId(int propertiesId) {
-
-        return jdbcTemplate.queryForObject(
-                "SELECT p.id, p.title,p.latitude, p.longitude, p.reservable,p.saved,p.host_type," +
-                        " p.price,p.place_type,p.review_average,p.number_of_reviews," +
-                        " GROUP_CONCAT(i.image_url) AS image, d.summary, d.space, d.city_overview, d.address," +
-                        " d.notes, d.transit, d.host_name, d.host_since, d.host_location, d.host_about," +
-                        " d.accommodates, d.bathrooms, d.bedrooms, d.beds, d.bed_type, d.amenities," +
-                        " d.service_fee, d.cleaning_fee, d.tax, d.review_scores_accuracy," +
-                        " d.review_scores_cleanliness, d.review_scores_checkin, d.review_scores_communication," +
-                        " d.review_scores_location, d.review_scores_value FROM properties p" +
-                        "    LEFT JOIN images i ON p.id = i.properties_id" +
-                        "    LEFT JOIN detail d ON p.id = d.id" +
-                        " WHERE p.id = ?" +
-                        " GROUP BY p.id;",
-                ((rs, rowNum) ->
-                        PropertiesDetailDtoHamill.builder()
-                                                 .id(rs.getLong("id"))
-                                                 .title(rs.getString("title"))
-                                                 .address(rs.getString("address"))
-                                                 .latitude(rs.getDouble("latitude"))
-                                                 .longitude(rs.getDouble("longitude"))
-                                                 .reservable(rs.getBoolean("reservable"))
-                                                 .saved(rs.getBoolean("saved"))
-                                                 .hostType(rs.getString("host_type"))
-                                                 .price(rs.getDouble("price"))
-                                                 .placeType(rs.getString("place_type"))
-                                                 .reviewAverage(rs.getDouble("review_average"))
-                                                 .numberOfReviews(rs.getInt("number_of_reviews"))
-                                                 .images(imageParser(rs.getString("image")))
-                                                 .summary(rs.getString("summary"))
-                                                 .space(rs.getString("space"))
-                                                 .cityOverview(rs.getString("city_overview"))
-                                                 .notes(rs.getString("notes"))
-                                                 .transit(rs.getString("transit"))
-                                                 .hostName(rs.getString("host_name"))
-                                                 .hostSince(rs.getString("host_since"))
-                                                 .hostLocation(rs.getString("host_location"))
-                                                 .hostAbout(rs.getString("host_about"))
-                                                 .accommodates(rs.getInt("accommodates"))
-                                                 .bathrooms(rs.getInt("bathrooms"))
-                                                 .bedrooms(rs.getInt("bedrooms"))
-                                                 .beds(rs.getInt("beds"))
-                                                 .bedType(rs.getString("bed_type"))
-                                                 .amenities(rs.getString("amenities"))
-                                                 .serviceFee(rs.getDouble("service_fee"))
-                                                 .cleaningFee(rs.getDouble("cleaning_fee"))
-                                                 .tax(rs.getDouble("tax"))
-                                                 .reviewScoresAccuracy(rs.getDouble("review_scores_accuracy"))
-                                                 .reviewScoresCleanliness(rs.getDouble("review_scores_cleanliness"))
-                                                 .reviewScoresCheckin(rs.getDouble("review_scores_checkin"))
-                                                 .reviewScoresCommunication(rs.getDouble("review_scores_communication"))
-                                                 .reviewScoresLocation(rs.getDouble("review_scores_location"))
-                                                 .reviewScoresValue(rs.getDouble("review_scores_value"))
-                                                 .build()
-                )
-                , propertiesId);
     }
 }

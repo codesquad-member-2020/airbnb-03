@@ -1,6 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.controller;
 
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDetailDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
 import com.airbnb3.codesquad.airbnb3.service.AirbnbServiceHamill;
 import org.slf4j.Logger;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
 
 @RestController
 public class AirbnbControllerHamill {
@@ -41,7 +40,7 @@ public class AirbnbControllerHamill {
     }
 
     @GetMapping("/detail/{propertiesId}")
-    public ResponseEntity<PropertiesDetailDtoHamill> findByPropertiesId(@PathVariable int propertiesId) {
+    public ResponseEntity<DetailDtoHamill> findByPropertiesId(@PathVariable int propertiesId) {
         return new ResponseEntity<>(airbnbServiceHamill.findByPropertiesId(propertiesId), HttpStatus.OK);
     }
 }

@@ -1,7 +1,7 @@
 package com.airbnb3.codesquad.airbnb3.service;
 
 import com.airbnb3.codesquad.airbnb3.dao.PropertiesDaoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDetailDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,7 +50,7 @@ public class AirbnbServiceHamill {
                                                     DateTypeCheckIn, DateTypeCheckOut, accommodates);
     }
 
-    public PropertiesDetailDtoHamill findByPropertiesId(int propertiesId) {
+    public DetailDtoHamill findByPropertiesId(int propertiesId) {
         return propertiesDaoHamill.findByPropertiesId(propertiesId);
     }
 
