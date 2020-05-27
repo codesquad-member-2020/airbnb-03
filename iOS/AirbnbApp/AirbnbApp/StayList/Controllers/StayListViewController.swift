@@ -1,6 +1,6 @@
 import UIKit
 
-class StayListViewController: UIViewController {
+final class StayListViewController: UIViewController {
     
     private var searchFieldView: SearchFieldView!
     private var separatorView: SeparatorView!
@@ -17,7 +17,6 @@ class StayListViewController: UIViewController {
         
         configureUI()
         configureLayout()
-        configureStayListCollectionViewHandlers()
         configureCollectionView()
         configureTextFieldDelegate()
         
@@ -56,17 +55,6 @@ class StayListViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    private func configureStayListCollectionViewHandlers() {
-        stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
-            DispatchQueue.main.async {
-                self?.stayListCollectionView.reloadData()
-                self?.dismissLoadingView()
-            }
-        })
-
-        stayListCollectionViewDelegate = StayListCollectionViewDelegate()
-    }
-    
     private func dismissLoadingView() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.loadingView.alpha = 0
@@ -76,29 +64,7 @@ class StayListViewController: UIViewController {
         }
     }
     
-    private func configureCollectionView() {
-        stayListCollectionView.dataSource = stayListCollectionViewDataSource
-        stayListCollectionView.delegate = stayListCollectionViewDelegate
-        stayListCollectionView.tapDelegate = self
-    }
-    
-    private func configureUI() {
-        view.backgroundColor = .white
-
-        searchFieldView = SearchFieldView.loadFromXib()
-        separatorView = SeparatorView()
-        searchFilterView = SearchFilterView.loadFromXib()
-        stayListCollectionView = StayListCollectionView()
-        mapButtonView = MapButtonView.loadFromXib()
-        loadingView = LoadingView()
-    }
-
-    private func configureTextFieldDelegate() {
-        searchTextFieldDelegate = SearchTextFieldDelegate()
-        searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
-    }
-
-    // MARK: - IBAction
+    // MARK: - IBActions
 
     @IBAction func mapButtonTouched(_ sender: Any) {
         #warning("동작 확인용 VC")
@@ -121,9 +87,50 @@ extension StayListViewController: StayListCollectionViewTapDelegate {
     }
 }
 
-// MARK:- Layout
+extension StayListViewController {
+    private func configureCollectionViewDatasource() {
+        stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
+            DispatchQueue.main.async {
+                self?.stayListCollectionView.reloadData()
+                self?.dismissLoadingView()
+            }
+        })
+    }
+    
+    private func configureCollectionViewDelegate() {
+        stayListCollectionViewDelegate = StayListCollectionViewDelegate()
+    }
+    
+    private func configureCollectionView() {
+        configureCollectionViewDatasource()
+        configureCollectionViewDelegate()
+        
+        stayListCollectionView.dataSource = stayListCollectionViewDataSource
+        stayListCollectionView.delegate = stayListCollectionViewDelegate
+        stayListCollectionView.tapDelegate = self
+    }
+    
+    private func configureTextFieldDelegate() {
+        searchTextFieldDelegate = SearchTextFieldDelegate()
+        searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
+    }
+}
+
+// MARK:- UI & Layout
 
 extension StayListViewController {
+    
+    private func configureUI() {
+        view.backgroundColor = .white
+
+        searchFieldView = SearchFieldView.loadFromXib()
+        separatorView = SeparatorView()
+        searchFilterView = SearchFilterView.loadFromXib()
+        stayListCollectionView = StayListCollectionView()
+        mapButtonView = MapButtonView.loadFromXib()
+        loadingView = LoadingView()
+    }
+
     private func configureLayout() {
         view.addSubviews(searchFieldView,
                          separatorView,

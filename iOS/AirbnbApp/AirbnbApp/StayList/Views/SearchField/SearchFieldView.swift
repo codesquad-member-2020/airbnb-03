@@ -1,6 +1,6 @@
 import UIKit
 
-class SearchFieldView: UIView, ViewFromXib {
+final class SearchFieldView: UIView, ViewFromXib {
 
     static let xibName = String(describing: SearchFieldView.self)
     static let height: CGFloat = 40.0

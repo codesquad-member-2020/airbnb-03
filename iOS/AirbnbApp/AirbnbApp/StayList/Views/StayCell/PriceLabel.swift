@@ -1,6 +1,6 @@
 import UIKit
 
-class PriceLabel: UILabel {
+final class PriceLabel: UILabel {
 
     func updateWith(price: Int) {
         let attributedText = NSMutableAttributedString(string: "")
