@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
+
 import java.util.List;
 
 @RestController
@@ -26,13 +28,13 @@ public class AirbnbControllerHamill {
 
     @GetMapping("/main")
     public ResponseEntity<List<PropertiesDtoHamill>> findAllProperties(
-            @RequestParam(value = "offset", required = false) String offset,
-            @RequestParam(value = "price_min", required = false) String priceMin,
-            @RequestParam(value = "price_max", required = false) String priceMax,
+            @RequestParam(value = "offset", required = false, defaultValue = DEFAULT_OFFSET) String offset,
+            @RequestParam(value = "price_min", required = false, defaultValue = DEFAULT_MIN_PRICE) String priceMin,
+            @RequestParam(value = "price_max", required = false, defaultValue = DEFAULT_MAX_PRICE) String priceMax,
             @RequestParam(value = "checkin", required = false) String checkIn,
             @RequestParam(value = "checkout", required = false) String checkOut,
-            @RequestParam(value = "adults", required = false) String adults,
-            @RequestParam(value = "children", required = false) String children) {
+            @RequestParam(value = "adults", required = false, defaultValue = DEFAULT_ADULTS_COUNT) String adults,
+            @RequestParam(value = "children", required = false, defaultValue = DEFAULT_CHILDREN_COUNT) String children) {
 
         return new ResponseEntity<>(
                 airbnbServiceHamill.findAllProperties(offset,priceMin, priceMax, checkIn, checkOut, adults, children),
