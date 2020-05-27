@@ -64,10 +64,7 @@ class StayListViewController: UIViewController {
             }
         })
 
-        stayListCollectionViewDelegate = StayListCollectionViewDelegate(handlerWhenSelected: { [weak self] in
-            let detailViewController = StayDetailViewController()
-            self?.navigationController?.pushViewController(detailViewController, animated: true)
-        })
+        stayListCollectionViewDelegate = StayListCollectionViewDelegate()
     }
     
     private func dismissLoadingView() {
@@ -82,6 +79,7 @@ class StayListViewController: UIViewController {
     private func configureCollectionView() {
         stayListCollectionView.dataSource = stayListCollectionViewDataSource
         stayListCollectionView.delegate = stayListCollectionViewDelegate
+        stayListCollectionView.tapDelegate = self
     }
     
     private func configureUI() {
@@ -111,7 +109,17 @@ class StayListViewController: UIViewController {
     }
 }
 
+// MARK:- Delegation Configuration
+
+extension StayListViewController: StayListCollectionViewTapDelegate {
+    func didTapCell(at indexPath: IndexPath) {
+        let detailViewController = StayDetailViewController()
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}
+
 // MARK:- Layout
+
 extension StayListViewController {
     private func configureLayout() {
         view.addSubviews(searchFieldView,
