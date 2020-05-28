@@ -28,7 +28,7 @@ public class AirbnbControllerHamill {
 
     @GetMapping("/main")
     public ResponseEntity<List<PropertiesDtoHamill>> findAllProperties(
-            @RequestParam(value = "offset", required = false, defaultValue = DEFAULT_OFFSET) String offset,
+            @RequestParam(value = "offset", required = false) String offset,
             @RequestParam(value = "price_min", required = false, defaultValue = DEFAULT_MIN_PRICE) String priceMin,
             @RequestParam(value = "price_max", required = false, defaultValue = DEFAULT_MAX_PRICE) String priceMax,
             @RequestParam(value = "checkin", required = false) String checkIn,

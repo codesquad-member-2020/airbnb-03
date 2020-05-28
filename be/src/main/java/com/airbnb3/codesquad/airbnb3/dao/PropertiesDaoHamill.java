@@ -25,12 +25,10 @@ public class PropertiesDaoHamill {
 
     public List<PropertiesDtoHamill> findAllProperties(
             Integer offset, Double priceMin, Double priceMax, Date checkIn, Date checkOut, Integer accommodates) {
-        logger.info("#### offset: {}", offset);
-        logger.info("#### priceMin: {}", priceMin);
-        logger.info("#### priceMax: {}", priceMax);
-        logger.info("#### checkIn: {}", checkIn);
-        logger.info("#### checkOut: {}", checkOut);
-        logger.info("#### accommodates: {}", accommodates);
+
+        logger.debug("#### offset, priceMin, priceMax, checkIn, checkOut, accommodates: {}, {}, {}, {}, {}, {}",
+                offset, priceMin, priceMax, checkIn, checkOut, accommodates);
+
         String sql =
                 "SELECT p.id,\n" +
                         "       p.title,\n" +
