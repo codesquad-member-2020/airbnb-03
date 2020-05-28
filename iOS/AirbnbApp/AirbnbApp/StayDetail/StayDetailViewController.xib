@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StayDetailViewController" customModule="AirbnbApp" customModuleProvider="target">
             <connections>
                 <outlet property="stackView" destination="nIX-aF-DtO" id="NdW-G1-dat"/>
+                <outlet property="topBarView" destination="hWN-ZV-Swm" id="Txa-8X-UTH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,19 +19,40 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWN-ZV-Swm">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KG5-Kr-4pF">
+                            <rect key="frame" x="15" y="14" width="13" height="22"/>
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <state key="normal" image="chevron.left" catalog="system">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
+                            </state>
+                            <connections>
+                                <action selector="backButtonTouched:" destination="-1" eventType="touchUpInside" id="AOl-62-2tM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="KG5-Kr-4pF" firstAttribute="leading" secondItem="hWN-ZV-Swm" secondAttribute="leading" constant="15" id="74E-j3-Dds"/>
+                        <constraint firstItem="KG5-Kr-4pF" firstAttribute="centerY" secondItem="hWN-ZV-Swm" secondAttribute="centerY" id="DWx-A3-PoR"/>
+                        <constraint firstAttribute="height" constant="50" id="qJR-SP-9bS"/>
+                    </constraints>
+                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-tZ-CWi">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nIX-aF-DtO">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="nIX-aF-DtO" firstAttribute="trailing" secondItem="zPR-jX-7L8" secondAttribute="trailing" constant="414" id="XnL-Ha-s6T"/>
+                        <constraint firstItem="nIX-aF-DtO" firstAttribute="trailing" secondItem="zPR-jX-7L8" secondAttribute="trailing" id="XnL-Ha-s6T"/>
                         <constraint firstItem="nIX-aF-DtO" firstAttribute="leading" secondItem="zPR-jX-7L8" secondAttribute="leading" id="hEM-LA-lj6"/>
                         <constraint firstItem="nIX-aF-DtO" firstAttribute="width" secondItem="rft-re-ZP4" secondAttribute="width" id="rus-LS-ikt"/>
                         <constraint firstItem="nIX-aF-DtO" firstAttribute="top" secondItem="zPR-jX-7L8" secondAttribute="top" id="yd3-Kh-HQR"/>
-                        <constraint firstItem="nIX-aF-DtO" firstAttribute="bottom" secondItem="zPR-jX-7L8" secondAttribute="bottom" constant="818" id="zAk-h3-MKp"/>
+                        <constraint firstItem="nIX-aF-DtO" firstAttribute="bottom" secondItem="zPR-jX-7L8" secondAttribute="bottom" id="zAk-h3-MKp"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="zPR-jX-7L8"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="rft-re-ZP4"/>
@@ -38,13 +60,19 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="hWN-ZV-Swm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="31J-xY-FYX"/>
+                <constraint firstItem="hWN-ZV-Swm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7tJ-1B-Ctq"/>
                 <constraint firstItem="ihf-tZ-CWi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WvB-Ka-3ac"/>
                 <constraint firstItem="ihf-tZ-CWi" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="b0X-Sx-0Uy"/>
-                <constraint firstItem="ihf-tZ-CWi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jhF-wF-esS"/>
-                <constraint firstItem="ihf-tZ-CWi" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="wCI-5F-YZP"/>
+                <constraint firstItem="ihf-tZ-CWi" firstAttribute="top" secondItem="hWN-ZV-Swm" secondAttribute="bottom" id="fK6-Nc-npL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hWN-ZV-Swm" secondAttribute="trailing" id="gCf-Q8-0td"/>
+                <constraint firstItem="ihf-tZ-CWi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wCI-5F-YZP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+    </resources>
 </document>

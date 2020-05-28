@@ -45,6 +45,7 @@
 		8D9B7A17247C0F1200D9A99D /* StayListCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A16247C0F1200D9A99D /* StayListCollectionViewDelegate.swift */; };
 		8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A18247C1D4500D9A99D /* DetailButton.swift */; };
 		8D9B7A1B247C206400D9A99D /* RoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */; };
+		8DA4BA2D247FB45E00FFE332 /* UIView+drawBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA2C247FB45E00FFE332 /* UIView+drawBorders.swift */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
 		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
 		8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA197024754B7900B3C167 /* SearchFilterView.xib */; };
@@ -108,6 +109,7 @@
 		8D9B7A16247C0F1200D9A99D /* StayListCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		8D9B7A18247C1D4500D9A99D /* DetailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButton.swift; sourceTree = "<group>"; };
 		8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorder.swift; sourceTree = "<group>"; };
+		8DA4BA2C247FB45E00FFE332 /* UIView+drawBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+drawBorders.swift"; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
 		8DCA197024754B7900B3C167 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				384C0E332473D9680051528B /* UIView+AutoLayout.swift */,
 				384C0E382473F50F0051528B /* UIView+addSubviews.swift */,
+				8DA4BA2C247FB45E00FFE332 /* UIView+drawBorders.swift */,
 				38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */,
 			);
 			path = Extensions;
@@ -533,6 +536,7 @@
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,
 				38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */,
+				8DA4BA2D247FB45E00FFE332 /* UIView+drawBorders.swift in Sources */,
 				381A030624762561004EDE84 /* PriceLabel.swift in Sources */,
 				38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */,
 				38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */,

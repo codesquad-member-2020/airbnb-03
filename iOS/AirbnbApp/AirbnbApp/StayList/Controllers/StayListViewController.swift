@@ -70,6 +70,7 @@ class StayListViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
+        navigationController?.setNavigationBarHidden(true, animated: false)
 
         searchFieldView = SearchFieldView.loadFromXib()
         separatorView = SeparatorView()
