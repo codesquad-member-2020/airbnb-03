@@ -7,7 +7,10 @@ class StayDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let detailSectionView = DetailSectionView.loadFromXib()
+        #warning("테스트용 뷰")
+        let detailSectionView = DetailSectionView.loadFromXib(titleText: "Stay with me") { view in
+            view.addSubContentViews()
+        }
         stackView.addArrangedSubview(detailSectionView)
 
     }
