@@ -22,7 +22,7 @@ public class DetailDtoAlex {
     private RoomDto roomInfo;
 
     @Builder
-    public DetailDtoAlex(Long id, String title, Boolean reservable, Boolean saved, List<String> images,
+    private DetailDtoAlex(Long id, String title, Boolean reservable, Boolean saved, List<String> images,
                          HostDto hostInfo, LocationDto locationInfo, PriceDto priceInfo, ReviewDto reviewInfo, RoomDto roomInfo) {
         this.id = id;
         this.title = title;

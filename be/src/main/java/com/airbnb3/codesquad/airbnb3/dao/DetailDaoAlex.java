@@ -27,9 +27,6 @@ public class DetailDaoAlex {
 
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("id", id);
-
-        DecimalFormat format = new DecimalFormat("#.#");
-
         return jdbcTemplate.queryForObject(sql, parameterSource, (rs, rowNum) ->
                 DetailDtoAlex.builder()
                         .id(rs.getLong("id"))
@@ -39,7 +36,7 @@ public class DetailDaoAlex {
                         .images(Arrays.asList(rs.getString("image").split(",")))
                         .hostInfo(HostDto.builder()
                                 .hostAbout(rs.getString("host_about"))
-                                .hostLocatison(rs.getString("host_location"))
+                                .hostLocation(rs.getString("host_location"))
                                 .hostName(rs.getString("host_name"))
                                 .hostSince(rs.getString("host_since"))
                                 .isSuperHost(rs.getBoolean("is_super_host"))

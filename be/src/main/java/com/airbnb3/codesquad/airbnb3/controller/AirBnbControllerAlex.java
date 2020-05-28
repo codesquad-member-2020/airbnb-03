@@ -20,9 +20,9 @@ public class AirBnbControllerAlex {
     @Autowired
     private AirBnbService airBnbService;
 
-    @GetMapping("/main")
+    @GetMapping("/properties")
     public ResponseEntity<List<PropertiesDtoAlex>> stayedPage(
-            @RequestParam(value = "offset", required = false, defaultValue = "1") String  pageNum,
+            @RequestParam(value = "offset", required = false, defaultValue = "1") String pageNum,
             @RequestParam(value = "adults", required = false, defaultValue = "1") String adults,
             @RequestParam(value = "children", required = false, defaultValue = "0") String children,
             @RequestParam(value = "checkin", required = false) String checkIn,
@@ -35,21 +35,21 @@ public class AirBnbControllerAlex {
             @RequestParam(value = "max_long", required = false, defaultValue = "max_long") String maxLongitude
     ) {
         return new ResponseEntity<>(airBnbService.stayedProperties(pageNum, adults, children, checkIn, checkOut,
-                minRange, maxRange, minLatitude,maxLatitude,minLongitude,maxLongitude), HttpStatus.OK);
+                minRange, maxRange, minLatitude, maxLatitude, minLongitude, maxLongitude), HttpStatus.OK);
     }
 
-    @GetMapping("/detail/{id}")
+    @GetMapping("/properties/{id}")
     public ResponseEntity<DetailDtoAlex> detailPage(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(airBnbService.detailProperties(id),HttpStatus.OK);
+        return new ResponseEntity<>(airBnbService.detailProperties(id), HttpStatus.OK);
     }
 
-    @GetMapping("/map")
-    public ResponseEntity<Object> mapRequest(@RequestParam(value = "latitude") String latitude, @RequestParam(value = "longitude") String longitude) {
-        return new ResponseEntity<>("TEST",HttpStatus.OK);
-    }
+    @PutMapping("/reservations/{id}")
+    public ResponseEntity<Object> bookingRequest(@PathVariable("id") Long id,
+                                                 @RequestParam(value = "checkin") String checkIn,
+                                                 @RequestParam(value = "checkout") String checkOut,
+                                                 @RequestParam(value = "guests") String guests
+    ) {
 
-    @GetMapping("/booking")
-    public ResponseEntity<Object> bookingRequest() {
-        return new ResponseEntity<>("TEST",HttpStatus.OK);
+        return new ResponseEntity<>("TEST", HttpStatus.OK);
     }
 }
