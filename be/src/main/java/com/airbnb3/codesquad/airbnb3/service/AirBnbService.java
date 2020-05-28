@@ -74,7 +74,7 @@ public class AirBnbService {
         try {
             return Date.valueOf(date);
         } catch (IllegalArgumentException e) {
-            return Date.valueOf(LocalDate.now().plusDays(1));
+            return Date.valueOf(LocalDate.now().plusDays(5));
         }
     }
 

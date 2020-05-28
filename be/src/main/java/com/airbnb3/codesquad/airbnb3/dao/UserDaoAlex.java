@@ -6,6 +6,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public class UserDaoAlex {
 
@@ -23,9 +25,9 @@ public class UserDaoAlex {
         return jdbcTemplate.queryForObject(sql, new Object[]{githubId}, (rs, rowNum) -> rs.getBoolean("id_check"));
     }
 
-    public Long getIdFromUserId(String name) {
+    public Optional<Long> getIdFromUserId(String name) {
         String sql = "SELECT u.id FROM users u WHERE u.name = ?";
-        return jdbcTemplate.queryForObject(sql, new Object[]{name}, (rs, rowNum) -> rs.getLong("name"));
+        return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[]{name}, (rs, rowNum) -> rs.getLong("name")));
     }
 
 }

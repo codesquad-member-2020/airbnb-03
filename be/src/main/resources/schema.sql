@@ -26,14 +26,16 @@ create table if not exists properties
 
 create table if not exists bookings
 (
-    id                INT AUTO_INCREMENT,
+    id                INT ,
     check_in_date     DATE,
     check_out_date    DATE,
     booking_date      DATETIME,
     cleaning_fee      DECIMAL(10, 3),
     service_fee       DECIMAL(10, 3),
     occupancy_tax_fee DECIMAL(10, 3),
-    booking_price     DECIMAL(10, 3),
+    room_price        DECIMAL(10, 3),
+    room_total_price  DECIMAL(10, 3),
+    total_price       DECIMAL(10, 3),
     nights            INT,
     status            BOOLEAN,
     properties_id     INT REFERENCES properties (id),
