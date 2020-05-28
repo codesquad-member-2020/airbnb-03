@@ -12,8 +12,4 @@ extension UIView {
         self.layer.shadowOpacity = opacity
         self.layer.shouldRasterize = shouldRasterize
     }
-    
-    func drawBorder() {
-        
-    }
 }
