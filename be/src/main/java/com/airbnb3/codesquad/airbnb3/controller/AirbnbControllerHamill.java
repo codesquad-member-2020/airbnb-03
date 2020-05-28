@@ -47,12 +47,12 @@ public class AirbnbControllerHamill {
         return new ResponseEntity<>(airbnbServiceHamill.findByPropertiesId(propertiesId), HttpStatus.OK);
     }
 
-//    @GetMapping("/reservations")
-//    public ResponseEntity<List<BookingsDtoHamill>> findAllReservations() {
-//
-//        return new ResponseEntity<>(airbnbServiceHamill.findAllReservations(), HttpStatus.OK);
-//    }
-//
+    @GetMapping("/reservations")
+    public ResponseEntity<List<BookingsDtoHamill>> findAllReservations() {
+
+        return new ResponseEntity<>(airbnbServiceHamill.findAllReservations(), HttpStatus.OK);
+    }
+
     @PutMapping("/reservations/{reservationId}")
     public ResponseEntity<CommonMessage> reserveTheProperties(
             @PathVariable Long reservationId,
