@@ -52,11 +52,14 @@ public class AirBnbService {
         Date checkInDate = parseStringToCheckInDate(checkIn);
         Date checkOutDate = parseStringToCheckOutDate(checkOut);
 
-        if (checkInDate.before(checkOutDate)) {
+        if (checkInDate.after(checkOutDate)) {
             Date temp = checkInDate;
             checkInDate = checkOutDate;
             checkOutDate = temp;
         }
+
+        if (checkInDate.before(Date.valueOf(LocalDate.now()))) checkInDate = Date.valueOf(LocalDate.now());
+
         tempMap.put("checkInDate", checkInDate);
         tempMap.put("checkOutDate", checkOutDate);
         return tempMap;

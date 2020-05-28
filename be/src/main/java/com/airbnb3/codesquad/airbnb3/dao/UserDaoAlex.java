@@ -2,6 +2,7 @@ package com.airbnb3.codesquad.airbnb3.dao;
 
 import com.airbnb3.codesquad.airbnb3.oauth.GithubUserAlex;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
@@ -25,9 +26,14 @@ public class UserDaoAlex {
         return jdbcTemplate.queryForObject(sql, new Object[]{githubId}, (rs, rowNum) -> rs.getBoolean("id_check"));
     }
 
-    public Optional<Long> getIdFromUserId(String name) {
-        String sql = "SELECT u.id FROM users u WHERE u.name = ?";
-        return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[]{name}, (rs, rowNum) -> rs.getLong("name")));
+    public Long getIdFromUserId(String name) {
+        String sql = "SELECT u.id FROM user u WHERE u.name = ?";
+        try {
+            return jdbcTemplate.queryForObject(sql, new Object[]{name}, (rs, rowNum) -> rs.getLong("name"));
+        } catch (EmptyResultDataAccessException e) {
+            return -1L;
+        }
+
     }
 
 }

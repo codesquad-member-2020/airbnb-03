@@ -2,6 +2,7 @@ package com.airbnb3.codesquad.airbnb3.controller;
 
 import com.airbnb3.codesquad.airbnb3.dto.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
 import com.airbnb3.codesquad.airbnb3.service.AirBnbService;
 import com.airbnb3.codesquad.airbnb3.service.ReservationServiceAlex;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,14 +50,13 @@ public class AirBnbControllerAlex {
         return new ResponseEntity<>(airBnbService.detailProperties(id), HttpStatus.OK);
     }
 
-    @PutMapping("/reservations/{id}")
-    public ResponseEntity<Object> bookingRequest(@PathVariable("id") Long id,
-                                                 @RequestParam(value = "checkin") String checkIn,
-                                                 @RequestParam(value = "checkout") String checkOut,
-                                                 @RequestParam(value = "guests") String guests,
-                                                 @CookieValue(value = "name", defaultValue = "None", required = false) String name
+    @GetMapping("/reservations/{id}")
+    public ResponseEntity<ReservationDto> bookingRequest(@PathVariable("id") Long id,
+                                                         @RequestParam(value = "checkin") String checkIn,
+                                                         @RequestParam(value = "checkout") String checkOut,
+                                                         @RequestParam(value = "guests") String guests,
+                                                         @CookieValue(value = "name", defaultValue = "None", required = false) String name
     ) {
-        reservationService.propertyReservation(id,checkIn,checkOut,guests,name);
-        return new ResponseEntity<>("TEST", HttpStatus.OK);
+        return new ResponseEntity<>(reservationService.propertyReservation(id,checkIn,checkOut,guests,name), HttpStatus.OK);
     }
 }

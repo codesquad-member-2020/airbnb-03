@@ -14,7 +14,7 @@ public class ReservationDto {
     private Date checkInDate;
     private Date checkOutDate;
     private Date bookingDate;
-    private int nights;
+    private Integer nights;
 
     private Double serviceFee;
     private Double cleaningFee;
@@ -23,12 +23,13 @@ public class ReservationDto {
     private Double roomPrice;
     private Double roomTotalPrice;
     private Double totalPrice;
+    private Integer guests;
 
     private Long propertiesId;
     private Long userId;
 
     @Builder
-    private ReservationDto(Date checkInDate, Date checkOutDate, Date bookingDate, int nights, Double serviceFee, Double cleaningFee, Double tax, Double roomPrice, Double roomTotalPrice, Double totalPrice, Long propertiesId, Long userId) {
+    private ReservationDto(Date checkInDate, Date checkOutDate, Date bookingDate, Integer nights, Double serviceFee, Double cleaningFee, Double tax, Double roomPrice, Double roomTotalPrice, Double totalPrice, Integer guests, Long propertiesId, Long userId) {
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.bookingDate = bookingDate;
@@ -39,6 +40,7 @@ public class ReservationDto {
         this.roomPrice = roomPrice;
         this.roomTotalPrice = roomTotalPrice;
         this.totalPrice = totalPrice;
+        this.guests = guests;
         this.propertiesId = propertiesId;
         this.userId = userId;
     }
