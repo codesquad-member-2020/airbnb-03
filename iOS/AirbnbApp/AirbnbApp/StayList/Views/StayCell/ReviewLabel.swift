@@ -1,6 +1,6 @@
 import UIKit
 
-class ReviewLabel: UILabel, LabelWithLeadingImage {
+final class ReviewLabel: UILabel, LabelWithLeadingImage {
     
     internal var leadingImage: UIImage? = UIImage(named: "review.star")
     internal var leadingImageTintColor: UIColor! = UIColor(named: "stay.tintcolor")

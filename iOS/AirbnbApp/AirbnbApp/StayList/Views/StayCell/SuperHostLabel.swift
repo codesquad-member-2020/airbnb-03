@@ -1,6 +1,6 @@
 import UIKit
 
-class SuperHostLabel: UILabel, LabelWithLeadingImage {
+final class SuperHostLabel: UILabel, LabelWithLeadingImage {
     
     internal var leadingImage: UIImage? = UIImage(named: "host.super")
     internal var leadingImageTintColor: UIColor! = UIColor(named: "stay.tintcolor")

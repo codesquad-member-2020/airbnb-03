@@ -1,6 +1,6 @@
 import UIKit
 
-class MapButtonView: UIView, ViewFromXib {
+final class MapButtonView: UIView, ViewFromXib {
     
     static let xibName = String(describing: MapButtonView.self)
     static let width: CGFloat = 80

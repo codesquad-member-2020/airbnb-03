@@ -1,18 +1,7 @@
 import UIKit
 
-class StayListCollectionViewDelegate: NSObject, UICollectionViewDelegate {
-    var handlerWhenSelected: () -> Void
-
-    init(handlerWhenSelected: @escaping () -> Void = {}) {
-        self.handlerWhenSelected = handlerWhenSelected
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        handlerWhenSelected()
-    }
-}
-
-extension StayListCollectionViewDelegate: UICollectionViewDelegateFlowLayout {
+final class StayListCollectionViewDelegate: NSObject, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let scrollViewHeight = collectionView.bounds.width * (3 / 5)
         let verticalSpace: CGFloat = 12.0

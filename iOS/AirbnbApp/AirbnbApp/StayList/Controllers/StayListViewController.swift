@@ -1,6 +1,6 @@
 import UIKit
 
-class StayListViewController: UIViewController {
+final class StayListViewController: UIViewController {
     
     private var searchFieldView: SearchFieldView!
     private var separatorView: SeparatorView!
@@ -17,7 +17,6 @@ class StayListViewController: UIViewController {
         
         configureUI()
         configureLayout()
-        configureStayListCollectionViewHandlers()
         configureCollectionView()
         configureTextFieldDelegate()
         
@@ -56,20 +55,6 @@ class StayListViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    private func configureStayListCollectionViewHandlers() {
-        stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
-            DispatchQueue.main.async {
-                self?.stayListCollectionView.reloadData()
-                self?.dismissLoadingView()
-            }
-        })
-
-        stayListCollectionViewDelegate = StayListCollectionViewDelegate(handlerWhenSelected: { [weak self] in
-            let detailViewController = StayDetailViewController()
-            self?.navigationController?.pushViewController(detailViewController, animated: true)
-        })
-    }
-    
     private func dismissLoadingView() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.loadingView.alpha = 0
@@ -79,10 +64,61 @@ class StayListViewController: UIViewController {
         }
     }
     
+    // MARK: - IBActions
+
+    @IBAction func mapButtonTouched(_ sender: Any) {
+        #warning("동작 확인용 VC")
+        let viewController = UIViewController()
+        viewController.modalPresentationStyle = .automatic // .fullScreen으로 변경할 것
+        viewController.view.backgroundColor = .systemTeal
+        present(viewController, animated: true)
+    }
+}
+
+// MARK:- Delegation Configuration
+
+extension StayListViewController: StayListCollectionViewTapDelegate {
+    func didTapCell(at indexPath: IndexPath) {
+        stayListCollectionViewDataSource.idForCell(at: indexPath) { [weak self] (id) in
+            let detailViewController = StayDetailViewController()
+            #warning("Request detail data")
+            self?.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+    }
+}
+
+extension StayListViewController {
+    private func configureCollectionViewDatasource() {
+        stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
+            DispatchQueue.main.async {
+                self?.stayListCollectionView.reloadData()
+                self?.dismissLoadingView()
+            }
+        })
+    }
+    
+    private func configureCollectionViewDelegate() {
+        stayListCollectionViewDelegate = StayListCollectionViewDelegate()
+    }
+    
     private func configureCollectionView() {
+        configureCollectionViewDatasource()
+        configureCollectionViewDelegate()
+        
         stayListCollectionView.dataSource = stayListCollectionViewDataSource
         stayListCollectionView.delegate = stayListCollectionViewDelegate
+        stayListCollectionView.tapDelegate = self
     }
+    
+    private func configureTextFieldDelegate() {
+        searchTextFieldDelegate = SearchTextFieldDelegate()
+        searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
+    }
+}
+
+// MARK:- UI & Layout
+
+extension StayListViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
@@ -95,24 +131,6 @@ class StayListViewController: UIViewController {
         loadingView = LoadingView()
     }
 
-    private func configureTextFieldDelegate() {
-        searchTextFieldDelegate = SearchTextFieldDelegate()
-        searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
-    }
-
-    // MARK: - IBAction
-
-    @IBAction func mapButtonTouched(_ sender: Any) {
-        #warning("동작 확인용 VC")
-        let viewController = UIViewController()
-        viewController.modalPresentationStyle = .automatic // .fullScreen으로 변경할 것
-        viewController.view.backgroundColor = .systemTeal
-        present(viewController, animated: true)
-    }
-}
-
-// MARK:- Layout
-extension StayListViewController {
     private func configureLayout() {
         view.addSubviews(searchFieldView,
                          separatorView,
