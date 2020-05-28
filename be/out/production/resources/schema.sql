@@ -1,12 +1,12 @@
-drop table if exists calendar;
-drop table if exists images;
-drop table if exists bookmarks;
-drop table if exists detail;
-drop table if exists user;
-drop table if exists bookings;
-drop table if exists properties;
+DROP TABLE IF EXISTS calendar;
+DROP TABLE IF EXISTS images;
+DROP TABLE IF EXISTS bookmarks;
+DROP TABLE IF EXISTS detail;
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS bookings;
+DROP TABLE IF EXISTS properties;
 
-create table if not exists properties
+CREATE TABLE IF NOT EXISTS properties
 (
     id                INT,
     title             VARCHAR(64),
@@ -16,39 +16,42 @@ create table if not exists properties
     longitude         DOUBLE,
     reservable        BOOLEAN,
     saved             BOOLEAN,
-    host_type         VARCHAR(32)  DEFAULT 'Not Tag',
+    host_type         VARCHAR(32) DEFAULT 'Not Tag',
     price             DECIMAL(10, 3),
     place_type        VARCHAR(32),
     review_average    DECIMAL(3, 2),
     number_of_reviews INT,
-    primary key (id)
+    PRIMARY KEY (id)
 );
 
-create table if not exists bookings
+CREATE TABLE IF NOT EXISTS bookings
 (
-    id                INT AUTO_INCREMENT,
-    check_in_date     DATE,
-    check_out_date    DATE,
-    booking_date      DATETIME,
-    cleaning_fee      DECIMAL(10, 3),
-    service_fee       DECIMAL(10, 3),
-    occupancy_tax_fee DECIMAL(10, 3),
-    booking_price     DECIMAL(10, 3),
-    status            BOOLEAN,
-    properties_id     INT REFERENCES properties (id),
-    user_id           INT REFERENCES user (id),
-    primary key (id)
+    id             INT AUTO_INCREMENT,
+    check_in_date  DATE,
+    check_out_date DATE,
+    booking_date   DATETIME,
+    guests         INT,
+    cleaning_fee   DECIMAL(10, 3),
+    service_fee    DECIMAL(10, 3),
+    tax            DECIMAL(10, 3),
+    price          DECIMAL(10, 3),
+    price_for_stay DECIMAL(10, 3),
+    total_price    DECIMAL(10, 3),
+    nights         INT,
+    properties_id  INT REFERENCES properties (id),
+    user_id        INT REFERENCES user (id),
+    PRIMARY KEY (id)
 );
 
-create table if not exists user
+CREATE TABLE IF NOT EXISTS user
 (
     id    INT AUTO_INCREMENT,
     name  VARCHAR(64),
     email VARCHAR(128),
-    primary key (id)
+    PRIMARY KEY (id)
 );
 
-create table if not exists detail
+CREATE TABLE IF NOT EXISTS detail
 (
     id                          INT,
     summary                     VARCHAR(1024),
@@ -76,30 +79,30 @@ create table if not exists detail
     review_scores_communication DECIMAL(2, 1),
     review_scores_location      DECIMAL(2, 1),
     review_scores_value         DECIMAL(2, 1),
-    primary key (id)
+    PRIMARY KEY (id)
 );
 
-create table if not exists bookmarks
+CREATE TABLE IF NOT EXISTS bookmarks
 (
     id            INT AUTO_INCREMENT,
     is_bookmarked BOOLEAN,
     user_id       INT REFERENCES user (id),
     properties_id INT REFERENCES properties (id),
-    primary key (id)
+    PRIMARY KEY (id)
 );
 
-create table if not exists images
+CREATE TABLE IF NOT EXISTS images
 (
     id            INT AUTO_INCREMENT,
     image_url     VARCHAR(256),
     properties_id INT REFERENCES properties (id),
-    primary key (id)
+    PRIMARY KEY (id)
 );
 
-create table if not exists calendar
+CREATE TABLE IF NOT EXISTS calendar
 (
     id               INT AUTO_INCREMENT,
     reservation_date DATE,
     properties_id    INT REFERENCES properties (id),
-    primary key (id)
+    PRIMARY KEY (id)
 );

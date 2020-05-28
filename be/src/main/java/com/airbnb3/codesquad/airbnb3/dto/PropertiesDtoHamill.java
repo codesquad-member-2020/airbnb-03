@@ -16,12 +16,11 @@ public class PropertiesDtoHamill {
     private String title;
     private String state;
     private String city;
-    private String address;
     private Double latitude;
     private Double longitude;
     private Boolean reservable;
     private Boolean saved;
-    private String hostType;
+    private Boolean isSuperHost;
     private Double price;
     private String placeType;
     private Double reviewAverage;
