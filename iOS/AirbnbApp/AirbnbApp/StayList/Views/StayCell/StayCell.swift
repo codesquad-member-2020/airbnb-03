@@ -6,7 +6,7 @@ final class StayCell: UICollectionViewCell {
     static let reuseIdentifier: String = "StayCell"
 
     @IBOutlet weak var thumbImagePagingView: ThumbImagePagingView!
-    @IBOutlet weak var saveButton: SaveButton!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var reviewLabel: ReviewLabel!
     @IBOutlet weak var superHostLabel: SuperHostLabel!
     @IBOutlet weak var placeTypeAndCityLabel: PlaceTypeAndCityLabel!
@@ -22,7 +22,7 @@ final class StayCell: UICollectionViewCell {
         priceLabel.updateWith(price: stay.price)
         thumbImagePagingView.configureStackView(numberOfImage: stay.images.count)
         superHostLabel.isHidden = stay.hostType != "super"
-        saveButton.updateImage(with: stay.saved)
+        #warning("update SaveButton status")
     }
     
     func updateImage(at index: Int, data: Data) {
@@ -35,22 +35,6 @@ final class StayCell: UICollectionViewCell {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        if saveButton.isSaved {
-            saveButton.toggle()
-        } else {
-            animateSaveButton()
-        }
-    }
-    
-    private func animateSaveButton() {
-        saveButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1.5, options: .curveEaseOut, animations: {
-            self.saveButton.toggle()
-            self.saveButton.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                self.saveButton.transform = .identity
-            })
-        })
+        #warning("Save Stay Action 구현")
     }
 }

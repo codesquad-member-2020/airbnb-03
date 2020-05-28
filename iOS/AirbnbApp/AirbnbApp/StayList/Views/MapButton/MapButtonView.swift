@@ -18,14 +18,19 @@ final class MapButtonView: UIView, ViewFromXib {
 
     private func configure() {
         drawBorder()
-        drawShadow(color: .darkGray,
-                   radius: 4.0,
-                   opacity: 0.5)
+        drawShadow()
     }
 
     private func drawBorder() {
         layer.cornerRadius = 20
         layer.borderWidth =  1
         layer.borderColor = UIColor.black.cgColor
+    }
+
+    private func drawShadow() {
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOffset = .zero
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 4
     }
 }
