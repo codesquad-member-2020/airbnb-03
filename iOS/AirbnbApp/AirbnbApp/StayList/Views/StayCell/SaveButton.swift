@@ -9,7 +9,7 @@ final class SaveButton: UIButton {
     private let savedColor: UIColor? = UIColor(named: "save.fill")
     private let notSavedColor: UIColor = UIColor.darkGray
     private let imageViewHeight: CGFloat = 18.0
-    private(set) var saved: Bool = false
+    private(set) var isSaved: Bool = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,12 +22,12 @@ final class SaveButton: UIButton {
     }
     
     func toggle() {
-        saved = !saved
-        updateImage(with: saved)
+        isSaved = !isSaved
+        updateImage(with: isSaved)
     }
     
-    func updateImage(with saved: Bool) {
-        if saved {
+    func updateImage(with isSaved: Bool) {
+        if isSaved {
             buttonImageView.image = savedImage
             buttonImageView.tintColor = savedColor
         } else {
@@ -39,7 +39,10 @@ final class SaveButton: UIButton {
     private func configure() {
         configureImageView()
         configureCornerRadius()
-        drawShadow()
+        drawShadow(offset: .zero,
+                   color: .darkGray,
+                   radius: 2.0,
+                   opacity: 0.4)
     }
     
     private func configureImageView() {
@@ -54,12 +57,5 @@ final class SaveButton: UIButton {
     
     private func configureCornerRadius() {
         layer.cornerRadius = self.bounds.height / 2
-    }
-    
-    private func drawShadow() {
-        layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowOffset = .zero
-        layer.shadowRadius = 2
-        layer.shadowOpacity = 0.4
     }
 }

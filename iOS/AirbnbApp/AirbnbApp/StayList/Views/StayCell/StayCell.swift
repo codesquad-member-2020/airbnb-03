@@ -35,7 +35,7 @@ class StayCell: UICollectionViewCell {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        if saveButton.saved {
+        if saveButton.isSaved {
             saveButton.toggle()
         } else {
             animateSaveButton()
