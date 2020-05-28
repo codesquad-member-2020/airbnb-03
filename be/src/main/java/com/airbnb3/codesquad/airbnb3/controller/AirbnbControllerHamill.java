@@ -7,16 +7,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/hamill")
 public class AirbnbControllerHamill {
 
     private static final Logger logger = LoggerFactory.getLogger(AirbnbControllerHamill.class);
@@ -26,7 +24,7 @@ public class AirbnbControllerHamill {
         this.airbnbServiceHamill = airbnbServiceHamill;
     }
 
-    @GetMapping("/main")
+    @GetMapping("/properties")
     public ResponseEntity<List<PropertiesDtoHamill>> findAllProperties(
             @RequestParam(value = "offset", required = false) String offset,
             @RequestParam(value = "price_min", required = false, defaultValue = DEFAULT_MIN_PRICE) String priceMin,
@@ -41,8 +39,26 @@ public class AirbnbControllerHamill {
                 HttpStatus.OK);
     }
 
-    @GetMapping("/detail/{propertiesId}")
+    @GetMapping("/properties/{propertiesId}")
     public ResponseEntity<DetailDtoHamill> findByPropertiesId(@PathVariable int propertiesId) {
         return new ResponseEntity<>(airbnbServiceHamill.findByPropertiesId(propertiesId), HttpStatus.OK);
+    }
+
+    @PutMapping("/reservations/{reservationsId}")
+    public String insertByReservationsId() {
+
+        return "";
+    }
+
+    @DeleteMapping("/reservations/{reservationId")
+    public String deleteByReservationsId() {
+
+        return "";
+    }
+
+    @GetMapping("/reservations")
+    public String findAllReservations() {
+
+        return "";
     }
 }
