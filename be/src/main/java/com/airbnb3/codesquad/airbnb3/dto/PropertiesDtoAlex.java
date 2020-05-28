@@ -17,7 +17,7 @@ public class PropertiesDtoAlex {
     private Double longitude;
     private Boolean reservable;
     private Boolean saved;
-    private String hostType;
+    private Boolean isSuperHost;
     private Double price;
     private String placeType;
     private Double reviewAverage;
@@ -25,9 +25,7 @@ public class PropertiesDtoAlex {
     private List<String> images;
 
     @Builder
-    private PropertiesDtoAlex(Long id, String title, String state, String city,
-                             Double latitude, Double longitude, Boolean reservable, Boolean saved,
-                             String hostType, Double price, String placeType, Double reviewAverage, Integer numberOfReviews, List<String> images) {
+    private PropertiesDtoAlex(Long id, String title, String state, String city, Double latitude, Double longitude, Boolean reservable, Boolean saved, boolean isSuperHost, Double price, String placeType, Double reviewAverage, Integer numberOfReviews, List<String> images) {
         this.id = id;
         this.title = title;
         this.state = state;
@@ -36,7 +34,7 @@ public class PropertiesDtoAlex {
         this.longitude = longitude;
         this.reservable = reservable;
         this.saved = saved;
-        this.hostType = hostType;
+        this.isSuperHost = isSuperHost;
         this.price = price;
         this.placeType = placeType;
         this.reviewAverage = reviewAverage;

@@ -7,7 +7,6 @@ import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.relational.core.sql.In;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
@@ -40,22 +39,7 @@ public class AirBnbService {
         Double minPrice = parseStringToMinDouble(minRange);
         Double maxPrice = parseStringToMaxDouble(maxRange);
         Map<String, Double> location = parseStringToLocationDouble(minLatitude, maxLatitude, minLongitude, maxLongitude);
-        logger.info("----------------- Main Query ---------------------");
-        logger.info("propertyRange : {}", propertyRange);
-        logger.info("accommodates : {}", accommodates);
-        logger.info("-------------------- Date  -----------------------");
-        logger.info("checkInDate : {}", checkInDate);
-        logger.info("checkOutDate : {}", checkOutDate);
-        logger.info("------------------- Price ------------------------");
-        logger.info("minPrice : {}", minPrice);
-        logger.info("maxPrice : {}", maxPrice);
-        logger.info("------------------ Location ----------------------");
-        logger.info("minLatitude : {}", location.get("minLatitude"));
-        logger.info("maxLatitude : {}", location.get("maxLatitude"));
-        logger.info("minLongitude : {}", location.get("minLongitude"));
-        logger.info("maxLongitude : {}", location.get("maxLongitude"));
-        logger.info("--------------------------------------------------");
-        return propertiesDao.getStayedProperties(propertyRange, accommodates, checkInDate, checkOutDate, minPrice, maxPrice,location);
+        return propertiesDao.getStayedProperties(propertyRange, accommodates, checkInDate, checkOutDate, minPrice, maxPrice, location);
     }
 
     public DetailDtoAlex detailProperties(Long id) {
@@ -68,7 +52,7 @@ public class AirBnbService {
         Date checkInDate = parseStringToCheckInDate(checkIn);
         Date checkOutDate = parseStringToCheckOutDate(checkOut);
 
-        if (checkInDate.compareTo(checkOutDate) > 0) {
+        if (checkInDate.before(checkOutDate)) {
             Date temp = checkInDate;
             checkInDate = checkOutDate;
             checkOutDate = temp;

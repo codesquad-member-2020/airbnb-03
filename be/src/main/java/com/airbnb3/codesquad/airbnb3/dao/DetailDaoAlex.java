@@ -5,10 +5,13 @@ import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.Arrays;
 
@@ -34,48 +37,81 @@ public class DetailDaoAlex {
                         .reservable(rs.getBoolean("reservable"))
                         .saved(rs.getBoolean("saved"))
                         .images(Arrays.asList(rs.getString("image").split(",")))
-                        .hostInfo(HostDto.builder()
-                                .hostAbout(rs.getString("host_about"))
-                                .hostLocation(rs.getString("host_location"))
-                                .hostName(rs.getString("host_name"))
-                                .hostSince(rs.getString("host_since"))
-                                .isSuperHost(rs.getBoolean("is_super_host"))
-                                .notes(rs.getString("notes"))
-                                .build())
-                        .locationInfo(LocationDto.builder()
-                                .address(rs.getString("address"))
-                                .cityOverView(rs.getString("city_overview"))
-                                .latitude(rs.getDouble("latitude"))
-                                .longitude(rs.getDouble("longitude"))
-                                .transit(rs.getString("transit"))
-                                .build())
-                        .priceInfo(PriceDto.builder()
-                                .cleaningFee(rs.getDouble("cleaning_fee"))
-                                .price(rs.getDouble("price"))
-                                .serviceFee(rs.getDouble("service_fee"))
-                                .tax(rs.getDouble("tax"))
-                                .build())
-                        .reviewInfo(ReviewDto.builder()
-                                .reviewAverage(rs.getDouble("review_average"))
-                                .numberOfReviews(rs.getInt("number_of_reviews"))
-                                .reviewScoresAccuracy(rs.getDouble("review_scores_accuracy"))
-                                .reviewScoresCheckin(rs.getDouble("review_scores_checkin"))
-                                .reviewScoresCleanliness(rs.getDouble("review_scores_cleanliness"))
-                                .reviewScoresCommunication(rs.getDouble("review_scores_communication"))
-                                .reviewScoresLocation(rs.getDouble("review_scores_location"))
-                                .reviewScoresValue(rs.getDouble("review_scores_value"))
-                                .build())
-                        .roomInfo(RoomDto.builder()
-                                .accommodates(rs.getInt("accommodates"))
-                                .amenities(rs.getString("amenity"))
-                                .bathrooms(rs.getInt("bathrooms"))
-                                .bedrooms(rs.getInt("bedrooms"))
-                                .beds(rs.getInt("beds"))
-                                .bedType(rs.getString("bed_type"))
-                                .placeType(rs.getString("place_type"))
-                                .space(rs.getString("space"))
-                                .summary(rs.getString("summary"))
-                                .build())
+                        .hostInfo(hostDtoBuilder(rs))
+                        .locationInfo(locationDtoBuilder(rs))
+                        .priceInfo(priceDtoBuilder(rs))
+                        .reviewInfo(reviewDtoBuilder(rs))
+                        .roomInfo(roomDtoBuilder(rs))
                         .build());
+    }
+
+    public PriceDto getPrices(Long id) {
+        String sql = "SELECT d.cleaning_fee,d.service_fee,d.tax,p.price FROM detail d LEFT JOIN properties p ON d.id = p.id WHERE p.id = :id";
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("id", id);
+        return jdbcTemplate.queryForObject(sql, parameterSource, ((rs, rowNum) ->
+                PriceDto.builder()
+                        .cleaningFee(rs.getDouble("cleaning_fee"))
+                        .price(rs.getDouble("price"))
+                        .serviceFee(rs.getDouble("service_fee"))
+                        .tax(rs.getDouble("tax"))
+                        .build()));
+    }
+
+    private RoomDto roomDtoBuilder(ResultSet rs) throws SQLException {
+        return RoomDto.builder()
+                .accommodates(rs.getInt("accommodates"))
+                .amenities(rs.getString("amenity"))
+                .bathrooms(rs.getInt("bathrooms"))
+                .bedrooms(rs.getInt("bedrooms"))
+                .beds(rs.getInt("beds"))
+                .bedType(rs.getString("bed_type"))
+                .placeType(rs.getString("place_type"))
+                .space(rs.getString("space"))
+                .summary(rs.getString("summary"))
+                .build();
+    }
+
+    private ReviewDto reviewDtoBuilder(ResultSet rs) throws SQLException {
+        return ReviewDto.builder()
+                .reviewAverage(rs.getDouble("review_average"))
+                .numberOfReviews(rs.getInt("number_of_reviews"))
+                .reviewScoresAccuracy(rs.getDouble("review_scores_accuracy"))
+                .reviewScoresCheckin(rs.getDouble("review_scores_checkin"))
+                .reviewScoresCleanliness(rs.getDouble("review_scores_cleanliness"))
+                .reviewScoresCommunication(rs.getDouble("review_scores_communication"))
+                .reviewScoresLocation(rs.getDouble("review_scores_location"))
+                .reviewScoresValue(rs.getDouble("review_scores_value"))
+                .build();
+    }
+
+    private PriceDto priceDtoBuilder(ResultSet rs) throws SQLException {
+        return PriceDto.builder()
+                .cleaningFee(rs.getDouble("cleaning_fee"))
+                .price(rs.getDouble("price"))
+                .serviceFee(rs.getDouble("service_fee"))
+                .tax(rs.getDouble("tax"))
+                .build();
+    }
+
+    private LocationDto locationDtoBuilder(ResultSet rs) throws SQLException {
+        return LocationDto.builder()
+                .address(rs.getString("address"))
+                .cityOverView(rs.getString("city_overview"))
+                .latitude(rs.getDouble("latitude"))
+                .longitude(rs.getDouble("longitude"))
+                .transit(rs.getString("transit"))
+                .build();
+    }
+
+    private HostDto hostDtoBuilder(ResultSet rs) throws SQLException {
+        return HostDto.builder()
+                .hostAbout(rs.getString("host_about"))
+                .hostLocation(rs.getString("host_location"))
+                .hostName(rs.getString("host_name"))
+                .hostSince(rs.getString("host_since"))
+                .isSuperHost(rs.getBoolean("is_super_host"))
+                .notes(rs.getString("notes"))
+                .build();
     }
 }

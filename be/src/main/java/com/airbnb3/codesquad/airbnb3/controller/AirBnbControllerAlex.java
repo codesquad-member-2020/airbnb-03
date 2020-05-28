@@ -3,11 +3,14 @@ package com.airbnb3.codesquad.airbnb3.controller;
 import com.airbnb3.codesquad.airbnb3.dto.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
 import com.airbnb3.codesquad.airbnb3.service.AirBnbService;
+import com.airbnb3.codesquad.airbnb3.service.ReservationServiceAlex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +22,9 @@ public class AirBnbControllerAlex {
 
     @Autowired
     private AirBnbService airBnbService;
+
+    @Autowired
+    private ReservationServiceAlex reservationService;
 
     @GetMapping("/properties")
     public ResponseEntity<List<PropertiesDtoAlex>> stayedPage(
@@ -47,9 +53,10 @@ public class AirBnbControllerAlex {
     public ResponseEntity<Object> bookingRequest(@PathVariable("id") Long id,
                                                  @RequestParam(value = "checkin") String checkIn,
                                                  @RequestParam(value = "checkout") String checkOut,
-                                                 @RequestParam(value = "guests") String guests
+                                                 @RequestParam(value = "guests") String guests,
+                                                 @CookieValue(value = "name", defaultValue = "None", required = false) String name
     ) {
-
+        reservationService.propertyReservation(id,checkIn,checkOut,guests,name);
         return new ResponseEntity<>("TEST", HttpStatus.OK);
     }
 }

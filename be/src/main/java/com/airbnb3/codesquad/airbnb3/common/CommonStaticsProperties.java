@@ -17,5 +17,8 @@ public class CommonStaticsProperties {
     public static final Double DEFAULT_MAX_LATITUDE = 47.72741971;
     public static final Double DEFAULT_MIN_LONGITUDE = -122.4129798;
     public static final Double DEFAULT_MAX_LONGITUDE = -122.2604426;
+
+    // 손님 기본값 세팅
+    public static final Integer DEFAULT_GUESTS_NUM = 1;
     //-----------------------------------------------------------------------------
 }

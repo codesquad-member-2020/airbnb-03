@@ -28,7 +28,7 @@ public class PropertiesDaoAlex {
     public List<PropertiesDtoAlex> getStayedProperties(int propertyRange, int accommodates,
                                                        Date checkInDate, Date checkOutDate,
                                                        Double minPrice, Double maxPrice, Map<String, Double> location) {
-        String sql = "select p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,p.host_type,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(i.image_url) AS image " +
+        String sql = "select p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(i.image_url) AS image " +
                 "FROM properties p LEFT JOIN images i ON p.id = i.properties_id " +
                 "LEFT JOIN detail t ON t.id = p.id LEFT JOIN calender c ON c.properties_id = p.id " +
                 "WHERE t.accommodates >= :accommodates " +
@@ -60,18 +60,13 @@ public class PropertiesDaoAlex {
                 .longitude(rs.getDouble("longitude"))
                 .reservable(rs.getBoolean("reservable"))
                 .saved(rs.getBoolean("saved"))
-                .hostType(rs.getString("host_type"))
+                .isSuperHost(rs.getBoolean("is_super_host"))
                 .price(rs.getDouble("price"))
                 .placeType(rs.getString("place_type"))
                 .reviewAverage(rs.getDouble("review_average"))
                 .numberOfReviews(rs.getInt("number_of_reviews"))
-                .images(imageParser(rs.getString("image")))
+                .images(Arrays.asList(rs.getString("image").split(",")))
                 .build());
-    }
-
-    private List<String> imageParser(String images) {
-        String[] image = images.split(",");
-        return Arrays.asList(image);
     }
 }
 

@@ -16,7 +16,7 @@ create table if not exists properties
     longitude         DOUBLE,
     reservable        BOOLEAN,
     saved             BOOLEAN,
-    host_type         VARCHAR(32)  DEFAULT 'Not Tag',
+    host_type         VARCHAR(32) DEFAULT 'Not Tag',
     price             DECIMAL(10, 3),
     place_type        VARCHAR(32),
     review_average    DECIMAL(3, 2),
@@ -34,6 +34,7 @@ create table if not exists bookings
     service_fee       DECIMAL(10, 3),
     occupancy_tax_fee DECIMAL(10, 3),
     booking_price     DECIMAL(10, 3),
+    nights            INT,
     status            BOOLEAN,
     properties_id     INT REFERENCES properties (id),
     user_id           INT REFERENCES user (id),
@@ -42,7 +43,7 @@ create table if not exists bookings
 
 create table if not exists user
 (
-    id    INT AUTO_INCREMENT,
+    id    INT,
     name  VARCHAR(64),
     email VARCHAR(128),
     primary key (id)
