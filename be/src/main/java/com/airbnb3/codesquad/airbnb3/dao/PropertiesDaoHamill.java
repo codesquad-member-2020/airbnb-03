@@ -73,7 +73,7 @@ public class PropertiesDaoHamill {
                                            .placeType(rs.getString("place_type"))
                                            .reviewAverage(rs.getDouble("review_average"))
                                            .numberOfReviews(rs.getInt("number_of_reviews"))
-                                           .images(imageParser(rs.getString("image")))
+                                           .images(Arrays.asList(rs.getString("image").split(",")))
                                            .build()
                 , priceMin, priceMax, checkIn, checkOut, accommodates, offset);
     }
@@ -135,7 +135,7 @@ public class PropertiesDaoHamill {
                                        .title(rs.getString("title"))
                                        .reservable(rs.getBoolean("reservable"))
                                        .saved(rs.getBoolean("saved"))
-                                       .images(imageParser(rs.getString("image")))
+                                       .images(Arrays.asList(rs.getString("image").split(",")))
                                        .hostInfo(HostDtoHamill.builder()
                                                               .isSuperHost(rs.getBoolean("is_super_host"))
                                                               .notes(rs.getString("notes"))
@@ -181,10 +181,5 @@ public class PropertiesDaoHamill {
                                        .build()
                 )
                 , propertiesId);
-    }
-
-    private List<String> imageParser(String images) {
-        String[] image = images.split(",");
-        return Arrays.asList(image);
     }
 }
