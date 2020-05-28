@@ -34,6 +34,8 @@ final class StayCell: UICollectionViewCell {
         thumbImagePagingView.prepareForReuse()
     }
     
+    // MARK:- IBAction
+    
     @IBAction func saveButtonTapped(_ sender: Any) {
         if saveButton.isSaved {
             saveButton.toggle()
@@ -41,14 +43,18 @@ final class StayCell: UICollectionViewCell {
             animateSaveButton()
         }
     }
-    
+}
+
+// MARK:- Save Button Animation
+
+extension StayCell {
     private func animateSaveButton() {
         saveButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1.5, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1.4, options: .curveEaseOut, animations: {
             self.saveButton.toggle()
             self.saveButton.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         }, completion: { _ in
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.8, options: .curveEaseIn, animations: {
                 self.saveButton.transform = .identity
             })
         })
