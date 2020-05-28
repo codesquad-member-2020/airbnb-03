@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 public class UserDaoAlex {
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     public void saveUserInfo(GithubUserAlex userInfo) {
         String sql = "INSERT INTO user (id, name, email) VALUES (?, ?, ?)";
