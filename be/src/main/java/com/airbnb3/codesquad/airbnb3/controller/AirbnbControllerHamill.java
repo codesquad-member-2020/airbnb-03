@@ -38,7 +38,7 @@ public class AirbnbControllerHamill {
             @RequestParam(value = "children", required = false, defaultValue = DEFAULT_CHILDREN_COUNT) String children) {
 
         return new ResponseEntity<>(
-                airbnbServiceHamill.findAllProperties(offset,priceMin, priceMax, checkIn, checkOut, adults, children),
+                airbnbServiceHamill.findAllProperties(offset, priceMin, priceMax, checkIn, checkOut, adults, children),
                 HttpStatus.OK);
     }
 
@@ -62,7 +62,7 @@ public class AirbnbControllerHamill {
             @CookieValue(value = "name", required = false, defaultValue = "None") String name) {
 
         airbnbServiceHamill.reserveTheProperties(reservationId, checkIn, checkOut, guests, name);
-        return new ResponseEntity<>(getMessage("200","예약 성공"), HttpStatus.OK);
+        return new ResponseEntity<>(getMessage("200", "예약 성공"), HttpStatus.OK);
     }
 
     @DeleteMapping("/reservations/{reservationId}")
@@ -75,9 +75,9 @@ public class AirbnbControllerHamill {
     private CommonMessage getMessage(String statusCode, String message) {
 
         return CommonMessage.builder()
-                .statusCode(statusCode)
-                .message(message)
-                .build();
+                            .statusCode(statusCode)
+                            .message(message)
+                            .build();
     }
 
 }

@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -204,8 +203,8 @@ public class PropertiesDaoHamill {
                         "     , b.price_for_stay\n" +
                         "     , b.total_price\n" +
                         "FROM bookings b\n" +
-                        "         JOIN properties p on b.properties_id = p.id\n" +
-                        "         JOIN images i on p.id = i.properties_id\n" +
+                        "         JOIN properties p ON b.properties_id = p.id\n" +
+                        "         JOIN images i ON p.id = i.properties_id\n" +
                         "GROUP BY b.id;";
 
         return jdbcTemplate.query(
@@ -235,7 +234,7 @@ public class PropertiesDaoHamill {
     }
 
     public void insertReservationInformation(Long reservationsId, Date checkIn, Date checkOut,
-                                             Integer guests, Integer nights,String name) {
+                                             Integer guests, Integer nights, String name) {
         String sql =
                 "INSERT INTO bookings(check_in_date, check_out_date, booking_date, guests, cleaning_fee, service_fee, tax, price,\n" +
                         "                     price_for_stay, total_price, nights, properties_id)\n" +
@@ -255,7 +254,7 @@ public class PropertiesDaoHamill {
                         "         JOIN detail d ON p.id = d.id " +
                         "WHERE p.id = ?";
 
-        jdbcTemplate.update(sql, checkIn, checkOut, Timestamp.valueOf(LocalDateTime.now()) ,guests, nights, nights, reservationsId);
+        jdbcTemplate.update(sql, checkIn, checkOut, Timestamp.valueOf(LocalDateTime.now()), guests, nights, nights, reservationsId);
     }
 
     public void deleteReservationInformation(Long propertiesId) {

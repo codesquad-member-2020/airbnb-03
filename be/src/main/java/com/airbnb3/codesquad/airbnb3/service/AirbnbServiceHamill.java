@@ -8,12 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
-
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
+
+import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
 
 @Service
 public class AirbnbServiceHamill {
@@ -42,14 +42,14 @@ public class AirbnbServiceHamill {
             DoubleTypePriceMin = tmp;
         }
 
-        if(DateTypeCheckIn.compareTo(DateTypeCheckOut) > 0) {
+        if (DateTypeCheckIn.compareTo(DateTypeCheckOut) > 0) {
             Date tmp = DateTypeCheckOut;
             DateTypeCheckOut = DateTypeCheckIn;
             DateTypeCheckIn = tmp;
         }
 
         return propertiesDaoHamill.findAllProperties(IntegerTypeOffset, DoubleTypePriceMin, DoubleTypePriceMax,
-                                                    DateTypeCheckIn, DateTypeCheckOut, guests);
+                DateTypeCheckIn, DateTypeCheckOut, guests);
     }
 
     public DetailDtoHamill findByPropertiesId(Long propertiesId) {
@@ -89,6 +89,7 @@ public class AirbnbServiceHamill {
             return Integer.parseInt(DEFAULT_OFFSET);
         }
     }
+
     private Double parseStringToDoublePriceMin(String priceMin) {
 
         if (priceMin == null) {
@@ -104,6 +105,7 @@ public class AirbnbServiceHamill {
             return Double.parseDouble(DEFAULT_MIN_PRICE);
         }
     }
+
     private Double parseStringToDoublePriceMax(String priceMax) {
 
         if (priceMax == null) {
@@ -119,6 +121,7 @@ public class AirbnbServiceHamill {
             return Double.parseDouble(DEFAULT_MAX_PRICE);
         }
     }
+
     private Date parseStringToDateCheckIn(String date) {
 
         if (date == null) {
@@ -127,22 +130,24 @@ public class AirbnbServiceHamill {
 
         try {
             return Date.valueOf(date);
-        } catch(IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             return Date.valueOf(LocalDate.now());
         }
     }
+
     private Date parseStringToDateCheckOut(String date) {
 
         if (date == null) {
-            return Date.valueOf(LocalDate.of(2021,6,4));
+            return Date.valueOf(LocalDate.of(2021, 6, 4));
         }
 
         try {
             return Date.valueOf(date);
-        } catch(IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             return Date.valueOf(LocalDate.now().plusDays(2));
         }
     }
+
     private Integer parseStringToIntegerAdults(String adults) {
 
         if (adults == null) {
@@ -158,6 +163,7 @@ public class AirbnbServiceHamill {
             return Integer.parseInt(DEFAULT_ADULTS_COUNT);
         }
     }
+
     private Integer parseStringToIntegerChildren(String children) {
 
         if (children == null) {
