@@ -1,5 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.controller;
 
+import com.airbnb3.codesquad.airbnb3.dto.BookingsDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
 import com.airbnb3.codesquad.airbnb3.service.AirbnbServiceHamill;
@@ -9,9 +10,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
-
+import java.sql.Date;
 import java.util.List;
+
+import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
 
 @RestController
 @RequestMapping("/hamill")
@@ -40,25 +42,33 @@ public class AirbnbControllerHamill {
     }
 
     @GetMapping("/properties/{propertiesId}")
-    public ResponseEntity<DetailDtoHamill> findByPropertiesId(@PathVariable int propertiesId) {
+    public ResponseEntity<DetailDtoHamill> findByPropertiesId(@PathVariable Long propertiesId) {
         return new ResponseEntity<>(airbnbServiceHamill.findByPropertiesId(propertiesId), HttpStatus.OK);
     }
 
-    @PutMapping("/reservations/{reservationsId}")
-    public String insertByReservationsId() {
+//    @GetMapping("/reservations")
+//    public ResponseEntity<List<BookingsDtoHamill>> findAllReservations() {
+//
+//        return new ResponseEntity<>(airbnbServiceHamill.findAllReservations(), HttpStatus.OK);
+//    }
+//
+    @PutMapping("/reservations/{reservationId}")
+    public ResponseEntity<String> reserveTheProperties(
+            @PathVariable Long reservationId,
+            @RequestParam(value = "checkin") Date checkIn,
+            @RequestParam(value = "checkout") Date checkOut,
+            @RequestParam(value = "guests") Integer guests,
+            @CookieValue(value = "name", required = false, defaultValue = "None") String name) {
 
-        return "";
+        airbnbServiceHamill.reserveTheProperties(reservationId, checkIn, checkOut, guests, name);
+        return new ResponseEntity<>("예약되었습니다", HttpStatus.OK);
     }
+//
+//    @DeleteMapping("/reservations/{reservationId")
+//    public ResponseEntity<String> cancelTheProperties(@PathVariable Long reservationId) {
+//        airbnbServiceHamill.cancelTheProperties(reservationId);
+//        return new ResponseEntity<>("예약이 취소되었습니다", HttpStatus.OK);
+//    }
 
-    @DeleteMapping("/reservations/{reservationId")
-    public String deleteByReservationsId() {
 
-        return "";
-    }
-
-    @GetMapping("/reservations")
-    public String findAllReservations() {
-
-        return "";
-    }
 }

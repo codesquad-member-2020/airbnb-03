@@ -1,6 +1,7 @@
 package com.airbnb3.codesquad.airbnb3.service;
 
 import com.airbnb3.codesquad.airbnb3.dao.PropertiesDaoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.BookingsDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 
 @Service
@@ -32,7 +34,7 @@ public class AirbnbServiceHamill {
         Double DoubleTypePriceMax = parseStringToDoublePriceMax(priceMax);
         Date DateTypeCheckIn = parseStringToDateCheckIn(checkIn);
         Date DateTypeCheckOut = parseStringToDateCheckOut(checkOut);
-        Integer accommodates = parseStringToIntegerAdults(adults) + parseStringToIntegerChildren(children);
+        Integer guests = parseStringToIntegerAdults(adults) + parseStringToIntegerChildren(children);
 
         if (DoubleTypePriceMin > DoubleTypePriceMax) {
             Double tmp = DoubleTypePriceMax;
@@ -47,11 +49,28 @@ public class AirbnbServiceHamill {
         }
 
         return propertiesDaoHamill.findAllProperties(IntegerTypeOffset, DoubleTypePriceMin, DoubleTypePriceMax,
-                                                    DateTypeCheckIn, DateTypeCheckOut, accommodates);
+                                                    DateTypeCheckIn, DateTypeCheckOut, guests);
     }
 
-    public DetailDtoHamill findByPropertiesId(int propertiesId) {
+    public DetailDtoHamill findByPropertiesId(Long propertiesId) {
         return propertiesDaoHamill.findByPropertiesId(propertiesId);
+    }
+
+//    public List<BookingsDtoHamill> findAllReservations() {
+//
+//        return propertiesDaoHamill.findAllReservations();
+//    }
+//
+    // 숙소 예약
+    public void reserveTheProperties(Long reservationId, Date checkIn, Date checkOut, Integer guests, String name) {
+
+        Period period = Period.between(checkIn.toLocalDate(), checkOut.toLocalDate());
+        propertiesDaoHamill.insertReservationInformation(reservationId, checkIn, checkOut, guests, period.getDays(), name);
+    }
+//
+    // 숙소 예약 취소
+    public void cancelTheProperties(Long propertiesId) {
+        propertiesDaoHamill.deleteReservationInformation(propertiesId);
     }
 
     private Integer parseStringToIntegerOffset(String offset) {

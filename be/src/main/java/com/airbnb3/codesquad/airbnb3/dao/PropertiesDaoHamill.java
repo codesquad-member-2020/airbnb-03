@@ -1,5 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.dao;
 
+import com.airbnb3.codesquad.airbnb3.dto.BookingsDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.composition.*;
@@ -9,6 +10,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,10 +28,10 @@ public class PropertiesDaoHamill {
     }
 
     public List<PropertiesDtoHamill> findAllProperties(
-            Integer offset, Double priceMin, Double priceMax, Date checkIn, Date checkOut, Integer accommodates) {
+            Integer offset, Double priceMin, Double priceMax, Date checkIn, Date checkOut, Integer guests) {
 
         logger.debug("#### offset, priceMin, priceMax, checkIn, checkOut, accommodates: {}, {}, {}, {}, {}, {}",
-                offset, priceMin, priceMax, checkIn, checkOut, accommodates);
+                offset, priceMin, priceMax, checkIn, checkOut, guests);
 
         String sql =
                 "SELECT p.id,\n" +
@@ -73,10 +77,10 @@ public class PropertiesDaoHamill {
                                            .numberOfReviews(rs.getInt("number_of_reviews"))
                                            .images(Arrays.asList(rs.getString("image").split(",")))
                                            .build()
-                , priceMin, priceMax, checkIn, checkOut, accommodates, offset);
+                , priceMin, priceMax, checkIn, checkOut, guests, offset);
     }
 
-    public DetailDtoHamill findByPropertiesId(int propertiesId) {
+    public DetailDtoHamill findByPropertiesId(Long propertiesId) {
 
         String sql =
                 "SELECT p.id,\n" +
@@ -180,4 +184,67 @@ public class PropertiesDaoHamill {
                 )
                 , propertiesId);
     }
+
+//    public List<BookingsDtoHamill> findAllReservations() {
+//        String sql =
+//                "";
+//
+//        return jdbcTemplate.query(
+//                sql,
+//                (rs, rowNum) ->
+//                        BookingsDtoHamill.builder()
+//                                         .id(rs.getLong("id"))
+//                                         .propertiesId(rs.getLong("properties_id"))
+//                                         .images(Arrays.asList(rs.getString("image").split(",")))
+//                                         .placeType(rs.getString("place_type"))
+//                                         .pricePerDay(rs.getDouble("price_per_day"))
+//                                         .numberOfReviews(rs.getInt("number_of_reviews"))
+//                                         .reviewAverage(rs.getDouble("review_average"))
+//                                         .checkIn(rs.getDate("check_in_date"))
+//                                         .checkOut(rs.getDate("check_out_date"))
+//                                         .guests(rs.getInt("guests"))
+//                                         .nights(rs.getInt("nights"))
+//                                         .bookingPriceInfo(BookingPriceDto.builder()
+//                                                                          .price(rs.getDouble("price"))
+//                                                                          .serviceFee(rs.getDouble("service_fee"))
+//                                                                          .cleaningFee(rs.getDouble("cleaning_fee"))
+//                                                                          .tax(rs.getDouble("tax"))
+//                                                                          .priceForStay(rs.getDouble("price_for_stay"))
+//                                                                          .totalPrice(rs.getDouble("total_price"))
+//                                                                          .build())
+//                                         .build()
+//        )
+//    }
+//
+    public void insertReservationInformation(Long reservationsId, Date checkIn, Date checkOut,
+                                             Integer guests, Integer nights,String name) {
+        String sql =
+                "INSERT INTO bookings(check_in_date, check_out_date, booking_date, guests, cleaning_fee, service_fee, tax, price,\n" +
+                        "                     price_for_stay, total_price, nights, properties_id)\n" +
+                        "SELECT ?,\n" +
+                        "       ?,\n" +
+                        "       ?,\n" +
+                        "       ?,\n" +
+                        "       d.cleaning_fee,\n" +
+                        "       d.service_fee,\n" +
+                        "       d.tax,\n" +
+                        "       p.price,\n" +
+                        "       (p.price + d.cleaning_fee + d.service_fee + d.tax),\n" +
+                        "       (p.price * ? + d.cleaning_fee + d.service_fee + d.tax),\n" +
+                        "       ?,\n" +
+                        "       p.id\n" +
+                        "FROM properties p\n" +
+                        "         JOIN detail d ON p.id = d.id " +
+                        "WHERE p.id = ?";
+
+        jdbcTemplate.update(sql, checkIn, checkOut, Timestamp.valueOf(LocalDateTime.now()) ,guests, nights, nights, reservationsId);
+    }
+//
+//    public void deleteReservationInformation(Long propertiesId) {
+//
+//        String sql = "DELETE FROM bookings WHERE id = ?";
+//        jdbcTemplate.update(sql, propertiesId);
+//    }
+
+
 }
