@@ -1,5 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.controller;
 
+import com.airbnb3.codesquad.airbnb3.common.CommonMessage;
 import com.airbnb3.codesquad.airbnb3.dto.BookingsDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
@@ -53,7 +54,7 @@ public class AirbnbControllerHamill {
 //    }
 //
     @PutMapping("/reservations/{reservationId}")
-    public ResponseEntity<String> reserveTheProperties(
+    public ResponseEntity<CommonMessage> reserveTheProperties(
             @PathVariable Long reservationId,
             @RequestParam(value = "checkin") Date checkIn,
             @RequestParam(value = "checkout") Date checkOut,
@@ -61,14 +62,22 @@ public class AirbnbControllerHamill {
             @CookieValue(value = "name", required = false, defaultValue = "None") String name) {
 
         airbnbServiceHamill.reserveTheProperties(reservationId, checkIn, checkOut, guests, name);
-        return new ResponseEntity<>("예약되었습니다", HttpStatus.OK);
+        return new ResponseEntity<>(getMessage("200","예약 성공"), HttpStatus.OK);
     }
-//
-//    @DeleteMapping("/reservations/{reservationId")
-//    public ResponseEntity<String> cancelTheProperties(@PathVariable Long reservationId) {
-//        airbnbServiceHamill.cancelTheProperties(reservationId);
-//        return new ResponseEntity<>("예약이 취소되었습니다", HttpStatus.OK);
-//    }
 
+    @DeleteMapping("/reservations/{reservationId}")
+    public ResponseEntity<CommonMessage> cancelTheProperties(@PathVariable Long reservationId) {
+
+        airbnbServiceHamill.cancelTheProperties(reservationId);
+        return new ResponseEntity<>(getMessage("200", "예약 취소"), HttpStatus.OK);
+    }
+
+    private CommonMessage getMessage(String statusCode, String message) {
+
+        return CommonMessage.builder()
+                .statusCode(statusCode)
+                .message(message)
+                .build();
+    }
 
 }

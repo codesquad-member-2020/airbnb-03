@@ -239,12 +239,12 @@ public class PropertiesDaoHamill {
 
         jdbcTemplate.update(sql, checkIn, checkOut, Timestamp.valueOf(LocalDateTime.now()) ,guests, nights, nights, reservationsId);
     }
-//
-//    public void deleteReservationInformation(Long propertiesId) {
-//
-//        String sql = "DELETE FROM bookings WHERE id = ?";
-//        jdbcTemplate.update(sql, propertiesId);
-//    }
+
+    public void deleteReservationInformation(Long propertiesId) {
+
+        String sql = "DELETE FROM bookings WHERE id = ?";
+        jdbcTemplate.update(sql, propertiesId);
+    }
 
 
 }
