@@ -1,38 +1,19 @@
 import Foundation
 
 struct SearchFilterQuery: Encodable {
-    var pageOffset: Int
-    var checkInDate, checkOutDate: String?
-    var adults, children, infants: Int?
-    var minPrice, maxPrice: Int?
-    var minLatitude, minLongitude, maxLatitude, maxLongitude: Double?
+    private var pageOffset: Int = 1
+    private var checkInDate: String? = nil
+    private var checkOutDate: String? = nil
+    private var adults: Int? = nil
+    private var children: Int? = nil
+    private var infants: Int? = nil
+    private var minPrice: Int? = nil
+    private var maxPrice: Int? = nil
+    private var minLatitude: Double? = nil
+    private var minLongitude: Double? = nil
+    private var maxLatitude: Double? = nil
+    private var maxLongitude: Double? = nil
 
-    init(pageOffset: Int = 1,
-         checkInDate: String? = nil,
-         checkOutDate: String? = nil,
-         adults: Int? = nil,
-         children: Int? = nil,
-         infants: Int? = nil,
-         minPrice: Int? = nil,
-         maxPrice: Int? = nil,
-         minLatitude: Double? = nil,
-         minLongitude: Double? = nil,
-         maxLatitude: Double? = nil,
-         maxLongitude: Double? = nil) {
-        self.pageOffset = pageOffset
-        self.checkInDate = checkInDate
-        self.checkOutDate = checkOutDate
-        self.adults = adults
-        self.children = children
-        self.infants = infants
-        self.minPrice = minPrice
-        self.maxPrice = maxPrice
-        self.minLatitude = minLatitude
-        self.minLongitude = minLongitude
-        self.maxLatitude = maxLatitude
-        self.maxLongitude = maxLongitude
-    }
-    
     struct Date {
         let checkIn, checkOut: String?
     }
@@ -48,29 +29,28 @@ struct SearchFilterQuery: Encodable {
     struct LocationRange {
         let minLatitude, minLongitude, maxLatitude, maxLongitude: Double?
     }
-
 }
 
 // MARK:- Update Filters Method
 
 extension SearchFilterQuery {
-    func updateFilters(pageOffset: Int = 1,
+    mutating func updateFilters(pageOffset: Int = 1,
                                          date: Date? = nil,
                                          guest: Guest? = nil,
                                          price: Price? = nil,
-                                         locationRange: LocationRange? = nil) -> Self {
-        SearchFilterQuery(pageOffset: pageOffset,
-                          checkInDate: date?.checkIn ?? self.checkInDate,
-                          checkOutDate: date?.checkOut ?? self.checkOutDate,
-                          adults: guest?.adults ?? self.adults,
-                          children: guest?.children ?? self.children,
-                          infants: guest?.infants ?? self.infants,
-                          minPrice: price?.min ?? self.minPrice,
-                          maxPrice: price?.max ?? self.maxPrice,
-                          minLatitude: locationRange?.minLatitude ?? self.minLatitude,
-                          minLongitude: locationRange?.minLongitude ?? self.minLongitude,
-                          maxLatitude: locationRange?.maxLatitude ?? self.maxLatitude,
-                          maxLongitude: locationRange?.maxLongitude ?? self.maxLongitude)
+                                         locationRange: LocationRange? = nil) {
+        self.pageOffset = pageOffset
+        checkInDate = date?.checkIn ?? self.checkInDate
+        checkOutDate = date?.checkOut ?? self.checkOutDate
+        adults = guest?.adults ?? self.adults
+        children = guest?.children ?? self.children
+        infants = guest?.infants ?? self.infants
+        minPrice = price?.min ?? self.minPrice
+        maxPrice = price?.max ?? self.maxPrice
+        minLatitude = locationRange?.minLatitude ?? self.minLatitude
+        minLongitude = locationRange?.minLongitude ?? self.minLongitude
+        maxLatitude = locationRange?.maxLatitude ?? self.maxLatitude
+        maxLongitude = locationRange?.maxLongitude ?? self.maxLongitude
     }
 }
 
