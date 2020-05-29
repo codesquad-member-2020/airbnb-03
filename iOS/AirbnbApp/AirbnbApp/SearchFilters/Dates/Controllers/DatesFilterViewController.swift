@@ -8,6 +8,7 @@ final class DatesFilterViewController: UIViewController {
     
     private var titleView: DatesFilterTitleView!
     private var fixedFooterView: DatesFilterFixedFooterView!
+    private var monthsCollectionView: MonthsCollectionView!
     weak var searchDelegate: DatesFilterViewControllerSearchDelegate?
 
     override func viewDidLoad() {
@@ -43,11 +44,13 @@ extension DatesFilterViewController {
         
         titleView = DatesFilterTitleView.loadFromXib()
         fixedFooterView = DatesFilterFixedFooterView.loadFromXib()
+        monthsCollectionView = MonthsCollectionView()
     }
     
     private func configureLayout() {
         view.addSubviews(titleView,
-                         fixedFooterView)
+                         fixedFooterView,
+                         monthsCollectionView)
         
         titleView.constraints(topAnchor: view.safeAreaLayoutGuide.topAnchor,
                               leadingAnchor: view.leadingAnchor,
@@ -61,5 +64,9 @@ extension DatesFilterViewController {
                                     trailingAnchor: view.trailingAnchor,
                                     size: .init(width: 0,
                                                 height: DatesFilterFixedFooterView.height))
+        monthsCollectionView.constraints(topAnchor: titleView.bottomAnchor,
+                                         leadingAnchor: view.leadingAnchor,
+                                         bottomAnchor: fixedFooterView.topAnchor,
+                                         trailingAnchor: view.trailingAnchor)
     }
 }
