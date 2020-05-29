@@ -36,6 +36,7 @@ public class AirBnbService {
         Map<String, Date> reservationDates = dateCompare(checkIn, checkOut);
         Date checkInDate = reservationDates.get("checkInDate");
         Date checkOutDate = reservationDates.get("checkOutDate");
+        logger.info("checkInDate : {}, checkOutDate : {}",checkInDate,checkOutDate);
         Double minPrice = parseStringToMinDouble(minRange);
         Double maxPrice = parseStringToMaxDouble(maxRange);
         Map<String, Double> location = parseStringToLocationDouble(minLatitude, maxLatitude, minLongitude, maxLongitude);
@@ -44,6 +45,10 @@ public class AirBnbService {
 
     public DetailDtoAlex detailProperties(Long id) {
         return detailDao.getDetailProperties(id);
+    }
+
+    public void saveProperties(Long id, String name) {
+
     }
 
     private Map<String, Date> dateCompare(String checkIn, String checkOut) {

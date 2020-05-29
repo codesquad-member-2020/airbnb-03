@@ -53,4 +53,34 @@ public class ReservationDaoAlex {
         jdbcTemplate.update(sql, parameterSource);
         return reservationDate;
     }
+
+    public String[] deleteReservation(Long reservationId) {
+        String sql_date = "SELECT CONCAT_WS(',',check_in_date,check_out_date) AS reservation_date FROM bookings WHERE id = :reservationId";
+        String sql = "DELETE FROM bookings WHERE id = :reservationId";
+
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource().addValue("reservationId", reservationId);
+        String[] result = jdbcTemplate.queryForObject(sql_date, parameterSource, (rs, rowNum) -> rs.getString("reservation_date").split(","));
+        jdbcTemplate.update(sql, parameterSource);
+        return result;
+    }
+
+    public void deleteCalender(Long propertiesId, Date checkInDate, Date checkOutDate) {
+        String sql = "DELETE FROM calender WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate AND properties_id = :propertiesId";
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource()
+                .addValue("propertiesId", propertiesId)
+                .addValue("checkInDate", checkInDate)
+                .addValue("checkOutDate", checkOutDate);
+        jdbcTemplate.update(sql, parameterSource);
+    }
+
+    public boolean checkReservation(Map<String, Date> reservationDates) {
+        Date checkInDate = reservationDates.get("checkInDate");
+        Date checkOutDate = reservationDates.get("checkOutDate");
+        String sql = "SELECT EXISTS(SELECT * FROM calender WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate) as reservationed;";
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource()
+                .addValue("checkInDate", checkInDate)
+                .addValue("checkOutDate", checkOutDate);
+        return jdbcTemplate.queryForObject(sql, parameterSource, (rs, rowNum) -> rs.getBoolean("reservationed"));
+
+    }
 }

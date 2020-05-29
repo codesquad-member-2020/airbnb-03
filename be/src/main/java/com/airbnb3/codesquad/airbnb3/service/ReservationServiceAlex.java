@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,12 +34,16 @@ public class ReservationServiceAlex {
 
     public ReservationDto propertyReservation(Long id, String checkIn, String checkOut, String guest, String name) {
         Map<String, Date> reservationDates = dateCompare(checkIn, checkOut);
+        Integer nights = (int) ChronoUnit.DAYS.between(reservationDates.get("checkInDate").toLocalDate(), reservationDates.get("checkOutDate").toLocalDate());
+
+        if (reservationDao.checkReservation(reservationDates)) return null;
+
         Integer guestCount = parseStringToAccommodatesInteger(guest);
         PriceDto prices = detailDao.getPrices(id);
         Long userId = userDao.getIdFromUserId(name);
-        Integer nights = (int) ChronoUnit.DAYS.between(reservationDates.get("checkInDate").toLocalDate(), reservationDates.get("checkOutDate").toLocalDate());
         Double roomTotalPrice = prices.getPrice() * nights;
         Double totalPrice = roomTotalPrice + prices.getCleaningFee() + prices.getServiceFee() + prices.getTax();
+
         ReservationDto reservation = ReservationDto.builder()
                 .checkInDate(reservationDates.get("checkInDate"))
                 .checkOutDate(reservationDates.get("checkOutDate"))
@@ -57,9 +60,17 @@ public class ReservationServiceAlex {
                 .guests(guestCount)
                 .build();
 
-        propertiesCalenderUpdate(id,reservationDates.get("checkInDate"),reservationDates.get("checkOutDate"));
+        propertiesCalenderUpdate(id, reservationDates.get("checkInDate"), reservationDates.get("checkOutDate"));
         return reservationDao.reservationProperties(reservation);
     }
+
+    public void cancelReservation(Long reservationId, Long propertiesId) {
+        String[] date = reservationDao.deleteReservation(reservationId);
+        Date checkInDate = Date.valueOf(date[0]);
+        Date checkOutDate = Date.valueOf(date[1]);
+        reservationDao.deleteCalender(propertiesId, checkInDate, checkOutDate);
+    }
+
 
     private Map<String, Date> dateCompare(String checkIn, String checkOut) {
 
@@ -107,11 +118,11 @@ public class ReservationServiceAlex {
     private void propertiesCalenderUpdate(Long id, Date checkInDate, Date checkOutDate) {
         LocalDate checkIn = checkInDate.toLocalDate();
         LocalDate checkOut = checkOutDate.toLocalDate();
-        logger.info("reservation :::::::::: {}",reservationDao.reservationCalender(id,checkInDate));
+        reservationDao.reservationCalender(id, checkInDate);
         while (!checkIn.isEqual(checkOut)) {
             checkIn = checkIn.plusDays(1L);
             Date reservationDate = Date.valueOf(checkIn);
-            logger.info("reservation :::::::::: {}",reservationDao.reservationCalender(id,reservationDate));
+            reservationDao.reservationCalender(id, reservationDate);
         }
     }
 }
