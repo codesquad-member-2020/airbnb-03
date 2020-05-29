@@ -1,9 +1,9 @@
-package com.airbnb3.codesquad.airbnb3.service;
+package com.airbnb3.codesquad.airbnb3.service.hamill;
 
-import com.airbnb3.codesquad.airbnb3.dao.PropertiesDaoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.BookingsDtoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dao.hamill.PropertiesDaoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingsDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.DetailDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.PropertiesDtoHamill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

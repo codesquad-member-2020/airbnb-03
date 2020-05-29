@@ -1,7 +1,7 @@
 package com.airbnb3.codesquad.airbnb3;
 
-import com.airbnb3.codesquad.airbnb3.dao.PropertiesDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.PropertiesDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

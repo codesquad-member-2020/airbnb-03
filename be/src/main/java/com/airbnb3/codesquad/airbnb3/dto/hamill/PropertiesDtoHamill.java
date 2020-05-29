@@ -1,4 +1,4 @@
-package com.airbnb3.codesquad.airbnb3.dto;
+package com.airbnb3.codesquad.airbnb3.dto.hamill;
 
 import lombok.Builder;
 import lombok.Getter;

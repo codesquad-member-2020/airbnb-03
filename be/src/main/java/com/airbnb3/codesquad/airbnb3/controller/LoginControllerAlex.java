@@ -2,7 +2,7 @@ package com.airbnb3.codesquad.airbnb3.controller;
 
 import com.airbnb3.codesquad.airbnb3.oauth.GithubAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.GithubUserAlex;
-import com.airbnb3.codesquad.airbnb3.service.LoginServiceAlex;
+import com.airbnb3.codesquad.airbnb3.service.alex.LoginServiceAlex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

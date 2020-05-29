@@ -1,10 +1,10 @@
-package com.airbnb3.codesquad.airbnb3.controller;
+package com.airbnb3.codesquad.airbnb3.controller.alex;
 
-import com.airbnb3.codesquad.airbnb3.dto.DetailDtoAlex;
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
-import com.airbnb3.codesquad.airbnb3.service.AirBnbServiceAlex;
-import com.airbnb3.codesquad.airbnb3.service.ReservationServiceAlex;
+import com.airbnb3.codesquad.airbnb3.service.alex.AirBnbServiceAlex;
+import com.airbnb3.codesquad.airbnb3.service.alex.ReservationServiceAlex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.airbnb3.codesquad.airbnb3.dto;
+package com.airbnb3.codesquad.airbnb3.dto.alex;
 
 import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import lombok.*;

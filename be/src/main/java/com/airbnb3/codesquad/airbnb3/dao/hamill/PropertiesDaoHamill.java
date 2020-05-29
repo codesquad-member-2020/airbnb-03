@@ -1,8 +1,8 @@
-package com.airbnb3.codesquad.airbnb3.dao;
+package com.airbnb3.codesquad.airbnb3.dao.hamill;
 
-import com.airbnb3.codesquad.airbnb3.dto.BookingsDtoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingsDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.DetailDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.PropertiesDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,8 +1,8 @@
-package com.airbnb3.codesquad.airbnb3.service;
+package com.airbnb3.codesquad.airbnb3.service.alex;
 
-import com.airbnb3.codesquad.airbnb3.dao.DetailDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dao.ReservationDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dao.UserDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.DetailDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.ReservationDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.UserDaoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
 import com.airbnb3.codesquad.airbnb3.dto.composition.PriceDto;
 import org.slf4j.Logger;

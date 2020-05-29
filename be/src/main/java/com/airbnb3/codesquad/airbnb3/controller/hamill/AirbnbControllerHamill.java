@@ -1,10 +1,10 @@
-package com.airbnb3.codesquad.airbnb3.controller;
+package com.airbnb3.codesquad.airbnb3.controller.hamill;
 
 import com.airbnb3.codesquad.airbnb3.common.CommonMessage;
-import com.airbnb3.codesquad.airbnb3.dto.BookingsDtoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
-import com.airbnb3.codesquad.airbnb3.service.AirbnbServiceHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingsDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.DetailDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.PropertiesDtoHamill;
+import com.airbnb3.codesquad.airbnb3.service.hamill.AirbnbServiceHamill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

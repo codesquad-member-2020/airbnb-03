@@ -1,9 +1,9 @@
-package com.airbnb3.codesquad.airbnb3.service;
+package com.airbnb3.codesquad.airbnb3.service.alex;
 
-import com.airbnb3.codesquad.airbnb3.dao.DetailDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dao.PropertiesDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dto.DetailDtoAlex;
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.DetailDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.PropertiesDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
