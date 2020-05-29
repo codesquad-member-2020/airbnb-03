@@ -29,6 +29,10 @@
 		3893B5E0247F9A83004783C4 /* UIView+layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893B5DF247F9A83004783C4 /* UIView+layer.swift */; };
 		3899CADB24811D37006CB23E /* DatesFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CADA24811D37006CB23E /* DatesFilterViewController.swift */; };
 		3899CADD2481369F006CB23E /* DatesFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CADC2481369F006CB23E /* DatesFilterButton.swift */; };
+		3899CADF24813ABD006CB23E /* DatesFilterTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CADE24813ABD006CB23E /* DatesFilterTitleView.swift */; };
+		3899CAE124813ACF006CB23E /* DatesFilterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CAE024813ACF006CB23E /* DatesFilterTitleView.xib */; };
+		3899CAE32481407D006CB23E /* ModalIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAE22481407D006CB23E /* ModalIndicatorView.swift */; };
+		3899CAE524814871006CB23E /* UIView+draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAE424814871006CB23E /* UIView+draw.swift */; };
 		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
 		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
@@ -97,6 +101,10 @@
 		3893B5DF247F9A83004783C4 /* UIView+layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+layer.swift"; sourceTree = "<group>"; };
 		3899CADA24811D37006CB23E /* DatesFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesFilterViewController.swift; sourceTree = "<group>"; };
 		3899CADC2481369F006CB23E /* DatesFilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesFilterButton.swift; sourceTree = "<group>"; };
+		3899CADE24813ABD006CB23E /* DatesFilterTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesFilterTitleView.swift; sourceTree = "<group>"; };
+		3899CAE024813ACF006CB23E /* DatesFilterTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatesFilterTitleView.xib; sourceTree = "<group>"; };
+		3899CAE22481407D006CB23E /* ModalIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalIndicatorView.swift; sourceTree = "<group>"; };
+		3899CAE424814871006CB23E /* UIView+draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+draw.swift"; sourceTree = "<group>"; };
 		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
 		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
@@ -214,6 +222,7 @@
 				384C0E382473F50F0051528B /* UIView+addSubviews.swift */,
 				38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */,
 				3893B5DF247F9A83004783C4 /* UIView+layer.swift */,
+				3899CAE424814871006CB23E /* UIView+draw.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +338,9 @@
 		3899CAD82480F880006CB23E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3899CAE024813ACF006CB23E /* DatesFilterTitleView.xib */,
+				3899CADE24813ABD006CB23E /* DatesFilterTitleView.swift */,
+				3899CAE22481407D006CB23E /* ModalIndicatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -509,6 +521,7 @@
 				8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */,
 				384C0E3D2473F62A0051528B /* StayCell.xib in Resources */,
 				8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */,
+				3899CAE124813ACF006CB23E /* DatesFilterTitleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */,
+				3899CAE524814871006CB23E /* UIView+draw.swift in Sources */,
 				388E141F2480D30100FC0D50 /* SearchFilterQuery.swift in Sources */,
 				8D9B7A17247C0F1200D9A99D /* StayListCollectionViewDelegate.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
@@ -600,6 +614,7 @@
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
 				384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */,
 				38F1F8982479614500454668 /* StayListCollectionViewDataSource.swift in Sources */,
+				3899CAE32481407D006CB23E /* ModalIndicatorView.swift in Sources */,
 				8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */,
 				8DCA197324754D5A00B3C167 /* SearchFilterView.swift in Sources */,
 				8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */,
@@ -625,6 +640,7 @@
 				3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */,
 				8D9B7A1B247C206400D9A99D /* RoundedBorder.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
+				3899CADF24813ABD006CB23E /* DatesFilterTitleView.swift in Sources */,
 				8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */,
 				8D9B7A13247C09E500D9A99D /* DetailSectionView.swift in Sources */,
 				38F1F89224795E0400454668 /* Stay.swift in Sources */,
