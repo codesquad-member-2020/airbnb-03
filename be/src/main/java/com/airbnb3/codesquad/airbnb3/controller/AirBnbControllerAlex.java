@@ -3,34 +3,28 @@ package com.airbnb3.codesquad.airbnb3.controller;
 import com.airbnb3.codesquad.airbnb3.dto.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
-import com.airbnb3.codesquad.airbnb3.service.AirBnbService;
+import com.airbnb3.codesquad.airbnb3.service.AirBnbServiceAlex;
 import com.airbnb3.codesquad.airbnb3.service.ReservationServiceAlex;
-import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
 import java.util.List;
-
-import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
 
 @RestController
 @RequestMapping("/alex")
 public class AirBnbControllerAlex {
 
     @Autowired
-    private AirBnbService airBnbService;
+    private AirBnbServiceAlex airBnbServiceAlex;
 
     @Autowired
     private ReservationServiceAlex reservationService;
 
     @GetMapping("/properties")
     public ResponseEntity<List<PropertiesDtoAlex>> stayedPage(
-            @RequestParam(value = "offset", required = false, defaultValue = "1") String pageNum,
+            @RequestParam(value = "offset", required = false, defaultValue = "1") String offset,
             @RequestParam(value = "adults", required = false, defaultValue = "1") String adults,
             @RequestParam(value = "children", required = false, defaultValue = "0") String children,
             @RequestParam(value = "check_in", required = false) String checkIn,
@@ -42,13 +36,13 @@ public class AirBnbControllerAlex {
             @RequestParam(value = "max_lat", required = false, defaultValue = "max_lat") String maxLatitude,
             @RequestParam(value = "max_long", required = false, defaultValue = "max_long") String maxLongitude
     ) {
-        return new ResponseEntity<>(airBnbService.stayedProperties(pageNum, adults, children, checkIn, checkOut,
+        return new ResponseEntity<>(airBnbServiceAlex.stayedProperties(offset, adults, children, checkIn, checkOut,
                 minRange, maxRange, minLatitude, maxLatitude, minLongitude, maxLongitude), HttpStatus.OK);
     }
 
     @GetMapping("/properties/{id}")
     public ResponseEntity<DetailDtoAlex> detailPage(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(airBnbService.detailProperties(id), HttpStatus.OK);
+        return new ResponseEntity<>(airBnbServiceAlex.detailProperties(id), HttpStatus.OK);
     }
 
     //@PutMapping("/reservations/{id}")
@@ -79,6 +73,6 @@ public class AirBnbControllerAlex {
     //@PutMapping("/saved/{id}")
     @GetMapping("/saved/{id}")
     public void savedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
-        airBnbService.saveProperties(id, name);
+        airBnbServiceAlex.saveProperties(id, name);
     }
 }

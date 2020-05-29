@@ -21,7 +21,7 @@ import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
 @Service
 public class ReservationServiceAlex {
 
-    private static final Logger logger = LoggerFactory.getLogger(AirBnbService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AirBnbServiceAlex.class);
 
     @Autowired
     private ReservationDaoAlex reservationDao;
