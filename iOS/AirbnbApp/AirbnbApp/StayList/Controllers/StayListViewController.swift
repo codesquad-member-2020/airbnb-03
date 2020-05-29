@@ -25,7 +25,8 @@ final class StayListViewController: UIViewController {
     
     private func fetchStayList() {
         loadingView.startLoadingAnimation()
-        StayListUseCase.getStayList { (result) in
+        let searchFilterQuery = SearchFilterQuery()
+        StayListUseCase.getStayList(searchFilterQuery: searchFilterQuery) { (result) in
             switch result {
             case .success(let stayList):
                 DispatchQueue.main.async {

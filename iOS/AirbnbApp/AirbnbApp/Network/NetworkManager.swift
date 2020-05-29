@@ -7,15 +7,21 @@ enum NetworkErrorCase {
 }
 
 final class NetworkManager {
-    static func getResource(from URL: URL,
-                               completionHandler: @escaping (Result<Data, AFError>) -> Void) {
-        AF.request(URL).responseData { (responseData) in
-            switch responseData.result {
-            case .success(let data):
-                completionHandler(.success(data))
-            case .failure(let error):
-                completionHandler(.failure(error))
-            }
+    
+    static func getResource<Parameters: Encodable>(from URL: URL,
+                            parameters: Parameters? = nil,
+                            encoder: ParameterEncoder = URLEncodedFormParameterEncoder.default,
+                            completionHandler: @escaping (Result<Data, AFError>) -> Void) {
+        AF.request(URL,
+                   parameters: parameters,
+                   encoder: encoder)
+            .responseData { (responseData) in
+                switch responseData.result {
+                case .success(let data):
+                    completionHandler(.success(data))
+                case .failure(let error):
+                    completionHandler(.failure(error))
+                }
         }
     }
     
