@@ -6,21 +6,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
 public class HostDto {
     private Boolean isSuperHost;
     private String notes;
-    private String hostName;
-    private String hostSince;
-    private String hostLocation;
-    private String hostAbout;
-
-    @Builder
-    public HostDto(Boolean isSuperHost, String notes, String hostName, String hostSince, String hostLocation, String hostAbout) {
-        this.isSuperHost = isSuperHost;
-        this.notes = notes;
-        this.hostName = hostName;
-        this.hostSince = hostSince;
-        this.hostLocation = hostLocation;
-        this.hostAbout = hostAbout;
-    }
+    private String name;
+    private String since;
+    private String location;
+    private String about;
 }

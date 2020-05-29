@@ -6,25 +6,14 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
 public class ReviewDto {
-    private Double reviewAverage;
+    private Double average;
     private Integer numberOfReviews;
-    private Double reviewScoresAccuracy;
-    private Double reviewScoresCleanliness;
-    private Double reviewScoresCheckin;
-    private Double reviewScoresCommunication;
-    private Double reviewScoresLocation;
-    private Double reviewScoresValue;
-
-    @Builder
-    public ReviewDto(Double reviewAverage, Integer numberOfReviews, Double reviewScoresAccuracy, Double reviewScoresCleanliness, Double reviewScoresCheckin, Double reviewScoresCommunication, Double reviewScoresLocation, Double reviewScoresValue) {
-        this.reviewAverage = reviewAverage;
-        this.numberOfReviews = numberOfReviews;
-        this.reviewScoresAccuracy = reviewScoresAccuracy;
-        this.reviewScoresCleanliness = reviewScoresCleanliness;
-        this.reviewScoresCheckin = reviewScoresCheckin;
-        this.reviewScoresCommunication = reviewScoresCommunication;
-        this.reviewScoresLocation = reviewScoresLocation;
-        this.reviewScoresValue = reviewScoresValue;
-    }
+    private Double scoresAccuracy;
+    private Double scoresCleanliness;
+    private Double scoresCheckin;
+    private Double scoresCommunication;
+    private Double scoresLocation;
+    private Double scoresValue;
 }

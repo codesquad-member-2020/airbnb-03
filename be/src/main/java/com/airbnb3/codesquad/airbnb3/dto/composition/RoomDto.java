@@ -6,6 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
 public class RoomDto {
     private String placeType;
     private String summary;
@@ -16,17 +17,4 @@ public class RoomDto {
     private Integer beds;
     private String bedType;
     private String amenities;
-
-    @Builder
-    public RoomDto(String placeType, String summary, String space, Integer accommodates, Integer bathrooms, Integer bedrooms, Integer beds, String bedType, String amenities) {
-        this.placeType = placeType;
-        this.summary = summary;
-        this.space = space;
-        this.accommodates = accommodates;
-        this.bathrooms = bathrooms;
-        this.bedrooms = bedrooms;
-        this.beds = beds;
-        this.bedType = bedType;
-        this.amenities = amenities;
-    }
 }
