@@ -11,6 +11,8 @@ final class StayListViewController: UIViewController {
     private var mapButtonView: MapButtonView!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
     private var loadingView: LoadingView!
+    
+    private var searchFilterQuery: SearchFilterQuery = SearchFilterQuery()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,6 @@ final class StayListViewController: UIViewController {
     
     private func fetchStayList() {
         loadingView.startLoadingAnimation()
-        let searchFilterQuery = SearchFilterQuery()
         StayListUseCase.getStayList(searchFilterQuery: searchFilterQuery) { (result) in
             switch result {
             case .success(let stayList):
@@ -75,6 +76,23 @@ final class StayListViewController: UIViewController {
         present(viewController, animated: true)
     }
 }
+
+// MARK:- SearchFilter for Query
+
+extension StayListViewController {
+    func updateSearchFilterQuery(pageOffset: Int = 1,
+                                 date: SearchFilterQuery.Date? = nil,
+                                 guest: SearchFilterQuery.Guest? = nil,
+                                 price: SearchFilterQuery.Price? = nil,
+                                 locationRange: SearchFilterQuery.LocationRange? = nil) {
+        self.searchFilterQuery = searchFilterQuery.updateFilters(pageOffset: pageOffset,
+                                                                date: date,
+                                                                guest: guest,
+                                                                price: price,
+                                                                locationRange: locationRange)
+    }
+}
+
 
 // MARK:- Delegation Configuration
 
