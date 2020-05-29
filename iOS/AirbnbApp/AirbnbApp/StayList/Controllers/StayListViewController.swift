@@ -128,7 +128,17 @@ extension StayListViewController: SearchFilterViewTapDelegate {
     
     func didTapDatesFilter() {
         let datesFilterViewController = DatesFilterViewController()
+        datesFilterViewController.searchDelegate = self
         present(datesFilterViewController, animated: true)
+    }
+}
+
+extension StayListViewController: DatesFilterViewControllerSearchDelegate {
+    func searchStayList(date: (checkIn: String, checkOut: String)?) {
+        guard let date = date else { return }
+        searchFilterQuery.updateFilters(date: SearchFilterQuery.Date(checkIn: date.checkIn,
+                                                                     checkOut: date.checkOut))
+        fetchStayList()
     }
 }
 

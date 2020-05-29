@@ -33,6 +33,9 @@
 		3899CAE124813ACF006CB23E /* DatesFilterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CAE024813ACF006CB23E /* DatesFilterTitleView.xib */; };
 		3899CAE32481407D006CB23E /* ModalIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAE22481407D006CB23E /* ModalIndicatorView.swift */; };
 		3899CAE524814871006CB23E /* UIView+draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAE424814871006CB23E /* UIView+draw.swift */; };
+		3899CAEB24814FD5006CB23E /* DatesFilterFixedFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CAEA24814FD5006CB23E /* DatesFilterFixedFooterView.xib */; };
+		3899CAED248150A2006CB23E /* DatesFilterFixedFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAEC248150A2006CB23E /* DatesFilterFixedFooterView.swift */; };
+		3899CAEF24815434006CB23E /* DatesFilterSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAEE24815434006CB23E /* DatesFilterSearchButton.swift */; };
 		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
 		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
@@ -105,6 +108,9 @@
 		3899CAE024813ACF006CB23E /* DatesFilterTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatesFilterTitleView.xib; sourceTree = "<group>"; };
 		3899CAE22481407D006CB23E /* ModalIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalIndicatorView.swift; sourceTree = "<group>"; };
 		3899CAE424814871006CB23E /* UIView+draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+draw.swift"; sourceTree = "<group>"; };
+		3899CAEA24814FD5006CB23E /* DatesFilterFixedFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatesFilterFixedFooterView.xib; sourceTree = "<group>"; };
+		3899CAEC248150A2006CB23E /* DatesFilterFixedFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesFilterFixedFooterView.swift; sourceTree = "<group>"; };
+		3899CAEE24815434006CB23E /* DatesFilterSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesFilterSearchButton.swift; sourceTree = "<group>"; };
 		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
 		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
@@ -341,6 +347,9 @@
 				3899CAE024813ACF006CB23E /* DatesFilterTitleView.xib */,
 				3899CADE24813ABD006CB23E /* DatesFilterTitleView.swift */,
 				3899CAE22481407D006CB23E /* ModalIndicatorView.swift */,
+				3899CAEA24814FD5006CB23E /* DatesFilterFixedFooterView.xib */,
+				3899CAEC248150A2006CB23E /* DatesFilterFixedFooterView.swift */,
+				3899CAEE24815434006CB23E /* DatesFilterSearchButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -522,6 +531,7 @@
 				384C0E3D2473F62A0051528B /* StayCell.xib in Resources */,
 				8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */,
 				3899CAE124813ACF006CB23E /* DatesFilterTitleView.xib in Resources */,
+				3899CAEB24814FD5006CB23E /* DatesFilterFixedFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +627,9 @@
 				3899CAE32481407D006CB23E /* ModalIndicatorView.swift in Sources */,
 				8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */,
 				8DCA197324754D5A00B3C167 /* SearchFilterView.swift in Sources */,
+				3899CAED248150A2006CB23E /* DatesFilterFixedFooterView.swift in Sources */,
 				8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */,
+				3899CAEF24815434006CB23E /* DatesFilterSearchButton.swift in Sources */,
 				3899CADD2481369F006CB23E /* DatesFilterButton.swift in Sources */,
 				8D328443247647900078678A /* ViewFromXib.swift in Sources */,
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
