@@ -1,11 +1,13 @@
 import Foundation
 
-final class StayListUseCase {
-    static let path: String = "https://551ca9ec-85b7-433b-b292-6fad22509ac8.mock.pstmn.io/main"
+struct StayListUseCase {
+    static let path: String = "http://3.34.93.158/alex/properties/"
     
-    static func getStayList(completionHandler: @escaping (Result<[Stay], Error>) -> Void) {
+    static func getStayList(searchFilterQuery: SearchFilterQuery,
+                            completionHandler: @escaping (Result<[Stay], Error>) -> Void) {
         let url = URL(string: path)!
-        NetworkManager.getResource(from: url) { (result) in
+        NetworkManager.getResource(from: url,
+                                   parameters: searchFilterQuery) { (result) in
             switch result {
             case .success(let data):
                 guard let decodedData = try? JSONDecoder().decode([Stay].self, from: data) else { return }

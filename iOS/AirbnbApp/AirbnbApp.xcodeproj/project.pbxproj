@@ -24,6 +24,7 @@
 		385D8BFC24728ECC009E2E2B /* AirbnbAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BFB24728ECC009E2E2B /* AirbnbAppTests.swift */; };
 		3869C446247BB9AC00A16C6D /* StayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3869C445247BB9AC00A16C6D /* StayList.swift */; };
 		38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863E242478F6AB00D8C75C /* ThumbImagePagingView.swift */; };
+		388E141F2480D30100FC0D50 /* SearchFilterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E141E2480D30100FC0D50 /* SearchFilterQuery.swift */; };
 		3893B5DE247E9168004783C4 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893B5DD247E9168004783C4 /* SaveButton.swift */; };
 		3893B5E0247F9A83004783C4 /* UIView+layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893B5DF247F9A83004783C4 /* UIView+layer.swift */; };
 		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
@@ -89,6 +90,7 @@
 		385D8BFD24728ECC009E2E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3869C445247BB9AC00A16C6D /* StayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayList.swift; sourceTree = "<group>"; };
 		38863E242478F6AB00D8C75C /* ThumbImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbImagePagingView.swift; sourceTree = "<group>"; };
+		388E141E2480D30100FC0D50 /* SearchFilterQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterQuery.swift; sourceTree = "<group>"; };
 		3893B5DD247E9168004783C4 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		3893B5DF247F9A83004783C4 /* UIView+layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+layer.swift"; sourceTree = "<group>"; };
 		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			children = (
 				38F1F89124795E0400454668 /* Stay.swift */,
 				3869C445247BB9AC00A16C6D /* StayList.swift */,
+				388E141E2480D30100FC0D50 /* SearchFilterQuery.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */,
+				388E141F2480D30100FC0D50 /* SearchFilterQuery.swift in Sources */,
 				8D9B7A17247C0F1200D9A99D /* StayListCollectionViewDelegate.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
 				38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */,

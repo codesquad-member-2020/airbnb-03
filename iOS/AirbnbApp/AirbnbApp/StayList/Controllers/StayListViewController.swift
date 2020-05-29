@@ -11,6 +11,8 @@ final class StayListViewController: UIViewController {
     private var mapButtonView: MapButtonView!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
     private var loadingView: LoadingView!
+    
+    private var searchFilterQuery: SearchFilterQuery = SearchFilterQuery()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ final class StayListViewController: UIViewController {
     
     private func fetchStayList() {
         loadingView.startLoadingAnimation()
-        StayListUseCase.getStayList { (result) in
+        StayListUseCase.getStayList(searchFilterQuery: searchFilterQuery) { (result) in
             switch result {
             case .success(let stayList):
                 DispatchQueue.main.async {
