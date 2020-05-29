@@ -9,9 +9,12 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
-public class PriceDtoHamill {
+public class BookingPriceDtoHamill {
+
     private Double price;
     private Double serviceFee;
     private Double cleaningFee;
     private Double tax;
+    private Double priceForStay;
+    private Double totalPrice;
 }
