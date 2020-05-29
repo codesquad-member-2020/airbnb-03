@@ -21,6 +21,7 @@ final class StayListViewController: UIViewController {
         configureLayout()
         configureCollectionView()
         configureTextFieldDelegate()
+        configureSearchFilterViewTapDelegate()
         
         fetchStayList()
     }
@@ -115,6 +116,19 @@ extension StayListViewController {
     private func configureTextFieldDelegate() {
         searchTextFieldDelegate = SearchTextFieldDelegate()
         searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
+    }
+}
+
+// MARK:- Search Filter Delegation
+
+extension StayListViewController: SearchFilterViewTapDelegate {
+    private func configureSearchFilterViewTapDelegate() {
+        searchFilterView.delegate = self
+    }
+    
+    func didTapDatesFilter() {
+        let datesFilterViewController = DatesFilterViewController()
+        present(datesFilterViewController, animated: true)
     }
 }
 

@@ -27,6 +27,8 @@
 		388E141F2480D30100FC0D50 /* SearchFilterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E141E2480D30100FC0D50 /* SearchFilterQuery.swift */; };
 		3893B5DE247E9168004783C4 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893B5DD247E9168004783C4 /* SaveButton.swift */; };
 		3893B5E0247F9A83004783C4 /* UIView+layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893B5DF247F9A83004783C4 /* UIView+layer.swift */; };
+		3899CADB24811D37006CB23E /* DatesFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CADA24811D37006CB23E /* DatesFilterViewController.swift */; };
+		3899CADD2481369F006CB23E /* DatesFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CADC2481369F006CB23E /* DatesFilterButton.swift */; };
 		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
 		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
@@ -93,6 +95,8 @@
 		388E141E2480D30100FC0D50 /* SearchFilterQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterQuery.swift; sourceTree = "<group>"; };
 		3893B5DD247E9168004783C4 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		3893B5DF247F9A83004783C4 /* UIView+layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+layer.swift"; sourceTree = "<group>"; };
+		3899CADA24811D37006CB23E /* DatesFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesFilterViewController.swift; sourceTree = "<group>"; };
+		3899CADC2481369F006CB23E /* DatesFilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesFilterButton.swift; sourceTree = "<group>"; };
 		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
 		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				8DCA197224754D5A00B3C167 /* SearchFilterView.swift */,
 				8DCA197024754B7900B3C167 /* SearchFilterView.xib */,
 				8DCA19742475546C00B3C167 /* FilterButton.swift */,
+				3899CADC2481369F006CB23E /* DatesFilterButton.swift */,
 			);
 			path = SearchFilter;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			children = (
 				8D8FE71B2473CF23008FF0AF /* TabBar */,
 				8D8FE71C2473CF3C008FF0AF /* StayList */,
+				3899CAD52480F864006CB23E /* SearchFilters */,
 				38DC2389247BDAD100DC3BCC /* Network */,
 				38AEA754247BF7400058050D /* UseCases */,
 				8D9B7A0D247C066300D9A99D /* StayDetail */,
@@ -292,6 +298,46 @@
 				3859747E2478FF98004A358C /* ThumbImageView.swift */,
 			);
 			path = ThumbImagePaging;
+			sourceTree = "<group>";
+		};
+		3899CAD52480F864006CB23E /* SearchFilters */ = {
+			isa = PBXGroup;
+			children = (
+				3899CAD62480F870006CB23E /* Dates */,
+			);
+			path = SearchFilters;
+			sourceTree = "<group>";
+		};
+		3899CAD62480F870006CB23E /* Dates */ = {
+			isa = PBXGroup;
+			children = (
+				3899CAD92480F887006CB23E /* Models */,
+				3899CAD72480F876006CB23E /* Controllers */,
+				3899CAD82480F880006CB23E /* Views */,
+			);
+			path = Dates;
+			sourceTree = "<group>";
+		};
+		3899CAD72480F876006CB23E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3899CADA24811D37006CB23E /* DatesFilterViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3899CAD82480F880006CB23E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3899CAD92480F887006CB23E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		38AEA754247BF7400058050D /* UseCases */ = {
@@ -557,6 +603,7 @@
 				8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */,
 				8DCA197324754D5A00B3C167 /* SearchFilterView.swift in Sources */,
 				8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */,
+				3899CADD2481369F006CB23E /* DatesFilterButton.swift in Sources */,
 				8D328443247647900078678A /* ViewFromXib.swift in Sources */,
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
 				8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */,
@@ -581,6 +628,7 @@
 				8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */,
 				8D9B7A13247C09E500D9A99D /* DetailSectionView.swift in Sources */,
 				38F1F89224795E0400454668 /* Stay.swift in Sources */,
+				3899CADB24811D37006CB23E /* DatesFilterViewController.swift in Sources */,
 				8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -735,7 +783,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66M38QS75Q;
+				DEVELOPMENT_TEAM = N2GAL8582Q;
 				INFOPLIST_FILE = AirbnbApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -754,7 +802,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66M38QS75Q;
+				DEVELOPMENT_TEAM = N2GAL8582Q;
 				INFOPLIST_FILE = AirbnbApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,6 +821,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2GAL8582Q;
 				INFOPLIST_FILE = AirbnbAppTests/Info.plist;
@@ -784,6 +834,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.codesquad.AirbnbAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirbnbApp.app/AirbnbApp";
@@ -796,6 +848,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2GAL8582Q;
 				INFOPLIST_FILE = AirbnbAppTests/Info.plist;
@@ -807,6 +861,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.codesquad.AirbnbAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirbnbApp.app/AirbnbApp";
