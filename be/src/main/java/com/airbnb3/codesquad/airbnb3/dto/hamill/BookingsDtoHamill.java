@@ -24,6 +24,6 @@ public class BookingsDtoHamill {
     private Date checkOut;
     private Integer guests;
     private Integer nights;
-    private BookingPriceDto bookingPriceInfo;
+    private BookingPriceDtoHamill bookingPriceInfo;
 
 }
