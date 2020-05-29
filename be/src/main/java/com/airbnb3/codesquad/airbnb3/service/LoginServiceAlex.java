@@ -19,7 +19,7 @@ public class LoginServiceAlex {
     private static final Logger logger = LoggerFactory.getLogger(LoginServiceAlex.class);
 
     @Autowired
-    UserDaoAlex userDaoAlex;
+    private UserDaoAlex userDaoAlex;
 
     @Value("${GITHUB_CLIENT_ID}")
     private String GITHUB_CLIENT_ID;

@@ -2,12 +2,17 @@ package com.airbnb3.codesquad.airbnb3.controller;
 
 import com.airbnb3.codesquad.airbnb3.dto.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
 import com.airbnb3.codesquad.airbnb3.service.AirBnbService;
+import com.airbnb3.codesquad.airbnb3.service.ReservationServiceAlex;
+import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -18,40 +23,62 @@ import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
 public class AirBnbControllerAlex {
 
     @Autowired
-    AirBnbService airBnbService;
+    private AirBnbService airBnbService;
 
-    @GetMapping("/main")
+    @Autowired
+    private ReservationServiceAlex reservationService;
+
+    @GetMapping("/properties")
     public ResponseEntity<List<PropertiesDtoAlex>> stayedPage(
-            @RequestParam(value = "offset", required = false, defaultValue = "1") Integer pageNum,
-            @RequestParam(value = "adults", required = false, defaultValue = "1") Integer adults,
-            @RequestParam(value = "children", required = false, defaultValue = "0") Integer children,
-            // 값을 받고는 있지만, 사용 하지 않는 변수 infants(신생아)
-            @RequestParam(value = "infants", required = false, defaultValue = "0") Integer infants,
-            @RequestParam(value = "checkin", required = false) String checkIn,
-            @RequestParam(value = "checkout", required = false) String checkOut,
-            @RequestParam(value = "price_min", required = false, defaultValue = "min") String minRange,
-            @RequestParam(value = "price_max", required = false, defaultValue = "max") String maxRange
-//            @RequestParam(value = "min_lat", required = false, defaultValue = "max") String maxRange
-//            @RequestParam(value = "min_long", required = false, defaultValue = "max") String maxRange
-//            @RequestParam(value = "max_lat", required = false, defaultValue = "max") String maxRange
-//            @RequestParam(value = "max_long", required = false, defaultValue = "max") String maxRange
-
+            @RequestParam(value = "offset", required = false, defaultValue = "1") String pageNum,
+            @RequestParam(value = "adults", required = false, defaultValue = "1") String adults,
+            @RequestParam(value = "children", required = false, defaultValue = "0") String children,
+            @RequestParam(value = "check_in", required = false) String checkIn,
+            @RequestParam(value = "check_out", required = false) String checkOut,
+            @RequestParam(value = "min_price", required = false, defaultValue = "min") String minRange,
+            @RequestParam(value = "max_price", required = false, defaultValue = "max") String maxRange,
+            @RequestParam(value = "min_lat", required = false, defaultValue = "min_lat") String minLatitude,
+            @RequestParam(value = "min_long", required = false, defaultValue = "min_long") String minLongitude,
+            @RequestParam(value = "max_lat", required = false, defaultValue = "max_lat") String maxLatitude,
+            @RequestParam(value = "max_long", required = false, defaultValue = "max_long") String maxLongitude
     ) {
-        return new ResponseEntity<>(airBnbService.stayedProperties(pageNum, adults, children, checkIn, checkOut, minRange, maxRange), HttpStatus.OK);
+        return new ResponseEntity<>(airBnbService.stayedProperties(pageNum, adults, children, checkIn, checkOut,
+                minRange, maxRange, minLatitude, maxLatitude, minLongitude, maxLongitude), HttpStatus.OK);
     }
 
-    @GetMapping("/detail/{id}")
+    @GetMapping("/properties/{id}")
     public ResponseEntity<DetailDtoAlex> detailPage(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(airBnbService.detailProperties(id),HttpStatus.OK);
+        return new ResponseEntity<>(airBnbService.detailProperties(id), HttpStatus.OK);
     }
 
-    @GetMapping("/map")
-    public ResponseEntity<Object> mapRequest(@RequestParam(value = "latitude") String latitude, @RequestParam(value = "longitude") String longitude) {
-        return new ResponseEntity<>("TEST",HttpStatus.OK);
+    //@PutMapping("/reservations/{id}")
+    @GetMapping("/reservations/{id}")
+    public ResponseEntity<Object> reservationRequest(@PathVariable("id") Long id,
+                                                     @RequestParam(value = "check_in") String checkIn,
+                                                     @RequestParam(value = "check_out") String checkOut,
+                                                     @RequestParam(value = "adults") String adults,
+                                                     @RequestParam(value = "children") String children,
+                                                     @CookieValue(value = "name", defaultValue = "None", required = false) String name
+    ) {
+        // 내부 로직 수정
+        ReservationDto result = reservationService.propertyReservation(id, checkIn, checkOut, guests, name);
+        if (result == null) {
+            return new ResponseEntity<>("Already Booked!!!!!!!!!!!!!!!!", HttpStatus.OK);
+        }
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @GetMapping("/booking")
-    public ResponseEntity<Object> bookingRequest() {
-        return new ResponseEntity<>("TEST",HttpStatus.OK);
+    //@DeleteMapping("/reservations/{id}")
+    @GetMapping("/reservations/{id}")
+    public ResponseEntity<Object> cancelReservationRequest(@PathVariable("id") Long reservationId) {
+        //내부 로직 수정
+        reservationService.cancelReservation(reservationId, propertiesId);
+        return new ResponseEntity<>("Cancel Reservation", HttpStatus.OK);
+    }
+
+    //@PutMapping("/saved/{id}")
+    @GetMapping("/saved/{id}")
+    public void savedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
+        airBnbService.saveProperties(id, name);
     }
 }

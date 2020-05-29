@@ -11,16 +11,16 @@ public class HostDto {
     private String notes;
     private String hostName;
     private String hostSince;
-    private String hostLocatison;
+    private String hostLocation;
     private String hostAbout;
 
     @Builder
-    public HostDto(Boolean isSuperHost, String notes, String hostName, String hostSince, String hostLocatison, String hostAbout) {
+    public HostDto(Boolean isSuperHost, String notes, String hostName, String hostSince, String hostLocation, String hostAbout) {
         this.isSuperHost = isSuperHost;
         this.notes = notes;
         this.hostName = hostName;
         this.hostSince = hostSince;
-        this.hostLocatison = hostLocatison;
+        this.hostLocation = hostLocation;
         this.hostAbout = hostAbout;
     }
 }
