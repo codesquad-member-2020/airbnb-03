@@ -3,6 +3,8 @@ import UIKit
 final class DaysCollectionView: UICollectionView {
     
     private let spacingForItem: CGFloat = 16.0
+    private var dayDates: [StayDate?] = []
+    private var firstDayOffset: Int = 0
 
     override init(frame: CGRect,
                   collectionViewLayout layout: UICollectionViewLayout) {
@@ -14,6 +16,20 @@ final class DaysCollectionView: UICollectionView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()
+    }
+    
+    func updateDays(dayDates: [StayDate]) {
+        self.dayDates = dayDates
+        calculateFirstDayOffset()
+        reloadData()
+    }
+    
+    private func calculateFirstDayOffset() {
+        let firstDayDate = dayDates.first!
+        firstDayOffset = firstDayDate!.date.weekday - 1
+        for _ in 0..<firstDayOffset {
+            self.dayDates.insert(nil, at: 0)
+        }
     }
     
     private func configure() {
@@ -61,16 +77,18 @@ extension DaysCollectionView: UICollectionViewDelegateFlowLayout {
 
 extension DaysCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Int.random(in: 28...42)
+        return dayDates.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DayCell.reuseIdentifier,
                                                       for: indexPath) as! DayCell
-        cell.backgroundColor = UIColor(red: CGFloat.random(in: 0.3...1.0),
-                                       green: CGFloat.random(in: 0.3...1.0),
-                                       blue: CGFloat.random(in: 0.3...1.0),
-                                       alpha: CGFloat.random(in: 0.5...1.0))
+        
+        guard let stayDate = dayDates[indexPath.item] else {
+            cell.empty()
+            return cell
+        }
+        cell.updateDay(stayDate.date.day)
         return cell
     }
 }

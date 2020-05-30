@@ -41,6 +41,9 @@
                 <constraint firstAttribute="trailing" secondItem="V5a-Id-kjf" secondAttribute="trailing" id="ePK-ez-hD6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="dayLabel" destination="sYh-Qe-JBO" id="nQC-jT-VNi"/>
+            </connections>
             <point key="canvasLocation" x="111.59420289855073" y="152.67857142857142"/>
         </collectionViewCell>
     </objects>

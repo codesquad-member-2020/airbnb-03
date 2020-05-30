@@ -39,6 +39,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="398" height="310"/>
             <connections>
+                <outlet property="daysCollectionView" destination="Yae-No-f1d" id="kFQ-cx-szg"/>
                 <outlet property="monthLabel" destination="Y3h-Lv-cxn" id="MNi-Ms-C7e"/>
             </connections>
             <point key="canvasLocation" x="5.7971014492753632" y="131.25"/>

@@ -42,6 +42,8 @@
 		3899CAFE24818F7D006CB23E /* DaysCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAFD24818F7D006CB23E /* DaysCollectionView.swift */; };
 		3899CB0124818FE1006CB23E /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAFF24818FE1006CB23E /* DayCell.swift */; };
 		3899CB0224818FE1006CB23E /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CB0024818FE1006CB23E /* DayCell.xib */; };
+		3899CB0424828B4A006CB23E /* StayDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB0324828B4A006CB23E /* StayDate.swift */; };
+		3899CB0624829859006CB23E /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB0524829859006CB23E /* Dates.swift */; };
 		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
 		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
@@ -123,6 +125,8 @@
 		3899CAFD24818F7D006CB23E /* DaysCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCollectionView.swift; sourceTree = "<group>"; };
 		3899CAFF24818FE1006CB23E /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		3899CB0024818FE1006CB23E /* DayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
+		3899CB0324828B4A006CB23E /* StayDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDate.swift; sourceTree = "<group>"; };
+		3899CB0524829859006CB23E /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
 		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 				38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */,
 				3893B5DF247F9A83004783C4 /* UIView+layer.swift */,
 				3899CAE424814871006CB23E /* UIView+draw.swift */,
+				3899CB0524829859006CB23E /* Dates.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 		3899CAD92480F887006CB23E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3899CB0324828B4A006CB23E /* StayDate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -659,6 +665,7 @@
 				8DCA197324754D5A00B3C167 /* SearchFilterView.swift in Sources */,
 				3899CAED248150A2006CB23E /* DatesFilterFixedFooterView.swift in Sources */,
 				8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */,
+				3899CB0624829859006CB23E /* Dates.swift in Sources */,
 				3899CAEF24815434006CB23E /* DatesFilterSearchButton.swift in Sources */,
 				3899CADD2481369F006CB23E /* DatesFilterButton.swift in Sources */,
 				8D328443247647900078678A /* ViewFromXib.swift in Sources */,
@@ -671,6 +678,7 @@
 				3899CAFE24818F7D006CB23E /* DaysCollectionView.swift in Sources */,
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,
+				3899CB0424828B4A006CB23E /* StayDate.swift in Sources */,
 				38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */,
 				381A030624762561004EDE84 /* PriceLabel.swift in Sources */,
 				38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */,
