@@ -7,11 +7,6 @@ final class MonthCell: UICollectionViewCell {
 
     @IBOutlet weak var monthLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
     func updateMonthLabel(with month: Int,
                           year: Int) {
         monthLabel.text = "\(month)월 \(year)"
