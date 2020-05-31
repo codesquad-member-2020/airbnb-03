@@ -2,7 +2,6 @@ package com.airbnb3.codesquad.airbnb3.controller;
 
 import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
-import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
 import com.airbnb3.codesquad.airbnb3.service.AirbnbService;
 import com.airbnb3.codesquad.airbnb3.service.ReservationService;
 import org.slf4j.Logger;
@@ -42,9 +41,10 @@ public class AirbnbController {
             @RequestParam(value = "min_lat", required = false, defaultValue = DEFAULT_MIN_LATITUDE) String minLatitude,
             @RequestParam(value = "min_long", required = false, defaultValue = DEFAULT_MIN_LONGITUDE) String minLongitude,
             @RequestParam(value = "max_lat", required = false, defaultValue = DEFAULT_MAX_LATITUDE) String maxLatitude,
-            @RequestParam(value = "max_long", required = false, defaultValue = DEFAULT_MAX_LONGITUDE) String maxLongitude
+            @RequestParam(value = "max_long", required = false, defaultValue = DEFAULT_MAX_LONGITUDE) String maxLongitude,
+            @CookieValue(value = "name", defaultValue = "None", required = false) String name
     ) {
-        return new ResponseEntity<>(airbnbService.stayedProperties(offset, adults, children, checkIn, checkOut,
+        return new ResponseEntity<>(airbnbService.stayedProperties(offset, adults, children, checkIn, checkOut, name,
                 minPrice, maxPrice, minLatitude, maxLatitude, minLongitude, maxLongitude), HttpStatus.OK);
     }
 
@@ -81,8 +81,13 @@ public class AirbnbController {
 //    }
 //
 //    //@PutMapping("/saved/{id}")
-//    @GetMapping("/saved/{id}")
-//    public void savedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
-//        airBnbService.saveProperties(id, name);
-//    }
+    @GetMapping("/saved/{id}")
+    public void savedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
+        airbnbService.saveProperties(id, name);
+    }
+
+    @GetMapping("/saved/{id}/del")
+    public void unSavedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
+        airbnbService.unSaveProperties(id, name);
+    }
 }

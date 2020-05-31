@@ -26,10 +26,10 @@ public class PropertiesDaoAlex {
                                                        Double minPrice, Double maxPrice, Map<String, Double> location) {
         String sql = "select p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(DISTINCT i.image_url) AS image " +
                 "FROM properties p LEFT JOIN images i ON p.id = i.properties_id " +
-                "LEFT JOIN detail t ON t.id = p.id LEFT JOIN calender c ON c.properties_id = p.id " +
+                "LEFT JOIN detail t ON t.id = p.id LEFT JOIN calendar c ON c.properties_id = p.id " +
                 "WHERE t.accommodates >= :accommodates " +
-                "AND p.id NOT IN (SELECT DISTINCT properties.id FROM properties LEFT JOIN calender ON properties.id = calender.properties_id " +
-                "WHERE calender.reservation_date BETWEEN :checkInDate AND :checkOutDate) " +
+                "AND p.id NOT IN (SELECT DISTINCT properties.id FROM properties LEFT JOIN calendar ON properties.id = calendar.properties_id " +
+                "WHERE calendar.reservation_date BETWEEN :checkInDate AND :checkOutDate) " +
                 "AND p.latitude BETWEEN :minLatitude AND :maxLatitude " +
                 "AND p.longitude BETWEEN :minLongitude AND :maxLongitude " +
                 "AND p.price BETWEEN :minPrice AND :maxPrice " +

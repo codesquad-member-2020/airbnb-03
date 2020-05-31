@@ -46,8 +46,8 @@ public class ReservationDaoAlex {
 
     }
 
-    public Date reservationCalender(Long id, Date reservationDate) {
-        String sql = "INSERT INTO calender(properties_id,reservation_date) VALUES(:id,:reservationDate)";
+    public Date reservationCalendar(Long id, Date reservationDate) {
+        String sql = "INSERT INTO calendar(properties_id,reservation_date) VALUES(:id,:reservationDate)";
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
                 .addValue("id", id)
                 .addValue("reservationDate", reservationDate);
@@ -65,8 +65,8 @@ public class ReservationDaoAlex {
         return result;
     }
 
-    public void deleteCalender(Long propertiesId, Date checkInDate, Date checkOutDate) {
-        String sql = "DELETE FROM calender WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate AND properties_id = :propertiesId";
+    public void deleteCalendar(Long propertiesId, Date checkInDate, Date checkOutDate) {
+        String sql = "DELETE FROM calendar WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate AND properties_id = :propertiesId";
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
                 .addValue("propertiesId", propertiesId)
                 .addValue("checkInDate", checkInDate)
@@ -77,7 +77,7 @@ public class ReservationDaoAlex {
     public boolean checkReservation(Map<String, Date> reservationDates) {
         Date checkInDate = reservationDates.get("checkInDate");
         Date checkOutDate = reservationDates.get("checkOutDate");
-        String sql = "SELECT EXISTS(SELECT * FROM calender WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate) as reservationed;";
+        String sql = "SELECT EXISTS(SELECT * FROM calendar WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate) as reservationed;";
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
                 .addValue("checkInDate", checkInDate)
                 .addValue("checkOutDate", checkOutDate);

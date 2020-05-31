@@ -60,7 +60,7 @@ public class ReservationServiceAlex {
                 .guests(guestCount)
                 .build();
 
-        propertiesCalenderUpdate(id, reservationDates.get("checkInDate"), reservationDates.get("checkOutDate"));
+        propertiesCalendarUpdate(id, reservationDates.get("checkInDate"), reservationDates.get("checkOutDate"));
         return reservationDao.reservationProperties(reservation);
     }
 
@@ -68,7 +68,7 @@ public class ReservationServiceAlex {
         String[] date = reservationDao.deleteReservation(reservationId);
         Date checkInDate = Date.valueOf(date[0]);
         Date checkOutDate = Date.valueOf(date[1]);
-        reservationDao.deleteCalender(propertiesId, checkInDate, checkOutDate);
+        reservationDao.deleteCalendar(propertiesId, checkInDate, checkOutDate);
     }
 
 
@@ -115,14 +115,14 @@ public class ReservationServiceAlex {
         }
     }
 
-    private void propertiesCalenderUpdate(Long id, Date checkInDate, Date checkOutDate) {
+    private void propertiesCalendarUpdate(Long id, Date checkInDate, Date checkOutDate) {
         LocalDate checkIn = checkInDate.toLocalDate();
         LocalDate checkOut = checkOutDate.toLocalDate();
-        reservationDao.reservationCalender(id, checkInDate);
+        reservationDao.reservationCalendar(id, checkInDate);
         while (!checkIn.isEqual(checkOut)) {
             checkIn = checkIn.plusDays(1L);
             Date reservationDate = Date.valueOf(checkIn);
-            reservationDao.reservationCalender(id, reservationDate);
+            reservationDao.reservationCalendar(id, reservationDate);
         }
     }
 }
