@@ -15,6 +15,7 @@ import java.util.List;
 
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.DEFAULT_CHILDREN_COUNT;
+import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
 
 @RestController
 public class AirbnbController {
@@ -32,14 +33,14 @@ public class AirbnbController {
             @RequestParam(value = "offset", required = false, defaultValue = DEFAULT_OFFSET) Integer offset,
             @RequestParam(value = "adults", required = false, defaultValue = DEFAULT_ADULTS_COUNT) Integer adults,
             @RequestParam(value = "children", required = false, defaultValue = DEFAULT_CHILDREN_COUNT) Integer children,
-            @RequestParam(value = "min_price", required = false, defaultValue = DEFAULT_MIN_PRICE) Double minPrice,
-            @RequestParam(value = "max_price", required = false, defaultValue = DEFAULT_MAX_PRICE) Double maxPrice,
+            @RequestParam(value = "min_price", required = false, defaultValue = DEFAULT_MIN_PRICE) String minPrice,
+            @RequestParam(value = "max_price", required = false, defaultValue = DEFAULT_MAX_PRICE) String maxPrice,
             @RequestParam(value = "check_in", required = false) Date checkIn,
             @RequestParam(value = "check_out", required = false) Date checkOut,
-            @RequestParam(value = "min_lat", required = false, defaultValue = "min_lat") Double minLatitude,
-            @RequestParam(value = "min_long", required = false, defaultValue = "min_long") Double minLongitude,
-            @RequestParam(value = "max_lat", required = false, defaultValue = "max_lat") Double maxLatitude,
-            @RequestParam(value = "max_long", required = false, defaultValue = "max_long") Double maxLongitude
+            @RequestParam(value = "min_lat", required = false, defaultValue = DEFAULT_MIN_LATITUDE) String minLatitude,
+            @RequestParam(value = "min_long", required = false, defaultValue = DEFAULT_MIN_LONGITUDE) String minLongitude,
+            @RequestParam(value = "max_lat", required = false, defaultValue = DEFAULT_MAX_LATITUDE) String maxLatitude,
+            @RequestParam(value = "max_long", required = false, defaultValue = DEFAULT_MAX_LONGITUDE) String maxLongitude
     ) {
         return new ResponseEntity<>(airbnbService.stayedProperties(offset, adults, children, checkIn, checkOut,
                 minPrice, maxPrice, minLatitude, maxLatitude, minLongitude, maxLongitude), HttpStatus.OK);

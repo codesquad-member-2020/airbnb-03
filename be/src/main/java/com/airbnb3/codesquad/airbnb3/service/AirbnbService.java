@@ -1,5 +1,7 @@
 package com.airbnb3.codesquad.airbnb3.service;
 
+import com.airbnb3.codesquad.airbnb3.dao.DetailDao;
+import com.airbnb3.codesquad.airbnb3.dao.PropertiesDao;
 import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
 import com.airbnb3.codesquad.airbnb3.service.alex.AirBnbServiceAlex;
@@ -7,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -14,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
-import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.DEFAULT_MAX_LONGITUDE;
 
 @Service
 public class AirbnbService {
@@ -30,19 +32,18 @@ public class AirbnbService {
     }
 
     public List<PropertiesDtoAlex> stayedProperties(Integer offset, Integer adults, Integer children,
-                                                    Date checkIn, Date checkOut, Double minPrice, Double maxPrice,
-                                                    Double minLatitude, Double maxLatitude, Double minLongitude, Double maxLongitude) {
+                                                    Date checkIn, Date checkOut, String minPrice, String maxPrice,
+                                                    String minLatitude, String maxLatitude, String minLongitude, String maxLongitude) {
 
-        Integer propertyRange = parseStringToPageNumInteger(pageNumber) * PAGE_VIEW_ITEM_COUNT;
-        Integer accommodates = parseStringToAccommodatesInteger(adults, children);
-        Map<String, Date> reservationDates = dateCompare(checkIn, checkOut);
-        Date checkInDate = reservationDates.get("checkInDate");
-        Date checkOutDate = reservationDates.get("checkOutDate");
-        logger.info("checkInDate : {}, checkOutDate : {}",checkInDate,checkOutDate);
-        Double minPrice = parseStringToMinDouble(minRange);
-        Double maxPrice = parseStringToMaxDouble(maxRange);
-        Map<String, Double> location = parseStringToLocationDouble(minLatitude, maxLatitude, minLongitude, maxLongitude);
-        return propertiesDao.getStayedProperties(propertyRange, accommodates, checkInDate, checkOutDate, minPrice, maxPrice, location);
+        Integer propertyRange = PAGE_VIEW_ITEM_COUNT * offset;
+        Integer accommodates = adults + children;
+        BigDecimal minPriceRange = new BigDecimal(String.valueOf(minPrice));
+        BigDecimal maxPriceRange = new BigDecimal(String.valueOf(maxPrice));
+        BigDecimal minLatitudeRange = new BigDecimal(String.valueOf(maxPrice));
+        BigDecimal maxLatitudeRange = new BigDecimal(String.valueOf(maxPrice));
+        BigDecimal minLongitudeRange = new BigDecimal(String.valueOf(maxPrice));
+        BigDecimal maxLongitudeRange = new BigDecimal(String.valueOf(maxPrice));
+        return propertiesDao.getStayedProperties(propertyRange, accommodates, checkIn, checkOut, minPriceRange,maxPriceRange,minLatitudeRange,maxLatitudeRange,minLongitudeRange,maxLongitudeRange);
     }
 
     public DetailDtoAlex detailProperties(Long id) {
@@ -70,46 +71,6 @@ public class AirbnbService {
         tempMap.put("checkInDate", checkInDate);
         tempMap.put("checkOutDate", checkOutDate);
         return tempMap;
-    }
-
-    private Date parseStringToCheckInDate(String date) {
-        try {
-            return Date.valueOf(date);
-        } catch (IllegalArgumentException e) {
-            return Date.valueOf(LocalDate.now());
-        }
-    }
-
-    private Date parseStringToCheckOutDate(String date) {
-        try {
-            return Date.valueOf(date);
-        } catch (IllegalArgumentException e) {
-            return Date.valueOf(LocalDate.now().plusDays(5));
-        }
-    }
-
-    private Double parseStringToMinDouble(String price) {
-        try {
-            return Double.parseDouble(price);
-        } catch (IllegalArgumentException e) {
-            return DEFAULT_MIN_PRICE;
-        }
-    }
-
-    private Double parseStringToMaxDouble(String price) {
-        try {
-            return Double.parseDouble(price);
-        } catch (IllegalArgumentException e) {
-            return DEFAULT_MAX_PRICE;
-        }
-    }
-
-    private Integer parseStringToPageNumInteger(String pageNum) {
-        try {
-            return Integer.parseInt(pageNum);
-        } catch (IllegalArgumentException e) {
-            return DEFAULT_PAGE_NUM;
-        }
     }
 
     private Integer parseStringToAccommodatesInteger(String adults, String children) {
