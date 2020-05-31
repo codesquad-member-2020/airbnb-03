@@ -26,11 +26,10 @@ public class PropertiesDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<PropertiesDtoAlex> getStayedProperties(Integer propertyRange, Integer accommodates,
-                                                       Date checkInDate, Date checkOutDate,
+    public List<PropertiesDtoAlex> getStayedProperties(Integer propertyRange, Integer accommodates, Date checkInDate, Date checkOutDate,
                                                        BigDecimal minPrice, BigDecimal maxPrice,
-                                                       BigDecimal minLatitude, BigDecimal maxLatitude,
-                                                       BigDecimal minLongitude, BigDecimal maxLongitude) {
+                                                       BigDecimal minLatitude, BigDecimal maxLatitude, BigDecimal minLongitude, BigDecimal maxLongitude) {
+
         String sql = "select p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(DISTINCT i.image_url) AS image " +
                 "FROM properties p LEFT JOIN images i ON p.id = i.properties_id " +
                 "LEFT JOIN detail t ON t.id = p.id LEFT JOIN calender c ON c.properties_id = p.id " +

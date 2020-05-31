@@ -26,7 +26,6 @@ CREATE TABLE IF NOT EXISTS properties
 
 CREATE TABLE IF NOT EXISTS bookings
 (
-<<<<<<< HEAD
     id             INT AUTO_INCREMENT,
     check_in_date  DATE,
     check_out_date DATE,
@@ -36,28 +35,12 @@ CREATE TABLE IF NOT EXISTS bookings
     service_fee    DECIMAL(10, 3),
     tax            DECIMAL(10, 3),
     price          DECIMAL(10, 3),
-    price_for_stay DECIMAL(10, 3),
+    price_per_stay DECIMAL(10, 3),
     total_price    DECIMAL(10, 3),
     nights         INT,
     properties_id  INT REFERENCES properties (id),
     user_id        INT REFERENCES user (id),
     PRIMARY KEY (id)
-=======
-    id               INT AUTO_INCREMENT,
-    check_in_date    DATE,
-    check_out_date   DATE,
-    booking_date     DATETIME,
-    cleaning_fee     DECIMAL(10, 3),
-    service_fee      DECIMAL(10, 3),
-    tax              DECIMAL(10, 3),
-    room_price       DECIMAL(10, 3),
-    room_total_price DECIMAL(10, 3),
-    total_price      DECIMAL(10, 3),
-    nights           INT,
-    properties_id    INT REFERENCES properties (id),
-    user_id          INT REFERENCES user (id),
-    primary key (id)
->>>>>>> origin/feat/be/reservation-alex
 );
 
 CREATE TABLE IF NOT EXISTS user

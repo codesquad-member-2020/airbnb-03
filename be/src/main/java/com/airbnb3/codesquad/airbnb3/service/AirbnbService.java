@@ -39,10 +39,23 @@ public class AirbnbService {
         Integer accommodates = adults + children;
         BigDecimal minPriceRange = new BigDecimal(String.valueOf(minPrice));
         BigDecimal maxPriceRange = new BigDecimal(String.valueOf(maxPrice));
-        BigDecimal minLatitudeRange = new BigDecimal(String.valueOf(maxPrice));
-        BigDecimal maxLatitudeRange = new BigDecimal(String.valueOf(maxPrice));
-        BigDecimal minLongitudeRange = new BigDecimal(String.valueOf(maxPrice));
-        BigDecimal maxLongitudeRange = new BigDecimal(String.valueOf(maxPrice));
+        BigDecimal minLatitudeRange = new BigDecimal(String.valueOf(minLatitude));
+        BigDecimal maxLatitudeRange = new BigDecimal(String.valueOf(maxLatitude));
+        BigDecimal minLongitudeRange = new BigDecimal(String.valueOf(minLongitude));
+        BigDecimal maxLongitudeRange = new BigDecimal(String.valueOf(maxLongitude));
+
+        logger.info("minPrice : {} , maxPrice : {}",minPriceRange,maxPriceRange);
+        logger.info("minLat : {} , maxLat : {}",minLatitudeRange,maxLatitudeRange);
+        logger.info("minLong : {} , maxLong : {}",minLongitudeRange,maxLongitudeRange);
+
+        if (checkIn == null) {
+            checkIn = Date.valueOf(LocalDate.now());
+        }
+        if (checkOut == null) {
+            checkOut = Date.valueOf(checkIn.toLocalDate().plusDays(2));
+        }
+        logger.info("checkIn : {} , checkOut : {}",checkIn,checkOut);
+
         return propertiesDao.getStayedProperties(propertyRange, accommodates, checkIn, checkOut, minPriceRange,maxPriceRange,minLatitudeRange,maxLatitudeRange,minLongitudeRange,maxLongitudeRange);
     }
 
@@ -52,69 +65,5 @@ public class AirbnbService {
 
     public void saveProperties(Long id, String name) {
 
-    }
-
-    private Map<String, Date> dateCompare(String checkIn, String checkOut) {
-
-        Map<String, Date> tempMap = new HashMap<>();
-        Date checkInDate = parseStringToCheckInDate(checkIn);
-        Date checkOutDate = parseStringToCheckOutDate(checkOut);
-
-        if (checkInDate.after(checkOutDate)) {
-            Date temp = checkInDate;
-            checkInDate = checkOutDate;
-            checkOutDate = temp;
-        }
-
-        if (checkInDate.before(Date.valueOf(LocalDate.now()))) checkInDate = Date.valueOf(LocalDate.now());
-
-        tempMap.put("checkInDate", checkInDate);
-        tempMap.put("checkOutDate", checkOutDate);
-        return tempMap;
-    }
-
-    private Integer parseStringToAccommodatesInteger(String adults, String children) {
-        Integer adult;
-        Integer child;
-        try {
-            adult = Integer.parseInt(adults);
-        } catch (IllegalArgumentException e) {
-            adult = 1;
-        }
-
-        try {
-            child = Integer.parseInt(children);
-        } catch (IllegalArgumentException e) {
-            child = 0;
-        }
-        return adult + child;
-    }
-
-    private Map<String, Double> parseStringToLocationDouble(String minLatitude, String maxLatitude, String minLongitude, String maxLongitude) {
-        Map<String, Double> temp = new HashMap<>();
-        try {
-            temp.put("minLatitude", Double.parseDouble(minLatitude));
-        } catch (IllegalArgumentException e) {
-            temp.put("minLatitude", DEFAULT_MIN_LATITUDE);
-        }
-
-        try {
-            temp.put("maxLatitude", Double.parseDouble(maxLatitude));
-        } catch (IllegalArgumentException e) {
-            temp.put("maxLatitude", DEFAULT_MAX_LATITUDE);
-        }
-
-        try {
-            temp.put("minLongitude", Double.parseDouble(minLongitude));
-        } catch (IllegalArgumentException e) {
-            temp.put("minLongitude", DEFAULT_MIN_LONGITUDE);
-        }
-
-        try {
-            temp.put("maxLongitude", Double.parseDouble(maxLongitude));
-        } catch (IllegalArgumentException e) {
-            temp.put("maxLongitude", DEFAULT_MAX_LONGITUDE);
-        }
-        return temp;
     }
 }
