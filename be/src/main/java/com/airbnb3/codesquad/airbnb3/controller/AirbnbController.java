@@ -81,13 +81,23 @@ public class AirbnbController {
 //    }
 //
 //    //@PutMapping("/saved/{id}")
+//    @GetMapping("/saved/{id}")
+//    public void savedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
+//        airbnbService.saveProperties(id, name);
+//    }
+//
+//    @GetMapping("/saved/{id}/del")
+//    public void unSavedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
+//        airbnbService.unSaveProperties(id, name);
+//    }
+
     @GetMapping("/saved/{id}")
-    public void savedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
+    public void savedProperties(@PathVariable("id") Long id, @RequestParam(value = "name", defaultValue = "Alex") String name) {
         airbnbService.saveProperties(id, name);
     }
 
     @GetMapping("/saved/{id}/del")
-    public void unSavedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
+    public void unSavedProperties(@PathVariable("id") Long id, @RequestParam(value = "name", defaultValue = "Alex") String name) {
         airbnbService.unSaveProperties(id, name);
     }
 }
