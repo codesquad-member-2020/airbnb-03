@@ -28,6 +28,8 @@ extension DatesFilterViewController {
     }
 }
 
+// MARK:- DatesFilterFixedFooterViewDelegate
+
 extension DatesFilterViewController: DatesFilterFixedFooterViewDelegate {
     func didTapSearchButton(date: (checkIn: String, checkOut: String)?) {
         dismiss(animated: true) {
@@ -48,25 +50,26 @@ extension DatesFilterViewController {
     }
     
     private func configureLayout() {
-        view.addSubviews(titleView,
-                         fixedFooterView,
-                         monthsCollectionView)
-        
-        titleView.constraints(topAnchor: view.safeAreaLayoutGuide.topAnchor,
-                              leadingAnchor: view.leadingAnchor,
-                              bottomAnchor: nil,
-                              trailingAnchor: view.trailingAnchor,
-                              size: .init(width: 0,
-                                          height: DatesFilterTitleView.height))
-        fixedFooterView.constraints(topAnchor: nil,
-                                    leadingAnchor: view.leadingAnchor,
-                                    bottomAnchor: view.bottomAnchor,
-                                    trailingAnchor: view.trailingAnchor,
-                                    size: .init(width: 0,
-                                                height: DatesFilterFixedFooterView.height))
-        monthsCollectionView.constraints(topAnchor: titleView.bottomAnchor,
-                                         leadingAnchor: view.leadingAnchor,
-                                         bottomAnchor: fixedFooterView.topAnchor,
-                                         trailingAnchor: view.trailingAnchor)
+        view.addSubviews(
+            titleView,
+            fixedFooterView,
+            monthsCollectionView)
+        titleView.constraints(
+            topAnchor: view.safeAreaLayoutGuide.topAnchor,
+            leadingAnchor: view.leadingAnchor,
+            bottomAnchor: nil,
+            trailingAnchor: view.trailingAnchor,
+            size: CGSize(width: 0, height: DatesFilterTitleView.height))
+        fixedFooterView.constraints(
+            topAnchor: nil,
+            leadingAnchor: view.leadingAnchor,
+            bottomAnchor: view.bottomAnchor,
+            trailingAnchor: view.trailingAnchor,
+            size: CGSize(width: 0, height: DatesFilterFixedFooterView.height))
+        monthsCollectionView.constraints(
+            topAnchor: titleView.bottomAnchor,
+            leadingAnchor: view.leadingAnchor,
+            bottomAnchor: fixedFooterView.topAnchor,
+            trailingAnchor: view.trailingAnchor)
     }
 }

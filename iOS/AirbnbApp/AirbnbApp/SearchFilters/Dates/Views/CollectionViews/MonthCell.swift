@@ -8,8 +8,7 @@ final class MonthCell: UICollectionViewCell {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var daysCollectionView: DaysCollectionView!
     
-    func updateMonthLabel(monthName: String,
-                          year: Int) {
+    func updateMonthLabel(monthName: String, year: Int) {
         monthLabel.text = "\(monthName) \(year)"
     }
     

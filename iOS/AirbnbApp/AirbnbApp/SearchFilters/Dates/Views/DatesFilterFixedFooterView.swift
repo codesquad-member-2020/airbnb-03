@@ -13,9 +13,7 @@ final class DatesFilterFixedFooterView: UIView, ViewFromXib {
     private var date: (String, String)?
     
     override func draw(_ rect: CGRect) {
-        drawEdgeLine(edge: .top,
-                     lineWidth: 0.3,
-                     lineColor: .lightGray)
+        drawEdgeLine(edge: .top, lineWidth: 0.3, lineColor: .lightGray)
     }
     
     @IBAction func didTapSearch(_ sender: Any) {
