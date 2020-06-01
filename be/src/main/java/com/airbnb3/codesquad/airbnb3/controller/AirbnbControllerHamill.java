@@ -85,13 +85,13 @@ public class AirbnbControllerHamill {
         return new ResponseEntity<>(airbnbServiceHamill.findAllSaved(userId), HttpStatus.OK);
     }
 
-    @PutMapping("/saved/{id}")
+    @PutMapping("/saved/{propertyId}")
     public ResponseEntity<CommonMessage> savedTheProperties(
-            @PathVariable Long id,
+            @PathVariable Long propertyId,
             @RequestParam Long userId) {
 
-        airbnbServiceHamill.savedTheProperties(id, userId);
-        return new ResponseEntity<>(getMessage("200", "즐겨찾기 성공"), HttpStatus.OK);
+        airbnbServiceHamill.savedTheProperties(propertyId, userId);
+        return new ResponseEntity<>(getMessage("200", "즐겨찾기 추가"), HttpStatus.OK);
     }
 
     private CommonMessage getMessage(String statusCode, String message) {
@@ -100,5 +100,14 @@ public class AirbnbControllerHamill {
                             .statusCode(statusCode)
                             .message(message)
                             .build();
+    }
+
+    @DeleteMapping("/saved/{propertyId}")
+    public ResponseEntity<CommonMessage> cancelThePropertiesSaved(
+            @PathVariable Long propertyId) {
+
+        airbnbServiceHamill.cancelThePropertiesSaved(propertyId);
+        return new ResponseEntity<>(getMessage("200", "즐겨찾기 취소"), HttpStatus.OK);
+
     }
 }

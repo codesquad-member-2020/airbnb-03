@@ -86,7 +86,7 @@ public class AirbnbServiceHamill {
     public void savedTheProperties(Long propertyId, Long userId) {
 
         propertiesDaoHamill.savedTheProperties(propertyId, userId);
-        propertiesDaoHamill.updatedTheProperties(propertyId);
+        propertiesDaoHamill.updatedThePropertiesSaved(propertyId);
     }
 
     // 즐겨찾기 목록 출력
@@ -94,6 +94,13 @@ public class AirbnbServiceHamill {
 
         return propertiesDaoHamill.findAllSaved(userId);
     }
+
+    // 즐겨찾기 삭제
+    public void cancelThePropertiesSaved(Long propertyId) {
+
+        propertiesDaoHamill.cancelThePropertiesSaved(propertyId);
+    }
+
 
     private Integer parseStringToIntegerOffset(String offset) {
 

@@ -339,9 +339,16 @@ public class PropertiesDaoHamill {
         ,userId);
     }
 
-    public void updatedTheProperties(Long propertiesId) {
+    public void updatedThePropertiesSaved(Long propertyId) {
+
         String sql = "UPDATE properties SET saved = true WHERE id = ?";
-        jdbcTemplate.update(sql, propertiesId);
+        jdbcTemplate.update(sql, propertyId);
+    }
+
+    public void cancelThePropertiesSaved(Long propertyId) {
+
+        String sql = "DELETE FROM bookmarks WHERE properties_id = ?";
+        jdbcTemplate.update(sql, propertyId);
     }
 
 }
