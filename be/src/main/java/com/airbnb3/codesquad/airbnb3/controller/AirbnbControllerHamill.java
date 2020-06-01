@@ -79,8 +79,11 @@ public class AirbnbControllerHamill {
         return new ResponseEntity<>(getMessage("200", "예약 취소"), HttpStatus.OK);
     }
 
-//    @GetMapping("/saved")
+    @GetMapping("/saved")
+    public ResponseEntity<List<PropertiesDtoHamill>> findAllSaved(@RequestParam Long userId) {
 
+        return new ResponseEntity<>(airbnbServiceHamill.findAllSaved(userId), HttpStatus.OK);
+    }
 
     @PutMapping("/saved/{id}")
     public ResponseEntity<CommonMessage> savedTheProperties(

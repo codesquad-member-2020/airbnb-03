@@ -20,6 +20,10 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 (image_url,properties_id);
 
+INSERT INTO user (id, name, email) VALUES (1, 'hamill', 'hamill@gmail.com');
+INSERT INTO user (id, name, email) VALUES (2, 'alex', 'haveagood@github.com');
+INSERT INTO user (id, name, email) VALUES (3, 'cory', 'corykim@github.com');
+INSERT INTO user (id, name, email) VALUES (4, 'mos', 'dongjunkim@github.com');
 
 -- LOAD DATA INFILE '/Users/choi/Desktop/java/airbnb-03/be/src/main/resources/data/properties.csv'
 -- INTO TABLE airbnb_a.properties
