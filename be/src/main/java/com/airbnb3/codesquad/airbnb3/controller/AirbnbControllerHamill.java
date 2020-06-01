@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sun.misc.Request;
 
 import java.sql.Date;
 import java.util.List;
@@ -78,7 +79,17 @@ public class AirbnbControllerHamill {
         return new ResponseEntity<>(getMessage("200", "예약 취소"), HttpStatus.OK);
     }
 
+//    @GetMapping("/saved")
 
+
+    @PutMapping("/saved/{id}")
+    public ResponseEntity<CommonMessage> savedTheProperties(
+            @PathVariable Long id,
+            @RequestParam Long userId) {
+
+        airbnbServiceHamill.savedTheProperties(id, userId);
+        return new ResponseEntity<>(getMessage("200", "즐겨찾기 성공"), HttpStatus.OK);
+    }
 
     private CommonMessage getMessage(String statusCode, String message) {
 
@@ -87,5 +98,4 @@ public class AirbnbControllerHamill {
                             .message(message)
                             .build();
     }
-
 }

@@ -82,6 +82,11 @@ public class AirbnbServiceHamill {
         propertiesDaoHamill.deleteReservationDate(propertiesId);
     }
 
+    public void savedTheProperties(Long propertyId, Long userId) {
+
+        propertiesDaoHamill.savedTheProperties(propertyId, userId);
+    }
+
     private Integer parseStringToIntegerOffset(String offset) {
 
         if (offset == null) {
@@ -239,5 +244,7 @@ public class AirbnbServiceHamill {
             return Double.parseDouble(DEFAULT_MAX_LONGITUDE);
         }
     }
+
+
 }
 

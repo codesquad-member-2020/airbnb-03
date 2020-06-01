@@ -283,4 +283,10 @@ public class PropertiesDaoHamill {
         jdbcTemplate.update(sql, propertyId);
     }
 
+    public void savedTheProperties(Long propertyId, Long userId) {
+
+        String sql = "INSERT INTO bookmarks (is_bookmarked, user_id, properties_id) VALUES (true, ?, ?)";
+        jdbcTemplate.update(sql, userId, propertyId);
+    }
+
 }
