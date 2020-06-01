@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.Date;
 import java.util.List;
 
-import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
 
 

@@ -6,29 +6,27 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Date;
 import java.util.Arrays;
 import java.util.List;
 
 @Repository
-public class PropertiesDaoHamill {
+public class SavedDaoHamill {
 
-    private final Logger logger = LoggerFactory.getLogger(PropertiesDaoHamill.class);
+    private final Logger logger = LoggerFactory.getLogger(SavedDaoHamill.class);
 
     private final JdbcTemplate jdbcTemplate;
 
-    public PropertiesDaoHamill(JdbcTemplate jdbcTemplate) {
+    public SavedDaoHamill(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<PropertiesDtoHamill> findAllProperties(
-            Integer offset, Double priceMin, Double priceMax, Date checkIn, Date checkOut, Integer guests
-            , Double minLatitude, Double minLongitude, Double maxLatitude, Double maxLongitude) {
+    public void savedTheProperties(Long propertyId, Long userId) {
 
-        logger.info("#### offset, priceMin, priceMax, checkIn, checkOut, guests: {}, {}, {}, {}, {}, {}",
-                offset, priceMin, priceMax, checkIn, checkOut, guests);
-        logger.info("#### minLatitude, maxLatitude, minLongitude, maxLongitude: {}, {}, {}, {}",
-                minLatitude, maxLatitude, minLongitude, maxLongitude);
+        String sql = "INSERT INTO bookmarks (is_bookmarked, user_id, properties_id) VALUES (true, ?, ?)";
+        jdbcTemplate.update(sql, userId, propertyId);
+    }
+
+    public List<PropertiesDtoHamill> findAllSaved(Long userId) {
 
         String sql =
                 "SELECT p.id,\n" +
@@ -44,18 +42,17 @@ public class PropertiesDaoHamill {
                         "       p.place_type,\n" +
                         "       p.review_average,\n" +
                         "       p.number_of_reviews,\n" +
-                        "       GROUP_CONCAT(i.image_url) AS image\n" +
+                        "       GROUP_CONCAT(i.image_url)                       AS image\n" +
                         "FROM properties p\n" +
-                        "         LEFT JOIN images i ON p.id = i.properties_id\n" +
+                        "         LEFT JOIN images i\n" +
+                        "                   ON p.id = i.properties_id\n" +
                         "         LEFT JOIN detail d ON p.id = d.id\n" +
                         "         LEFT JOIN calendar c ON p.id = c.properties_id\n" +
-                        "WHERE (p.price BETWEEN ? AND ?)\n" +
-                        "  AND p.id NOT IN (SELECT DISTINCT properties_id FROM calendar WHERE reservation_date BETWEEN ? AND ?)\n" +
-                        "  AND d.accommodates >= ?\n" +
-                        "  AND p.latitude BETWEEN  ? AND ?\n" +
-                        "  AND p.longitude BETWEEN  ? AND ?\n" +
-                        "GROUP BY p.id\n" +
-                        "LIMIT ?";
+                        "         LEFT JOIN bookmarks b on p.id = b.properties_id\n" +
+                        "         LEFT JOIN user u on b.user_id = u.id\n" +
+                        "WHERE is_bookmarked = 1\n" +
+                        "AND u.id = ?\n" +
+                        "GROUP BY p.id;";
 
         return jdbcTemplate.query(
                 sql,
@@ -76,6 +73,24 @@ public class PropertiesDaoHamill {
                                            .numberOfReviews(rs.getInt("number_of_reviews"))
                                            .images(Arrays.asList(rs.getString("image").split(",")))
                                            .build()
-                , priceMin, priceMax, checkIn, checkOut, guests, minLatitude, maxLatitude, minLongitude, maxLongitude, offset);
+                ,userId);
+    }
+
+    public void updatedSavedIsTrue(Long propertyId) {
+
+        String sql = "UPDATE properties SET saved = true WHERE id = ?";
+        jdbcTemplate.update(sql, propertyId);
+    }
+
+    public void updatedSavedIsFalse(Long propertyId) {
+
+        String sql = "UPDATE properties SET saved = false WHERE id = ?";
+        jdbcTemplate.update(sql, propertyId);
+    }
+
+    public void cancelThePropertiesSaved(Long propertyId) {
+
+        String sql = "DELETE FROM bookmarks WHERE properties_id = ?";
+        jdbcTemplate.update(sql, propertyId);
     }
 }
