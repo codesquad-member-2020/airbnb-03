@@ -73,6 +73,7 @@ public class AirbnbServiceHamill {
     // 숙소 예약 취소
     public void cancelTheProperties(Long propertiesId) {
         propertiesDaoHamill.deleteReservationInformation(propertiesId);
+        propertiesDaoHamill.deleteReservationDate(propertiesId);
     }
 
     private Integer parseStringToIntegerOffset(String offset) {

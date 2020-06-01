@@ -259,20 +259,23 @@ public class PropertiesDaoHamill {
 
     public void deleteReservationInformation(Long propertiesId) {
 
-        String sql = "DELETE FROM bookings WHERE id = ?";
+        String sql = "DELETE FROM bookings WHERE bookings.properties_id = ?";
         jdbcTemplate.update(sql, propertiesId);
     }
 
     public void insertReservationDate(Long reservationId, Date checkIn, Integer nights) {
-        logger.info("##### reservationId, checkIn, nights: {}, {}, {}", reservationId, checkIn, nights);
 
         for (int i = 0; i <= nights; i++) {
             String sql = "INSERT INTO calendar (reservation_date, properties_id)\n" +
                     "        VALUES (DATE_ADD( ?, INTERVAL ? DAY), ?);";
             jdbcTemplate.update(sql, checkIn, i, reservationId);
         }
-
     }
 
+    public void deleteReservationDate(Long propertyId) {
+
+        String sql = "DELETE FROM calendar WHERE properties_id = ?";
+        jdbcTemplate.update(sql, propertyId);
+    }
 
 }
