@@ -3,9 +3,11 @@ package com.airbnb3.codesquad.airbnb3.service;
 import com.airbnb3.codesquad.airbnb3.dao.DetailDao;
 import com.airbnb3.codesquad.airbnb3.dao.PropertiesDao;
 import com.airbnb3.codesquad.airbnb3.dao.UserDao;
+import com.airbnb3.codesquad.airbnb3.dto.DetailDto;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDto;
 import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.DetailDtoHamill;
 import com.airbnb3.codesquad.airbnb3.service.alex.AirBnbServiceAlex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,9 +60,10 @@ public class AirbnbService {
         return propertiesDao.getStayedProperties(propertyRange, accommodates, checkIn, checkOut, userId, minPriceRange, maxPriceRange, minLatitudeRange, maxLatitudeRange, minLongitudeRange, maxLongitudeRange);
     }
 
-    public DetailDtoAlex detailProperties(Long id) {
+    public DetailDto detailProperties(Long id) {
         return detailDao.getDetailProperties(id);
     }
+
 
     public void saveProperties(Long id, String name) {
         Long userId = userDao.findUserIdByUserName(name);

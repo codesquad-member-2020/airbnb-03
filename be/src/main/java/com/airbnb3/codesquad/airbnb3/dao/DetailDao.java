@@ -1,11 +1,9 @@
 package com.airbnb3.codesquad.airbnb3.dao;
 
-import com.airbnb3.codesquad.airbnb3.dao.alex.DetailDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.DetailDto;
 import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -25,7 +23,7 @@ public class DetailDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public DetailDtoAlex getDetailProperties(Long id) {
+    public DetailDto getDetailProperties(Long id) {
         String sql = "SELECT p.id,p.city,p.state,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,p.price,p.place_type,p.review_average,p.number_of_reviews,GROUP_CONCAT(i.image_url) AS image," +
                 "d.summary,d.space,d.city_overview,d.notes,d.transit,d.host_name,d.host_since,d.host_location,d.host_about,d.address,d.accommodates,d.bathrooms,d.bedrooms,d.beds,d.bed_type,REPLACE(d.amenities,'\"','') AS amenity,d.service_fee,d.cleaning_fee,d.tax,d.review_scores_accuracy,d.review_scores_cleanliness,d.review_scores_checkin,d.review_scores_communication,d.review_scores_location,d.review_scores_value " +
                 "FROM properties p LEFT JOIN detail d ON p.id = d.id LEFT JOIN images i ON p.id = i.properties_id WHERE p.id = :id";
@@ -33,7 +31,7 @@ public class DetailDao {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("id", id);
         return jdbcTemplate.queryForObject(sql, parameterSource, (rs, rowNum) ->
-                DetailDtoAlex.builder()
+                DetailDto.builder()
                         .id(rs.getLong("id"))
                         .title(rs.getString("title"))
                         .reservable(rs.getBoolean("reservable"))

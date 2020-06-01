@@ -1,9 +1,8 @@
 package com.airbnb3.codesquad.airbnb3.controller;
 
 import com.airbnb3.codesquad.airbnb3.common.CommonMessage;
+import com.airbnb3.codesquad.airbnb3.dto.DetailDto;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDto;
-import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
-import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingsDtoHamill;
 import com.airbnb3.codesquad.airbnb3.service.AirbnbService;
 import com.airbnb3.codesquad.airbnb3.service.ReservationService;
@@ -16,9 +15,8 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.Date;
 import java.util.List;
 
-import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
-import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.DEFAULT_CHILDREN_COUNT;
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
+import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
 
 
 @RestController
@@ -54,7 +52,7 @@ public class AirbnbController {
     }
 
     @GetMapping("/properties/{id}")
-    public ResponseEntity<DetailDtoAlex> detailPage(@PathVariable("id") Long id) {
+    public ResponseEntity<DetailDto> detailPage(@PathVariable("id") Long id) {
         return new ResponseEntity<>(airbnbService.detailProperties(id), HttpStatus.OK);
     }
 
@@ -82,22 +80,6 @@ public class AirbnbController {
         reservationService.cancelTheProperties(id);
         return new ResponseEntity<>(getMessage("200", "예약 취소"), HttpStatus.OK);
     }
-
-//
-//    //@PutMapping("/saved/{id}")
-//    @GetMapping("/saved/{id}")
-//    public void savedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
-//        airbnbService.saveProperties(id, name);
-//    }
-//
-//    @GetMapping("/saved/{id}/del")
-//    public void unSavedProperties(@PathVariable("id") Long id, @CookieValue(value = "name", defaultValue = "Alex") String name) {
-//        airbnbService.unSaveProperties(id, name);
-//    }
-//    @GetMapping("/saved")
-//    public ResponseEntity<List<PropertiesDto>> savedPropertiesList(@CookieValue(value = "name", defaultValue = "Alex") String name) {
-//        return new ResponseEntity<>(airbnbService.savedPropertiesList(name),HttpStatus.OK);
-//    }
 
     @GetMapping("/saved/{id}")
     public void savedProperties(@PathVariable("id") Long id, @RequestParam(value = "name", defaultValue = "Alex") String name) {

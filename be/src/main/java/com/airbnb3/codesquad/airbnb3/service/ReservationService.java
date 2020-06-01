@@ -1,8 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.service;
 
-import com.airbnb3.codesquad.airbnb3.dao.PropertiesDao;
 import com.airbnb3.codesquad.airbnb3.dao.ReservationDao;
-import com.airbnb3.codesquad.airbnb3.dao.hamill.PropertiesDaoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingsDtoHamill;
 import com.airbnb3.codesquad.airbnb3.service.hamill.AirbnbServiceHamill;
 import org.slf4j.Logger;
