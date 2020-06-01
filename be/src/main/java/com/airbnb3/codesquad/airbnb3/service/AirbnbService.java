@@ -3,6 +3,7 @@ package com.airbnb3.codesquad.airbnb3.service;
 import com.airbnb3.codesquad.airbnb3.dao.DetailDao;
 import com.airbnb3.codesquad.airbnb3.dao.PropertiesDao;
 import com.airbnb3.codesquad.airbnb3.dao.UserDao;
+import com.airbnb3.codesquad.airbnb3.dto.PropertiesDto;
 import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
 import com.airbnb3.codesquad.airbnb3.service.alex.AirBnbServiceAlex;
@@ -33,9 +34,9 @@ public class AirbnbService {
         this.userDao = userDao;
     }
 
-    public List<PropertiesDtoAlex> stayedProperties(Integer offset, Integer adults, Integer children, Date checkIn, Date checkOut,
-                                                    String name, String minPrice, String maxPrice,
-                                                    String minLatitude, String maxLatitude, String minLongitude, String maxLongitude) {
+    public List<PropertiesDto> stayedProperties(Integer offset, Integer adults, Integer children, Date checkIn, Date checkOut,
+                                                String name, String minPrice, String maxPrice,
+                                                String minLatitude, String maxLatitude, String minLongitude, String maxLongitude) {
 
         Integer propertyRange = PAGE_VIEW_ITEM_COUNT * offset;
         Integer accommodates = adults + children;
@@ -69,5 +70,10 @@ public class AirbnbService {
     public void unSaveProperties(Long id, String name) {
         Long userId = userDao.findUserIdByUserName(name);
         propertiesDao.unSaveProperties(id, userId);
+    }
+
+    public List<PropertiesDto> savedPropertiesList(String name) {
+        Long userId = userDao.findUserIdByUserName(name);
+        return propertiesDao.savedPropertiesList(userId);
     }
 }

@@ -42,11 +42,11 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 (image_url,properties_id);
-
-INSERT INTO user(id, name, email) values (0001,'Alex','Alex@email.com');
-INSERT INTO user(id, name, email) values (0002,'Hamill','Hamill@email.com');
-INSERT INTO user(id, name, email) values (0003,'Cory','Cory@email.com');
-INSERT INTO user(id, name, email) values (0004,'모스','모스@email.com');
+--
+-- INSERT INTO user(id, name, email) values (0001,'Alex','Alex@email.com');
+-- INSERT INTO user(id, name, email) values (0002,'Hamill','Hamill@email.com');
+-- INSERT INTO user(id, name, email) values (0003,'Cory','Cory@email.com');
+-- INSERT INTO user(id, name, email) values (0004,'모스','모스@email.com');
 
 -- LOAD DATA INFILE '/Users/choi/Desktop/java/airbnb-03/be/src/main/resources/data/properties.csv'
 -- INTO TABLE airbnb_a.properties

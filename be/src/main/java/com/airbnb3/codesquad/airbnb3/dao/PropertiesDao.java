@@ -1,5 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.dao;
 
+import com.airbnb3.codesquad.airbnb3.dto.PropertiesDto;
 import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,11 +24,11 @@ public class PropertiesDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<PropertiesDtoAlex> getStayedProperties(Integer propertyRange, Integer accommodates, Date checkInDate, Date checkOutDate,
-                                                       Long userId, BigDecimal minPrice, BigDecimal maxPrice,
-                                                       BigDecimal minLatitude, BigDecimal maxLatitude, BigDecimal minLongitude, BigDecimal maxLongitude) {
+    public List<PropertiesDto> getStayedProperties(Integer propertyRange, Integer accommodates, Date checkInDate, Date checkOutDate,
+                                                   Long userId, BigDecimal minPrice, BigDecimal maxPrice,
+                                                   BigDecimal minLatitude, BigDecimal maxLatitude, BigDecimal minLongitude, BigDecimal maxLongitude) {
 
-        String sql = "select p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,CASE WHEN p.id IN (SELECT bookmarks.properties_id FROM bookmarks WHERE bookmarks.user_id = :userId) THEN 1 ELSE 0 END AS is_saved," +
+        String sql = "SELECT p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,CASE WHEN p.id IN (SELECT bookmarks.properties_id FROM bookmarks WHERE bookmarks.user_id = :userId) THEN 1 ELSE 0 END AS is_saved," +
                 "CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(DISTINCT i.image_url) AS image " +
                 "FROM properties p LEFT JOIN images i ON p.id = i.properties_id " +
                 "LEFT JOIN detail t ON t.id = p.id LEFT JOIN calendar c ON c.properties_id = p.id LEFT JOIN bookings b on p.id = b.properties_id LEFT JOIN user u on b.user_id = u.id " +
@@ -52,7 +53,7 @@ public class PropertiesDao {
                 .addValue("minLongitude", minLongitude)
                 .addValue("maxLongitude", maxLongitude);
 
-        return jdbcTemplate.query(sql, parameterSource, (rs, rowNum) -> PropertiesDtoAlex.builder()
+        return jdbcTemplate.query(sql, parameterSource, (rs, rowNum) -> PropertiesDto.builder()
                 .id(rs.getLong("id"))
                 .title(rs.getString("title"))
                 .state(rs.getString("state"))
@@ -86,4 +87,32 @@ public class PropertiesDao {
         jdbcTemplate.update(sql, parameterSource);
     }
 
+    public List<PropertiesDto> savedPropertiesList(Long userId) {
+        String sql = "SELECT p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable," +
+                "CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,p.price,p.place_type,p.review_average,p.number_of_reviews," +
+                "CASE WHEN p.id IN (SELECT bookmarks.properties_id FROM bookmarks WHERE bookmarks.user_id = :userId) THEN 1 ELSE 0 END AS is_saved," +
+                "GROUP_CONCAT(DISTINCT i.image_url) AS image " +
+                "FROM properties p LEFT JOIN bookmarks bm ON p.id = bm.properties_id LEFT JOIN images i ON p.id = i.properties_id " +
+                "WHERE bm.user_id = :userId GROUP BY p.id";
+
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource()
+                .addValue("userId", userId);
+
+        return jdbcTemplate.query(sql, parameterSource, (rs, rowNum) -> PropertiesDto.builder()
+                .id(rs.getLong("id"))
+                .title(rs.getString("title"))
+                .state(rs.getString("state"))
+                .city(rs.getString("city"))
+                .latitude(rs.getDouble("latitude"))
+                .longitude(rs.getDouble("longitude"))
+                .reservable(rs.getBoolean("reservable"))
+                .saved(rs.getBoolean("is_saved"))
+                .isSuperHost(rs.getBoolean("is_super_host"))
+                .price(rs.getDouble("price"))
+                .placeType(rs.getString("place_type"))
+                .reviewAverage(rs.getDouble("review_average"))
+                .numberOfReviews(rs.getInt("number_of_reviews"))
+                .images(Arrays.asList(rs.getString("image").split(",")))
+                .build());
+    }
 }
