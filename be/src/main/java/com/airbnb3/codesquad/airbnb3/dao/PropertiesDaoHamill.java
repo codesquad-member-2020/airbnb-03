@@ -351,9 +351,15 @@ public class PropertiesDaoHamill {
         ,userId);
     }
 
-    public void updatedThePropertiesSaved(Long propertyId) {
+    public void updatedSavedIsTrue(Long propertyId) {
 
         String sql = "UPDATE properties SET saved = true WHERE id = ?";
+        jdbcTemplate.update(sql, propertyId);
+    }
+
+    public void updatedSavedIsFalse(Long propertyId) {
+
+        String sql = "UPDATE properties SET saved = false WHERE id = ?";
         jdbcTemplate.update(sql, propertyId);
     }
 

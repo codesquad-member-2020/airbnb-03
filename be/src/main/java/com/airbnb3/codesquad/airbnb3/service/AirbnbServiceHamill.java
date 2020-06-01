@@ -88,7 +88,7 @@ public class AirbnbServiceHamill {
     public void savedTheProperties(Long propertyId, Long userId) {
 
         propertiesDaoHamill.savedTheProperties(propertyId, userId);
-//        propertiesDaoHamill.updatedThePropertiesSaved(propertyId);
+        propertiesDaoHamill.updatedSavedIsTrue(propertyId);
     }
 
     // 즐겨찾기 목록 출력
@@ -101,6 +101,7 @@ public class AirbnbServiceHamill {
     public void cancelThePropertiesSaved(Long propertyId) {
 
         propertiesDaoHamill.cancelThePropertiesSaved(propertyId);
+        propertiesDaoHamill.updatedSavedIsFalse(propertyId);
     }
 
 
