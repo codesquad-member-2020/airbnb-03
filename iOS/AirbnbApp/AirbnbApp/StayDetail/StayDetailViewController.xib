@@ -40,14 +40,16 @@
                         <constraint firstAttribute="height" constant="50" id="qJR-SP-9bS"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-tZ-CWi">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-tZ-CWi">
                     <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nIX-aF-DtO">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nIX-aF-DtO">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
                         </stackView>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="nIX-aF-DtO" firstAttribute="height" relation="greaterThanOrEqual" secondItem="rft-re-ZP4" secondAttribute="height" id="78S-Od-WB8"/>
+                        <constraint firstItem="nIX-aF-DtO" firstAttribute="bottom" secondItem="rft-re-ZP4" secondAttribute="bottom" id="S0E-EJ-fqB"/>
                         <constraint firstItem="nIX-aF-DtO" firstAttribute="trailing" secondItem="zPR-jX-7L8" secondAttribute="trailing" id="XnL-Ha-s6T"/>
                         <constraint firstItem="nIX-aF-DtO" firstAttribute="leading" secondItem="zPR-jX-7L8" secondAttribute="leading" id="hEM-LA-lj6"/>
                         <constraint firstItem="nIX-aF-DtO" firstAttribute="width" secondItem="rft-re-ZP4" secondAttribute="width" id="rus-LS-ikt"/>

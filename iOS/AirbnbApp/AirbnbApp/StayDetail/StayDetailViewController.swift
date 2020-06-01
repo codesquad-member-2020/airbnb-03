@@ -9,7 +9,7 @@ class StayDetailViewController: UIViewController {
 
         #warning("테스트용 뷰")
         let detailSectionView = DetailSectionView.loadFromXib(titleText: "Stay with me") { view in
-            view.addSubContentViews()
+//            view.addSubContentViews()
         }
         stackView.addArrangedSubview(detailSectionView)
 
@@ -25,5 +25,11 @@ class StayDetailViewController: UIViewController {
 
     @IBAction func backButtonTouched(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func detailTouched(_ sender: Any) {
+        print("detail button")
+        let viewController = StayDetailSectionViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

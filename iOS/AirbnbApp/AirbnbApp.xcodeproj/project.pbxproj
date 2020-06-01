@@ -46,6 +46,8 @@
 		8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A18247C1D4500D9A99D /* DetailButton.swift */; };
 		8D9B7A1B247C206400D9A99D /* RoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */; };
 		8DA4BA2D247FB45E00FFE332 /* UIView+drawBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA2C247FB45E00FFE332 /* UIView+drawBorders.swift */; };
+		8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */; };
+		8DA4BA33247FB7B800FFE332 /* StayDetailSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
 		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
 		8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA197024754B7900B3C167 /* SearchFilterView.xib */; };
@@ -110,6 +112,8 @@
 		8D9B7A18247C1D4500D9A99D /* DetailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButton.swift; sourceTree = "<group>"; };
 		8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorder.swift; sourceTree = "<group>"; };
 		8DA4BA2C247FB45E00FFE332 /* UIView+drawBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+drawBorders.swift"; sourceTree = "<group>"; };
+		8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDetailSectionViewController.swift; sourceTree = "<group>"; };
+		8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayDetailSectionViewController.xib; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
 		8DCA197024754B7900B3C167 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 				8D8FE71B2473CF23008FF0AF /* TabBar */,
 				8D8FE71C2473CF3C008FF0AF /* StayList */,
 				8D9B7A0D247C066300D9A99D /* StayDetail */,
+				8DA4BA2F247FB77F00FFE332 /* StayDetailSection */,
 				384C0E322473D9380051528B /* Extensions */,
 				385D8BE424728EC8009E2E2B /* AppDelegate.swift */,
 				385D8BE624728EC8009E2E2B /* SceneDelegate.swift */,
@@ -332,6 +337,15 @@
 				8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */,
 			);
 			path = StayDetail;
+			sourceTree = "<group>";
+		};
+		8DA4BA2F247FB77F00FFE332 /* StayDetailSection */ = {
+			isa = PBXGroup;
+			children = (
+				8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */,
+				8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */,
+			);
+			path = StayDetailSection;
 			sourceTree = "<group>";
 		};
 		BB525B3078B278E3107AD411 /* Frameworks */ = {
@@ -433,6 +447,7 @@
 				8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */,
 				385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */,
 				8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */,
+				8DA4BA33247FB7B800FFE332 /* StayDetailSectionViewController.xib in Resources */,
 				384C0E3D2473F62A0051528B /* StayCell.xib in Resources */,
 				8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */,
 			);
@@ -536,6 +551,7 @@
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,
 				38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */,
+				8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */,
 				8DA4BA2D247FB45E00FFE332 /* UIView+drawBorders.swift in Sources */,
 				381A030624762561004EDE84 /* PriceLabel.swift in Sources */,
 				38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */,

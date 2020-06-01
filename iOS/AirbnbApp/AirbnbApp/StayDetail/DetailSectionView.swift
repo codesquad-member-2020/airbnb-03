@@ -18,4 +18,13 @@ class DetailSectionView: UIView, ViewFromXib {
     func addSubContentViews(_ views: UIView...) {
         views.forEach { contentView.addSubview($0) }
     }
+    @IBAction func buttonTouched(_ sender: Any) {
+        print("button touched in view")
+    }
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let hitTestView = super.hitTest(point, with: event)
+        print(hitTestView)
+        return hitTestView
+    }
 }
