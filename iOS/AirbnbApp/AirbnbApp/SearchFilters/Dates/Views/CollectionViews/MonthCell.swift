@@ -12,7 +12,8 @@ final class MonthCell: UICollectionViewCell {
         monthLabel.text = "\(monthName) \(year)"
     }
     
-    func updateDays(dayDates: [StayDate]) {
-        daysCollectionView.updateDays(dayDates: dayDates)
+    func configureDaysCollectionViewDataSource(_ dataSource: DaysCollectionViewDataSource) {
+        dataSource.calculateFirstDayOffset()
+        daysCollectionView.dataSource = dataSource
     }
 }

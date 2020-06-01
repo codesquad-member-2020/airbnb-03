@@ -1,9 +1,10 @@
 import Foundation
 
-struct StayDate {
+struct ReservationDate {
     private(set) var year: Int
     private(set) var month: Int
     private(set) var day: Int
+    private(set) var isEmpty: Bool = false
     
     init(year: Int,
          month: Int,
@@ -32,14 +33,20 @@ struct StayDate {
         return "\(year)-\(month)-\(day)"
     }
     
-    func after(month offset: Int) -> Self {
+    /// '월'을 더하여 ReservationDate를 반환하는 메소드
+    /// - Parameter monthOffset: 더하고 싶은 월의 값
+    func after(monthOffset: Int) -> Self {
         var year = self.year
-        var month = self.month + offset
+        var month = self.month + monthOffset
         if month > 12 {
             year += 1
             month -= 12
         }
-        return StayDate(year: year, month: month)
+        return ReservationDate(year: year, month: month)
+    }
+    
+    mutating func setEmpty() {
+        isEmpty = true
     }
 }
 
