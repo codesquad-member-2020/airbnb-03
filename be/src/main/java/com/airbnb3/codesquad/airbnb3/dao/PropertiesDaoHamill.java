@@ -262,10 +262,10 @@ public class PropertiesDaoHamill {
         jdbcTemplate.update(sql, checkIn, checkOut, Timestamp.valueOf(LocalDateTime.now()), guests, nights, nights, propertyId);
     }
 
-    public void deleteReservationInformation(Long propertiesId) {
+    public void deleteReservationInformation(Long propertyId) {
 
         String sql = "DELETE FROM bookings WHERE bookings.properties_id = ?";
-        jdbcTemplate.update(sql, propertiesId);
+        jdbcTemplate.update(sql, propertyId);
     }
 
     public void insertReservationDate(Long propertyId, Date checkIn, Integer nights) {
@@ -283,9 +283,15 @@ public class PropertiesDaoHamill {
         jdbcTemplate.update(sql, propertyId);
     }
 
-    public void updateReservable(Long propertyId) {
+    public void updateReservableIsFalse(Long propertyId) {
 
         String sql = "UPDATE properties SET reservable = false WHERE id = ?";
+        jdbcTemplate.update(sql, propertyId);
+    }
+
+    public void updateReservableIsTrue(Long propertyId) {
+
+        String sql = "UPDATE properties SET reservable = true WHERE id = ?";
         jdbcTemplate.update(sql, propertyId);
     }
 

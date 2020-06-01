@@ -74,13 +74,14 @@ public class AirbnbServiceHamill {
         Period period = Period.between(checkIn.toLocalDate(), checkOut.toLocalDate());
         propertiesDaoHamill.insertReservationInformation(propertyId, checkIn, checkOut, guests, period.getDays(), name);
         propertiesDaoHamill.insertReservationDate(propertyId, checkIn, period.getDays());
-        propertiesDaoHamill.updateReservable(propertyId);
+        propertiesDaoHamill.updateReservableIsFalse(propertyId);
     }
 
     // 숙소 예약 취소
     public void cancelTheProperties(Long propertiesId) {
         propertiesDaoHamill.deleteReservationInformation(propertiesId);
         propertiesDaoHamill.deleteReservationDate(propertiesId);
+        propertiesDaoHamill.updateReservableIsTrue(propertiesId);
     }
 
     // 즐겨찾기 추가
