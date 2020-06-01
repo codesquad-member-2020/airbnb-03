@@ -35,10 +35,16 @@ public class AirbnbControllerHamill {
             @RequestParam(value = "checkin", required = false) String checkIn,
             @RequestParam(value = "checkout", required = false) String checkOut,
             @RequestParam(value = "adults", required = false, defaultValue = DEFAULT_ADULTS_COUNT) String adults,
-            @RequestParam(value = "children", required = false, defaultValue = DEFAULT_CHILDREN_COUNT) String children) {
+            @RequestParam(value = "children", required = false, defaultValue = DEFAULT_CHILDREN_COUNT) String children,
+            @RequestParam(value = "min_lat", required = false, defaultValue = DEFAULT_MIN_LATITUDE) String minLatitude,
+            @RequestParam(value = "min_long", required = false, defaultValue = DEFAULT_MIN_LONGITUDE) String minLongitude,
+            @RequestParam(value = "max_lat", required = false, defaultValue = DEFAULT_MAX_LATITUDE) String maxLatitude,
+            @RequestParam(value = "max_long", required = false, defaultValue = DEFAULT_MAX_LONGITUDE) String maxLongitude) {
 
         return new ResponseEntity<>(
-                airbnbServiceHamill.findAllProperties(offset, priceMin, priceMax, checkIn, checkOut, adults, children),
+                airbnbServiceHamill.findAllProperties(
+                        offset, priceMin, priceMax, checkIn, checkOut, adults, children,
+                        minLatitude, minLongitude, maxLatitude, maxLongitude),
                 HttpStatus.OK);
     }
 
@@ -71,6 +77,8 @@ public class AirbnbControllerHamill {
         airbnbServiceHamill.cancelTheProperties(reservationId);
         return new ResponseEntity<>(getMessage("200", "예약 취소"), HttpStatus.OK);
     }
+
+
 
     private CommonMessage getMessage(String statusCode, String message) {
 

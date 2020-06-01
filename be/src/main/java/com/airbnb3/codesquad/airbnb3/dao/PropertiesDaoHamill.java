@@ -27,10 +27,13 @@ public class PropertiesDaoHamill {
     }
 
     public List<PropertiesDtoHamill> findAllProperties(
-            Integer offset, Double priceMin, Double priceMax, Date checkIn, Date checkOut, Integer guests) {
+            Integer offset, Double priceMin, Double priceMax, Date checkIn, Date checkOut, Integer guests
+    , Double minLatitude, Double minLongitude, Double maxLatitude, Double maxLongitude) {
 
-        logger.debug("#### offset, priceMin, priceMax, checkIn, checkOut, accommodates: {}, {}, {}, {}, {}, {}",
+        logger.info("#### offset, priceMin, priceMax, checkIn, checkOut, guests: {}, {}, {}, {}, {}, {}",
                 offset, priceMin, priceMax, checkIn, checkOut, guests);
+        logger.info("#### minLatitude, maxLatitude, minLongitude, maxLongitude: {}, {}, {}, {}",
+                minLatitude, maxLatitude, minLongitude, maxLongitude);
 
         String sql =
                 "SELECT p.id,\n" +
@@ -54,6 +57,8 @@ public class PropertiesDaoHamill {
                         "WHERE (p.price BETWEEN ? AND ?)\n" +
                         "  AND p.id NOT IN (SELECT DISTINCT properties_id FROM calendar WHERE reservation_date BETWEEN ? AND ?)\n" +
                         "  AND d.accommodates >= ?\n" +
+                        "  AND p.latitude BETWEEN  ? AND ?\n" +
+                        "  AND p.longitude BETWEEN  ? AND ?\n" +
                         "GROUP BY p.id\n" +
                         "LIMIT ?";
 
@@ -76,7 +81,7 @@ public class PropertiesDaoHamill {
                                            .numberOfReviews(rs.getInt("number_of_reviews"))
                                            .images(Arrays.asList(rs.getString("image").split(",")))
                                            .build()
-                , priceMin, priceMax, checkIn, checkOut, guests, offset);
+                , priceMin, priceMax, checkIn, checkOut, guests, minLatitude, maxLatitude, minLongitude, maxLongitude, offset);
     }
 
     public DetailDtoHamill findByPropertiesId(Long propertiesId) {
