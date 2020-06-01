@@ -1,6 +1,8 @@
 package com.airbnb3.codesquad.airbnb3.controller;
 
+import com.airbnb3.codesquad.airbnb3.common.CommonMessage;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDto;
+import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
 import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.service.AirbnbService;
 import com.airbnb3.codesquad.airbnb3.service.ReservationService;
@@ -16,6 +18,7 @@ import java.util.List;
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.DEFAULT_CHILDREN_COUNT;
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
+
 
 @RestController
 public class AirbnbController {
@@ -54,7 +57,18 @@ public class AirbnbController {
         return new ResponseEntity<>(airbnbService.detailProperties(id), HttpStatus.OK);
     }
 
-    //@PutMapping("/reservations/{id}")
+    @PutMapping("/reservations/{id}")
+    public ResponseEntity<CommonMessage> reserveTheProperties(
+            @PathVariable Long id,
+            @RequestParam(value = "checkin") Date checkIn,
+            @RequestParam(value = "checkout") Date checkOut,
+            @RequestParam(value = "guests") Integer guests,
+            @CookieValue(value = "name", required = false, defaultValue = "None") String name) {
+
+        reservationService.reserveTheProperties(id, checkIn, checkOut, guests, name);
+        return new ResponseEntity<>(getMessage("200", "예약 성공"), HttpStatus.OK);
+    }
+
 //    @GetMapping("/reservations/{id}")
 //    public ResponseEntity<Object> reservationRequest(@PathVariable("id") Long id,
 //                                                     @RequestParam(value = "check_in") Date checkIn,
@@ -109,5 +123,13 @@ public class AirbnbController {
     @GetMapping("/saved")
     public ResponseEntity<List<PropertiesDto>> savedPropertiesList(@RequestParam(value = "name", defaultValue = "Alex") String name) {
         return new ResponseEntity<>(airbnbService.savedPropertiesList(name), HttpStatus.OK);
+    }
+
+    private CommonMessage getMessage(String statusCode, String message) {
+
+        return CommonMessage.builder()
+                            .statusCode(statusCode)
+                            .message(message)
+                            .build();
     }
 }
