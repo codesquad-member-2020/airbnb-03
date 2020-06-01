@@ -67,6 +67,7 @@ public class AirbnbServiceHamill {
 
         Period period = Period.between(checkIn.toLocalDate(), checkOut.toLocalDate());
         propertiesDaoHamill.insertReservationInformation(reservationId, checkIn, checkOut, guests, period.getDays(), name);
+        propertiesDaoHamill.insertReservationDate(reservationId, checkIn, period.getDays());
     }
 
     // 숙소 예약 취소

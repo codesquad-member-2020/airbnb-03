@@ -263,5 +263,16 @@ public class PropertiesDaoHamill {
         jdbcTemplate.update(sql, propertiesId);
     }
 
+    public void insertReservationDate(Long reservationId, Date checkIn, Integer nights) {
+        logger.info("##### reservationId, checkIn, nights: {}, {}, {}", reservationId, checkIn, nights);
+
+        for (int i = 0; i <= nights; i++) {
+            String sql = "INSERT INTO calendar (reservation_date, properties_id)\n" +
+                    "        VALUES (DATE_ADD( ?, INTERVAL ? DAY), ?);";
+            jdbcTemplate.update(sql, checkIn, i, reservationId);
+        }
+
+    }
+
 
 }

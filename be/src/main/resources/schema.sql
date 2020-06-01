@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS bookings
     service_fee    DECIMAL(10, 3),
     tax            DECIMAL(10, 3),
     price          DECIMAL(10, 3),
-    price_per_stay DECIMAL(10, 3),
+    price_for_stay DECIMAL(10, 3),
     total_price    DECIMAL(10, 3),
     nights         INT,
     properties_id  INT REFERENCES properties (id),
