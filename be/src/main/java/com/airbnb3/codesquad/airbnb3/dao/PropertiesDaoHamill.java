@@ -238,7 +238,7 @@ public class PropertiesDaoHamill {
         );
     }
 
-    public void insertReservationInformation(Long reservationsId, Date checkIn, Date checkOut,
+    public void insertReservationInformation(Long propertyId, Date checkIn, Date checkOut,
                                              Integer guests, Integer nights, String name) {
         String sql =
                 "INSERT INTO bookings(check_in_date, check_out_date, booking_date, guests, cleaning_fee, service_fee, tax, price,\n" +
@@ -259,7 +259,7 @@ public class PropertiesDaoHamill {
                         "         JOIN detail d ON p.id = d.id " +
                         "WHERE p.id = ?";
 
-        jdbcTemplate.update(sql, checkIn, checkOut, Timestamp.valueOf(LocalDateTime.now()), guests, nights, nights, reservationsId);
+        jdbcTemplate.update(sql, checkIn, checkOut, Timestamp.valueOf(LocalDateTime.now()), guests, nights, nights, propertyId);
     }
 
     public void deleteReservationInformation(Long propertiesId) {
@@ -268,18 +268,24 @@ public class PropertiesDaoHamill {
         jdbcTemplate.update(sql, propertiesId);
     }
 
-    public void insertReservationDate(Long reservationId, Date checkIn, Integer nights) {
+    public void insertReservationDate(Long propertyId, Date checkIn, Integer nights) {
 
         for (int i = 0; i <= nights; i++) {
             String sql = "INSERT INTO calendar (reservation_date, properties_id)\n" +
                     "        VALUES (DATE_ADD( ?, INTERVAL ? DAY), ?);";
-            jdbcTemplate.update(sql, checkIn, i, reservationId);
+            jdbcTemplate.update(sql, checkIn, i, propertyId);
         }
     }
 
     public void deleteReservationDate(Long propertyId) {
 
         String sql = "DELETE FROM calendar WHERE properties_id = ?";
+        jdbcTemplate.update(sql, propertyId);
+    }
+
+    public void updateReservable(Long propertyId) {
+
+        String sql = "UPDATE properties SET reservable = false WHERE id = ?";
         jdbcTemplate.update(sql, propertyId);
     }
 

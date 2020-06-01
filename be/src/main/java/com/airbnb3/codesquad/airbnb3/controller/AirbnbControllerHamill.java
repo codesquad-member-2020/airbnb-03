@@ -60,15 +60,15 @@ public class AirbnbControllerHamill {
         return new ResponseEntity<>(airbnbServiceHamill.findAllReservations(), HttpStatus.OK);
     }
 
-    @PutMapping("/reservations/{reservationId}")
+    @PutMapping("/reservations/{propertyId}")
     public ResponseEntity<CommonMessage> reserveTheProperties(
-            @PathVariable Long reservationId,
+            @PathVariable Long propertyId,
             @RequestParam(value = "checkin") Date checkIn,
             @RequestParam(value = "checkout") Date checkOut,
             @RequestParam(value = "guests") Integer guests,
             @CookieValue(value = "name", required = false, defaultValue = "None") String name) {
 
-        airbnbServiceHamill.reserveTheProperties(reservationId, checkIn, checkOut, guests, name);
+        airbnbServiceHamill.reserveTheProperties(propertyId, checkIn, checkOut, guests, name);
         return new ResponseEntity<>(getMessage("200", "예약 성공"), HttpStatus.OK);
     }
 

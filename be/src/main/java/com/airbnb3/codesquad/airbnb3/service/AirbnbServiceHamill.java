@@ -69,11 +69,12 @@ public class AirbnbServiceHamill {
     }
 
     // 숙소 예약
-    public void reserveTheProperties(Long reservationId, Date checkIn, Date checkOut, Integer guests, String name) {
+    public void reserveTheProperties(Long propertyId, Date checkIn, Date checkOut, Integer guests, String name) {
 
         Period period = Period.between(checkIn.toLocalDate(), checkOut.toLocalDate());
-        propertiesDaoHamill.insertReservationInformation(reservationId, checkIn, checkOut, guests, period.getDays(), name);
-        propertiesDaoHamill.insertReservationDate(reservationId, checkIn, period.getDays());
+        propertiesDaoHamill.insertReservationInformation(propertyId, checkIn, checkOut, guests, period.getDays(), name);
+        propertiesDaoHamill.insertReservationDate(propertyId, checkIn, period.getDays());
+        propertiesDaoHamill.updateReservable(propertyId);
     }
 
     // 숙소 예약 취소
@@ -86,7 +87,7 @@ public class AirbnbServiceHamill {
     public void savedTheProperties(Long propertyId, Long userId) {
 
         propertiesDaoHamill.savedTheProperties(propertyId, userId);
-        propertiesDaoHamill.updatedThePropertiesSaved(propertyId);
+//        propertiesDaoHamill.updatedThePropertiesSaved(propertyId);
     }
 
     // 즐겨찾기 목록 출력
