@@ -1,6 +1,5 @@
-package com.airbnb3.codesquad.airbnb3.dto;
+package com.airbnb3.codesquad.airbnb3.dto.hamill;
 
-import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +23,6 @@ public class BookingsDtoHamill {
     private Date checkOut;
     private Integer guests;
     private Integer nights;
-    private BookingPriceDto bookingPriceInfo;
+    private BookingPriceDtoHamill bookingPriceInfo;
 
 }

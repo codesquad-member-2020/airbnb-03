@@ -1,18 +1,16 @@
-package com.airbnb3.codesquad.airbnb3.dao;
+package com.airbnb3.codesquad.airbnb3.dao.alex;
 
-import com.airbnb3.codesquad.airbnb3.dto.*;
+import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.util.Arrays;
 
 @Repository
@@ -74,14 +72,14 @@ public class DetailDaoAlex {
 
     private ReviewDto reviewDtoBuilder(ResultSet rs) throws SQLException {
         return ReviewDto.builder()
-                .reviewAverage(rs.getDouble("review_average"))
+                .average(rs.getDouble("review_average"))
                 .numberOfReviews(rs.getInt("number_of_reviews"))
-                .reviewScoresAccuracy(rs.getDouble("review_scores_accuracy"))
-                .reviewScoresCheckin(rs.getDouble("review_scores_checkin"))
-                .reviewScoresCleanliness(rs.getDouble("review_scores_cleanliness"))
-                .reviewScoresCommunication(rs.getDouble("review_scores_communication"))
-                .reviewScoresLocation(rs.getDouble("review_scores_location"))
-                .reviewScoresValue(rs.getDouble("review_scores_value"))
+                .scoresAccuracy(rs.getDouble("review_scores_accuracy"))
+                .scoresCheckin(rs.getDouble("review_scores_checkin"))
+                .scoresCleanliness(rs.getDouble("review_scores_cleanliness"))
+                .scoresCommunication(rs.getDouble("review_scores_communication"))
+                .scoresLocation(rs.getDouble("review_scores_location"))
+                .scoresValue(rs.getDouble("review_scores_value"))
                 .build();
     }
 
@@ -97,7 +95,7 @@ public class DetailDaoAlex {
     private LocationDto locationDtoBuilder(ResultSet rs) throws SQLException {
         return LocationDto.builder()
                 .address(rs.getString("address"))
-                .cityOverView(rs.getString("city_overview"))
+                .description(rs.getString("city_overview"))
                 .latitude(rs.getDouble("latitude"))
                 .longitude(rs.getDouble("longitude"))
                 .transit(rs.getString("transit"))
@@ -106,10 +104,10 @@ public class DetailDaoAlex {
 
     private HostDto hostDtoBuilder(ResultSet rs) throws SQLException {
         return HostDto.builder()
-                .hostAbout(rs.getString("host_about"))
-                .hostLocation(rs.getString("host_location"))
-                .hostName(rs.getString("host_name"))
-                .hostSince(rs.getString("host_since"))
+                .about(rs.getString("host_about"))
+                .location(rs.getString("host_location"))
+                .name(rs.getString("host_name"))
+                .since(rs.getString("host_since"))
                 .isSuperHost(rs.getBoolean("is_super_host"))
                 .notes(rs.getString("notes"))
                 .build();

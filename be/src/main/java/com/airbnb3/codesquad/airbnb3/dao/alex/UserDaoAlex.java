@@ -1,4 +1,4 @@
-package com.airbnb3.codesquad.airbnb3.dao;
+package com.airbnb3.codesquad.airbnb3.dao.alex;
 
 import com.airbnb3.codesquad.airbnb3.oauth.GithubUserAlex;
 import org.springframework.beans.factory.annotation.Autowired;

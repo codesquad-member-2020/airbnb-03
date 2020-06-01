@@ -1,157 +1,82 @@
 package com.airbnb3.codesquad.airbnb3.service;
 
-import com.airbnb3.codesquad.airbnb3.dao.DetailDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dao.PropertiesDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dto.DetailDtoAlex;
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.DetailDao;
+import com.airbnb3.codesquad.airbnb3.dao.PropertiesDao;
+import com.airbnb3.codesquad.airbnb3.dao.UserDao;
+import com.airbnb3.codesquad.airbnb3.dto.DetailDto;
+import com.airbnb3.codesquad.airbnb3.dto.PropertiesDto;
+import com.airbnb3.codesquad.airbnb3.dto.alex.DetailDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.DetailDtoHamill;
+import com.airbnb3.codesquad.airbnb3.service.alex.AirBnbServiceAlex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.sql.Date;
+
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
 
 @Service
-public class AirBnbService {
+public class AirbnbService {
 
-    private static final Logger logger = LoggerFactory.getLogger(AirBnbService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AirBnbServiceAlex.class);
 
-    @Autowired
-    private PropertiesDaoAlex propertiesDao;
+    private final PropertiesDao propertiesDao;
+    private final DetailDao detailDao;
+    private final UserDao userDao;
 
-    @Autowired
-    private DetailDaoAlex detailDao;
-
-    public List<PropertiesDtoAlex> stayedProperties(String pageNumber, String adults, String children,
-                                                    String checkIn, String checkOut, String minRange, String maxRange,
-                                                    String minLatitude, String maxLatitude, String minLongitude, String maxLongitude) {
-        Integer propertyRange = parseStringToPageNumInteger(pageNumber) * PAGE_VIEW_ITEM_COUNT;
-        Integer accommodates = parseStringToAccommodatesInteger(adults, children);
-        Map<String, Date> reservationDates = dateCompare(checkIn, checkOut);
-        Date checkInDate = reservationDates.get("checkInDate");
-        Date checkOutDate = reservationDates.get("checkOutDate");
-        logger.info("checkInDate : {}, checkOutDate : {}",checkInDate,checkOutDate);
-        Double minPrice = parseStringToMinDouble(minRange);
-        Double maxPrice = parseStringToMaxDouble(maxRange);
-        Map<String, Double> location = parseStringToLocationDouble(minLatitude, maxLatitude, minLongitude, maxLongitude);
-        return propertiesDao.getStayedProperties(propertyRange, accommodates, checkInDate, checkOutDate, minPrice, maxPrice, location);
+    public AirbnbService(PropertiesDao propertiesDao, DetailDao detailDao, UserDao userDao) {
+        this.propertiesDao = propertiesDao;
+        this.detailDao = detailDao;
+        this.userDao = userDao;
     }
 
-    public DetailDtoAlex detailProperties(Long id) {
+    public List<PropertiesDto> stayedProperties(Integer offset, Integer adults, Integer children, Date checkIn, Date checkOut,
+                                                String name, String minPrice, String maxPrice,
+                                                String minLatitude, String maxLatitude, String minLongitude, String maxLongitude) {
+
+        Integer propertyRange = PAGE_VIEW_ITEM_COUNT * offset;
+        Integer accommodates = adults + children;
+        BigDecimal minPriceRange = new BigDecimal(String.valueOf(minPrice));
+        BigDecimal maxPriceRange = new BigDecimal(String.valueOf(maxPrice));
+        BigDecimal minLatitudeRange = new BigDecimal(String.valueOf(minLatitude));
+        BigDecimal maxLatitudeRange = new BigDecimal(String.valueOf(maxLatitude));
+        BigDecimal minLongitudeRange = new BigDecimal(String.valueOf(minLongitude));
+        BigDecimal maxLongitudeRange = new BigDecimal(String.valueOf(maxLongitude));
+
+        if (checkIn == null) {
+            checkIn = Date.valueOf(LocalDate.now());
+        }
+        if (checkOut == null) {
+            checkOut = Date.valueOf(checkIn.toLocalDate().plusDays(2));
+        }
+        logger.info("checkIn : {} , checkOut : {}", checkIn, checkOut);
+        Long userId = userDao.findUserIdByUserName(name);
+        return propertiesDao.getStayedProperties(propertyRange, accommodates, checkIn, checkOut, userId, minPriceRange, maxPriceRange, minLatitudeRange, maxLatitudeRange, minLongitudeRange, maxLongitudeRange);
+    }
+
+    public DetailDto detailProperties(Long id) {
         return detailDao.getDetailProperties(id);
     }
 
+
     public void saveProperties(Long id, String name) {
-
+        Long userId = userDao.findUserIdByUserName(name);
+        propertiesDao.saveProperties(id, userId);
     }
 
-    private Map<String, Date> dateCompare(String checkIn, String checkOut) {
-
-        Map<String, Date> tempMap = new HashMap<>();
-        Date checkInDate = parseStringToCheckInDate(checkIn);
-        Date checkOutDate = parseStringToCheckOutDate(checkOut);
-
-        if (checkInDate.after(checkOutDate)) {
-            Date temp = checkInDate;
-            checkInDate = checkOutDate;
-            checkOutDate = temp;
-        }
-
-        if (checkInDate.before(Date.valueOf(LocalDate.now()))) checkInDate = Date.valueOf(LocalDate.now());
-
-        tempMap.put("checkInDate", checkInDate);
-        tempMap.put("checkOutDate", checkOutDate);
-        return tempMap;
+    public void unSaveProperties(Long id, String name) {
+        Long userId = userDao.findUserIdByUserName(name);
+        propertiesDao.unSaveProperties(id, userId);
     }
 
-    private Date parseStringToCheckInDate(String date) {
-        try {
-            return Date.valueOf(date);
-        } catch (IllegalArgumentException e) {
-            return Date.valueOf(LocalDate.now());
-        }
-    }
-
-    private Date parseStringToCheckOutDate(String date) {
-        try {
-            return Date.valueOf(date);
-        } catch (IllegalArgumentException e) {
-            return Date.valueOf(LocalDate.now().plusDays(5));
-        }
-    }
-
-    private Double parseStringToMinDouble(String price) {
-        try {
-            return Double.parseDouble(price);
-        } catch (IllegalArgumentException e) {
-            return DEFAULT_MIN_PRICE;
-        }
-    }
-
-    private Double parseStringToMaxDouble(String price) {
-        try {
-            return Double.parseDouble(price);
-        } catch (IllegalArgumentException e) {
-            return DEFAULT_MAX_PRICE;
-        }
-    }
-
-    private Integer parseStringToPageNumInteger(String pageNum) {
-        try {
-            return Integer.parseInt(pageNum);
-        } catch (IllegalArgumentException e) {
-            return DEFAULT_PAGE_NUM;
-        }
-    }
-
-    private Integer parseStringToAccommodatesInteger(String adults, String children) {
-        Integer adult;
-        Integer child;
-        try {
-            adult = Integer.parseInt(adults);
-        } catch (IllegalArgumentException e) {
-            adult = 1;
-        }
-
-        try {
-            child = Integer.parseInt(children);
-        } catch (IllegalArgumentException e) {
-            child = 0;
-        }
-        return adult + child;
-    }
-
-    private Map<String, Double> parseStringToLocationDouble(String minLatitude, String maxLatitude, String minLongitude, String maxLongitude) {
-        Map<String, Double> temp = new HashMap<>();
-        try {
-            temp.put("minLatitude", Double.parseDouble(minLatitude));
-        } catch (IllegalArgumentException e) {
-            temp.put("minLatitude", DEFAULT_MIN_LATITUDE);
-        }
-
-        try {
-            temp.put("maxLatitude", Double.parseDouble(maxLatitude));
-        } catch (IllegalArgumentException e) {
-            temp.put("maxLatitude", DEFAULT_MAX_LATITUDE);
-        }
-
-        try {
-            temp.put("minLongitude", Double.parseDouble(minLongitude));
-        } catch (IllegalArgumentException e) {
-            temp.put("minLongitude", DEFAULT_MIN_LONGITUDE);
-        }
-
-        try {
-            temp.put("maxLongitude", Double.parseDouble(maxLongitude));
-        } catch (IllegalArgumentException e) {
-            temp.put("maxLongitude", DEFAULT_MAX_LONGITUDE);
-        }
-        return temp;
+    public List<PropertiesDto> savedPropertiesList(String name) {
+        Long userId = userDao.findUserIdByUserName(name);
+        return propertiesDao.savedPropertiesList(userId);
     }
 }

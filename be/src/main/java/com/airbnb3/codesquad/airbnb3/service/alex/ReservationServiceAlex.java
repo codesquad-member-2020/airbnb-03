@@ -1,8 +1,8 @@
-package com.airbnb3.codesquad.airbnb3.service;
+package com.airbnb3.codesquad.airbnb3.service.alex;
 
-import com.airbnb3.codesquad.airbnb3.dao.DetailDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dao.ReservationDaoAlex;
-import com.airbnb3.codesquad.airbnb3.dao.UserDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.DetailDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.ReservationDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.UserDaoAlex;
 import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
 import com.airbnb3.codesquad.airbnb3.dto.composition.PriceDto;
 import org.slf4j.Logger;
@@ -21,7 +21,7 @@ import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsProperties.*;
 @Service
 public class ReservationServiceAlex {
 
-    private static final Logger logger = LoggerFactory.getLogger(AirBnbService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AirBnbServiceAlex.class);
 
     @Autowired
     private ReservationDaoAlex reservationDao;
@@ -52,15 +52,15 @@ public class ReservationServiceAlex {
                 .cleaningFee(prices.getCleaningFee())
                 .serviceFee(prices.getServiceFee())
                 .tax(prices.getTax())
-                .roomPrice(prices.getPrice())
-                .roomTotalPrice(roomTotalPrice)
+                .price(prices.getPrice())
+                .totalPrice(roomTotalPrice)
                 .totalPrice(totalPrice)
                 .propertiesId(id)
                 .userId(userId)
                 .guests(guestCount)
                 .build();
 
-        propertiesCalenderUpdate(id, reservationDates.get("checkInDate"), reservationDates.get("checkOutDate"));
+        propertiesCalendarUpdate(id, reservationDates.get("checkInDate"), reservationDates.get("checkOutDate"));
         return reservationDao.reservationProperties(reservation);
     }
 
@@ -68,7 +68,7 @@ public class ReservationServiceAlex {
         String[] date = reservationDao.deleteReservation(reservationId);
         Date checkInDate = Date.valueOf(date[0]);
         Date checkOutDate = Date.valueOf(date[1]);
-        reservationDao.deleteCalender(propertiesId, checkInDate, checkOutDate);
+        reservationDao.deleteCalendar(propertiesId, checkInDate, checkOutDate);
     }
 
 
@@ -115,14 +115,14 @@ public class ReservationServiceAlex {
         }
     }
 
-    private void propertiesCalenderUpdate(Long id, Date checkInDate, Date checkOutDate) {
+    private void propertiesCalendarUpdate(Long id, Date checkInDate, Date checkOutDate) {
         LocalDate checkIn = checkInDate.toLocalDate();
         LocalDate checkOut = checkOutDate.toLocalDate();
-        reservationDao.reservationCalender(id, checkInDate);
+        reservationDao.reservationCalendar(id, checkInDate);
         while (!checkIn.isEqual(checkOut)) {
             checkIn = checkIn.plusDays(1L);
             Date reservationDate = Date.valueOf(checkIn);
-            reservationDao.reservationCalender(id, reservationDate);
+            reservationDao.reservationCalendar(id, reservationDate);
         }
     }
 }

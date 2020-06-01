@@ -1,4 +1,4 @@
-package com.airbnb3.codesquad.airbnb3.dto;
+package com.airbnb3.codesquad.airbnb3.dto.hamill;
 
 import com.airbnb3.codesquad.airbnb3.dto.composition.*;
 import lombok.Builder;
@@ -19,9 +19,9 @@ public class DetailDtoHamill {
     private Boolean saved;
     private List<String> images;
     // Composition (비슷한 변수들 별도의 객체로 분류)
-    private HostDtoHamill hostInfo;
-    private LocationDtoHamill locationInfo;
-    private PriceDtoHamill priceInfo;
-    private ReviewDtoHamill reviewInfo;
-    private RoomDtoHamill roomInfo;
+    private HostDto hostInfo;
+    private LocationDto locationInfo;
+    private PriceDto priceInfo;
+    private ReviewDto reviewInfo;
+    private RoomDto roomInfo;
 }

@@ -85,7 +85,6 @@ CREATE TABLE IF NOT EXISTS detail
 CREATE TABLE IF NOT EXISTS bookmarks
 (
     id            INT AUTO_INCREMENT,
-    is_bookmarked BOOLEAN,
     user_id       INT REFERENCES user (id),
     properties_id INT REFERENCES properties (id),
     PRIMARY KEY (id)

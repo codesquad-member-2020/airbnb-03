@@ -1,6 +1,6 @@
-package com.airbnb3.codesquad.airbnb3.service;
+package com.airbnb3.codesquad.airbnb3.service.alex;
 
-import com.airbnb3.codesquad.airbnb3.dao.UserDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.UserDaoAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.GithubAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.GithubUserAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.RequestBodyAlex;

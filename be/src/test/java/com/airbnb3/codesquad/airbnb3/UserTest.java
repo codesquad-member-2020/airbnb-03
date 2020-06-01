@@ -1,13 +1,12 @@
 package com.airbnb3.codesquad.airbnb3;
 
-import com.airbnb3.codesquad.airbnb3.dao.UserDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.UserDaoAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.GithubUserAlex;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import sun.jvm.hotspot.utilities.Assert;
 
 @SpringBootTest
 public class UserTest {

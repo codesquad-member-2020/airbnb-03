@@ -1,18 +1,14 @@
-package com.airbnb3.codesquad.airbnb3.dao;
+package com.airbnb3.codesquad.airbnb3.dao.alex;
 
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoAlex;
+import com.airbnb3.codesquad.airbnb3.dto.alex.PropertiesDtoAlex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -30,10 +26,10 @@ public class PropertiesDaoAlex {
                                                        Double minPrice, Double maxPrice, Map<String, Double> location) {
         String sql = "select p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,p.saved,CASE p.host_type WHEN 'super' THEN 1 ELSE 0 END AS is_super_host,p.price,p.place_type,p.review_average,p.number_of_reviews, GROUP_CONCAT(DISTINCT i.image_url) AS image " +
                 "FROM properties p LEFT JOIN images i ON p.id = i.properties_id " +
-                "LEFT JOIN detail t ON t.id = p.id LEFT JOIN calender c ON c.properties_id = p.id " +
+                "LEFT JOIN detail t ON t.id = p.id LEFT JOIN calendar c ON c.properties_id = p.id " +
                 "WHERE t.accommodates >= :accommodates " +
-                "AND p.id NOT IN (SELECT DISTINCT properties.id FROM properties LEFT JOIN calender ON properties.id = calender.properties_id " +
-                "WHERE calender.reservation_date BETWEEN :checkInDate AND :checkOutDate) " +
+                "AND p.id NOT IN (SELECT DISTINCT properties.id FROM properties LEFT JOIN calendar ON properties.id = calendar.properties_id " +
+                "WHERE calendar.reservation_date BETWEEN :checkInDate AND :checkOutDate) " +
                 "AND p.latitude BETWEEN :minLatitude AND :maxLatitude " +
                 "AND p.longitude BETWEEN :minLongitude AND :maxLongitude " +
                 "AND p.price BETWEEN :minPrice AND :maxPrice " +

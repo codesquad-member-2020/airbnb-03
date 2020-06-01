@@ -1,7 +1,6 @@
-package com.airbnb3.codesquad.airbnb3.dao;
+package com.airbnb3.codesquad.airbnb3.dao.alex;
 
 import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +22,10 @@ public class ReservationDaoAlex {
     public ReservationDto reservationProperties(ReservationDto reservationDto) {
         String sql = "INSERT INTO bookings (check_in_date, check_out_date, booking_date, cleaning_fee, service_fee, tax, room_price, room_total_price, total_price, nights, properties_id, user_id) " +
                 "VALUES ( :checkInDate, :checkOutDate, :bookingDate, :cleaningFee, :serviceFee, :tax, :roomPrice, :roomTotalPrice, :totalPrice, :nights, :propertiesId, :userId)";
+
+//        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+//        parameterSource.addValues(new ObjectMapper().convertValue(reservationDto,Map.class));
+
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
                 .addValue("bookingDate", reservationDto.getBookingDate())
                 .addValue("checkInDate", reservationDto.getCheckInDate())
@@ -31,8 +34,8 @@ public class ReservationDaoAlex {
                 .addValue("cleaningFee", reservationDto.getCleaningFee())
                 .addValue("serviceFee", reservationDto.getServiceFee())
                 .addValue("tax", reservationDto.getTax())
-                .addValue("roomPrice", reservationDto.getRoomPrice())
-                .addValue("roomTotalPrice", reservationDto.getRoomTotalPrice())
+                .addValue("roomPrice", reservationDto.getPrice())
+                .addValue("roomTotalPrice", reservationDto.getTotalPrice())
                 .addValue("guests", reservationDto.getGuests())
                 .addValue("totalPrice", reservationDto.getTotalPrice())
                 .addValue("propertiesId", reservationDto.getPropertiesId())
@@ -40,13 +43,11 @@ public class ReservationDaoAlex {
 
         jdbcTemplate.update(sql, parameterSource);
         return reservationDto;
-//      parameter 설정하는 새로운 방법!!!(질문 남기고 잊지 않기 위해서 주석 처리!!)
-//      MapSqlParameterSource parameterSource = new MapSqlParameterSource();
-//      parameterSource.addValues(new ObjectMapper().convertValue(reservationDto,Map.class));
+
     }
 
-    public Date reservationCalender(Long id, Date reservationDate) {
-        String sql = "INSERT INTO calender(properties_id,reservation_date) VALUES(:id,:reservationDate)";
+    public Date reservationCalendar(Long id, Date reservationDate) {
+        String sql = "INSERT INTO calendar(properties_id,reservation_date) VALUES(:id,:reservationDate)";
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
                 .addValue("id", id)
                 .addValue("reservationDate", reservationDate);
@@ -64,8 +65,8 @@ public class ReservationDaoAlex {
         return result;
     }
 
-    public void deleteCalender(Long propertiesId, Date checkInDate, Date checkOutDate) {
-        String sql = "DELETE FROM calender WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate AND properties_id = :propertiesId";
+    public void deleteCalendar(Long propertiesId, Date checkInDate, Date checkOutDate) {
+        String sql = "DELETE FROM calendar WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate AND properties_id = :propertiesId";
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
                 .addValue("propertiesId", propertiesId)
                 .addValue("checkInDate", checkInDate)
@@ -76,7 +77,7 @@ public class ReservationDaoAlex {
     public boolean checkReservation(Map<String, Date> reservationDates) {
         Date checkInDate = reservationDates.get("checkInDate");
         Date checkOutDate = reservationDates.get("checkOutDate");
-        String sql = "SELECT EXISTS(SELECT * FROM calender WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate) as reservationed;";
+        String sql = "SELECT EXISTS(SELECT * FROM calendar WHERE reservation_date BETWEEN :checkInDate AND :checkOutDate) as reservationed;";
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
                 .addValue("checkInDate", checkInDate)
                 .addValue("checkOutDate", checkOutDate);
