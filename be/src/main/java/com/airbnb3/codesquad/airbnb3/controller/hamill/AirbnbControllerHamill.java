@@ -38,8 +38,8 @@ public class AirbnbControllerHamill {
             @RequestParam(value = "offset", required = false) String offset,
             @RequestParam(value = "price_min", required = false, defaultValue = DEFAULT_MIN_PRICE) String priceMin,
             @RequestParam(value = "price_max", required = false, defaultValue = DEFAULT_MAX_PRICE) String priceMax,
-            @RequestParam(value = "checkin", required = false) String checkIn,
-            @RequestParam(value = "checkout", required = false) String checkOut,
+            @RequestParam(value = "check_in", required = false) String checkIn,
+            @RequestParam(value = "check_out", required = false) String checkOut,
             @RequestParam(value = "adults", required = false, defaultValue = DEFAULT_ADULTS_COUNT) String adults,
             @RequestParam(value = "children", required = false, defaultValue = DEFAULT_CHILDREN_COUNT) String children,
             @RequestParam(value = "min_lat", required = false, defaultValue = DEFAULT_MIN_LATITUDE) String minLatitude,
@@ -68,12 +68,13 @@ public class AirbnbControllerHamill {
     @PutMapping("/reservations/{propertyId}")
     public ResponseEntity<CommonMessage> reserveTheProperties(
             @PathVariable Long propertyId,
-            @RequestParam(value = "checkin") Date checkIn,
-            @RequestParam(value = "checkout") Date checkOut,
-            @RequestParam(value = "guests") Integer guests,
+            @RequestParam(value = "check_in") Date checkIn,
+            @RequestParam(value = "check_out") Date checkOut,
+            @RequestParam(value = "adults") Integer adults,
+            @RequestParam(value = "children") Integer children,
             @CookieValue(value = "name", required = false, defaultValue = "None") String name) {
 
-        reservationServiceHamill.reserveTheProperties(propertyId, checkIn, checkOut, guests, name);
+        reservationServiceHamill.reserveTheProperties(propertyId, checkIn, checkOut, adults, children, name);
         return new ResponseEntity<>(getMessage("200", "예약 성공"), HttpStatus.OK);
     }
 
