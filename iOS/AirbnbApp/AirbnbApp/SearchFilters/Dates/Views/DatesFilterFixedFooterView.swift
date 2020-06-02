@@ -2,6 +2,7 @@ import UIKit
 
 protocol DatesFilterFixedFooterViewDelegate: class {
     func didTapSearchButton()
+    func didTapClearButton()
 }
 
 final class DatesFilterFixedFooterView: UIView, ViewFromXib {
@@ -19,6 +20,11 @@ final class DatesFilterFixedFooterView: UIView, ViewFromXib {
             configureSearchButton()
         }
     }
+    @IBOutlet weak var clearButton: UIButton! {
+        didSet {
+            configureClearButton()
+        }
+    }
     
     weak var delegate: DatesFilterFixedFooterViewDelegate?
     
@@ -34,13 +40,27 @@ final class DatesFilterFixedFooterView: UIView, ViewFromXib {
         searchButton.isEnabled = false
     }
     
+    private func configureClearButton() {
+        clearButton.setTitleColor(.black, for: .normal)
+        clearButton.setTitleColor(.lightGray, for: .disabled)
+        clearButton.isEnabled = false
+    }
+    
     func updateSearchButton(with isSelected: Bool) {
         searchButton.isEnabled = isSelected
         searchButton.backgroundColor = isSelected ? Color.searchEnabled : Color.searchDisabled
         searchButton.tintColor = isSelected ? .white : .black
     }
     
+    func updateClearButton(with isSelected: Bool) {
+        clearButton.isEnabled = isSelected
+    }
+    
     @IBAction func didTapSearch(_ sender: Any) {
         delegate?.didTapSearchButton()
+    }
+    
+    @IBAction func didTapClear(_ sender: Any) {
+        delegate?.didTapClearButton()
     }
 }

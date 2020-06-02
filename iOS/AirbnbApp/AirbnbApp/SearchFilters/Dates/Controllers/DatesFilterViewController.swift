@@ -17,7 +17,12 @@ final class DatesFilterViewController: UIViewController {
     private let numberOfDaysAt: [Int] = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
     private var historyOfSelectedCell: [DateCell] = []
-    private var checkInDate: ReservationDate? = nil
+    private var checkInDate: ReservationDate? = nil {
+        didSet {
+            fixedFooterView.updateClearButton(with: checkInDate != nil)
+        }
+    }
+    
     private var checkOutDate: ReservationDate? = nil {
         didSet {
             fixedFooterView.updateSearchButton(with: checkOutDate != nil)
@@ -109,11 +114,7 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
         let selectedDate = datesByMonth[indexPath.item]
         let selectedCell = calendarCollectionView.cellForItem(at: indexPath) as! DateCell
         if checkInDate != nil, checkOutDate != nil {
-            historyOfSelectedCell.forEach {
-                $0.deselected()
-            }
-            historyOfSelectedCell.removeAll()
-            checkOutDate = nil
+            resetSelectedDates()
             historyOfSelectedCell.append(selectedCell)
             self.checkInDate = selectedDate
             selectedCell.selected()
@@ -128,11 +129,7 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
                 #warning("Update cells between check-in and check-out dates")
                 selectedCell.selected()
             } else {
-                historyOfSelectedCell.forEach {
-                    $0.deselected()
-                }
-                historyOfSelectedCell.removeAll()
-                checkOutDate = nil
+                resetSelectedDates()
                 historyOfSelectedCell.append(selectedCell)
                 self.checkInDate = selectedDate
                 selectedCell.selected()
@@ -143,6 +140,15 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
             selectedCell.selected()
         }
     }
+    
+    private func resetSelectedDates() {
+        historyOfSelectedCell.forEach {
+            $0.deselected()
+        }
+        historyOfSelectedCell.removeAll()
+        checkInDate = nil
+        checkOutDate = nil
+    }
 }
 
 // MARK:- DatesFilterFixedFooterViewDelegate
@@ -152,6 +158,10 @@ extension DatesFilterViewController: DatesFilterFixedFooterViewDelegate {
         let selectedDates = (checkInDate?.string, checkOutDate?.string)
         self.searchDelegate?.searchStayList(dates: selectedDates)
         dismiss(animated: true)
+    }
+    
+    func didTapClearButton() {
+        resetSelectedDates()
     }
 }
 
