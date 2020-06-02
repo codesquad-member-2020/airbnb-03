@@ -8,11 +8,12 @@ final class DatesFilterViewController: UIViewController {
     
     private var titleView: DatesFilterTitleView!
     private var fixedFooterView: DatesFilterFixedFooterView!
-    private var monthsCollectionView: MonthsCollectionView!
-    private var monthsCollectionViewDataSource: MonthsCollectionViewDataSource!
+    
+    private var calendarCollectionView: CalendarCollectionView!
+    private var calendarCollectionViewDataSource: CalendarCollectionViewDataSource!
     weak var searchDelegate: DatesFilterViewControllerSearchDelegate?
     
-    private let spacingForItem: CGFloat = 16.0
+    private let spacingForItemLine: CGFloat = 2.0
     private let numberOfDaysAt: [Int] = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
     private var checkInDate: ReservationDate? = nil
@@ -33,27 +34,26 @@ final class DatesFilterViewController: UIViewController {
 extension DatesFilterViewController {
     private func configureCollectionView() {
         configureDatesData()
-        
-        monthsCollectionViewDataSource = MonthsCollectionViewDataSource(
+        calendarCollectionViewDataSource = CalendarCollectionViewDataSource(
             totalReservationDates: totalReservationDates)
-        monthsCollectionView.dataSource = monthsCollectionViewDataSource
-        monthsCollectionView.reloadData()
+        calendarCollectionView.dataSource = calendarCollectionViewDataSource
+        calendarCollectionView.delegate = self
     }
     
     private func configureDatesData() {
         for monthOffset in 0..<12 {
-            // 월 계산
             let currentDate = ReservationDate(date: Date())
             let monthUpdatedDate = currentDate.after(monthOffset: monthOffset)
-            var dayDatesByMonth = ReservationDates()
+            var datesByMonth = ReservationDates()
             for day in 1...numberOfDaysAt[monthUpdatedDate.month] {
-                dayDatesByMonth.append(
+                datesByMonth.append(
                     ReservationDate(
                         year: monthUpdatedDate.year,
                         month: monthUpdatedDate.month,
                         day: day))
             }
-            totalReservationDates.append(dayDatesByMonth)
+            datesByMonth.configureFirstDayOffsetDates()
+            totalReservationDates.append(datesByMonth)
         }
     }
 }
@@ -63,6 +63,39 @@ extension DatesFilterViewController {
 extension DatesFilterViewController {
     private func configureDelegates() {
         fixedFooterView.delegate = self
+    }
+}
+
+// MARK:- UICollectionViewDelegateFlowLayout
+
+extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return spacingForItemLine
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width / 7.0
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: CalendarHeaderView.height)
     }
 }
 
@@ -81,17 +114,16 @@ extension DatesFilterViewController: DatesFilterFixedFooterViewDelegate {
 extension DatesFilterViewController {
     private func configureUI() {
         view.backgroundColor = .white
-        
         titleView = DatesFilterTitleView.loadFromXib()
         fixedFooterView = DatesFilterFixedFooterView.loadFromXib()
-        monthsCollectionView = MonthsCollectionView()
+        calendarCollectionView = CalendarCollectionView()
     }
     
     private func configureLayout() {
         view.addSubviews(
             titleView,
             fixedFooterView,
-            monthsCollectionView)
+            calendarCollectionView)
         titleView.constraints(
             topAnchor: view.safeAreaLayoutGuide.topAnchor,
             leadingAnchor: view.leadingAnchor,
@@ -104,10 +136,11 @@ extension DatesFilterViewController {
             bottomAnchor: view.bottomAnchor,
             trailingAnchor: view.trailingAnchor,
             size: CGSize(width: 0, height: DatesFilterFixedFooterView.height))
-        monthsCollectionView.constraints(
+        calendarCollectionView.constraints(
             topAnchor: titleView.bottomAnchor,
             leadingAnchor: view.leadingAnchor,
             bottomAnchor: fixedFooterView.topAnchor,
-            trailingAnchor: view.trailingAnchor)
+            trailingAnchor: view.trailingAnchor,
+            padding: .init(top: 0, left: 24, bottom: 0, right: 24))
     }
 }

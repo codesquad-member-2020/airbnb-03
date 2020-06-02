@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380F73262486E0500045C6CA /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380F73252486E0500045C6CA /* CircleView.swift */; };
 		381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */; };
 		381A030624762561004EDE84 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A030524762561004EDE84 /* PriceLabel.swift */; };
 		3839C7B02477D6760039BB19 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3839C7AF2477D6760039BB19 /* SeparatorView.swift */; };
@@ -36,17 +37,15 @@
 		3899CAEB24814FD5006CB23E /* DatesFilterFixedFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CAEA24814FD5006CB23E /* DatesFilterFixedFooterView.xib */; };
 		3899CAED248150A2006CB23E /* DatesFilterFixedFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAEC248150A2006CB23E /* DatesFilterFixedFooterView.swift */; };
 		3899CAEF24815434006CB23E /* DatesFilterSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAEE24815434006CB23E /* DatesFilterSearchButton.swift */; };
-		3899CAF224816FE9006CB23E /* MonthsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAF124816FE9006CB23E /* MonthsCollectionView.swift */; };
-		3899CAF524817182006CB23E /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAF324817182006CB23E /* MonthCell.swift */; };
-		3899CAF624817182006CB23E /* MonthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CAF424817182006CB23E /* MonthCell.xib */; };
-		3899CAFE24818F7D006CB23E /* DaysCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAFD24818F7D006CB23E /* DaysCollectionView.swift */; };
-		3899CB0124818FE1006CB23E /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAFF24818FE1006CB23E /* DayCell.swift */; };
-		3899CB0224818FE1006CB23E /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CB0024818FE1006CB23E /* DayCell.xib */; };
+		3899CAF224816FE9006CB23E /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAF124816FE9006CB23E /* CalendarCollectionView.swift */; };
+		3899CB0124818FE1006CB23E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CAFF24818FE1006CB23E /* DateCell.swift */; };
+		3899CB0224818FE1006CB23E /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CB0024818FE1006CB23E /* DateCell.xib */; };
 		3899CB0424828B4A006CB23E /* ReservationDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB0324828B4A006CB23E /* ReservationDate.swift */; };
 		3899CB0624829859006CB23E /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB0524829859006CB23E /* Dates.swift */; };
-		3899CB092484FB28006CB23E /* MonthsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB082484FB28006CB23E /* MonthsCollectionViewDataSource.swift */; };
+		3899CB092484FB28006CB23E /* CalendarCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB082484FB28006CB23E /* CalendarCollectionViewDataSource.swift */; };
 		3899CB0B2484FFD2006CB23E /* ReservationDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB0A2484FFD2006CB23E /* ReservationDates.swift */; };
-		3899CB0D2485245B006CB23E /* DaysCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB0C2485245B006CB23E /* DaysCollectionViewDataSource.swift */; };
+		3899CB1024852EA9006CB23E /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB0E24852EA9006CB23E /* CalendarHeaderView.swift */; };
+		3899CB1124852EA9006CB23E /* CalendarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CB0F24852EA9006CB23E /* CalendarHeaderView.xib */; };
 		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
 		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
@@ -89,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380F73252486E0500045C6CA /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTypeAndCityLabel.swift; sourceTree = "<group>"; };
 		381A030524762561004EDE84 /* PriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
 		3839C7AF2477D6760039BB19 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
@@ -122,17 +122,15 @@
 		3899CAEA24814FD5006CB23E /* DatesFilterFixedFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatesFilterFixedFooterView.xib; sourceTree = "<group>"; };
 		3899CAEC248150A2006CB23E /* DatesFilterFixedFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesFilterFixedFooterView.swift; sourceTree = "<group>"; };
 		3899CAEE24815434006CB23E /* DatesFilterSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesFilterSearchButton.swift; sourceTree = "<group>"; };
-		3899CAF124816FE9006CB23E /* MonthsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsCollectionView.swift; sourceTree = "<group>"; };
-		3899CAF324817182006CB23E /* MonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
-		3899CAF424817182006CB23E /* MonthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthCell.xib; sourceTree = "<group>"; };
-		3899CAFD24818F7D006CB23E /* DaysCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCollectionView.swift; sourceTree = "<group>"; };
-		3899CAFF24818FE1006CB23E /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
-		3899CB0024818FE1006CB23E /* DayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
+		3899CAF124816FE9006CB23E /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
+		3899CAFF24818FE1006CB23E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		3899CB0024818FE1006CB23E /* DateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
 		3899CB0324828B4A006CB23E /* ReservationDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDate.swift; sourceTree = "<group>"; };
 		3899CB0524829859006CB23E /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
-		3899CB082484FB28006CB23E /* MonthsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		3899CB082484FB28006CB23E /* CalendarCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		3899CB0A2484FFD2006CB23E /* ReservationDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDates.swift; sourceTree = "<group>"; };
-		3899CB0C2485245B006CB23E /* DaysCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		3899CB0E24852EA9006CB23E /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		3899CB0F24852EA9006CB23E /* CalendarHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarHeaderView.xib; sourceTree = "<group>"; };
 		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
 		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
@@ -391,12 +389,12 @@
 		3899CAF024816FC2006CB23E /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
-				3899CAF124816FE9006CB23E /* MonthsCollectionView.swift */,
-				3899CAF324817182006CB23E /* MonthCell.swift */,
-				3899CAF424817182006CB23E /* MonthCell.xib */,
-				3899CAFD24818F7D006CB23E /* DaysCollectionView.swift */,
-				3899CAFF24818FE1006CB23E /* DayCell.swift */,
-				3899CB0024818FE1006CB23E /* DayCell.xib */,
+				3899CAF124816FE9006CB23E /* CalendarCollectionView.swift */,
+				380F73252486E0500045C6CA /* CircleView.swift */,
+				3899CAFF24818FE1006CB23E /* DateCell.swift */,
+				3899CB0024818FE1006CB23E /* DateCell.xib */,
+				3899CB0E24852EA9006CB23E /* CalendarHeaderView.swift */,
+				3899CB0F24852EA9006CB23E /* CalendarHeaderView.xib */,
 			);
 			path = CollectionViews;
 			sourceTree = "<group>";
@@ -404,8 +402,7 @@
 		3899CB072484FB0D006CB23E /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				3899CB082484FB28006CB23E /* MonthsCollectionViewDataSource.swift */,
-				3899CB0C2485245B006CB23E /* DaysCollectionViewDataSource.swift */,
+				3899CB082484FB28006CB23E /* CalendarCollectionViewDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -579,9 +576,9 @@
 				8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */,
 				384C0E3D2473F62A0051528B /* StayCell.xib in Resources */,
 				8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */,
-				3899CAF624817182006CB23E /* MonthCell.xib in Resources */,
+				3899CB1124852EA9006CB23E /* CalendarHeaderView.xib in Resources */,
 				3899CAE124813ACF006CB23E /* DatesFilterTitleView.xib in Resources */,
-				3899CB0224818FE1006CB23E /* DayCell.xib in Resources */,
+				3899CB0224818FE1006CB23E /* DateCell.xib in Resources */,
 				3899CAEB24814FD5006CB23E /* DatesFilterFixedFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,13 +665,13 @@
 				3899CAE524814871006CB23E /* UIView+draw.swift in Sources */,
 				388E141F2480D30100FC0D50 /* SearchFilterQuery.swift in Sources */,
 				8D9B7A17247C0F1200D9A99D /* StayListCollectionViewDelegate.swift in Sources */,
+				380F73262486E0500045C6CA /* CircleView.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
 				38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */,
-				3899CAF524817182006CB23E /* MonthCell.swift in Sources */,
 				3839C7B02477D6760039BB19 /* SeparatorView.swift in Sources */,
 				384C0E3C2473F62A0051528B /* StayCell.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
-				3899CAF224816FE9006CB23E /* MonthsCollectionView.swift in Sources */,
+				3899CAF224816FE9006CB23E /* CalendarCollectionView.swift in Sources */,
 				384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */,
 				38F1F8982479614500454668 /* StayListCollectionViewDataSource.swift in Sources */,
 				3899CAE32481407D006CB23E /* ModalIndicatorView.swift in Sources */,
@@ -690,15 +687,15 @@
 				8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */,
 				38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */,
 				384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */,
-				3899CB092484FB28006CB23E /* MonthsCollectionViewDataSource.swift in Sources */,
+				3899CB092484FB28006CB23E /* CalendarCollectionViewDataSource.swift in Sources */,
 				38DC238B247BDAE200DC3BCC /* NetworkManager.swift in Sources */,
 				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
-				3899CAFE24818F7D006CB23E /* DaysCollectionView.swift in Sources */,
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,
 				3899CB0424828B4A006CB23E /* ReservationDate.swift in Sources */,
 				38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */,
 				381A030624762561004EDE84 /* PriceLabel.swift in Sources */,
+				3899CB1024852EA9006CB23E /* CalendarHeaderView.swift in Sources */,
 				38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */,
 				38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */,
 				3893B5DE247E9168004783C4 /* SaveButton.swift in Sources */,
@@ -708,13 +705,12 @@
 				38EB9D8F2479A48100236DB4 /* LoadingView.swift in Sources */,
 				3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */,
 				8D9B7A1B247C206400D9A99D /* RoundedBorder.swift in Sources */,
-				3899CB0D2485245B006CB23E /* DaysCollectionViewDataSource.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
 				3899CADF24813ABD006CB23E /* DatesFilterTitleView.swift in Sources */,
 				3899CB0B2484FFD2006CB23E /* ReservationDates.swift in Sources */,
 				8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */,
 				8D9B7A13247C09E500D9A99D /* DetailSectionView.swift in Sources */,
-				3899CB0124818FE1006CB23E /* DayCell.swift in Sources */,
+				3899CB0124818FE1006CB23E /* DateCell.swift in Sources */,
 				38F1F89224795E0400454668 /* Stay.swift in Sources */,
 				3899CADB24811D37006CB23E /* DatesFilterViewController.swift in Sources */,
 				8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */,

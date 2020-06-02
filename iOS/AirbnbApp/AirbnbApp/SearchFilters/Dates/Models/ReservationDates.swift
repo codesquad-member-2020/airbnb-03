@@ -7,12 +7,23 @@ struct ReservationDates {
         return dates.count
     }
     
-    var first: ReservationDate? {
-        return dates.first
+    var last: ReservationDate? {
+        return dates.last
     }
     
     init(dates: [ReservationDate] = []) {
         self.dates = dates
+    }
+    
+    mutating func configureFirstDayOffsetDates() {
+        removeEmptyDates()
+        let firstDayDate = dates.first!
+        let firstDayOffset = firstDayDate.date.weekday - 1
+        for _ in 0..<firstDayOffset {
+            var emptyDate = ReservationDate(date: Date())
+            emptyDate.setEmpty()
+            self.dates.insert(emptyDate, at: 0)
+        }
     }
     
     mutating func append(_ reservationDate: ReservationDate) {
