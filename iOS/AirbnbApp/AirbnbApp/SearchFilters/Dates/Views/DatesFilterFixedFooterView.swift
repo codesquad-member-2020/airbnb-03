@@ -7,8 +7,8 @@ protocol DatesFilterFixedFooterViewDelegate: class {
 final class DatesFilterFixedFooterView: UIView, ViewFromXib {
     
     private enum Color {
-        static let searchButtonEnabled: UIColor? = UIColor(named: "button.enabled")
-        static let searchButtonDisabled: UIColor? = UIColor(named: "button.disabled")
+        static let searchEnabled: UIColor? = UIColor(named: "button.enabled")
+        static let searchDisabled: UIColor? = UIColor(named: "button.disabled")
     }
     
     static var xibName: String = String(describing: DatesFilterFixedFooterView.self)
@@ -29,14 +29,14 @@ final class DatesFilterFixedFooterView: UIView, ViewFromXib {
     private func configureSearchButton() {
         searchButton.setTitleColor(.white, for: .normal)
         searchButton.setTitleColor(.darkGray, for: .disabled)
-        searchButton.backgroundColor = Color.searchButtonDisabled
+        searchButton.backgroundColor = Color.searchDisabled
         searchButton.tintColor = .black
         searchButton.isEnabled = false
     }
     
     func updateSearchButton(with isSelected: Bool) {
         searchButton.isEnabled = isSelected
-        searchButton.backgroundColor = isSelected ? Color.searchButtonEnabled : Color.searchButtonDisabled
+        searchButton.backgroundColor = isSelected ? Color.searchEnabled : Color.searchDisabled
         searchButton.tintColor = isSelected ? .white : .black
     }
     
