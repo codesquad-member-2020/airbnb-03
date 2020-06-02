@@ -18,7 +18,11 @@ final class DatesFilterViewController: UIViewController {
     
     private var historyOfSelectedCell: [DateCell] = []
     private var checkInDate: ReservationDate? = nil
-    private var checkOutDate: ReservationDate? = nil
+    private var checkOutDate: ReservationDate? = nil {
+        didSet {
+            fixedFooterView.updateSearchButton(with: checkOutDate != nil)
+        }
+    }
     private var totalReservationDates: [ReservationDates] = []
 
     override func viewDidLoad() {

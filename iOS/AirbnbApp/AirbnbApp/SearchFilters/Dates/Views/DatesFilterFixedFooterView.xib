@@ -48,13 +48,16 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="searchButton" destination="qpy-ux-Z3t" id="JQC-Pw-1xM"/>
+            </connections>
             <point key="canvasLocation" x="140.57971014492756" y="18.415178571428569"/>
         </view>
     </objects>
     <resources>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <namedColor name="button.key">
-            <color red="0.80944369075837563" green="0.20861079732817125" blue="0.34691371213705546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.80900001525878906" green="0.20900000631809235" blue="0.34700000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
