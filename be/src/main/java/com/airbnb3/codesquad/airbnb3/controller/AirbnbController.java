@@ -3,6 +3,8 @@ package com.airbnb3.codesquad.airbnb3.controller;
 import com.airbnb3.codesquad.airbnb3.common.CommonMessage;
 import com.airbnb3.codesquad.airbnb3.dto.DetailDto;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDto;
+import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
+import com.airbnb3.codesquad.airbnb3.dto.ReservationsDto;
 import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingsDtoHamill;
 import com.airbnb3.codesquad.airbnb3.service.AirbnbService;
 import com.airbnb3.codesquad.airbnb3.service.ReservationService;
@@ -62,7 +64,7 @@ public class AirbnbController {
     }
 
     @PutMapping("/reservations/{propertyId}")
-    public ResponseEntity<BookingsDtoHamill> reserveTheProperties(
+    public ResponseEntity<ReservationsDto> reserveTheProperties(
             @PathVariable Long propertyId,
             @RequestParam(value = "check_in") Date checkIn,
             @RequestParam(value = "check_out") Date checkOut,

@@ -41,7 +41,7 @@ public class AirbnbService {
                                                 String minLatitude, String maxLatitude, String minLongitude, String maxLongitude) {
 
         Integer propertyRange = PAGE_VIEW_ITEM_COUNT * offset;
-        Integer accommodates = adults + children;
+        Integer guests = adults + children;
         BigDecimal minPriceRange = new BigDecimal(String.valueOf(minPrice));
         BigDecimal maxPriceRange = new BigDecimal(String.valueOf(maxPrice));
         BigDecimal minLatitudeRange = new BigDecimal(String.valueOf(minLatitude));
@@ -57,7 +57,7 @@ public class AirbnbService {
         }
         logger.info("checkIn : {} , checkOut : {}", checkIn, checkOut);
         Long userId = userDao.findUserIdByUserName(name);
-        return propertiesDao.getStayedProperties(propertyRange, accommodates, checkIn, checkOut, userId, minPriceRange, maxPriceRange, minLatitudeRange, maxLatitudeRange, minLongitudeRange, maxLongitudeRange);
+        return propertiesDao.getStayedProperties(propertyRange, guests, checkIn, checkOut, userId, minPriceRange, maxPriceRange, minLatitudeRange, maxLatitudeRange, minLongitudeRange, maxLongitudeRange);
     }
 
     public DetailDto detailProperties(Long id) {
