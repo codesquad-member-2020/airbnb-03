@@ -28,19 +28,21 @@ public class ReservationServiceHamill {
     }
 
     // 숙소 예약
-    public void reserveTheProperties(Long propertyId, Date checkIn, Date checkOut, Integer adults, Integer children, String name) {
+    public BookingsDtoHamill reserveTheProperties(Long propertyId, Date checkIn, Date checkOut, Integer adults, Integer children, String name) {
 
         Integer nights = (int)ChronoUnit.DAYS.between(checkIn.toLocalDate(), checkOut.toLocalDate());
         Integer guests = adults + children;
         reservationDaoHamill.insertReservationInformation(propertyId, checkIn, checkOut, guests, nights, name);
         reservationDaoHamill.insertReservationDate(propertyId, checkIn, nights);
         reservationDaoHamill.updateReservableIsFalse(propertyId);
+        return reservationDaoHamill.findByPropertyId(propertyId);
     }
 
     // 숙소 예약 취소
-    public void cancelTheProperties(Long propertiesId) {
-        reservationDaoHamill.deleteReservationInformation(propertiesId);
-        reservationDaoHamill.deleteReservationDate(propertiesId);
-        reservationDaoHamill.updateReservableIsTrue(propertiesId);
+    public void cancelTheProperties(Long propertyId) {
+
+        reservationDaoHamill.deleteReservationInformation(propertyId);
+        reservationDaoHamill.deleteReservationDate(propertyId);
+        reservationDaoHamill.updateReservableIsTrue(propertyId);
     }
 }

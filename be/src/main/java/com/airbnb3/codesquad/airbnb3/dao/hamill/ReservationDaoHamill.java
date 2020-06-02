@@ -1,5 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.dao.hamill;
 
+import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
 import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingPriceDtoHamill;
 import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingsDtoHamill;
 import org.slf4j.Logger;
@@ -71,6 +72,56 @@ public class ReservationDaoHamill {
                                                                                 .build())
                                          .build()
         );
+    }
+
+    public BookingsDtoHamill findByPropertyId(Long propertyId) {
+        String sql =
+                "SELECT b.id\n" +
+                        "     , b.properties_id\n" +
+                        "     , GROUP_CONCAT(i.image_url) AS image\n" +
+                        "     , p.place_type\n" +
+                        "     , p.number_of_reviews\n" +
+                        "     , p.review_average\n" +
+                        "     , b.check_in_date\n" +
+                        "     , b.check_out_date\n" +
+                        "     , b.guests\n" +
+                        "     , b.nights\n" +
+                        "     , p.price\n" +
+                        "     , b.service_fee\n" +
+                        "     , b.cleaning_fee\n" +
+                        "     , b.tax\n" +
+                        "     , b.price_for_stay\n" +
+                        "     , b.total_price\n" +
+                        "FROM bookings b\n" +
+                        "         JOIN properties p ON b.properties_id = p.id\n" +
+                        "         JOIN images i ON p.id = i.properties_id\n" +
+                        "WHERE p.id = ?\n" +
+                        "GROUP BY b.id;";
+
+        return jdbcTemplate.queryForObject(
+                sql,
+                (rs, rowNum) ->
+                        BookingsDtoHamill.builder()
+                                         .id(rs.getLong("id"))
+                                         .propertiesId(rs.getLong("properties_id"))
+                                         .images(Arrays.asList(rs.getString("image").split(",")))
+                                         .placeType(rs.getString("place_type"))
+                                         .numberOfReviews(rs.getInt("number_of_reviews"))
+                                         .reviewAverage(rs.getDouble("review_average"))
+                                         .checkIn(rs.getDate("check_in_date"))
+                                         .checkOut(rs.getDate("check_out_date"))
+                                         .guests(rs.getInt("guests"))
+                                         .nights(rs.getInt("nights"))
+                                         .bookingPriceInfo(BookingPriceDtoHamill.builder()
+                                                                                .price(rs.getDouble("price"))
+                                                                                .serviceFee(rs.getDouble("service_fee"))
+                                                                                .cleaningFee(rs.getDouble("cleaning_fee"))
+                                                                                .tax(rs.getDouble("tax"))
+                                                                                .priceForStay(rs.getDouble("price_for_stay"))
+                                                                                .totalPrice(rs.getDouble("total_price"))
+                                                                                .build())
+                                         .build()
+                , propertyId);
     }
 
     public void insertReservationInformation(Long propertyId, Date checkIn, Date checkOut,

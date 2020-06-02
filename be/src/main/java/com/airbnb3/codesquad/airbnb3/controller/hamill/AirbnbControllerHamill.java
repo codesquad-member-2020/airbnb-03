@@ -66,23 +66,23 @@ public class AirbnbControllerHamill {
     }
 
     @PutMapping("/reservations/{propertyId}")
-    public ResponseEntity<CommonMessage> reserveTheProperties(
+    public ResponseEntity<BookingsDtoHamill> reserveTheProperties(
             @PathVariable Long propertyId,
             @RequestParam(value = "check_in") Date checkIn,
             @RequestParam(value = "check_out") Date checkOut,
-            @RequestParam(value = "adults") Integer adults,
-            @RequestParam(value = "children") Integer children,
+            @RequestParam(value = "adults", required = false, defaultValue = DEFAULT_ADULTS_COUNT) Integer adults,
+            @RequestParam(value = "children", required = false, defaultValue = DEFAULT_CHILDREN_COUNT) Integer children,
             @CookieValue(value = "name", required = false, defaultValue = "None") String name) {
 
-        reservationServiceHamill.reserveTheProperties(propertyId, checkIn, checkOut, adults, children, name);
-        return new ResponseEntity<>(getMessage("200", "예약 성공"), HttpStatus.OK);
+        return new ResponseEntity<>(reservationServiceHamill.reserveTheProperties(
+                propertyId, checkIn, checkOut, adults, children, name), HttpStatus.OK);
     }
 
-    @DeleteMapping("/reservations/{reservationId}")
-    public ResponseEntity<CommonMessage> cancelTheProperties(@PathVariable Long reservationId) {
+    @DeleteMapping("/reservations/{propertyId}")
+    public ResponseEntity<CommonMessage> cancelTheProperties(@PathVariable Long propertyId) {
 
-        reservationServiceHamill.cancelTheProperties(reservationId);
-        return new ResponseEntity<>(getMessage("200", "예약 취소"), HttpStatus.OK);
+        reservationServiceHamill.cancelTheProperties(propertyId);
+        return new ResponseEntity<>(getMessage("예약 취소", "200"), HttpStatus.OK);
     }
 
     @GetMapping("/saved")
