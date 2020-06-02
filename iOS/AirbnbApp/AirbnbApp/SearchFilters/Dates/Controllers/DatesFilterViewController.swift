@@ -1,7 +1,7 @@
 import UIKit
 
 protocol DatesFilterViewControllerSearchDelegate: class {
-    func searchStayList(date: (checkIn: String, checkOut: String)?)
+    func searchStayList(dates: (checkIn: String?, checkOut: String?))
 }
 
 final class DatesFilterViewController: UIViewController {
@@ -144,10 +144,10 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
 // MARK:- DatesFilterFixedFooterViewDelegate
 
 extension DatesFilterViewController: DatesFilterFixedFooterViewDelegate {
-    func didTapSearchButton(date: (checkIn: String, checkOut: String)?) {
-        dismiss(animated: true) {
-            self.searchDelegate?.searchStayList(date: date)
-        }
+    func didTapSearchButton() {
+        let selectedDates = (checkInDate?.string, checkOutDate?.string)
+        self.searchDelegate?.searchStayList(dates: selectedDates)
+        dismiss(animated: true)
     }
 }
 

@@ -1,7 +1,7 @@
 import UIKit
 
 protocol DatesFilterFixedFooterViewDelegate: class {
-    func didTapSearchButton(date: (checkIn: String, checkOut: String)?)
+    func didTapSearchButton()
 }
 
 final class DatesFilterFixedFooterView: UIView, ViewFromXib {
@@ -10,13 +10,12 @@ final class DatesFilterFixedFooterView: UIView, ViewFromXib {
     static let height: CGFloat = 96
     
     weak var delegate: DatesFilterFixedFooterViewDelegate?
-    private var date: (String, String)?
     
     override func draw(_ rect: CGRect) {
         drawEdgeLine(edge: .top, lineWidth: 0.3, lineColor: .lightGray)
     }
     
     @IBAction func didTapSearch(_ sender: Any) {
-        delegate?.didTapSearchButton(date: date)
+        delegate?.didTapSearchButton()
     }
 }

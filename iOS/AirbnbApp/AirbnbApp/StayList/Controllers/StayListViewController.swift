@@ -13,7 +13,7 @@ final class StayListViewController: UIViewController {
     private var loadingView: LoadingView!
     
     private var searchFilterQuery: SearchFilterQuery = SearchFilterQuery()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +27,7 @@ final class StayListViewController: UIViewController {
     }
     
     private func fetchStayList() {
-        loadingView.startLoadingAnimation()
+        startLoadingView()
         StayListUseCase.getStayList(searchFilterQuery: searchFilterQuery) { (result) in
             switch result {
             case .success(let stayList):
@@ -44,9 +44,10 @@ final class StayListViewController: UIViewController {
     
     private func presentAlertController(with error: Error) {
         let message = error.localizedDescription.components(separatedBy: ": ").last
-        let alertController = UIAlertController(title: "Network Error",
-                                                message: message,
-                                                preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: "Network Error",
+            message: message,
+            preferredStyle: .alert)
         let retryAction = UIAlertAction(title: "Retry", style: .default) { (_) in
             self.fetchStayList()
         }
@@ -58,9 +59,21 @@ final class StayListViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    private func startLoadingView() {
+        loadingView.isHidden = false
+        loadingView.alpha = 1
+        loadingView.startLoadingAnimation()
+    }
+    
     private func dismissLoadingView() {
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.loadingView.alpha = 0
+        UIView.animate(
+            withDuration: 1,
+            delay: 0,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 1,
+            options: .curveEaseOut,
+            animations: {
+                self.loadingView.alpha = 0
         }) { (_) in
             self.loadingView.stopLoadingAnimation()
             self.loadingView.isHidden = true
@@ -68,7 +81,7 @@ final class StayListViewController: UIViewController {
     }
     
     // MARK: - IBActions
-
+    
     @IBAction func mapButtonTouched(_ sender: Any) {
         #warning("동작 확인용 VC")
         let viewController = UIViewController()
@@ -85,7 +98,9 @@ extension StayListViewController: StayListCollectionViewTapDelegate {
         stayListCollectionViewDataSource.idForCell(at: indexPath) { [weak self] (id) in
             let detailViewController = StayDetailViewController()
             #warning("Request detail data")
-            self?.navigationController?.pushViewController(detailViewController, animated: true)
+            self?.navigationController?.pushViewController(
+                detailViewController,
+                animated: true)
         }
     }
 }
@@ -134,10 +149,13 @@ extension StayListViewController: SearchFilterViewTapDelegate {
 }
 
 extension StayListViewController: DatesFilterViewControllerSearchDelegate {
-    func searchStayList(date: (checkIn: String, checkOut: String)?) {
-        guard let date = date else { return }
-        searchFilterQuery.updateFilters(date: SearchFilterQuery.Date(checkIn: date.checkIn,
-                                                                     checkOut: date.checkOut))
+    func searchStayList(dates: (checkIn: String?, checkOut: String?)) {
+        guard let checkIn = dates.checkIn, let checkOut = dates.checkOut
+            else {
+                return
+        }
+        searchFilterQuery.updateFilters(
+            date: SearchFilterQuery.Date(checkIn: checkIn, checkOut: checkOut))
         fetchStayList()
     }
 }
@@ -148,7 +166,6 @@ extension StayListViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
-
         searchFieldView = SearchFieldView.loadFromXib()
         separatorView = SeparatorView()
         searchFilterView = SearchFilterView.loadFromXib()
@@ -156,68 +173,56 @@ extension StayListViewController {
         mapButtonView = MapButtonView.loadFromXib()
         loadingView = LoadingView()
     }
-
+    
     private func configureLayout() {
-        view.addSubviews(searchFieldView,
-                         separatorView,
-                         searchFilterView,
-                         stayListCollectionView,
-                         mapButtonView,
-                         loadingView
+        view.addSubviews(
+            searchFieldView,
+            separatorView,
+            searchFilterView,
+            stayListCollectionView,
+            mapButtonView,
+            loadingView
         )
-        
         let sidePadding: CGFloat = 24.0
-        searchFieldView.constraints(topAnchor: view.safeAreaLayoutGuide.topAnchor,
-                                     leadingAnchor: view.leadingAnchor,
-                                     bottomAnchor: nil, trailingAnchor: view.trailingAnchor,
-                                     padding: .init(top: 16,
-                                                    left: sidePadding + 16,
-                                                    bottom: 0,
-                                                    right: sidePadding + 16),
-                                     size: .init(width: 0,
-                                                 height: SearchFieldView.height))
-        separatorView.constraints(topAnchor: searchFieldView.bottomAnchor,
-                                  leadingAnchor: view.leadingAnchor,
-                                  bottomAnchor: nil,
-                                  trailingAnchor: view.trailingAnchor,
-                                  padding: .init(top: 12,
-                                                 left: 0,
-                                                 bottom: 0,
-                                                 right: 0),
-                                  size: .init(width: 0,
-                                              height: 0.5))
-        searchFilterView.constraints(topAnchor: searchFieldView.bottomAnchor,
-                                     leadingAnchor: view.leadingAnchor,
-                                     bottomAnchor: nil,
-                                     trailingAnchor: view.trailingAnchor,
-                                     padding: .init(top: 24,
-                                                    left: sidePadding,
-                                                    bottom: 0,
-                                                    right: sidePadding),
-                                     size: .init(width: 0,
-                                                 height: SearchFilterView.height))
-        stayListCollectionView.constraints(topAnchor: searchFilterView.bottomAnchor,
-                                         leadingAnchor: view.leadingAnchor,
-                                         bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
-                                         trailingAnchor: view.trailingAnchor,
-                                         padding: .init(top: 12,
-                                                        left: sidePadding,
-                                                        bottom: 0,
-                                                        right: sidePadding))
-        mapButtonView.constraints(topAnchor: nil,
-                                  leadingAnchor: nil,
-                                  bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
-                                  trailingAnchor: nil,
-                                  padding: .init(top: 0,
-                                                 left: 0,
-                                                 bottom: 20,
-                                                 right: 0),
-                                  size: CGSize(width: MapButtonView.width,
-                                               height: MapButtonView.height))
-        mapButtonView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        loadingView.constraints(topAnchor: stayListCollectionView.topAnchor,
-                                     leadingAnchor: stayListCollectionView.leadingAnchor,
-                                     bottomAnchor: stayListCollectionView.bottomAnchor,
-                                     trailingAnchor: stayListCollectionView.trailingAnchor)
+        searchFieldView.constraints(
+            topAnchor: view.safeAreaLayoutGuide.topAnchor,
+            leadingAnchor: view.leadingAnchor,
+            bottomAnchor: nil, trailingAnchor: view.trailingAnchor,
+            padding: .init( top: 16, left: sidePadding + 16, bottom: 0, right: sidePadding + 16),
+            size: .init(width: 0, height: SearchFieldView.height))
+        separatorView.constraints(
+            topAnchor: searchFieldView.bottomAnchor,
+            leadingAnchor: view.leadingAnchor,
+            bottomAnchor: nil,
+            trailingAnchor: view.trailingAnchor,
+            padding: .init( top: 12, left: 0, bottom: 0, right: 0),
+            size: .init(width: 0, height: 0.5))
+        searchFilterView.constraints(
+            topAnchor: searchFieldView.bottomAnchor,
+            leadingAnchor: view.leadingAnchor,
+            bottomAnchor: nil,
+            trailingAnchor: view.trailingAnchor,
+            padding: .init(top: 24, left: sidePadding, bottom: 0, right: sidePadding),
+            size: .init(width: 0, height: SearchFilterView.height))
+        stayListCollectionView.constraints(
+            topAnchor: searchFilterView.bottomAnchor,
+            leadingAnchor: view.leadingAnchor,
+            bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
+            trailingAnchor: view.trailingAnchor,
+            padding: .init(top: 12, left: sidePadding, bottom: 0, right: sidePadding))
+        mapButtonView.constraints(
+            topAnchor: nil,
+            leadingAnchor: nil,
+            bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
+            trailingAnchor: nil,
+            padding: .init(top: 0, left: 0, bottom: 20, right: 0),
+            size: CGSize(width: MapButtonView.width, height: MapButtonView.height))
+        mapButtonView.centerXAnchor.constraint(
+            equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        loadingView.constraints(
+            topAnchor: stayListCollectionView.topAnchor,
+            leadingAnchor: stayListCollectionView.leadingAnchor,
+            bottomAnchor: stayListCollectionView.bottomAnchor,
+            trailingAnchor: stayListCollectionView.trailingAnchor)
     }
 }
