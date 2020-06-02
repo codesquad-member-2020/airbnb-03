@@ -32,7 +32,7 @@ final class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSour
             cell.empty()
             return cell
         }
-        cell.updateDay(dayDate.day)
+        cell.updateDay(dayDate.day, isEnabled: dayDate.isEnabled)
         return cell
     }
     

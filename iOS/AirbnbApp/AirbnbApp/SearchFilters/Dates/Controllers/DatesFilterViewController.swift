@@ -55,11 +55,14 @@ extension DatesFilterViewController {
             let monthUpdatedDate = currentDate.after(monthOffset: monthOffset)
             var datesByMonth = ReservationDates()
             for day in 1...numberOfDaysAt[monthUpdatedDate.month] {
-                datesByMonth.append(
-                    ReservationDate(
-                        year: monthUpdatedDate.year,
-                        month: monthUpdatedDate.month,
-                        day: day))
+                var dayDate = ReservationDate(
+                    year: monthUpdatedDate.year,
+                    month: monthUpdatedDate.month,
+                    day: day)
+                if dayDate <= currentDate {
+                    dayDate.disabled()
+                }
+                datesByMonth.append(dayDate)
             }
             datesByMonth.configureFirstDayOffsetDates()
             totalReservationDates.append(datesByMonth)
@@ -113,6 +116,12 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
         let datesByMonth = totalReservationDates[indexPath.section]
         let selectedDate = datesByMonth[indexPath.item]
         let selectedCell = calendarCollectionView.cellForItem(at: indexPath) as! DateCell
+        
+        guard selectedDate.isEnabled
+        else {
+            return
+        }
+        
         if checkInDate != nil, checkOutDate != nil {
             resetSelectedDates()
             historyOfSelectedCell.append(selectedCell)

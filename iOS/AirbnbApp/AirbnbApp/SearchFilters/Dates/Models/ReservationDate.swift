@@ -5,6 +5,7 @@ struct ReservationDate {
     private(set) var month: Int
     private(set) var day: Int
     private(set) var isEmpty: Bool = false
+    private(set) var isEnabled: Bool = true
     
     init(year: Int,
          month: Int,
@@ -45,8 +46,13 @@ struct ReservationDate {
         return ReservationDate(year: year, month: month)
     }
     
+    mutating func disabled() {
+        isEnabled = false
+    }
+    
     mutating func setEmpty() {
         isEmpty = true
+        isEnabled = false
     }
 }
 

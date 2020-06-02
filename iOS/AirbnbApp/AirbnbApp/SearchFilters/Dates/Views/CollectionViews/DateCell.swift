@@ -8,8 +8,9 @@ final class DateCell: UICollectionViewCell {
     @IBOutlet weak var selectedView: CircleView!
     @IBOutlet weak var dayLabel: UILabel!
     
-    func updateDay(_ day: Int) {
+    func updateDay(_ day: Int, isEnabled: Bool) {
         dayLabel.text = String(day)
+        dayLabel.textColor = isEnabled ? .black : .lightGray
     }
     
     func empty() {
