@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 
@@ -29,18 +30,21 @@ public class ReservationService {
     }
 
     // 숙소 예약
-    public void reserveTheProperties(Long propertyId, Date checkIn, Date checkOut, Integer guests, String name) {
+    public BookingsDtoHamill reserveTheProperties(Long propertyId, Date checkIn, Date checkOut, Integer adults, Integer children, String name) {
 
-        Period period = Period.between(checkIn.toLocalDate(), checkOut.toLocalDate());
-        reservationDao.insertReservationInformation(propertyId, checkIn, checkOut, guests, period.getDays(), name);
-        reservationDao.insertReservationDate(propertyId, checkIn, period.getDays());
+        Integer nights = (int) ChronoUnit.DAYS.between(checkIn.toLocalDate(), checkOut.toLocalDate());
+        Integer guests = adults + children;
+        reservationDao.insertReservationInformation(propertyId, checkIn, checkOut, guests, nights, name);
+        reservationDao.insertReservationDate(propertyId, checkIn, nights);
         reservationDao.updateReservableIsFalse(propertyId);
+        return reservationDao.findByPropertyId(propertyId);
     }
 
     // 숙소 예약 취소
-    public void cancelTheProperties(Long propertiesId) {
-        reservationDao.deleteReservationInformation(propertiesId);
-        reservationDao.deleteReservationDate(propertiesId);
-        reservationDao.updateReservableIsTrue(propertiesId);
+    public void cancelTheProperties(Long propertyId) {
+
+        reservationDao.deleteReservationInformation(propertyId);
+        reservationDao.deleteReservationDate(propertyId);
+        reservationDao.updateReservableIsTrue(propertyId);
     }
 }
