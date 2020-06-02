@@ -9,9 +9,26 @@ class StayDetailViewController: UIViewController {
 
         #warning("테스트용 뷰")
         let detailSectionView = DetailSectionView.loadFromXib(titleText: "Stay with me") { view in
-//            view.addSubContentViews()
+            let subView = SectionSummary.loadFromXib()
+            view.contentView.addSubview(subView)
         }
+        let detailSectionView2 = DetailSectionView.loadFromXib(titleText: "Stay with me") { view in
+            let subView = SectionSummary.loadFromXib()
+            view.contentView.addSubview(subView)
+        }
+        let detailSectionView3 = DetailSectionView.loadFromXib(titleText: "Stay with me") { view in
+            let subView = SectionSummary.loadFromXib()
+            view.contentView.addSubview(subView)
+        }
+        let detailSectionView4 = DetailSectionView.loadFromXib(titleText: "Stay with me") { view in
+            let subView = SectionSummary.loadFromXib()
+            view.contentView.addSubview(subView)
+        }
+//        stackView.distribution = .equalSpacing
         stackView.addArrangedSubview(detailSectionView)
+        stackView.addArrangedSubview(detailSectionView2)
+        stackView.addArrangedSubview(detailSectionView3)
+        stackView.addArrangedSubview(detailSectionView4)
 
     }
 

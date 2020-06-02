@@ -35,6 +35,8 @@
 		861F07DAEA6EB82E6080DC12 /* Pods_AirbnbAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEA6BC11BFDF3333CB7883F /* Pods_AirbnbAppTests.framework */; };
 		8D328443247647900078678A /* ViewFromXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D328442247647900078678A /* ViewFromXib.swift */; };
 		8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */; };
+		8D5CE95F2484E74F00C850A1 /* SectionSummary.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D5CE95E2484E74F00C850A1 /* SectionSummary.xib */; };
+		8D5CE9612484E77100C850A1 /* SectionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5CE9602484E77100C850A1 /* SectionSummary.swift */; };
 		8D63C75B2476CF4E0074BF0F /* MapButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */; };
 		8D63C75D2476CFA10074BF0F /* MapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D63C75C2476CFA10074BF0F /* MapButtonView.swift */; };
 		8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */; };
@@ -101,6 +103,8 @@
 		6CEA6BC11BFDF3333CB7883F /* Pods_AirbnbAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D328442247647900078678A /* ViewFromXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFromXib.swift; sourceTree = "<group>"; };
 		8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldDelegate.swift; sourceTree = "<group>"; };
+		8D5CE95E2484E74F00C850A1 /* SectionSummary.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionSummary.xib; sourceTree = "<group>"; };
+		8D5CE9602484E77100C850A1 /* SectionSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSummary.swift; sourceTree = "<group>"; };
 		8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButtonView.xib; sourceTree = "<group>"; };
 		8D63C75C2476CFA10074BF0F /* MapButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapButtonView.swift; sourceTree = "<group>"; };
 		8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListViewController.swift; sourceTree = "<group>"; };
@@ -333,6 +337,8 @@
 				8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */,
 				8D9B7A12247C09E500D9A99D /* DetailSectionView.swift */,
 				8D9B7A14247C09F700D9A99D /* DetailSectionView.xib */,
+				8D5CE9602484E77100C850A1 /* SectionSummary.swift */,
+				8D5CE95E2484E74F00C850A1 /* SectionSummary.xib */,
 				8D9B7A18247C1D4500D9A99D /* DetailButton.swift */,
 				8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */,
 			);
@@ -444,6 +450,7 @@
 				8D63C75B2476CF4E0074BF0F /* MapButtonView.xib in Resources */,
 				8D9B7A15247C09F700D9A99D /* DetailSectionView.xib in Resources */,
 				385D8BF124728ECC009E2E2B /* LaunchScreen.storyboard in Resources */,
+				8D5CE95F2484E74F00C850A1 /* SectionSummary.xib in Resources */,
 				8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */,
 				385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */,
 				8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */,
@@ -541,6 +548,7 @@
 				38F1F8982479614500454668 /* StayListCollectionViewDataSource.swift in Sources */,
 				8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */,
 				8DCA197324754D5A00B3C167 /* SearchFilterView.swift in Sources */,
+				8D5CE9612484E77100C850A1 /* SectionSummary.swift in Sources */,
 				8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */,
 				8D328443247647900078678A /* ViewFromXib.swift in Sources */,
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
