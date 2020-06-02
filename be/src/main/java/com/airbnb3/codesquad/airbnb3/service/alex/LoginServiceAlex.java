@@ -1,6 +1,6 @@
-package com.airbnb3.codesquad.airbnb3.service;
+package com.airbnb3.codesquad.airbnb3.service.alex;
 
-import com.airbnb3.codesquad.airbnb3.dao.UserDaoAlex;
+import com.airbnb3.codesquad.airbnb3.dao.alex.UserDaoAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.GithubAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.GithubUserAlex;
 import com.airbnb3.codesquad.airbnb3.oauth.RequestBodyAlex;
@@ -19,7 +19,7 @@ public class LoginServiceAlex {
     private static final Logger logger = LoggerFactory.getLogger(LoginServiceAlex.class);
 
     @Autowired
-    UserDaoAlex userDaoAlex;
+    private UserDaoAlex userDaoAlex;
 
     @Value("${GITHUB_CLIENT_ID}")
     private String GITHUB_CLIENT_ID;

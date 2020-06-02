@@ -1,16 +1,15 @@
-package com.airbnb3.codesquad.airbnb3.service;
+package com.airbnb3.codesquad.airbnb3.service.hamill;
 
-import com.airbnb3.codesquad.airbnb3.dao.PropertiesDaoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.BookingsDtoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.DetailDtoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.PropertiesDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dao.hamill.DetailDaoHamill;
+import com.airbnb3.codesquad.airbnb3.dao.hamill.PropertiesDaoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.DetailDtoHamill;
+import com.airbnb3.codesquad.airbnb3.dto.hamill.PropertiesDtoHamill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.List;
 
 import static com.airbnb3.codesquad.airbnb3.common.CommonStaticsPropertiesHamill.*;
@@ -21,58 +20,49 @@ public class AirbnbServiceHamill {
     private static final Logger logger = LoggerFactory.getLogger(AirbnbServiceHamill.class);
 
     private final PropertiesDaoHamill propertiesDaoHamill;
+    private final DetailDaoHamill detailDaoHamill;
 
-    public AirbnbServiceHamill(PropertiesDaoHamill propertiesDaoHamill) {
+    public AirbnbServiceHamill(PropertiesDaoHamill propertiesDaoHamill, DetailDaoHamill detailDaoHamill) {
         this.propertiesDaoHamill = propertiesDaoHamill;
+        this.detailDaoHamill = detailDaoHamill;
     }
 
     public List<PropertiesDtoHamill> findAllProperties(String offset, String priceMin, String priceMax,
-                                                       String checkIn, String checkOut, String adults, String children) {
+                                                       String checkIn, String checkOut, String adults, String children,
+                                                       String minLatitude, String minLongitude, String maxLatitude, String maxLongitude) {
 
-        Integer IntegerTypeOffset = parseStringToIntegerOffset(offset);
-        Double DoubleTypePriceMin = parseStringToDoublePriceMin(priceMin);
-        Double DoubleTypePriceMax = parseStringToDoublePriceMax(priceMax);
-        Date DateTypeCheckIn = parseStringToDateCheckIn(checkIn);
-        Date DateTypeCheckOut = parseStringToDateCheckOut(checkOut);
+        Integer integerTypeOffset = parseStringToIntegerOffset(offset);
+        Double doubleTypePriceMin = parseStringToDoublePriceMin(priceMin);
+        Double doubleTypePriceMax = parseStringToDoublePriceMax(priceMax);
+        Date dateTypeCheckIn = parseStringToDateCheckIn(checkIn);
+        Date dateTypeCheckOut = parseStringToDateCheckOut(checkOut);
         Integer guests = parseStringToIntegerAdults(adults) + parseStringToIntegerChildren(children);
+        Double doubleTypeMinLatitude = parseStringToDoubleMinLatitude(minLatitude);
+        Double doubleTypeMinLongitude = parseStringToDoubleMinLongitude(minLongitude);
+        Double doubleTypeMaxLatitude = parseStringToDoubleMaxLatitude(maxLatitude);
+        Double doubleTypeMaxLongitude = parseStringToDoubleMaxLongitude(maxLongitude);
 
-        if (DoubleTypePriceMin > DoubleTypePriceMax) {
-            Double tmp = DoubleTypePriceMax;
-            DoubleTypePriceMax = DoubleTypePriceMin;
-            DoubleTypePriceMin = tmp;
+        if (doubleTypePriceMin > doubleTypePriceMax) {
+            Double tmp = doubleTypePriceMax;
+            doubleTypePriceMax = doubleTypePriceMin;
+            doubleTypePriceMin = tmp;
         }
 
-        if (DateTypeCheckIn.compareTo(DateTypeCheckOut) > 0) {
-            Date tmp = DateTypeCheckOut;
-            DateTypeCheckOut = DateTypeCheckIn;
-            DateTypeCheckIn = tmp;
+        if (dateTypeCheckIn.compareTo(dateTypeCheckOut) > 0) {
+            Date tmp = dateTypeCheckOut;
+            dateTypeCheckOut = dateTypeCheckIn;
+            dateTypeCheckIn = tmp;
         }
 
-        return propertiesDaoHamill.findAllProperties(IntegerTypeOffset, DoubleTypePriceMin, DoubleTypePriceMax,
-                DateTypeCheckIn, DateTypeCheckOut, guests);
+        return propertiesDaoHamill.findAllProperties(integerTypeOffset, doubleTypePriceMin, doubleTypePriceMax,
+                dateTypeCheckIn, dateTypeCheckOut, guests, doubleTypeMinLatitude, doubleTypeMinLongitude,
+                doubleTypeMaxLatitude, doubleTypeMaxLongitude);
     }
 
     public DetailDtoHamill findByPropertiesId(Long propertiesId) {
-        return propertiesDaoHamill.findByPropertiesId(propertiesId);
+        return detailDaoHamill.findByPropertiesId(propertiesId);
     }
 
-    // 모든 예약 목록 반환
-    public List<BookingsDtoHamill> findAllReservations() {
-
-        return propertiesDaoHamill.findAllReservations();
-    }
-
-    // 숙소 예약
-    public void reserveTheProperties(Long reservationId, Date checkIn, Date checkOut, Integer guests, String name) {
-
-        Period period = Period.between(checkIn.toLocalDate(), checkOut.toLocalDate());
-        propertiesDaoHamill.insertReservationInformation(reservationId, checkIn, checkOut, guests, period.getDays(), name);
-    }
-
-    // 숙소 예약 취소
-    public void cancelTheProperties(Long propertiesId) {
-        propertiesDaoHamill.deleteReservationInformation(propertiesId);
-    }
 
     private Integer parseStringToIntegerOffset(String offset) {
 
@@ -179,5 +169,59 @@ public class AirbnbServiceHamill {
             return Integer.parseInt(DEFAULT_CHILDREN_COUNT);
         }
     }
+
+    private Double parseStringToDoubleMinLatitude(String minLatitude) {
+
+        if (minLatitude == null) {
+            return Double.parseDouble(DEFAULT_MIN_LATITUDE);
+        }
+
+        try {
+            return Double.parseDouble(minLatitude);
+        } catch (IllegalArgumentException e) {
+            return Double.parseDouble(DEFAULT_MIN_LATITUDE);
+        }
+    }
+
+    private Double parseStringToDoubleMinLongitude(String minLongitude) {
+
+        if (minLongitude == null) {
+            return Double.parseDouble(DEFAULT_MIN_LONGITUDE);
+        }
+
+        try {
+            return Double.parseDouble(minLongitude);
+        } catch (IllegalArgumentException e) {
+            return Double.parseDouble(DEFAULT_MIN_LONGITUDE);
+        }
+    }
+
+    private Double parseStringToDoubleMaxLatitude(String maxLatitude) {
+
+        if (maxLatitude == null) {
+            return Double.parseDouble(DEFAULT_MAX_LATITUDE);
+        }
+
+        try {
+            return Double.parseDouble(maxLatitude);
+        } catch (IllegalArgumentException e) {
+            return Double.parseDouble(DEFAULT_MAX_LATITUDE);
+        }
+    }
+
+    private Double parseStringToDoubleMaxLongitude(String maxLongitude) {
+
+        if (maxLongitude == null) {
+            return Double.parseDouble(DEFAULT_MAX_LONGITUDE);
+        }
+
+        try {
+            return Double.parseDouble(maxLongitude);
+        } catch (IllegalArgumentException e) {
+            return Double.parseDouble(DEFAULT_MAX_LONGITUDE);
+        }
+    }
+
+
 }
 

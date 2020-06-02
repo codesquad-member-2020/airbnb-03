@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS bookings
 
 CREATE TABLE IF NOT EXISTS user
 (
-    id    INT AUTO_INCREMENT,
+    id    INT,
     name  VARCHAR(64),
     email VARCHAR(128),
     PRIMARY KEY (id)
@@ -67,9 +67,9 @@ CREATE TABLE IF NOT EXISTS detail
     beds                        INT,
     bed_type                    VARCHAR(128),
     amenities                   VARCHAR(512),
-    service_fee                 DOUBLE,
-    cleaning_fee                DOUBLE,
-    tax                         DOUBLE,
+    service_fee                 DECIMAL(10,3),
+    cleaning_fee                DECIMAL(10,3),
+    tax                         DECIMAL(10,3),
     review_scores_accuracy      DECIMAL(2, 1),
     review_scores_cleanliness   DECIMAL(2, 1),
     review_scores_checkin       DECIMAL(2, 1),
@@ -82,7 +82,6 @@ CREATE TABLE IF NOT EXISTS detail
 CREATE TABLE IF NOT EXISTS bookmarks
 (
     id            INT AUTO_INCREMENT,
-    is_bookmarked BOOLEAN,
     user_id       INT REFERENCES user (id),
     properties_id INT REFERENCES properties (id),
     PRIMARY KEY (id)
