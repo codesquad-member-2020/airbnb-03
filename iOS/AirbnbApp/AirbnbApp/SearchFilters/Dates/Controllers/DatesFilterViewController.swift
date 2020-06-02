@@ -16,10 +16,10 @@ final class DatesFilterViewController: UIViewController {
     private let spacingForItemLine: CGFloat = 2.0
     private let numberOfDaysAt: [Int] = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
+    private var historyOfSelectedCell: [DateCell] = []
     private var checkInDate: ReservationDate? = nil
     private var checkOutDate: ReservationDate? = nil
     private var totalReservationDates: [ReservationDates] = []
-    private var firstDayOffset: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +96,48 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: CalendarHeaderView.height)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath) {
+        let datesByMonth = totalReservationDates[indexPath.section]
+        let selectedDate = datesByMonth[indexPath.item]
+        let selectedCell = calendarCollectionView.cellForItem(at: indexPath) as! DateCell
+        if checkInDate != nil, checkOutDate != nil {
+            historyOfSelectedCell.forEach {
+                $0.deselected()
+            }
+            historyOfSelectedCell.removeAll()
+            checkOutDate = nil
+            historyOfSelectedCell.append(selectedCell)
+            self.checkInDate = selectedDate
+            selectedCell.selected()
+        } else if let checkInDate = checkInDate, checkOutDate == nil {
+            guard selectedDate != checkInDate
+            else {
+                return
+            }
+            if selectedDate > checkInDate {
+                historyOfSelectedCell.append(selectedCell)
+                checkOutDate = selectedDate
+                #warning("Update cells between check-in and check-out dates")
+                selectedCell.selected()
+            } else {
+                historyOfSelectedCell.forEach {
+                    $0.deselected()
+                }
+                historyOfSelectedCell.removeAll()
+                checkOutDate = nil
+                historyOfSelectedCell.append(selectedCell)
+                self.checkInDate = selectedDate
+                selectedCell.selected()
+            }
+        } else if checkInDate == nil, checkOutDate == nil {
+            historyOfSelectedCell.append(selectedCell)
+            checkInDate = selectedDate
+            selectedCell.selected()
+        }
     }
 }
 

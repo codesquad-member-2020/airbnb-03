@@ -50,6 +50,16 @@ struct ReservationDate {
     }
 }
 
+extension ReservationDate: Comparable {
+    static func < (lhs: ReservationDate, rhs: ReservationDate) -> Bool {
+        return lhs.date < rhs.date
+    }
+    
+    static func == (lhs: ReservationDate, rhs: ReservationDate) -> Bool {
+        return lhs.date == rhs.date
+    }
+}
+
 extension DateFormatter {
     static let reservation: DateFormatter = {
         let formatter = DateFormatter()
