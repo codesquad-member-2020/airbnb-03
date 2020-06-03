@@ -71,6 +71,8 @@
 		8D63C75B2476CF4E0074BF0F /* MapButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */; };
 		8D63C75D2476CFA10074BF0F /* MapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D63C75C2476CFA10074BF0F /* MapButtonView.swift */; };
 		8D6A9DBA2487F39600850C94 /* ReserveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A9DB92487F39600850C94 /* ReserveButton.swift */; };
+		8D6A9DBD248809AA00850C94 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A9DBB248809AA00850C94 /* ReservationViewController.swift */; };
+		8D6A9DBE248809AA00850C94 /* ReservationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6A9DBC248809AA00850C94 /* ReservationViewController.xib */; };
 		8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */; };
 		8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */; };
 		8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */; };
@@ -171,6 +173,8 @@
 		8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButtonView.xib; sourceTree = "<group>"; };
 		8D63C75C2476CFA10074BF0F /* MapButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapButtonView.swift; sourceTree = "<group>"; };
 		8D6A9DB92487F39600850C94 /* ReserveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveButton.swift; sourceTree = "<group>"; };
+		8D6A9DBB248809AA00850C94 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		8D6A9DBC248809AA00850C94 /* ReservationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationViewController.xib; sourceTree = "<group>"; };
 		8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListViewController.swift; sourceTree = "<group>"; };
 		8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDetailViewController.swift; sourceTree = "<group>"; };
 		8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayDetailViewController.xib; sourceTree = "<group>"; };
@@ -487,6 +491,15 @@
 			path = SectionViews;
 			sourceTree = "<group>";
 		};
+		8D6A9DBF24880A1B00850C94 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				8D6A9DBB248809AA00850C94 /* ReservationViewController.swift */,
+				8D6A9DBC248809AA00850C94 /* ReservationViewController.xib */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
 		8D8FE71B2473CF23008FF0AF /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +530,7 @@
 				8D9B7A18247C1D4500D9A99D /* DetailButton.swift */,
 				8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */,
 				8D6A9DB82487EFBC00850C94 /* SectionViews */,
+				8D6A9DBF24880A1B00850C94 /* Reservation */,
 			);
 			path = StayDetail;
 			sourceTree = "<group>";
@@ -632,6 +646,7 @@
 				8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */,
 				385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */,
 				8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */,
+				8D6A9DBE248809AA00850C94 /* ReservationViewController.xib in Resources */,
 				8D5CE9972487841E00C850A1 /* SectionBriefInfo.xib in Resources */,
 				8DA4BA33247FB7B800FFE332 /* StayDetailSectionViewController.xib in Resources */,
 				384C0E3D2473F62A0051528B /* StayCell.xib in Resources */,
@@ -730,6 +745,7 @@
 				38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */,
 				3839C7B02477D6760039BB19 /* SeparatorView.swift in Sources */,
 				384C0E3C2473F62A0051528B /* StayCell.swift in Sources */,
+				8D6A9DBD248809AA00850C94 /* ReservationViewController.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
 				3899CAF224816FE9006CB23E /* CalendarCollectionView.swift in Sources */,
 				384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */,

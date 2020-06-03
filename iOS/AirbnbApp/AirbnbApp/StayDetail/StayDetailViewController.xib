@@ -73,6 +73,9 @@
                             <state key="normal" title="Reserve">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="reserveButtonTouched:" destination="-1" eventType="touchUpInside" id="HSb-Rn-oJv"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 23,800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDk-Ky-4hn">
                             <rect key="frame" x="25" y="13" width="75" height="21"/>

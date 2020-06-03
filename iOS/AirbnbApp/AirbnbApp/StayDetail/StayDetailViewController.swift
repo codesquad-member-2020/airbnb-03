@@ -43,6 +43,11 @@ class StayDetailViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
 
+    @IBAction func reserveButtonTouched(_ sender: ReserveButton) {
+        let viewController = ReservationViewController()
+        present(viewController, animated: true, completion: nil)
+    }
+
     // MARK: Private Methods
 
     private func addToStackView(title: String?, subContentView: UIView) {
