@@ -116,7 +116,6 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
         didSelectItemAt indexPath: IndexPath) {
         let datesByMonth = totalReservationDates[indexPath.section]
         let selectedDate = datesByMonth[indexPath.item]
-        let selectedCell = calendarCollectionView.cellForItem(at: indexPath) as! DateCell
         
         guard selectedDate.isEnabled
         else {
@@ -145,7 +144,6 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
         historyOfSelectedIndexPath.append(indexPath)
         updateSelectedDateToTotalReservationDates(at: indexPath)
         updateCalendarCollectionViewDataSource()
-        selectedCell.selected()
     }
     
     private func updateSelectedDateToTotalReservationDates(at indexPath: IndexPath) {

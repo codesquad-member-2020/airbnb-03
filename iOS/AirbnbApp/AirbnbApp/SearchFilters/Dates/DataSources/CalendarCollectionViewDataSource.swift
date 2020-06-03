@@ -29,19 +29,8 @@ final class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: DateCell.reuseIdentifier,
             for: indexPath) as! DateCell
-        let month = totalReservationDates[indexPath.section]
-        let dayDate = month[indexPath.item]
-        guard !dayDate.isEmpty
-        else {
-            cell.empty()
-            return cell
-        }
-        cell.updateDay(dayDate.day, isEnabled: dayDate.isEnabled)
-        if dayDate.isSelected {
-            cell.selected()
-        } else {
-            cell.deselected()
-        }
+        let date = totalReservationDates[indexPath.section][indexPath.item]
+        cell.update(with: date)
         return cell
     }
     

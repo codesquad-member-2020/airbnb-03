@@ -8,23 +8,25 @@ final class DateCell: UICollectionViewCell {
     @IBOutlet weak var selectedView: CircleView!
     @IBOutlet weak var dayLabel: UILabel!
     
-    func updateDay(_ day: Int, isEnabled: Bool) {
-        dayLabel.text = String(day)
-        dayLabel.textColor = isEnabled ? .black : .lightGray
-    }
-    
-    func empty() {
-        dayLabel.text = ""
-    }
-    
-    func selected() {
-        dayLabel.textColor = .white
-        selectedView.isHidden = false
-    }
-    
-    func deselected() {
+    private func deselected() {
         dayLabel.textColor = .black
         selectedView.isHidden = true
+    }
+    
+    func update(with date: ReservationDate) {
+        guard !date.isEmpty
+        else {
+            dayLabel.text = ""
+            return
+        }
+        
+        dayLabel.text = String(date.day)
+        dayLabel.textColor = date.isEnabled ? .black : .lightGray
+        selectedView.isHidden = !date.isSelected
+        
+        if date.isSelected {
+            dayLabel.textColor = .white
+        }
     }
     
     override func prepareForReuse() {
