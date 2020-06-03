@@ -53,8 +53,8 @@ extension GuestsFilterViewController: SearchFooterViewDelegate {
     }
     
     func didTapClearButton() {
-        searchFooterView.updateClearButton(with: false)
         guests = initialGuests
+        searchFooterView.updateClearButton(with: false)
     }
 }
 
