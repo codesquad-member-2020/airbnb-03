@@ -15,10 +15,6 @@ class DetailSectionView: UIView, ViewFromXib {
         return view
     }
 
-    override class func awakeFromNib() {
-        
-    }
-
     @IBAction func buttonTouched(_ sender: Any) {
         print("button touched in view")
     }
