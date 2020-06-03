@@ -455,6 +455,7 @@
 			children = (
 				8D32844624764B4C0078678A /* Controllers */,
 				38F1F89024795DED00454668 /* Model */,
+				38AEA754247BF7400058050D /* UseCases */,
 				384C0E3E24742B660051528B /* ViewModels */,
 				384C0E352473E04C0051528B /* Views */,
 			);
@@ -465,7 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */,
-				38AEA754247BF7400058050D /* UseCases */,
 				8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */,
 				8D9B7A12247C09E500D9A99D /* DetailSectionView.swift */,
 				8D9B7A14247C09F700D9A99D /* DetailSectionView.xib */,

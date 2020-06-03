@@ -13,19 +13,19 @@ struct SearchFilterQuery: Encodable {
     private var minLongitude: Double? = nil
     private var maxLatitude: Double? = nil
     private var maxLongitude: Double? = nil
-
+    
     struct Date {
         let checkIn, checkOut: String?
     }
-
+    
     struct Guest {
         let adults, children, infants: Int?
     }
-
+    
     struct Price {
         let min, max: Int?
     }
-
+    
     struct LocationRange {
         let minLatitude, minLongitude, maxLatitude, maxLongitude: Double?
     }
@@ -34,11 +34,12 @@ struct SearchFilterQuery: Encodable {
 // MARK:- Update Filters Method
 
 extension SearchFilterQuery {
-    mutating func updateFilters(pageOffset: Int = 1,
-                                         date: Date? = nil,
-                                         guest: Guest? = nil,
-                                         price: Price? = nil,
-                                         locationRange: LocationRange? = nil) {
+    mutating func updateFilters(
+        pageOffset: Int = 1,
+        date: Date? = nil,
+        guest: Guest? = nil,
+        price: Price? = nil,
+        locationRange: LocationRange? = nil) {
         self.pageOffset = pageOffset
         checkInDate = date?.checkIn ?? self.checkInDate
         checkOutDate = date?.checkOut ?? self.checkOutDate

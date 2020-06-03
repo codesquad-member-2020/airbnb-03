@@ -107,11 +107,12 @@ extension StayListViewController: StayListCollectionViewTapDelegate {
 
 extension StayListViewController {
     private func configureCollectionViewDatasource() {
-        stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
-            DispatchQueue.main.async {
-                self?.stayListCollectionView.reloadData()
-                self?.dismissLoadingView()
-            }
+        stayListCollectionViewDataSource = StayListCollectionViewDataSource(
+            changedHandler: { [weak self] (_) in
+                DispatchQueue.main.async {
+                    self?.stayListCollectionView.reloadData()
+                    self?.dismissLoadingView()
+                }
         })
     }
     
