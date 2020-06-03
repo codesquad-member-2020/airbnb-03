@@ -16,11 +16,17 @@ final class GuestsFilterViewController: SearchFooterViewController {
         }
     }
     
+    weak var searchDelegate: GuestsFilterSearchDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         configureLayout()
         configureDelegates()
+    }
+    
+    func updateGuests(_ guests: (adults: Int?, children: Int?, infants: Int?)) {
+        self.guests = (guests.adults ?? 0, guests.children ?? 0, guests.infants ?? 0)
     }
     
     private func configureDelegates() {
@@ -61,6 +67,11 @@ extension GuestsFilterViewController: SearchFooterViewDelegate {
     }
     
     func didTapSearchButton() {
+        let adults = guests.adults != 0 ? guests.adults : nil
+        let children = guests.children != 0 ? guests.children : nil
+        let infants = guests.infants != 0 ? guests.infants : nil
+        let guests = (adults, children, infants)
+        searchDelegate?.searchStayList(guests: guests)
         dismiss(animated: true)
     }
     

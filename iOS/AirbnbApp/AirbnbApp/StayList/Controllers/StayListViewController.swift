@@ -150,12 +150,15 @@ extension StayListViewController: SearchFilterViewTapDelegate {
     
     func didTapGuestsFilter() {
         let guestsFilterViewController = GuestsFilterViewController()
-//        guestsFilterViewController.searchDelegate = self
+        guestsFilterViewController.searchDelegate = self
         present(guestsFilterViewController, animated: true)
+        
+        let guests = (searchFilterQuery.adults, searchFilterQuery.children, searchFilterQuery.infants)
+        guestsFilterViewController.updateGuests(guests)
     }
 }
 
-extension StayListViewController: DatesFilterViewControllerSearchDelegate {
+extension StayListViewController: DatesFilterSearchDelegate {
     func searchStayList(dates: (checkIn: String?, checkOut: String?)) {
         guard let checkIn = dates.checkIn, let checkOut = dates.checkOut
             else {
@@ -163,6 +166,17 @@ extension StayListViewController: DatesFilterViewControllerSearchDelegate {
         }
         searchFilterQuery.updateFilters(
             date: SearchFilterQuery.Date(checkIn: checkIn, checkOut: checkOut))
+        fetchStayList()
+    }
+}
+
+extension StayListViewController: GuestsFilterSearchDelegate {
+    func searchStayList(guests: (adults: Int?, children: Int?, infants: Int?)) {
+        searchFilterQuery.updateFilters(
+            guest: SearchFilterQuery.Guest(
+                adults: guests.adults,
+                children: guests.children,
+                infants: guests.infants))
         fetchStayList()
     }
 }

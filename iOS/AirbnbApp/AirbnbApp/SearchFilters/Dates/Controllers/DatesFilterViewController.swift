@@ -1,6 +1,6 @@
 import UIKit
 
-protocol DatesFilterViewControllerSearchDelegate: class {
+protocol DatesFilterSearchDelegate: class {
     func searchStayList(dates: (checkIn: String?, checkOut: String?))
 }
 
@@ -10,7 +10,7 @@ final class DatesFilterViewController: SearchFooterViewController {
     
     private var calendarCollectionView: CalendarCollectionView!
     private var calendarCollectionViewDataSource: CalendarCollectionViewDataSource!
-    weak var searchDelegate: DatesFilterViewControllerSearchDelegate?
+    weak var searchDelegate: DatesFilterSearchDelegate?
     
     private let spacingForItemLine: CGFloat = 0.0
     private let numberOfDaysAt: [Int] = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
