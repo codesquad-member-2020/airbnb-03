@@ -180,7 +180,7 @@ extension DatesFilterViewController: DatesFilterTitleViewDelegate {
     }
 }
 
-// MARK:- DatesFilterFixedFooterViewDelegate
+// MARK:- SearchFooterViewDelegate
 
 extension DatesFilterViewController: SearchFooterViewDelegate {
     func didTapSearchButton() {
