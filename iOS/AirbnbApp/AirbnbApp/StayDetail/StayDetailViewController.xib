@@ -43,7 +43,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-tZ-CWi">
                     <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="nIX-aF-DtO">
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nIX-aF-DtO">
                             <rect key="frame" x="10" y="0.0" width="394" height="768"/>
                         </stackView>
                     </subviews>

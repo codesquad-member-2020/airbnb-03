@@ -14,14 +14,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aj1-dm-9zs">
-                    <rect key="frame" x="0.0" y="33" width="414" height="200"/>
+                    <rect key="frame" x="0.0" y="39" width="414" height="194"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="tfI-N8-Hle"/>
+                        <constraint firstAttribute="height" constant="200" id="otN-7G-gY6"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="otN-7G-gY6"/>
+                        </mask>
+                    </variation>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ols-dC-cVD">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="18"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -32,7 +37,7 @@
                 <constraint firstItem="ols-dC-cVD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0XV-Xb-93V"/>
                 <constraint firstItem="aj1-dm-9zs" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="9M2-UW-gBm"/>
                 <constraint firstItem="aj1-dm-9zs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RXF-O9-mTy"/>
-                <constraint firstItem="aj1-dm-9zs" firstAttribute="top" secondItem="ols-dC-cVD" secondAttribute="bottom" constant="15" id="ZgI-mt-qhP"/>
+                <constraint firstItem="aj1-dm-9zs" firstAttribute="top" secondItem="ols-dC-cVD" secondAttribute="bottom" constant="10" id="ZgI-mt-qhP"/>
                 <constraint firstItem="ols-dC-cVD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hns-Rk-Cza"/>
                 <constraint firstAttribute="trailing" secondItem="ols-dC-cVD" secondAttribute="trailing" id="kH3-lK-VlD"/>
                 <constraint firstItem="aj1-dm-9zs" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="zb2-hj-HTd"/>
