@@ -3,6 +3,7 @@ import UIKit
 final class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     private var totalReservationDates: [ReservationDates]
+    private var historyOfSelectedIndexPath: [IndexPath] = []
     
     init(totalReservationDates: [ReservationDates]) {
         self.totalReservationDates = totalReservationDates
@@ -10,6 +11,10 @@ final class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSour
     
     func update(with totalReservationDates: [ReservationDates]) {
         self.totalReservationDates = totalReservationDates
+    }
+    
+    func update(with historyOfSelectedIndexPath: [IndexPath]) {
+        self.historyOfSelectedIndexPath = historyOfSelectedIndexPath
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -29,18 +34,24 @@ final class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: DateCell.reuseIdentifier,
             for: indexPath) as! DateCell
-        let month = totalReservationDates[indexPath.section]
-        let dayDate = month[indexPath.item]
-        guard !dayDate.isEmpty
+        let date = totalReservationDates[indexPath.section][indexPath.item]
+        cell.update(with: date)
+        
+        guard historyOfSelectedIndexPath.count >= 2
         else {
-            cell.empty()
             return cell
         }
-        cell.updateDay(dayDate.day, isEnabled: dayDate.isEnabled)
-        if dayDate.isSelected {
-            cell.selected()
-        } else {
-            cell.deselected()
+        let checkInIndexPath = historyOfSelectedIndexPath.first!
+        let checkOutIndexPath = historyOfSelectedIndexPath.last!
+        switch indexPath {
+        case checkInIndexPath:
+            cell.updateCheckInOutCell(isCheckIn: true)
+        case checkOutIndexPath:
+            cell.updateCheckInOutCell(isCheckIn: false)
+        case checkInIndexPath..<checkOutIndexPath:
+            cell.updateBetweenCells(with: date)
+        default:
+            break
         }
         return cell
     }
