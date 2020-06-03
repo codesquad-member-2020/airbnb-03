@@ -47,6 +47,13 @@
 		3899CB1024852EA9006CB23E /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CB0E24852EA9006CB23E /* CalendarHeaderView.swift */; };
 		3899CB1124852EA9006CB23E /* CalendarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3899CB0F24852EA9006CB23E /* CalendarHeaderView.xib */; };
 		38A328DF2487D025009ED71D /* UIView+RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A328DE2487D025009ED71D /* UIView+RoundCorner.swift */; };
+		38A328E42487D9A3009ED71D /* GuestsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A328E32487D9A3009ED71D /* GuestsFilterViewController.swift */; };
+		38A328E62487DB77009ED71D /* GuestsFilterTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A328E52487DB77009ED71D /* GuestsFilterTitleView.swift */; };
+		38A328E82487DB88009ED71D /* GuestsFilterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A328E72487DB88009ED71D /* GuestsFilterTitleView.xib */; };
+		38A328EA2487DEB0009ED71D /* GuestsFilterButtonSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A328E92487DEB0009ED71D /* GuestsFilterButtonSectionView.xib */; };
+		38A328EC2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A328EB2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift */; };
+		38A328EE2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A328ED2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift */; };
+		38A328F02487E6EE009ED71D /* GuestsFilterSaveButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A328EF2487E6EE009ED71D /* GuestsFilterSaveButtonView.xib */; };
 		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
 		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
@@ -145,6 +152,13 @@
 		3899CB0E24852EA9006CB23E /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		3899CB0F24852EA9006CB23E /* CalendarHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarHeaderView.xib; sourceTree = "<group>"; };
 		38A328DE2487D025009ED71D /* UIView+RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorner.swift"; sourceTree = "<group>"; };
+		38A328E32487D9A3009ED71D /* GuestsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsFilterViewController.swift; sourceTree = "<group>"; };
+		38A328E52487DB77009ED71D /* GuestsFilterTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsFilterTitleView.swift; sourceTree = "<group>"; };
+		38A328E72487DB88009ED71D /* GuestsFilterTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuestsFilterTitleView.xib; sourceTree = "<group>"; };
+		38A328E92487DEB0009ED71D /* GuestsFilterButtonSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuestsFilterButtonSectionView.xib; sourceTree = "<group>"; };
+		38A328EB2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsFilterButtonSectionView.swift; sourceTree = "<group>"; };
+		38A328ED2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsFilterSaveButtonView.swift; sourceTree = "<group>"; };
+		38A328EF2487E6EE009ED71D /* GuestsFilterSaveButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuestsFilterSaveButtonView.xib; sourceTree = "<group>"; };
 		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
 		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
@@ -367,6 +381,7 @@
 		3899CAD52480F864006CB23E /* SearchFilters */ = {
 			isa = PBXGroup;
 			children = (
+				38A328E02487D96E009ED71D /* Guests */,
 				3899CAD62480F870006CB23E /* Dates */,
 			);
 			path = SearchFilters;
@@ -433,6 +448,36 @@
 				3899CB082484FB28006CB23E /* CalendarCollectionViewDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		38A328E02487D96E009ED71D /* Guests */ = {
+			isa = PBXGroup;
+			children = (
+				38A328E22487D97F009ED71D /* Views */,
+				38A328E12487D975009ED71D /* Controllers */,
+			);
+			path = Guests;
+			sourceTree = "<group>";
+		};
+		38A328E12487D975009ED71D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38A328E32487D9A3009ED71D /* GuestsFilterViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		38A328E22487D97F009ED71D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				38A328E52487DB77009ED71D /* GuestsFilterTitleView.swift */,
+				38A328E72487DB88009ED71D /* GuestsFilterTitleView.xib */,
+				38A328EB2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift */,
+				38A328E92487DEB0009ED71D /* GuestsFilterButtonSectionView.xib */,
+				38A328ED2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift */,
+				38A328EF2487E6EE009ED71D /* GuestsFilterSaveButtonView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		38AEA754247BF7400058050D /* UseCases */ = {
@@ -623,7 +668,9 @@
 				8D5CE98324868F0A00C850A1 /* SectionTitleInfo.xib in Resources */,
 				8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */,
 				385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */,
+				38A328E82487DB88009ED71D /* GuestsFilterTitleView.xib in Resources */,
 				8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */,
+				38A328EA2487DEB0009ED71D /* GuestsFilterButtonSectionView.xib in Resources */,
 				8D5CE9972487841E00C850A1 /* SectionBriefInfo.xib in Resources */,
 				8DA4BA33247FB7B800FFE332 /* StayDetailSectionViewController.xib in Resources */,
 				384C0E3D2473F62A0051528B /* StayCell.xib in Resources */,
@@ -631,6 +678,7 @@
 				3899CB1124852EA9006CB23E /* CalendarHeaderView.xib in Resources */,
 				3899CAE124813ACF006CB23E /* DatesFilterTitleView.xib in Resources */,
 				3899CB0224818FE1006CB23E /* DateCell.xib in Resources */,
+				38A328F02487E6EE009ED71D /* GuestsFilterSaveButtonView.xib in Resources */,
 				3899CAEB24814FD5006CB23E /* DatesFilterFixedFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,6 +765,7 @@
 				3899CAE524814871006CB23E /* UIView+draw.swift in Sources */,
 				388E141F2480D30100FC0D50 /* SearchFilterQuery.swift in Sources */,
 				8D9B7A17247C0F1200D9A99D /* StayListCollectionViewDelegate.swift in Sources */,
+				38A328E42487D9A3009ED71D /* GuestsFilterViewController.swift in Sources */,
 				380F73262486E0500045C6CA /* CircleView.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
 				38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */,
@@ -747,8 +796,10 @@
 				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,
+				38A328EC2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift in Sources */,
 				3899CB0424828B4A006CB23E /* ReservationDate.swift in Sources */,
 				38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */,
+				38A328E62487DB77009ED71D /* GuestsFilterTitleView.swift in Sources */,
 				8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */,
 				8D5CE99324869A1C00C850A1 /* AmenityView.swift in Sources */,
 				8DA4BA2D247FB45E00FFE332 /* UIView+drawBorders.swift in Sources */,
@@ -766,6 +817,7 @@
 				3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */,
 				8D9B7A1B247C206400D9A99D /* RoundedBorder.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
+				38A328EE2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift in Sources */,
 				3899CADF24813ABD006CB23E /* DatesFilterTitleView.swift in Sources */,
 				3899CB0B2484FFD2006CB23E /* ReservationDates.swift in Sources */,
 				8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */,

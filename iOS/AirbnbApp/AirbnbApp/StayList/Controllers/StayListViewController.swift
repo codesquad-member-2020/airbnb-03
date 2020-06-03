@@ -147,6 +147,12 @@ extension StayListViewController: SearchFilterViewTapDelegate {
         datesFilterViewController.searchDelegate = self
         present(datesFilterViewController, animated: true)
     }
+    
+    func didTapGuestsFilter() {
+        let guestsFilterViewController = GuestsFilterViewController()
+//        guestsFilterViewController.searchDelegate = self
+        present(guestsFilterViewController, animated: true)
+    }
 }
 
 extension StayListViewController: DatesFilterViewControllerSearchDelegate {

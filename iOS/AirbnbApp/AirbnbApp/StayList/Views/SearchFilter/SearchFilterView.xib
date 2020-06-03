@@ -32,6 +32,9 @@
                             <state key="normal" title="Guests">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="didTapGuestsFilter:" destination="iN0-l3-epB" eventType="touchUpInside" id="7be-l2-VW6"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrv-9G-tao" customClass="PriceFilterButton" customModule="AirbnbApp" customModuleProvider="target">
                             <rect key="frame" x="95" y="0.0" width="31" height="40"/>

@@ -2,6 +2,7 @@ import UIKit
 
 protocol SearchFilterViewTapDelegate: class {
     func didTapDatesFilter()
+    func didTapGuestsFilter()
 }
 
 final class SearchFilterView: UIView, ViewFromXib {
@@ -13,5 +14,9 @@ final class SearchFilterView: UIView, ViewFromXib {
     
     @IBAction func didTapDatesFilter(_ sender: Any) {
         delegate?.didTapDatesFilter()
+    }
+    
+    @IBAction func didTapGuestsFilter(_ sender: Any) {
+        delegate?.didTapGuestsFilter()
     }
 }

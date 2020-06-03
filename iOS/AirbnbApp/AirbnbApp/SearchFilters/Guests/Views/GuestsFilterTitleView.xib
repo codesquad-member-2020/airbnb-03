@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GuestsFilterTitleView" customModule="AirbnbApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This home allows a maximum of 6 guests, excluding infants." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrW-EP-YQw">
+                    <rect key="frame" x="24" y="116" width="339" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many guests?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="u6K-8c-K57">
+                    <rect key="frame" x="24" y="80" width="261" height="32"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                    <color key="textColor" name="lightBlack"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="u6K-8c-K57" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.63" id="2mE-Hm-FJM"/>
+                <constraint firstItem="u6K-8c-K57" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="5kv-ac-oWS"/>
+                <constraint firstItem="VrW-EP-YQw" firstAttribute="top" secondItem="u6K-8c-K57" secondAttribute="bottom" constant="4" id="Eff-Hl-Hyi"/>
+                <constraint firstAttribute="bottom" secondItem="u6K-8c-K57" secondAttribute="bottom" constant="48" id="Fin-XJ-hJw"/>
+                <constraint firstItem="u6K-8c-K57" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="MI6-ec-xOH"/>
+                <constraint firstItem="VrW-EP-YQw" firstAttribute="leading" secondItem="u6K-8c-K57" secondAttribute="leading" id="zni-db-e8m"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="44.927536231884062" y="399.77678571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="lightBlack">
+            <color red="0.06418446582313124" green="0.064819955583756306" blue="0.064819955583756306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
