@@ -35,7 +35,6 @@ final class LoadingView: UIView {
     
     private func configureLayout() {
         addSubview(activityIndicatorView)
-        activityIndicatorView.centerInSuperview(constantX: 0,
-                                                constantY: -16)
+        activityIndicatorView.centerInSuperview(constantX: 0, constantY: -16)
     }
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DatesFilterFixedFooterView" customModule="AirbnbApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpy-ux-Z3t" customClass="DatesFilterSearchButton" customModule="AirbnbApp" customModuleProvider="target">
+                    <rect key="frame" x="275.5" y="16" width="110.5" height="48"/>
+                    <color key="backgroundColor" name="button.key"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="B60-rc-fNr"/>
+                        <constraint firstAttribute="width" secondItem="qpy-ux-Z3t" secondAttribute="height" multiplier="2.3:1" id="sTc-en-vcK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title=" Search " image="magnifyingglass" catalog="system">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="medium"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapSearch:" destination="iN0-l3-epB" eventType="touchUpInside" id="zih-2B-7Im"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKA-Xq-3jy">
+                    <rect key="frame" x="32" y="24" width="38" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Clear">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapClear:" destination="iN0-l3-epB" eventType="touchUpInside" id="qgY-Qk-0Nm"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qpy-ux-Z3t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="9JV-9P-yUm"/>
+                <constraint firstItem="KKA-Xq-3jy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="Bng-LM-aJH"/>
+                <constraint firstItem="KKA-Xq-3jy" firstAttribute="centerY" secondItem="qpy-ux-Z3t" secondAttribute="centerY" id="DX9-Ao-w0k"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qpy-ux-Z3t" secondAttribute="trailing" constant="28" id="XOb-Ps-dLl"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="clearButton" destination="KKA-Xq-3jy" id="DZw-Aq-Hgj"/>
+                <outlet property="searchButton" destination="qpy-ux-Z3t" id="JQC-Pw-1xM"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="18.415178571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <namedColor name="button.key">
+            <color red="0.80900001525878906" green="0.20900000631809235" blue="0.34700000286102295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

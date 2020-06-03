@@ -26,6 +26,5 @@ class FilterButton: UIButton {
     }
 }
 
-class DateFilterButton: FilterButton { }
 class PeopleFilterButton: FilterButton { }
 class PriceFilterButton: FilterButton { }
