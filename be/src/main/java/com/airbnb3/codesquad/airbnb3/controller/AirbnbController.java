@@ -46,7 +46,6 @@ public class AirbnbController {
             @RequestParam(value = "max_lat", required = false, defaultValue = DEFAULT_MAX_LATITUDE) String maxLatitude,
             @RequestParam(value = "max_long", required = false, defaultValue = DEFAULT_MAX_LONGITUDE) String maxLongitude,
             @RequestParam(value = "name", required = false) String name
-//            @CookieValue(value = "name", defaultValue = "None", required = false) String name
     ) {
         return new ResponseEntity<>(airbnbService.stayedProperties(offset, adults, children, checkIn, checkOut, name,
                 minPrice, maxPrice, minLatitude, maxLatitude, minLongitude, maxLongitude), HttpStatus.OK);
@@ -59,7 +58,6 @@ public class AirbnbController {
 
     @GetMapping("/reservations")
     public ResponseEntity<List<BookingsDtoHamill>> findAllReservations() {
-
         return new ResponseEntity<>(reservationService.findAllReservations(), HttpStatus.OK);
     }
 
@@ -83,12 +81,12 @@ public class AirbnbController {
         return new ResponseEntity<>(getMessage("예약 취소", "200"), HttpStatus.OK);
     }
 
-    @GetMapping("/saved/{id}")
+    @PutMapping("/saved/{id}")
     public void savedProperties(@PathVariable("id") Long id, @RequestParam(value = "name", defaultValue = "Alex") String name) {
         airbnbService.saveProperties(id, name);
     }
 
-    @GetMapping("/saved/{id}/del")
+    @DeleteMapping("/saved/{id}")
     public void unSavedProperties(@PathVariable("id") Long id, @RequestParam(value = "name", defaultValue = "Alex") String name) {
         airbnbService.unSaveProperties(id, name);
     }
@@ -101,8 +99,8 @@ public class AirbnbController {
     private CommonMessage getMessage(String statusCode, String message) {
 
         return CommonMessage.builder()
-                            .statusCode(statusCode)
-                            .message(message)
-                            .build();
+                .statusCode(statusCode)
+                .message(message)
+                .build();
     }
 }
