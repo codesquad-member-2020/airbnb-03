@@ -78,6 +78,7 @@
                             </state>
                             <connections>
                                 <action selector="didTapAdultsDecreaseButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="cwU-Zo-JaC"/>
+                                <action selector="didTapChangeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="1s4-E4-zkl"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsh-Ju-Fl8">
@@ -97,6 +98,7 @@
                             </state>
                             <connections>
                                 <action selector="didTapAdultsIncreaseButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="yux-O4-Rf1"/>
+                                <action selector="didTapChangeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="QDn-UF-OE5"/>
                             </connections>
                         </button>
                     </subviews>
@@ -119,6 +121,7 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="thin"/>
                             </state>
                             <connections>
+                                <action selector="didTapChangeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="iI9-eZ-ct4"/>
                                 <action selector="didTapChildrenDecreaseButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="ct4-Hv-O4D"/>
                             </connections>
                         </button>
@@ -138,6 +141,7 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="thin"/>
                             </state>
                             <connections>
+                                <action selector="didTapChangeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="bMP-Pm-USW"/>
                                 <action selector="didTapChildrenIncreaseButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bee-UT-p62"/>
                             </connections>
                         </button>
@@ -161,6 +165,7 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="thin"/>
                             </state>
                             <connections>
+                                <action selector="didTapChangeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mli-8a-eaU"/>
                                 <action selector="didTapInfantsDecreaseButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="AnZ-Wg-z7c"/>
                             </connections>
                         </button>
@@ -180,6 +185,7 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="thin"/>
                             </state>
                             <connections>
+                                <action selector="didTapChangeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="wWG-OR-Hvm"/>
                                 <action selector="didTapInfantsIncreaseButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="5cr-Zg-gzT"/>
                             </connections>
                         </button>

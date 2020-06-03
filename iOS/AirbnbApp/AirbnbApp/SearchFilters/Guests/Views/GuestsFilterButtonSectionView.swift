@@ -23,32 +23,30 @@ final class GuestsFilterButtonSectionView: UIView {
     
     @IBAction func didTapAdultsDecreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (-1, 0, 0))
-        animateButton(button)
     }
     
     @IBAction func didTapAdultsIncreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (+1, 0, 0))
-        animateButton(button)
     }
     
     @IBAction func didTapChildrenDecreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (0, -1, 0))
-        animateButton(button)
     }
     
     @IBAction func didTapChildrenIncreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (0, +1, 0))
-        animateButton(button)
     }
     
     @IBAction func didTapInfantsDecreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (0, 0, -1))
-        animateButton(button)
     }
     
     @IBAction func didTapInfantsIncreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (0, 0, +1))
-        animateButton(button)
+    }
+    
+    @IBAction func didTapChangeButton(_ button: UIButton) {
+        button.animate(initialScale: 0.7, initialAlpha: 0.4, duration: 0.3)
     }
     
     func update(with guests: (adults: Int, children: Int, infants: Int)) {
@@ -63,14 +61,5 @@ final class GuestsFilterButtonSectionView: UIView {
         [adultsIncreaseButton, childrenIncreaseButton, infantsIncreaseButton].forEach {
             $0?.isEnabled = (guests.adults + guests.children + guests.infants < maximumGuests)
         }
-    }
-    
-    private func animateButton(_ button: UIButton) {
-        button.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        button.alpha = 0.4
-        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1.4, options: .curveEaseOut, animations: {
-            button.alpha = 1
-            button.transform = .identity
-        })
     }
 }

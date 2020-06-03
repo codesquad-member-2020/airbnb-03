@@ -53,7 +53,8 @@ final class SearchFooterView: UIView {
         clearButton.isEnabled = isEnabled
     }
     
-    @IBAction func didTapSearch(_ sender: Any) {
+    @IBAction func didTapSearch(_ button: UIButton) {
+        button.animate(initialAlpha: 1, duration: 0.4)
         delegate?.didTapSearchButton()
     }
     
