@@ -21,6 +21,9 @@
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" image="back.button"/>
+                    <connections>
+                        <action selector="didTapBackButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="4LE-Uw-YRo"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When will you be there?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="20R-Qk-zfz">
                     <rect key="frame" x="24" y="76" width="261" height="31.5"/>

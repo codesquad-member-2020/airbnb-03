@@ -74,6 +74,7 @@ extension DatesFilterViewController {
 
 extension DatesFilterViewController {
     private func configureDelegates() {
+        titleView.delegate = self
         fixedFooterView.delegate = self
     }
 }
@@ -157,6 +158,14 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
         historyOfSelectedCell.removeAll()
         checkInDate = nil
         checkOutDate = nil
+    }
+}
+
+// MARK:- DatesFilterTitleViewDelegate
+
+extension DatesFilterViewController: DatesFilterTitleViewDelegate {
+    func didTapBackButton() {
+        dismiss(animated: true)
     }
 }
 
