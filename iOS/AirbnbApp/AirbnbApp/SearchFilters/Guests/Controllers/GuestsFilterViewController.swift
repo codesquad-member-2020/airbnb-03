@@ -1,10 +1,9 @@
 import UIKit
 
-final class GuestsFilterViewController: UIViewController {
+final class GuestsFilterViewController: SearchFooterViewController {
 
     private var titleView: GuestsFilterTitleView!
     private var buttonSectionView: GuestsFilterButtonSectionView!
-    private var saveButtonView: GuestsFilterSaveButtonView!
     
     private var guests: (adults: Int, children: Int, infants: Int) = (1, 0, 0) {
         didSet {
@@ -46,14 +45,12 @@ extension GuestsFilterViewController {
         
         titleView = GuestsFilterTitleView.loadFromXib()
         buttonSectionView = GuestsFilterButtonSectionView.loadFromXib()
-        saveButtonView = GuestsFilterSaveButtonView.loadFromXib()
     }
     
     private func configureLayout() {
         view.addSubviews(
             titleView,
-            buttonSectionView,
-            saveButtonView)
+            buttonSectionView)
         titleView.constraints(
             topAnchor: view.topAnchor,
             leadingAnchor: view.leadingAnchor,
@@ -62,13 +59,7 @@ extension GuestsFilterViewController {
         buttonSectionView.constraints(
             topAnchor: titleView.bottomAnchor,
             leadingAnchor: view.leadingAnchor,
-            bottomAnchor: saveButtonView.topAnchor,
+            bottomAnchor: searchFooterView.topAnchor,
             trailingAnchor: view.trailingAnchor)
-        saveButtonView.constraints(
-            topAnchor: nil,
-            leadingAnchor: view.leadingAnchor,
-            bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
-            trailingAnchor: view.trailingAnchor,
-            size: CGSize(width: 0, height: 48 + 16))
     }
 }

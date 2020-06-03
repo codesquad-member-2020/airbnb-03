@@ -4,10 +4,9 @@ protocol DatesFilterViewControllerSearchDelegate: class {
     func searchStayList(dates: (checkIn: String?, checkOut: String?))
 }
 
-final class DatesFilterViewController: UIViewController {
+final class DatesFilterViewController: SearchFooterViewController {
     
     private var titleView: DatesFilterTitleView!
-    private var fixedFooterView: DatesFilterFixedFooterView!
     
     private var calendarCollectionView: CalendarCollectionView!
     private var calendarCollectionViewDataSource: CalendarCollectionViewDataSource!
@@ -25,13 +24,13 @@ final class DatesFilterViewController: UIViewController {
     
     private var checkInDate: ReservationDate? = nil {
         didSet {
-            fixedFooterView.updateClearButton(with: checkInDate != nil)
+            searchFooterView.updateClearButton(with: checkInDate != nil)
         }
     }
     
     private var checkOutDate: ReservationDate? = nil {
         didSet {
-            fixedFooterView.updateSearchButton(with: checkOutDate != nil)
+            searchFooterView.updateSearchButton(with: checkOutDate != nil)
         }
     }
 
@@ -80,7 +79,7 @@ extension DatesFilterViewController {
 extension DatesFilterViewController {
     private func configureDelegates() {
         titleView.delegate = self
-        fixedFooterView.delegate = self
+        searchFooterView.delegate = self
     }
 }
 
@@ -183,7 +182,7 @@ extension DatesFilterViewController: DatesFilterTitleViewDelegate {
 
 // MARK:- DatesFilterFixedFooterViewDelegate
 
-extension DatesFilterViewController: DatesFilterFixedFooterViewDelegate {
+extension DatesFilterViewController: SearchFooterViewDelegate {
     func didTapSearchButton() {
         let selectedDates = (checkInDate?.string, checkOutDate?.string)
         self.searchDelegate?.searchStayList(dates: selectedDates)
@@ -201,14 +200,12 @@ extension DatesFilterViewController {
     private func configureUI() {
         view.backgroundColor = .white
         titleView = DatesFilterTitleView.loadFromXib()
-        fixedFooterView = DatesFilterFixedFooterView.loadFromXib()
         calendarCollectionView = CalendarCollectionView()
     }
     
     private func configureLayout() {
         view.addSubviews(
             titleView,
-            fixedFooterView,
             calendarCollectionView)
         titleView.constraints(
             topAnchor: view.safeAreaLayoutGuide.topAnchor,
@@ -216,16 +213,10 @@ extension DatesFilterViewController {
             bottomAnchor: nil,
             trailingAnchor: view.trailingAnchor,
             size: CGSize(width: 0, height: DatesFilterTitleView.height))
-        fixedFooterView.constraints(
-            topAnchor: nil,
-            leadingAnchor: view.leadingAnchor,
-            bottomAnchor: view.bottomAnchor,
-            trailingAnchor: view.trailingAnchor,
-            size: CGSize(width: 0, height: DatesFilterFixedFooterView.height))
         calendarCollectionView.constraints(
             topAnchor: titleView.bottomAnchor,
             leadingAnchor: view.leadingAnchor,
-            bottomAnchor: fixedFooterView.topAnchor,
+            bottomAnchor: searchFooterView.topAnchor,
             trailingAnchor: view.trailingAnchor,
             padding: .init(top: 0, left: 24, bottom: 0, right: 24))
     }
