@@ -6,11 +6,35 @@ final class GuestsFilterViewController: UIViewController {
     private var buttonSectionView: GuestsFilterButtonSectionView!
     private var saveButtonView: GuestsFilterSaveButtonView!
     
+    private var guests: (adults: Int, children: Int, infants: Int) = (1, 0, 0) {
+        didSet {
+            buttonSectionView.update(with: guests)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureUI()
         configureLayout()
+        configureDelegates()
+    }
+    
+    private func configureDelegates() {
+        configureGuestsFilterButtonSectionViewDelegate()
+    }
+}
+
+// MARK:- GuestsManagementDelegate
+
+extension GuestsFilterViewController: GuestsManagementDelegate {
+    private func configureGuestsFilterButtonSectionViewDelegate() {
+        buttonSectionView.delegate = self
+    }
+    
+    func didTapChangeGuestsButton(guestsChanges: (adults: Int, children: Int, infants: Int)) {
+        guests.adults += guestsChanges.adults
+        guests.children += guestsChanges.children
+        guests.infants += guestsChanges.infants
     }
 }
 
@@ -38,7 +62,7 @@ extension GuestsFilterViewController {
         buttonSectionView.constraints(
             topAnchor: titleView.bottomAnchor,
             leadingAnchor: view.leadingAnchor,
-            bottomAnchor: nil,
+            bottomAnchor: saveButtonView.topAnchor,
             trailingAnchor: view.trailingAnchor)
         saveButtonView.constraints(
             topAnchor: nil,

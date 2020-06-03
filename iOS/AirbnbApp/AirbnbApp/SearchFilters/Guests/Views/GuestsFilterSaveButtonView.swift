@@ -14,4 +14,8 @@ final class GuestsFilterSaveButtonView: UIView, ViewFromXib {
     override func draw(_ rect: CGRect) {
         drawEdgeLine(edge: .top, lineWidth: 0.3, lineColor: .lightGray)
     }
+    
+    @IBAction func didTapSaveButton(_ sender: Any) {
+        print("hehee")
+    }
 }

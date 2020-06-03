@@ -23,6 +23,9 @@
                     <state key="normal" title="Save">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="didTapSaveButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="UNF-s7-Z65"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,7 +43,7 @@
     </objects>
     <resources>
         <namedColor name="button.key2">
-            <color red="0.22382432220000001" green="0.5093104839" blue="0.5294182301" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.22400000691413879" green="0.50900000333786011" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
