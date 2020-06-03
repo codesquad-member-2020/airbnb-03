@@ -27,6 +27,11 @@ final class GuestsFilterViewController: SearchFooterViewController {
     
     func updateGuests(_ guests: (adults: Int?, children: Int?, infants: Int?)) {
         self.guests = (guests.adults ?? 0, guests.children ?? 0, guests.infants ?? 0)
+        if self.guests == initialGuests {
+            buttonSectionView.reset()
+            searchFooterView.updateSearchButton(with: false)
+            searchFooterView.updateClearButton(with: false)
+        }
     }
     
     private func configureDelegates() {
@@ -41,7 +46,11 @@ final class GuestsFilterViewController: SearchFooterViewController {
         } else {
             searchFooterView.updateSearchButton(with: true)
         }
-        searchFooterView.updateClearButton(with: true)
+        if guests != initialGuests {
+            searchFooterView.updateClearButton(with: true)
+        } else {
+            searchFooterView.updateClearButton(with: false)
+        }
     }
 }
 

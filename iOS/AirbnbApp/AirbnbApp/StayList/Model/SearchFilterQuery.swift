@@ -29,6 +29,10 @@ struct SearchFilterQuery: Encodable {
     struct LocationRange {
         let minLatitude, minLongitude, maxLatitude, maxLongitude: Double?
     }
+    
+    func filteredGuests() -> (Int, Int, Int) {
+        return (adults ?? 0, children ?? 0, infants ?? 0)
+    }
 }
 
 // MARK:- Update Filters Method

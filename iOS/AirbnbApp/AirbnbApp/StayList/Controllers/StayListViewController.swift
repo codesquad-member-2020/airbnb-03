@@ -152,8 +152,10 @@ extension StayListViewController: SearchFilterViewTapDelegate {
         let guestsFilterViewController = GuestsFilterViewController()
         guestsFilterViewController.searchDelegate = self
         present(guestsFilterViewController, animated: true)
-        
-        let guests = (searchFilterQuery.adults, searchFilterQuery.children, searchFilterQuery.infants)
+        var guests = searchFilterQuery.filteredGuests()
+        if guests == (0, 0, 0) {
+            guests = (1, 0, 0)
+        }
         guestsFilterViewController.updateGuests(guests)
     }
 }
@@ -177,14 +179,18 @@ extension StayListViewController: GuestsFilterSearchDelegate {
                 adults: guests.adults,
                 children: guests.children,
                 infants: guests.infants))
-        fetchStayList()
+        if searchFilterQuery.filteredGuests() != (1, 0, 0) {
+            searchFilterView.updateGuestsFiltered(with: true)
+            fetchStayList()
+        } else {
+            searchFilterView.updateGuestsFiltered(with: false)
+        }
     }
 }
 
 // MARK:- UI & Layout
 
 extension StayListViewController {
-    
     private func configureUI() {
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)
