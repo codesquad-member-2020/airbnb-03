@@ -5,9 +5,12 @@ final class GuestsFilterViewController: SearchFooterViewController {
     private var titleView: GuestsFilterTitleView!
     private var buttonSectionView: GuestsFilterButtonSectionView!
     
+    private let initialGuests: (adults: Int, children: Int, infants: Int) = (1, 0, 0)
     private var guests: (adults: Int, children: Int, infants: Int) = (1, 0, 0) {
         didSet {
             buttonSectionView.update(with: guests)
+            searchFooterView.updateSearchButton(with: true)
+            searchFooterView.updateClearButton(with: true)
         }
     }
     
@@ -20,6 +23,7 @@ final class GuestsFilterViewController: SearchFooterViewController {
     
     private func configureDelegates() {
         configureGuestsFilterButtonSectionViewDelegate()
+        configureSearchFooterViewDelegate()
     }
 }
 
@@ -34,6 +38,23 @@ extension GuestsFilterViewController: GuestsManagementDelegate {
         guests.adults += guestsChanges.adults
         guests.children += guestsChanges.children
         guests.infants += guestsChanges.infants
+    }
+}
+
+// MARK:- SearchFooterViewDelegate
+
+extension GuestsFilterViewController: SearchFooterViewDelegate {
+    private func configureSearchFooterViewDelegate() {
+        searchFooterView.delegate = self
+    }
+    
+    func didTapSearchButton() {
+        dismiss(animated: true)
+    }
+    
+    func didTapClearButton() {
+        searchFooterView.updateClearButton(with: false)
+        guests = initialGuests
     }
 }
 
