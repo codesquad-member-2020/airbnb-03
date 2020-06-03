@@ -13,11 +13,16 @@ final class DatesFilterViewController: UIViewController {
     private var calendarCollectionViewDataSource: CalendarCollectionViewDataSource!
     weak var searchDelegate: DatesFilterViewControllerSearchDelegate?
     
-    private let spacingForItemLine: CGFloat = 2.0
+    private let spacingForItemLine: CGFloat = 0.0
     private let numberOfDaysAt: [Int] = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
     private var totalReservationDates: [ReservationDates] = []
-    private var historyOfSelectedIndexPath: [IndexPath] = []
+    private var historyOfSelectedIndexPath: [IndexPath] = [] {
+        didSet {
+            calendarCollectionViewDataSource.update(with: historyOfSelectedIndexPath)
+        }
+    }
+    
     private var checkInDate: ReservationDate? = nil {
         didSet {
             fixedFooterView.updateClearButton(with: checkInDate != nil)
