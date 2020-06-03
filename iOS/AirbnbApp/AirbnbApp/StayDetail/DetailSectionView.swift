@@ -14,8 +14,4 @@ class DetailSectionView: UIView, ViewFromXib {
 
         return view
     }
-
-    @IBAction func buttonTouched(_ sender: Any) {
-        print("button touched in view")
-    }
 }

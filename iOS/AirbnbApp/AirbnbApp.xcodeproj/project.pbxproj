@@ -70,6 +70,7 @@
 		8D5CE9992487842D00C850A1 /* SectionBriefInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5CE9982487842D00C850A1 /* SectionBriefInfo.swift */; };
 		8D63C75B2476CF4E0074BF0F /* MapButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */; };
 		8D63C75D2476CFA10074BF0F /* MapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D63C75C2476CFA10074BF0F /* MapButtonView.swift */; };
+		8D6A9DBA2487F39600850C94 /* ReserveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A9DB92487F39600850C94 /* ReserveButton.swift */; };
 		8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */; };
 		8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */; };
 		8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */; };
@@ -78,7 +79,7 @@
 		8D9B7A17247C0F1200D9A99D /* StayListCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A16247C0F1200D9A99D /* StayListCollectionViewDelegate.swift */; };
 		8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A18247C1D4500D9A99D /* DetailButton.swift */; };
 		8D9B7A1B247C206400D9A99D /* RoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */; };
-		8DA4BA2D247FB45E00FFE332 /* UIView+drawBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA2C247FB45E00FFE332 /* UIView+drawBorders.swift */; };
+		8DA4BA2D247FB45E00FFE332 /* UIView+drawBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA2C247FB45E00FFE332 /* UIView+drawBorder.swift */; };
 		8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */; };
 		8DA4BA33247FB7B800FFE332 /* StayDetailSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
@@ -169,6 +170,7 @@
 		8D5CE9982487842D00C850A1 /* SectionBriefInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBriefInfo.swift; sourceTree = "<group>"; };
 		8D63C75A2476CF4E0074BF0F /* MapButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapButtonView.xib; sourceTree = "<group>"; };
 		8D63C75C2476CFA10074BF0F /* MapButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapButtonView.swift; sourceTree = "<group>"; };
+		8D6A9DB92487F39600850C94 /* ReserveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveButton.swift; sourceTree = "<group>"; };
 		8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListViewController.swift; sourceTree = "<group>"; };
 		8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDetailViewController.swift; sourceTree = "<group>"; };
 		8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayDetailViewController.xib; sourceTree = "<group>"; };
@@ -177,7 +179,7 @@
 		8D9B7A16247C0F1200D9A99D /* StayListCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		8D9B7A18247C1D4500D9A99D /* DetailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButton.swift; sourceTree = "<group>"; };
 		8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorder.swift; sourceTree = "<group>"; };
-		8DA4BA2C247FB45E00FFE332 /* UIView+drawBorders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+drawBorders.swift"; sourceTree = "<group>"; };
+		8DA4BA2C247FB45E00FFE332 /* UIView+drawBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+drawBorder.swift"; sourceTree = "<group>"; };
 		8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDetailSectionViewController.swift; sourceTree = "<group>"; };
 		8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayDetailSectionViewController.xib; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
@@ -270,7 +272,7 @@
 			children = (
 				384C0E332473D9680051528B /* UIView+AutoLayout.swift */,
 				384C0E382473F50F0051528B /* UIView+addSubviews.swift */,
-				8DA4BA2C247FB45E00FFE332 /* UIView+drawBorders.swift */,
+				8DA4BA2C247FB45E00FFE332 /* UIView+drawBorder.swift */,
 				38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */,
 				3893B5DF247F9A83004783C4 /* UIView+layer.swift */,
 				3899CAE424814871006CB23E /* UIView+draw.swift */,
@@ -468,6 +470,23 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		8D6A9DB82487EFBC00850C94 /* SectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				8D5CE98424868F1600C850A1 /* SectionTitleInfo.swift */,
+				8D5CE98224868F0A00C850A1 /* SectionTitleInfo.xib */,
+				8D5CE9982487842D00C850A1 /* SectionBriefInfo.swift */,
+				8D5CE9962487841E00C850A1 /* SectionBriefInfo.xib */,
+				8D5CE9602484E77100C850A1 /* SectionSummary.swift */,
+				8D5CE95E2484E74F00C850A1 /* SectionSummary.xib */,
+				8D5CE9862486939400C850A1 /* SectionAmenities.swift */,
+				8D5CE9882486939E00C850A1 /* SectionAmenities.xib */,
+				8D5CE99224869A1C00C850A1 /* AmenityView.swift */,
+				8D6A9DB92487F39600850C94 /* ReserveButton.swift */,
+			);
+			path = SectionViews;
+			sourceTree = "<group>";
+		};
 		8D8FE71B2473CF23008FF0AF /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,15 +516,7 @@
 				8D9B7A14247C09F700D9A99D /* DetailSectionView.xib */,
 				8D9B7A18247C1D4500D9A99D /* DetailButton.swift */,
 				8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */,
-				8D5CE98424868F1600C850A1 /* SectionTitleInfo.swift */,
-				8D5CE98224868F0A00C850A1 /* SectionTitleInfo.xib */,
-				8D5CE9982487842D00C850A1 /* SectionBriefInfo.swift */,
-				8D5CE9962487841E00C850A1 /* SectionBriefInfo.xib */,
-				8D5CE9602484E77100C850A1 /* SectionSummary.swift */,
-				8D5CE95E2484E74F00C850A1 /* SectionSummary.xib */,
-				8D5CE9862486939400C850A1 /* SectionAmenities.swift */,
-				8D5CE9882486939E00C850A1 /* SectionAmenities.xib */,
-				8D5CE99224869A1C00C850A1 /* AmenityView.swift */,
+				8D6A9DB82487EFBC00850C94 /* SectionViews */,
 			);
 			path = StayDetail;
 			sourceTree = "<group>";
@@ -742,13 +753,14 @@
 				3899CB092484FB28006CB23E /* CalendarCollectionViewDataSource.swift in Sources */,
 				38DC238B247BDAE200DC3BCC /* NetworkManager.swift in Sources */,
 				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
+				8D6A9DBA2487F39600850C94 /* ReserveButton.swift in Sources */,
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,
 				3899CB0424828B4A006CB23E /* ReservationDate.swift in Sources */,
 				38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */,
 				8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */,
 				8D5CE99324869A1C00C850A1 /* AmenityView.swift in Sources */,
-				8DA4BA2D247FB45E00FFE332 /* UIView+drawBorders.swift in Sources */,
+				8DA4BA2D247FB45E00FFE332 /* UIView+drawBorder.swift in Sources */,
 				381A030624762561004EDE84 /* PriceLabel.swift in Sources */,
 				3899CB1024852EA9006CB23E /* CalendarHeaderView.swift in Sources */,
 				38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */,
