@@ -24,10 +24,15 @@
 		385D8BFC24728ECC009E2E2B /* AirbnbAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D8BFB24728ECC009E2E2B /* AirbnbAppTests.swift */; };
 		3869C446247BB9AC00A16C6D /* StayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3869C445247BB9AC00A16C6D /* StayList.swift */; };
 		38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863E242478F6AB00D8C75C /* ThumbImagePagingView.swift */; };
+		388E141F2480D30100FC0D50 /* SearchFilterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E141E2480D30100FC0D50 /* SearchFilterQuery.swift */; };
+		3893B5DE247E9168004783C4 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893B5DD247E9168004783C4 /* SaveButton.swift */; };
+		3893B5E0247F9A83004783C4 /* UIView+layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3893B5DF247F9A83004783C4 /* UIView+layer.swift */; };
+		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
 		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
 		38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */; };
 		38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */; };
+		38DC238B247BDAE200DC3BCC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC238A247BDAE200DC3BCC /* NetworkManager.swift */; };
 		38EB9D8F2479A48100236DB4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EB9D8E2479A48100236DB4 /* LoadingView.swift */; };
 		38F1F89224795E0400454668 /* Stay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1F89124795E0400454668 /* Stay.swift */; };
 		38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F1F89324795F5200454668 /* ViewModelBinding.swift */; };
@@ -97,10 +102,15 @@
 		385D8BFD24728ECC009E2E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3869C445247BB9AC00A16C6D /* StayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayList.swift; sourceTree = "<group>"; };
 		38863E242478F6AB00D8C75C /* ThumbImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbImagePagingView.swift; sourceTree = "<group>"; };
+		388E141E2480D30100FC0D50 /* SearchFilterQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterQuery.swift; sourceTree = "<group>"; };
+		3893B5DD247E9168004783C4 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
+		3893B5DF247F9A83004783C4 /* UIView+layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+layer.swift"; sourceTree = "<group>"; };
+		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
 		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
 		38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLeadingImage.swift; sourceTree = "<group>"; };
 		38BDDCB12475AD43000ACA1C /* SuperHostLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHostLabel.swift; sourceTree = "<group>"; };
+		38DC238A247BDAE200DC3BCC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		38EB9D8E2479A48100236DB4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		38F1F89124795E0400454668 /* Stay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stay.swift; sourceTree = "<group>"; };
 		38F1F89324795F5200454668 /* ViewModelBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinding.swift; sourceTree = "<group>"; };
@@ -183,6 +193,7 @@
 				38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */,
 				381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */,
 				381A030524762561004EDE84 /* PriceLabel.swift */,
+				3893B5DD247E9168004783C4 /* SaveButton.swift */,
 			);
 			path = StayCell;
 			sourceTree = "<group>";
@@ -222,6 +233,7 @@
 				384C0E382473F50F0051528B /* UIView+addSubviews.swift */,
 				8DA4BA2C247FB45E00FFE332 /* UIView+drawBorders.swift */,
 				38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */,
+				3893B5DF247F9A83004783C4 /* UIView+layer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +288,8 @@
 			children = (
 				8D8FE71B2473CF23008FF0AF /* TabBar */,
 				8D8FE71C2473CF3C008FF0AF /* StayList */,
+				38DC2389247BDAD100DC3BCC /* Network */,
+				38AEA754247BF7400058050D /* UseCases */,
 				8D9B7A0D247C066300D9A99D /* StayDetail */,
 				8DA4BA2F247FB77F00FFE332 /* StayDetailSection */,
 				384C0E322473D9380051528B /* Extensions */,
@@ -306,11 +320,28 @@
 			path = ThumbImagePaging;
 			sourceTree = "<group>";
 		};
+		38AEA754247BF7400058050D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				38AEA755247BF7590058050D /* StayListUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		38DC2389247BDAD100DC3BCC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				38DC238A247BDAE200DC3BCC /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		38F1F89024795DED00454668 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				38F1F89124795E0400454668 /* Stay.swift */,
 				3869C445247BB9AC00A16C6D /* StayList.swift */,
+				388E141E2480D30100FC0D50 /* SearchFilterQuery.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -563,8 +594,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				384C0E342473D9680051528B /* UIView+AutoLayout.swift in Sources */,
+				388E141F2480D30100FC0D50 /* SearchFilterQuery.swift in Sources */,
 				8D9B7A17247C0F1200D9A99D /* StayListCollectionViewDelegate.swift in Sources */,
 				385D8BE924728EC8009E2E2B /* TabBarController.swift in Sources */,
+				38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */,
 				3839C7B02477D6760039BB19 /* SeparatorView.swift in Sources */,
 				384C0E3C2473F62A0051528B /* StayCell.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
@@ -581,6 +614,7 @@
 				8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */,
 				38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */,
 				384C0E392473F50F0051528B /* UIView+addSubviews.swift in Sources */,
+				38DC238B247BDAE200DC3BCC /* NetworkManager.swift in Sources */,
 				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,
@@ -592,7 +626,9 @@
 				38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */,
 				8D5CE98524868F1600C850A1 /* SectionTitleInfo.swift in Sources */,
 				38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */,
+				3893B5DE247E9168004783C4 /* SaveButton.swift in Sources */,
 				8D63C75D2476CFA10074BF0F /* MapButtonView.swift in Sources */,
+				3893B5E0247F9A83004783C4 /* UIView+layer.swift in Sources */,
 				38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */,
 				38EB9D8F2479A48100236DB4 /* LoadingView.swift in Sources */,
 				3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */,

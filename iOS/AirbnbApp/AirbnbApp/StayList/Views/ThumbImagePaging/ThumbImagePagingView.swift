@@ -26,6 +26,21 @@ final class ThumbImagePagingView: UIView {
         }
     }
     
+    func updateImage(at index: Int, data: Data) {
+        let thumbImageViews = imageStackView.arrangedSubviews as! [ThumbImageView]
+        thumbImageViews[index].image = UIImage(data: data)
+    }
+    
+    func prepareForReuse() {
+        pageControl.currentPage = 0
+        scrollView.contentOffset.x = 0
+        
+        imageStackView.arrangedSubviews.forEach {
+            imageStackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+    }
+    
     private func configure() {
         configureUI()
         configureScrollViewDelegate()

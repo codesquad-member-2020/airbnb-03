@@ -1,6 +1,6 @@
 import UIKit
 
-class SearchFieldView: UIView, ViewFromXib {
+final class SearchFieldView: UIView, ViewFromXib {
 
     static let xibName = String(describing: SearchFieldView.self)
     static let height: CGFloat = 40.0
@@ -23,15 +23,10 @@ class SearchFieldView: UIView, ViewFromXib {
 
     private func configure() {
         drawBorder()
-        drawShadow()
-    }
-
-    private func drawShadow() {
-        layer.shadowColor = UIColor.lightGray.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = .zero
-        layer.shadowRadius = 4
-        layer.shouldRasterize = true
+        drawShadow(color: .lightGray,
+                   radius: 4.0,
+                   opacity: 0.5,
+                   shouldRasterize: true)
     }
 
     private func drawBorder() {

@@ -20,12 +20,34 @@ final class StayListCollectionViewDataSource: NSObject, UICollectionViewDataSour
         self.stayList = StayList(stays)
     }
     
+    func idForCell(at indexPath: IndexPath, handler: (Int) -> Void) {
+        let stay = stayList[indexPath]
+        handler(stay.id)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StayCell.reuseIdentifier, for: indexPath) as! StayCell
         let stay = stayList[indexPath]
         cell.update(with: stay)
-        #warning("update images with urls")
+        fetchThumbImages(at: cell, with: stay.images)
+        
         return cell
+    }
+    
+    private func fetchThumbImages(at cell: UICollectionViewCell, with imageUrls: [String]) {
+        let cell = cell as! StayCell
+        imageUrls.enumerated().forEach { (index, imageUrl) in
+            NetworkManager.getResource(from: imageUrl) { (result) in
+                switch result {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        cell.updateImage(at: index, data: data)
+                    }
+                case .failure(_):
+                    break
+                }
+            }
+        }
     }
 }
 

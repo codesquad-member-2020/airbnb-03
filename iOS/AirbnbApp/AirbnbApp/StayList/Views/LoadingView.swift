@@ -1,6 +1,6 @@
 import UIKit
 
-class LoadingView: UIView {
+final class LoadingView: UIView {
     
     private var activityIndicatorView: UIActivityIndicatorView!
     

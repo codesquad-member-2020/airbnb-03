@@ -1,6 +1,6 @@
 import UIKit
 
-class StayListViewController: UIViewController {
+final class StayListViewController: UIViewController {
     
     private var searchFieldView: SearchFieldView!
     private var separatorView: SeparatorView!
@@ -11,35 +11,37 @@ class StayListViewController: UIViewController {
     private var mapButtonView: MapButtonView!
     private var searchTextFieldDelegate: SearchTextFieldDelegate!
     private var loadingView: LoadingView!
+    
+    private var searchFilterQuery: SearchFilterQuery = SearchFilterQuery()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
         configureLayout()
-        configureStayListCollectionViewHandlers()
         configureCollectionView()
         configureTextFieldDelegate()
-        fetchFakeStayList()
-    }
-    
-    private func fetchFakeStayList() {
-        loadingView.startLoadingAnimation()
-        var fakeStays = [Stay]()
-        for _ in 0..<19 {
-            let randomDouble = (Double(Int.random(in: 0...99)) * 0.01)
-            let fakeStay = Stay(id: 1, images: ["https://airbnb-codesquad.s3.ap-northeast-2.amazonaws.com/1.jpg",
-            "https://airbnb-codesquad.s3.ap-northeast-2.amazonaws.com/2.jpg",
-            "https://airbnb-codesquad.s3.ap-northeast-2.amazonaws.com/3.jpg"], saved: false, reviewAverage: Double(Int.random(in: 2...4)) + randomDouble, numberOfReviews: Int.random(in: 10...999), hostType: "", placeType: "Entire Apartment", city: "Upper East Side", state: "Korea", title: "해운대/펜트하우스/더탑플로어", price: Int.random(in: 100...9999), latitude: "", longitude: "")
-            fakeStays.append(fakeStay)
-        }
         
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {
-          (timer) in
-            self.stayListCollectionViewDataSource.configure(with: fakeStays)
+        fetchStayList()
+    }
+    
+    private func fetchStayList() {
+        loadingView.startLoadingAnimation()
+        StayListUseCase.getStayList(searchFilterQuery: searchFilterQuery) { (result) in
+            switch result {
+            case .success(let stayList):
+                DispatchQueue.main.async {
+                    self.stayListCollectionViewDataSource.configure(with: stayList)
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.presentAlertController(with: error)
+                }
+            }
         }
     }
     
+
     private func configureStayListCollectionViewHandlers() {
         stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
             DispatchQueue.main.async {
@@ -53,6 +55,21 @@ class StayListViewController: UIViewController {
             detailViewController.modalPresentationStyle = .fullScreen
             self?.present(detailViewController, animated: true, completion: nil)
         })
+      
+    private func presentAlertController(with error: Error) {
+        let message = error.localizedDescription.components(separatedBy: ": ").last
+        let alertController = UIAlertController(title: "Network Error",
+                                                message: message,
+                                                preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { (_) in
+            self.fetchStayList()
+        }
+        let doneAction = UIAlertAction(title: "Done", style: .default) { (_) in
+            self.loadingView.stopLoadingAnimation()
+        }
+        alertController.addAction(retryAction)
+        alertController.addAction(doneAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     private func dismissLoadingView() {
@@ -64,10 +81,61 @@ class StayListViewController: UIViewController {
         }
     }
     
+    // MARK: - IBActions
+
+    @IBAction func mapButtonTouched(_ sender: Any) {
+        #warning("동작 확인용 VC")
+        let viewController = UIViewController()
+        viewController.modalPresentationStyle = .automatic // .fullScreen으로 변경할 것
+        viewController.view.backgroundColor = .systemTeal
+        present(viewController, animated: true)
+    }
+}
+
+// MARK:- Delegation Configuration
+
+extension StayListViewController: StayListCollectionViewTapDelegate {
+    func didTapCell(at indexPath: IndexPath) {
+        stayListCollectionViewDataSource.idForCell(at: indexPath) { [weak self] (id) in
+            let detailViewController = StayDetailViewController()
+            #warning("Request detail data")
+            self?.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+    }
+}
+
+extension StayListViewController {
+    private func configureCollectionViewDatasource() {
+        stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
+            DispatchQueue.main.async {
+                self?.stayListCollectionView.reloadData()
+                self?.dismissLoadingView()
+            }
+        })
+    }
+    
+    private func configureCollectionViewDelegate() {
+        stayListCollectionViewDelegate = StayListCollectionViewDelegate()
+    }
+    
     private func configureCollectionView() {
+        configureCollectionViewDatasource()
+        configureCollectionViewDelegate()
+        
         stayListCollectionView.dataSource = stayListCollectionViewDataSource
         stayListCollectionView.delegate = stayListCollectionViewDelegate
+        stayListCollectionView.tapDelegate = self
     }
+    
+    private func configureTextFieldDelegate() {
+        searchTextFieldDelegate = SearchTextFieldDelegate()
+        searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
+    }
+}
+
+// MARK:- UI & Layout
+
+extension StayListViewController {
     
     private func configureUI() {
         view.backgroundColor = .white
@@ -81,24 +149,6 @@ class StayListViewController: UIViewController {
         loadingView = LoadingView()
     }
 
-    private func configureTextFieldDelegate() {
-        searchTextFieldDelegate = SearchTextFieldDelegate()
-        searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
-    }
-
-    // MARK: - IBAction
-
-    @IBAction func mapButtonTouched(_ sender: Any) {
-        #warning("동작 확인용 VC")
-        let viewController = UIViewController()
-        viewController.modalPresentationStyle = .automatic // .fullScreen으로 변경할 것
-        viewController.view.backgroundColor = .systemTeal
-        present(viewController, animated: true)
-    }
-}
-
-// MARK:- Layout
-extension StayListViewController {
     private func configureLayout() {
         view.addSubviews(searchFieldView,
                          separatorView,

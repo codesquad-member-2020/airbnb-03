@@ -65,14 +65,16 @@
                             <constraint firstItem="264-Ef-QMx" firstAttribute="width" relation="lessThanOrEqual" secondItem="WGr-q7-Mzh" secondAttribute="width" multiplier="0.8" id="JFE-BW-Z5D"/>
                         </constraints>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2N-sy-TGs">
-                        <rect key="frame" x="382" y="8" width="24" height="24"/>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2N-sy-TGs" customClass="SaveButton" customModule="AirbnbApp" customModuleProvider="target">
+                        <rect key="frame" x="370" y="12" width="32" height="32"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="l2N-sy-TGs" secondAttribute="height" multiplier="1:1" id="2W3-zJ-bnV"/>
-                            <constraint firstAttribute="width" constant="24" id="bG3-T4-ip3"/>
+                            <constraint firstAttribute="width" constant="32" id="P2i-Sa-7vs"/>
+                            <constraint firstAttribute="width" secondItem="l2N-sy-TGs" secondAttribute="height" multiplier="1:1" id="Sjf-qP-FTm"/>
                         </constraints>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" image="heart" catalog="system"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="1" minY="2" maxX="0.0" maxY="0.0"/>
                         <connections>
                             <action selector="saveButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zhk-eB-sFS"/>
                         </connections>
@@ -81,11 +83,11 @@
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="WGr-q7-Mzh" secondAttribute="trailing" id="1th-8B-jkA"/>
-                <constraint firstAttribute="trailing" secondItem="l2N-sy-TGs" secondAttribute="trailing" constant="8" id="2eg-xd-nun"/>
                 <constraint firstItem="WGr-q7-Mzh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Gf-3P-JBq"/>
-                <constraint firstItem="l2N-sy-TGs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="91U-QR-q8T"/>
                 <constraint firstAttribute="trailing" secondItem="Jms-4T-OYY" secondAttribute="trailing" id="TsZ-ej-J0U"/>
                 <constraint firstItem="WGr-q7-Mzh" firstAttribute="top" secondItem="Jms-4T-OYY" secondAttribute="bottom" constant="8" symbolic="YES" id="Ug3-NH-JF0"/>
+                <constraint firstItem="l2N-sy-TGs" firstAttribute="trailing" secondItem="Jms-4T-OYY" secondAttribute="trailing" constant="-12" id="V8W-k3-jm0"/>
+                <constraint firstItem="l2N-sy-TGs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="aXZ-cd-KVO"/>
                 <constraint firstItem="Jms-4T-OYY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hf3-zD-qpZ"/>
                 <constraint firstAttribute="bottom" secondItem="WGr-q7-Mzh" secondAttribute="bottom" id="hlK-7s-6OC"/>
                 <constraint firstItem="Jms-4T-OYY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vmJ-Ze-ooW"/>
@@ -103,7 +105,4 @@
             <point key="canvasLocation" x="168.11594202898553" y="256.47321428571428"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="heart" catalog="system" width="64" height="54"/>
-    </resources>
 </document>
