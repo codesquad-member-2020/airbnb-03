@@ -1,8 +1,6 @@
 package com.airbnb3.codesquad.airbnb3.dao;
 
 import com.airbnb3.codesquad.airbnb3.dto.ReservationsDto;
-import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingPriceDtoHamill;
-import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingsDtoHamill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 
 @Repository
@@ -155,6 +152,14 @@ public class ReservationDao {
         }
     }
 
+    public Boolean checkReservation(Date checkIn, Date checkOut) {
+
+        String sql = "SELECT EXISTS(SELECT * FROM calendar WHERE reservation_date BETWEEN ? AND ?) AS is_booked;";
+        return jdbcTemplate.queryForObject(
+                sql, new Object[]{checkIn, checkOut},
+                (rs, rowNum) -> rs.getBoolean("is_booked"));
+    }
+
     public void deleteReservationDate(Long propertyId) {
 
         String sql = "DELETE FROM calendar WHERE properties_id = ?";
@@ -163,13 +168,13 @@ public class ReservationDao {
 
     public void updateReservableIsFalse(Long propertyId) {
 
-        String sql = "UPDATE properties SET reservable = false WHERE id = ?";
+        String sql = "UPDATE properties SET reservable = FALSE WHERE id = ?";
         jdbcTemplate.update(sql, propertyId);
     }
 
     public void updateReservableIsTrue(Long propertyId) {
 
-        String sql = "UPDATE properties SET reservable = true WHERE id = ?";
+        String sql = "UPDATE properties SET reservable = TRUE WHERE id = ?";
         jdbcTemplate.update(sql, propertyId);
     }
 }

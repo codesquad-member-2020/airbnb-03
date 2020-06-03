@@ -62,7 +62,7 @@ public class AirbnbController {
     }
 
     @PutMapping("/reservations/{propertyId}")
-    public ResponseEntity<ReservationsDto> reserveTheProperties(
+    public ResponseEntity<Object> reserveTheProperties(
             @PathVariable Long propertyId,
             @RequestParam(value = "check_in") Date checkIn,
             @RequestParam(value = "check_out") Date checkOut,
@@ -70,8 +70,12 @@ public class AirbnbController {
             @RequestParam(value = "children", required = false, defaultValue = DEFAULT_CHILDREN_COUNT) Integer children,
             @CookieValue(value = "name", required = false, defaultValue = DEFAULT_NAME) String name) {
 
-        return new ResponseEntity<>(reservationService.reserveTheProperties(
-                propertyId, checkIn, checkOut, adults, children, name), HttpStatus.OK);
+        ReservationsDto result = reservationService.reserveTheProperties(propertyId, checkIn, checkOut, adults, children, name);
+
+        if (result == null) {
+            return new ResponseEntity<>(getMessage("400", "이미 예약되어 있는 상품입니다"), HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @DeleteMapping("/reservations/{propertyId}")
