@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SectionAmenities" customModule="AirbnbApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2lf-JN-gFg">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="81.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-LZ-UFB">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed7-Yq-c2C">
+                            <rect key="frame" x="0.0" y="30.5" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kitchen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9o-sX-WMN">
+                            <rect key="frame" x="0.0" y="61" width="414" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poO-LU-nUw" customClass="DetailButton" customModule="AirbnbApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="155" width="414" height="30"/>
+                    <state key="normal" title="Show all 30 amenities"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="poO-LU-nUw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2lf-JN-gFg" secondAttribute="bottom" constant="10" id="3n9-Lq-2Mh"/>
+                <constraint firstItem="2lf-JN-gFg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FWk-ge-gla"/>
+                <constraint firstItem="poO-LU-nUw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="J3c-ph-Qwf"/>
+                <constraint firstItem="2lf-JN-gFg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="V49-wh-hmq"/>
+                <constraint firstItem="poO-LU-nUw" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="XUB-mn-VfK"/>
+                <constraint firstItem="2lf-JN-gFg" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" priority="250" id="mqO-g4-rMf"/>
+                <constraint firstItem="poO-LU-nUw" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="p8B-5l-p5v"/>
+                <constraint firstItem="2lf-JN-gFg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="r6b-D8-zKv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="stackView" destination="2lf-JN-gFg" id="Mb5-w8-f7B"/>
+                <outlet property="viewAllButton" destination="poO-LU-nUw" id="Xpy-pn-hmE"/>
+            </connections>
+            <point key="canvasLocation" x="-23.188405797101453" y="-0.33482142857142855"/>
+        </view>
+    </objects>
+</document>
