@@ -57,7 +57,7 @@ public class AirbnbController {
     }
 
     @GetMapping("/reservations")
-    public ResponseEntity<List<BookingsDtoHamill>> findAllReservations() {
+    public ResponseEntity<List<ReservationsDto>> findAllReservations() {
         return new ResponseEntity<>(reservationService.findAllReservations(), HttpStatus.OK);
     }
 

@@ -25,7 +25,7 @@ public class ReservationService {
     }
 
     // 모든 예약 목록 반환
-    public List<BookingsDtoHamill> findAllReservations() {
+    public List<ReservationsDto> findAllReservations() {
 
         return reservationDao.findAllReservations();
     }
