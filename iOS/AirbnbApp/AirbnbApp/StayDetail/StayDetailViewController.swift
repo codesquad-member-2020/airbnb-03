@@ -3,6 +3,7 @@ import UIKit
 class StayDetailViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var topBarView: UIView!
+    @IBOutlet weak var bottomBarView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,12 +12,23 @@ class StayDetailViewController: UIViewController {
         addToStackView(title: nil, subContentView: SectionBriefInfo.loadFromXib())
         addToStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
         addToStackView(title: "Amenities", subContentView: SectionAmenities.loadFromXib())
+        
+        addToStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addToStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addToStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        topBarView.drawBottomBorder()
+        topBarView.drawBorder(.bottom)
+        bottomBarView.drawBorder(.top)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        stackView.arrangedSubviews.forEach { $0.drawBorder(.top) }
     }
 
     // MARK: - IBAction
