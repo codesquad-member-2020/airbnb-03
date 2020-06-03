@@ -18,7 +18,7 @@ final class GuestsFilterButtonSectionView: UIView {
     @IBOutlet weak var infantsLabel: UILabel!
     
     private let maximumGuests: Int = 16
-    private let minimumAdults: Int = 1
+    private let minimumGuests: Int = 1
     weak var delegate: GuestsManagementDelegate?
     
     @IBAction func didTapAdultsDecreaseButton(_ button: UIButton) {
@@ -54,12 +54,24 @@ final class GuestsFilterButtonSectionView: UIView {
         childrenLabel.text = String(guests.children)
         infantsLabel.text = String(guests.infants)
         
-        adultsDecreaseButton.isEnabled = (guests.adults > minimumAdults)
+        let totalGuests = guests.adults + guests.children + guests.infants
+        [adultsIncreaseButton, childrenIncreaseButton, infantsIncreaseButton].forEach {
+            $0?.isEnabled = (totalGuests < maximumGuests)
+        }
+        
+        [adultsDecreaseButton, childrenDecreaseButton, infantsDecreaseButton].forEach {
+            $0?.isEnabled = (totalGuests > minimumGuests)
+        }
+        
+        adultsDecreaseButton.isEnabled = (guests.adults > 0)
         childrenDecreaseButton.isEnabled = (guests.children > 0)
         infantsDecreaseButton.isEnabled = (guests.infants > 0)
-        
-        [adultsIncreaseButton, childrenIncreaseButton, infantsIncreaseButton].forEach {
-            $0?.isEnabled = (guests.adults + guests.children + guests.infants < maximumGuests)
-        }
+    }
+    
+    func reset() {
+        adultsDecreaseButton.isEnabled = false
+        adultsIncreaseButton.isEnabled = true
+        childrenIncreaseButton.isEnabled = true
+        infantsIncreaseButton.isEnabled = true
     }
 }

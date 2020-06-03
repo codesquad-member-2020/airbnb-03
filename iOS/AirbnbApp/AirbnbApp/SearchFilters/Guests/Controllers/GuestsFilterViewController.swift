@@ -1,5 +1,9 @@
 import UIKit
 
+protocol GuestsFilterSearchDelegate: class {
+    func searchStayList(guests: (adults: Int?, children: Int?, infants: Int?))
+}
+
 final class GuestsFilterViewController: SearchFooterViewController {
 
     private var titleView: GuestsFilterTitleView!
@@ -8,9 +12,7 @@ final class GuestsFilterViewController: SearchFooterViewController {
     private let initialGuests: (adults: Int, children: Int, infants: Int) = (1, 0, 0)
     private var guests: (adults: Int, children: Int, infants: Int) = (1, 0, 0) {
         didSet {
-            buttonSectionView.update(with: guests)
-            searchFooterView.updateSearchButton(with: true)
-            searchFooterView.updateClearButton(with: true)
+            didChangedGuests()
         }
     }
     
@@ -24,6 +26,16 @@ final class GuestsFilterViewController: SearchFooterViewController {
     private func configureDelegates() {
         configureGuestsFilterButtonSectionViewDelegate()
         configureSearchFooterViewDelegate()
+    }
+    
+    private func didChangedGuests() {
+        buttonSectionView.update(with: guests)
+        if guests.adults == 0 && guests.children == 0 {
+            searchFooterView.updateSearchButton(with: false)
+        } else {
+            searchFooterView.updateSearchButton(with: true)
+        }
+        searchFooterView.updateClearButton(with: true)
     }
 }
 
@@ -54,6 +66,7 @@ extension GuestsFilterViewController: SearchFooterViewDelegate {
     
     func didTapClearButton() {
         guests = initialGuests
+        buttonSectionView.reset()
         searchFooterView.updateClearButton(with: false)
     }
 }
