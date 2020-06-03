@@ -4,9 +4,7 @@ protocol GuestsManagementDelegate: class {
     func didTapChangeGuestsButton(guestsChanges: (adults: Int, children: Int, infants: Int))
 }
 
-final class GuestsFilterButtonSectionView: UIView, ViewFromXib {
-    
-    static var xibName: String = String(describing: GuestsFilterButtonSectionView.self)
+final class GuestsFilterButtonSectionView: UIView {
     
     @IBOutlet weak var adultsDecreaseButton: UIButton!
     @IBOutlet weak var adultsIncreaseButton: UIButton!

@@ -44,7 +44,7 @@ extension GuestsFilterViewController {
         view.backgroundColor = .white
         
         titleView = GuestsFilterTitleView.loadFromXib()
-        buttonSectionView = GuestsFilterButtonSectionView.loadFromXib()
+        buttonSectionView = GuestsFilterButtonSectionView.loadFromNib()
     }
     
     private func configureLayout() {

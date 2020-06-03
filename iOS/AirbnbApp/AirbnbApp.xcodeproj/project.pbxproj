@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		380B0234248832390061C8C9 /* SearchFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B0233248832390061C8C9 /* SearchFooterViewController.swift */; };
+		380B0237248834F70061C8C9 /* GuestsSaveFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B0235248834F70061C8C9 /* GuestsSaveFooterView.swift */; };
+		380B0238248834F70061C8C9 /* GuestsSaveFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B0236248834F70061C8C9 /* GuestsSaveFooterView.xib */; };
 		380F73262486E0500045C6CA /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380F73252486E0500045C6CA /* CircleView.swift */; };
 		38109A3C2488268D003EC0AC /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38109A3B2488268D003EC0AC /* UIView+Nib.swift */; };
 		381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */; };
@@ -54,8 +56,6 @@
 		38A328E82487DB88009ED71D /* GuestsFilterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A328E72487DB88009ED71D /* GuestsFilterTitleView.xib */; };
 		38A328EA2487DEB0009ED71D /* GuestsFilterButtonSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A328E92487DEB0009ED71D /* GuestsFilterButtonSectionView.xib */; };
 		38A328EC2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A328EB2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift */; };
-		38A328EE2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A328ED2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift */; };
-		38A328F02487E6EE009ED71D /* GuestsFilterSaveButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A328EF2487E6EE009ED71D /* GuestsFilterSaveButtonView.xib */; };
 		38AEA756247BF7590058050D /* StayListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEA755247BF7590058050D /* StayListUseCase.swift */; };
 		38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */; };
 		38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */; };
@@ -111,6 +111,8 @@
 
 /* Begin PBXFileReference section */
 		380B0233248832390061C8C9 /* SearchFooterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooterViewController.swift; sourceTree = "<group>"; };
+		380B0235248834F70061C8C9 /* GuestsSaveFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestsSaveFooterView.swift; sourceTree = "<group>"; };
+		380B0236248834F70061C8C9 /* GuestsSaveFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuestsSaveFooterView.xib; sourceTree = "<group>"; };
 		380F73252486E0500045C6CA /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		38109A3B2488268D003EC0AC /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTypeAndCityLabel.swift; sourceTree = "<group>"; };
@@ -161,8 +163,6 @@
 		38A328E72487DB88009ED71D /* GuestsFilterTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuestsFilterTitleView.xib; sourceTree = "<group>"; };
 		38A328E92487DEB0009ED71D /* GuestsFilterButtonSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuestsFilterButtonSectionView.xib; sourceTree = "<group>"; };
 		38A328EB2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsFilterButtonSectionView.swift; sourceTree = "<group>"; };
-		38A328ED2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestsFilterSaveButtonView.swift; sourceTree = "<group>"; };
-		38A328EF2487E6EE009ED71D /* GuestsFilterSaveButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuestsFilterSaveButtonView.xib; sourceTree = "<group>"; };
 		38AEA755247BF7590058050D /* StayListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListUseCase.swift; sourceTree = "<group>"; };
 		38BDDCAB24751DED000ACA1C /* ReviewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLabel.swift; sourceTree = "<group>"; };
 		38BDDCAD2475A36D000ACA1C /* NSMutableAttributedString+append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+append.swift"; sourceTree = "<group>"; };
@@ -457,8 +457,8 @@
 		38A328E02487D96E009ED71D /* Guests */ = {
 			isa = PBXGroup;
 			children = (
-				38A328E22487D97F009ED71D /* Views */,
 				38A328E12487D975009ED71D /* Controllers */,
+				38A328E22487D97F009ED71D /* Views */,
 			);
 			path = Guests;
 			sourceTree = "<group>";
@@ -478,8 +478,8 @@
 				38A328E72487DB88009ED71D /* GuestsFilterTitleView.xib */,
 				38A328EB2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift */,
 				38A328E92487DEB0009ED71D /* GuestsFilterButtonSectionView.xib */,
-				38A328ED2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift */,
-				38A328EF2487E6EE009ED71D /* GuestsFilterSaveButtonView.xib */,
+				380B0235248834F70061C8C9 /* GuestsSaveFooterView.swift */,
+				380B0236248834F70061C8C9 /* GuestsSaveFooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -692,7 +692,7 @@
 				3899CB1124852EA9006CB23E /* CalendarHeaderView.xib in Resources */,
 				3899CAE124813ACF006CB23E /* DatesFilterTitleView.xib in Resources */,
 				3899CB0224818FE1006CB23E /* DateCell.xib in Resources */,
-				38A328F02487E6EE009ED71D /* GuestsFilterSaveButtonView.xib in Resources */,
+				380B0238248834F70061C8C9 /* GuestsSaveFooterView.xib in Resources */,
 				3899CAEB24814FD5006CB23E /* SearchFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -788,6 +788,7 @@
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
 				3899CAF224816FE9006CB23E /* CalendarCollectionView.swift in Sources */,
 				384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */,
+				380B0237248834F70061C8C9 /* GuestsSaveFooterView.swift in Sources */,
 				38F1F8982479614500454668 /* StayListCollectionViewDataSource.swift in Sources */,
 				3899CAE32481407D006CB23E /* ModalIndicatorView.swift in Sources */,
 				8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */,
@@ -833,7 +834,6 @@
 				3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */,
 				8D9B7A1B247C206400D9A99D /* RoundedBorder.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
-				38A328EE2487E6B0009ED71D /* GuestsFilterSaveButtonView.swift in Sources */,
 				3899CADF24813ABD006CB23E /* DatesFilterTitleView.swift in Sources */,
 				3899CB0B2484FFD2006CB23E /* ReservationDates.swift in Sources */,
 				8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */,

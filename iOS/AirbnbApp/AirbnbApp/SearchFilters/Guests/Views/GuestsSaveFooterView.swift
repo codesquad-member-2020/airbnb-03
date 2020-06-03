@@ -1,9 +1,6 @@
 import UIKit
 
-final class GuestsFilterSaveButtonView: UIView, ViewFromXib {
-
-    static var xibName: String = String(describing: GuestsFilterSaveButtonView.self)
-    static let height: CGFloat = 64.0
+final class GuestsSaveFooterView: UIView {
 
     @IBOutlet weak var saveButton: UIButton! {
         didSet {
@@ -16,6 +13,6 @@ final class GuestsFilterSaveButtonView: UIView, ViewFromXib {
     }
     
     @IBAction func didTapSaveButton(_ sender: Any) {
-        print("hehee")
+        
     }
 }
