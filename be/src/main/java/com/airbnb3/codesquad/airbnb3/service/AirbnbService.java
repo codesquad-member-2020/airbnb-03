@@ -65,14 +65,14 @@ public class AirbnbService {
     }
 
 
-    public void saveProperties(Long id, String name) {
+    public void saveProperties(Long propertyId, String name) {
         Long userId = userDao.findUserIdByUserName(name);
-        propertiesDao.saveProperties(id, userId);
+        propertiesDao.saveProperties(propertyId, userId);
     }
 
-    public void unSaveProperties(Long id, String name) {
+    public void unSaveProperties(Long propertyId, String name) {
         Long userId = userDao.findUserIdByUserName(name);
-        propertiesDao.unSaveProperties(id, userId);
+        propertiesDao.unSaveProperties(propertyId, userId);
     }
 
     public List<PropertiesDto> savedPropertiesList(String name) {

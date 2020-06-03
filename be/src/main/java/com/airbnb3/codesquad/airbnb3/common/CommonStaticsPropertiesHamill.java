@@ -10,5 +10,6 @@ public class CommonStaticsPropertiesHamill {
     public static final String DEFAULT_MAX_LATITUDE = "47.72741971";
     public static final String DEFAULT_MIN_LONGITUDE = "-122.4129798";
     public static final String DEFAULT_MAX_LONGITUDE = "-122.2604426";
+    public static final String DEFAULT_NAME = "airbnb";
 
 }

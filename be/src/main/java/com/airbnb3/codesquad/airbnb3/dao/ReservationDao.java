@@ -25,24 +25,23 @@ public class ReservationDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<BookingsDtoHamill> findAllReservations() {
+    public List<ReservationsDto> findAllReservations() {
         String sql =
-                "SELECT b.id\n" +
-                        "     , b.properties_id\n" +
-                        "     , GROUP_CONCAT(i.image_url) AS image\n" +
-                        "     , p.place_type\n" +
-                        "     , p.number_of_reviews\n" +
-                        "     , p.review_average\n" +
+                "SELECT GROUP_CONCAT(i.image_url) AS image\n" +
                         "     , b.check_in_date\n" +
                         "     , b.check_out_date\n" +
-                        "     , b.guests\n" +
+                        "     , b.booking_date\n" +
                         "     , b.nights\n" +
-                        "     , p.price\n" +
                         "     , b.service_fee\n" +
                         "     , b.cleaning_fee\n" +
                         "     , b.tax\n" +
+                        "     , p.price\n" +
                         "     , b.price_for_stay\n" +
                         "     , b.total_price\n" +
+                        "     , p.number_of_reviews\n" +
+                        "     , p.review_average\n" +
+                        "     , b.guests\n" +
+                        "     , p.id AS properties_id\n" +
                         "FROM bookings b\n" +
                         "         JOIN properties p ON b.properties_id = p.id\n" +
                         "         JOIN images i ON p.id = i.properties_id\n" +
@@ -51,26 +50,23 @@ public class ReservationDao {
         return jdbcTemplate.query(
                 sql,
                 (rs, rowNum) ->
-                        BookingsDtoHamill.builder()
-                                         .id(rs.getLong("id"))
-                                         .propertiesId(rs.getLong("properties_id"))
-                                         .images(Arrays.asList(rs.getString("image").split(",")))
-                                         .placeType(rs.getString("place_type"))
-                                         .numberOfReviews(rs.getInt("number_of_reviews"))
-                                         .reviewAverage(rs.getDouble("review_average"))
-                                         .checkIn(rs.getDate("check_in_date"))
-                                         .checkOut(rs.getDate("check_out_date"))
-                                         .guests(rs.getInt("guests"))
-                                         .nights(rs.getInt("nights"))
-                                         .bookingPriceInfo(BookingPriceDtoHamill.builder()
-                                                                                .price(rs.getDouble("price"))
-                                                                                .serviceFee(rs.getDouble("service_fee"))
-                                                                                .cleaningFee(rs.getDouble("cleaning_fee"))
-                                                                                .tax(rs.getDouble("tax"))
-                                                                                .priceForStay(rs.getDouble("price_for_stay"))
-                                                                                .totalPrice(rs.getDouble("total_price"))
-                                                                                .build())
-                                         .build()
+                        ReservationsDto.builder()
+                                       .images((rs.getString("image").split(",")[0]))
+                                       .checkInDate(rs.getDate("check_in_date"))
+                                       .checkOutDate(rs.getDate("check_out_date"))
+                                       .bookingDate(rs.getDate("booking_date"))
+                                       .nights(rs.getInt("nights"))
+                                       .serviceFee(rs.getBigDecimal("service_fee"))
+                                       .cleaningFee(rs.getBigDecimal("cleaning_fee"))
+                                       .tax(rs.getBigDecimal("tax"))
+                                       .price(rs.getBigDecimal("price"))
+                                       .priceForStay(rs.getBigDecimal("price_for_stay"))
+                                       .totalPrice(rs.getBigDecimal("total_price"))
+                                       .numberOfReviews(rs.getInt("number_of_reviews"))
+                                       .reviewAverage(rs.getDouble("review_average"))
+                                       .guests(rs.getInt("guests"))
+                                       .propertiesId(rs.getLong("properties_id"))
+                                       .build()
         );
     }
 
