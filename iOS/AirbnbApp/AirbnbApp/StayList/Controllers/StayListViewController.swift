@@ -42,21 +42,6 @@ final class StayListViewController: UIViewController {
         }
     }
     
-
-    private func configureStayListCollectionViewHandlers() {
-        stayListCollectionViewDataSource = StayListCollectionViewDataSource(changedHandler: { [weak self] (_) in
-            DispatchQueue.main.async {
-                self?.stayListCollectionView.reloadData()
-                self?.dismissLoadingView()
-            }
-        })
-
-        stayListCollectionViewDelegate = StayListCollectionViewDelegate(handlerWhenSelected: { [weak self] in
-            let detailViewController = StayDetailViewController()
-            detailViewController.modalPresentationStyle = .fullScreen
-            self?.present(detailViewController, animated: true, completion: nil)
-        })
-      
     private func presentAlertController(with error: Error) {
         let message = error.localizedDescription.components(separatedBy: ": ").last
         let alertController = UIAlertController(

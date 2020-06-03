@@ -6,7 +6,7 @@ struct Stay: Decodable {
     let saved: Bool
     let reviewAverage: Double
     let numberOfReviews: Int
-    let hostType: String
+    let isSuperHost: Bool
     let placeType: String
     let city: String
     let state: String
