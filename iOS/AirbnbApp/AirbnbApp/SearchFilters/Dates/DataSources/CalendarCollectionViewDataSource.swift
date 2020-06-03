@@ -8,7 +8,7 @@ final class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSour
         self.totalReservationDates = totalReservationDates
     }
     
-    func updateTotalReservationDates(_ totalReservationDates: [ReservationDates]) {
+    func update(with totalReservationDates: [ReservationDates]) {
         self.totalReservationDates = totalReservationDates
     }
     

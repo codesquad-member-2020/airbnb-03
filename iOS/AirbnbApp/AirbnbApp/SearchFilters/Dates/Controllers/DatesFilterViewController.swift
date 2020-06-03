@@ -153,16 +153,11 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
     }
     
     private func updateCalendarCollectionViewDataSource() {
-        calendarCollectionViewDataSource.updateTotalReservationDates(totalReservationDates)
+        calendarCollectionViewDataSource.update(with: totalReservationDates)
         calendarCollectionView.reloadData()
     }
     
     private func resetSelectedDates() {
-        historyOfSelectedIndexPath.forEach {
-            let dateCell = calendarCollectionView.cellForItem(at: $0) as! DateCell
-            dateCell.deselected()
-        }
-        
         historyOfSelectedIndexPath.forEach {
             totalReservationDates[$0.section][$0.item].deselected()
         }
