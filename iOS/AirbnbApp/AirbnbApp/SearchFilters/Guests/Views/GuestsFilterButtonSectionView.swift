@@ -21,28 +21,34 @@ final class GuestsFilterButtonSectionView: UIView {
     private let minimumAdults: Int = 1
     weak var delegate: GuestsManagementDelegate?
     
-    @IBAction func didTapAdultsDecreaseButton(_ sender: Any) {
+    @IBAction func didTapAdultsDecreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (-1, 0, 0))
+        animateButton(button)
     }
     
-    @IBAction func didTapAdultsIncreaseButton(_ sender: Any) {
+    @IBAction func didTapAdultsIncreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (+1, 0, 0))
+        animateButton(button)
     }
     
-    @IBAction func didTapChildrenDecreaseButton(_ sender: Any) {
+    @IBAction func didTapChildrenDecreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (0, -1, 0))
+        animateButton(button)
     }
     
-    @IBAction func didTapChildrenIncreaseButton(_ sender: Any) {
+    @IBAction func didTapChildrenIncreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (0, +1, 0))
+        animateButton(button)
     }
     
-    @IBAction func didTapInfantsDecreaseButton(_ sender: Any) {
+    @IBAction func didTapInfantsDecreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (0, 0, -1))
+        animateButton(button)
     }
     
-    @IBAction func didTapInfantsIncreaseButton(_ sender: Any) {
+    @IBAction func didTapInfantsIncreaseButton(_ button: UIButton) {
         delegate?.didTapChangeGuestsButton(guestsChanges: (0, 0, +1))
+        animateButton(button)
     }
     
     func update(with guests: (adults: Int, children: Int, infants: Int)) {
@@ -57,5 +63,14 @@ final class GuestsFilterButtonSectionView: UIView {
         [adultsIncreaseButton, childrenIncreaseButton, infantsIncreaseButton].forEach {
             $0?.isEnabled = (guests.adults + guests.children + guests.infants < maximumGuests)
         }
+    }
+    
+    private func animateButton(_ button: UIButton) {
+        button.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        button.alpha = 0.4
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1.4, options: .curveEaseOut, animations: {
+            button.alpha = 1
+            button.transform = .identity
+        })
     }
 }
