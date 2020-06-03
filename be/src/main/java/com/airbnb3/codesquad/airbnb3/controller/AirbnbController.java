@@ -45,10 +45,11 @@ public class AirbnbController {
             @RequestParam(value = "min_long", required = false, defaultValue = DEFAULT_MIN_LONGITUDE) String minLongitude,
             @RequestParam(value = "max_lat", required = false, defaultValue = DEFAULT_MAX_LATITUDE) String maxLatitude,
             @RequestParam(value = "max_long", required = false, defaultValue = DEFAULT_MAX_LONGITUDE) String maxLongitude,
-            @RequestParam(value = "name", required = false, defaultValue = DEFAULT_NAME) String name
+            @RequestParam(value = "name", required = false, defaultValue = DEFAULT_NAME) String name,
+            @RequestParam(value = "search", required = false, defaultValue = "%") String searchData
     ) {
         return new ResponseEntity<>(airbnbService.stayedProperties(offset, adults, children, checkIn, checkOut, name,
-                minPrice, maxPrice, minLatitude, maxLatitude, minLongitude, maxLongitude), HttpStatus.OK);
+                minPrice, maxPrice, searchData, minLatitude, maxLatitude, minLongitude, maxLongitude), HttpStatus.OK);
     }
 
     @GetMapping("/properties/{id}")

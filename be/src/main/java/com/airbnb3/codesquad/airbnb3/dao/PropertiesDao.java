@@ -25,7 +25,7 @@ public class PropertiesDao {
     }
 
     public List<PropertiesDto> getStayedProperties(Integer propertyRange, Integer accommodates, Date checkInDate, Date checkOutDate,
-                                                   Long userId, BigDecimal minPrice, BigDecimal maxPrice,
+                                                   Long userId, BigDecimal minPrice, BigDecimal maxPrice, String search,
                                                    BigDecimal minLatitude, BigDecimal maxLatitude, BigDecimal minLongitude, BigDecimal maxLongitude) {
 
         String sql = "SELECT p.id,p.title,p.state,p.city,p.latitude,p.longitude,p.reservable,CASE WHEN p.id IN (SELECT bookmarks.properties_id FROM bookmarks WHERE bookmarks.user_id = :userId) THEN 1 ELSE 0 END AS is_saved," +
@@ -38,6 +38,7 @@ public class PropertiesDao {
                 "AND p.latitude BETWEEN :minLatitude AND :maxLatitude " +
                 "AND p.longitude BETWEEN :minLongitude AND :maxLongitude " +
                 "AND p.price BETWEEN :minPrice AND :maxPrice " +
+                "AND p.title LIKE :search " +
                 "GROUP BY p.id LIMIT :propertyRange";
 
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
@@ -48,6 +49,7 @@ public class PropertiesDao {
                 .addValue("userId", userId)
                 .addValue("minPrice", minPrice)
                 .addValue("maxPrice", maxPrice)
+                .addValue("search",search)
                 .addValue("minLatitude", minLatitude)
                 .addValue("maxLatitude", maxLatitude)
                 .addValue("minLongitude", minLongitude)
