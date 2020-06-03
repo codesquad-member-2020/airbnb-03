@@ -71,18 +71,18 @@ public class PropertiesDao {
                 .build());
     }
 
-    public void saveProperties(Long id, Long userId) {
+    public void saveProperties(Long propertyId, Long userId) {
         String sql = "INSERT INTO bookmarks(user_id, properties_id) VALUES (:userId, :id)";
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
-                .addValue("id", id)
+                .addValue("id", propertyId)
                 .addValue("userId", userId);
         jdbcTemplate.update(sql, parameterSource);
     }
 
-    public void unSaveProperties(Long id, Long userId) {
+    public void unSaveProperties(Long propertyId, Long userId) {
         String sql = "DELETE FROM bookmarks WHERE user_id = :userId AND properties_id = :id";
         MapSqlParameterSource parameterSource = new MapSqlParameterSource()
-                .addValue("id", id)
+                .addValue("id", propertyId)
                 .addValue("userId", userId);
         jdbcTemplate.update(sql, parameterSource);
     }
