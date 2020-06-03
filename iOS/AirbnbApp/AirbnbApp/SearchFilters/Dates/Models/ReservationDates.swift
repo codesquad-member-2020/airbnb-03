@@ -39,6 +39,11 @@ struct ReservationDates {
     }
     
     subscript(index: Int) -> ReservationDate {
-        return dates[index]
+        get {
+            dates[index]
+        }
+        set(newValue) {
+            dates[index] = newValue
+        }
     }
 }

@@ -16,7 +16,8 @@ final class DatesFilterViewController: UIViewController {
     private let spacingForItemLine: CGFloat = 2.0
     private let numberOfDaysAt: [Int] = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
-    private var historyOfSelectedCell: [DateCell] = []
+    private var totalReservationDates: [ReservationDates] = []
+    private var historyOfSelectedIndexPath: [IndexPath] = []
     private var checkInDate: ReservationDate? = nil {
         didSet {
             fixedFooterView.updateClearButton(with: checkInDate != nil)
@@ -28,7 +29,6 @@ final class DatesFilterViewController: UIViewController {
             fixedFooterView.updateSearchButton(with: checkOutDate != nil)
         }
     }
-    private var totalReservationDates: [ReservationDates] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,37 +125,46 @@ extension DatesFilterViewController: UICollectionViewDelegateFlowLayout {
         
         if checkInDate != nil, checkOutDate != nil {
             resetSelectedDates()
-            historyOfSelectedCell.append(selectedCell)
             self.checkInDate = selectedDate
-            selectedCell.selected()
         } else if let checkInDate = checkInDate, checkOutDate == nil {
             guard selectedDate != checkInDate
             else {
                 return
             }
             if selectedDate > checkInDate {
-                historyOfSelectedCell.append(selectedCell)
                 checkOutDate = selectedDate
                 #warning("Update cells between check-in and check-out dates")
-                selectedCell.selected()
             } else {
                 resetSelectedDates()
-                historyOfSelectedCell.append(selectedCell)
                 self.checkInDate = selectedDate
-                selectedCell.selected()
             }
         } else if checkInDate == nil, checkOutDate == nil {
-            historyOfSelectedCell.append(selectedCell)
             checkInDate = selectedDate
-            selectedCell.selected()
         }
+        
+        historyOfSelectedIndexPath.append(indexPath)
+        updateSelectedDateToTotalReservationDates(at: indexPath)
+        updateCalendarCollectionViewDataSource()
+        selectedCell.selected()
+    }
+    
+    private func updateSelectedDateToTotalReservationDates(at indexPath: IndexPath) {
+        totalReservationDates[indexPath.section][indexPath.item].selected()
+    }
+    
+    private func updateCalendarCollectionViewDataSource() {
+        calendarCollectionViewDataSource.update(with: totalReservationDates)
+        calendarCollectionView.reloadData()
     }
     
     private func resetSelectedDates() {
-        historyOfSelectedCell.forEach {
-            $0.deselected()
+        historyOfSelectedIndexPath.forEach {
+            totalReservationDates[$0.section][$0.item].deselected()
         }
-        historyOfSelectedCell.removeAll()
+
+        historyOfSelectedIndexPath.removeAll()
+        updateCalendarCollectionViewDataSource()
+        
         checkInDate = nil
         checkOutDate = nil
     }

@@ -8,6 +8,10 @@ final class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSour
         self.totalReservationDates = totalReservationDates
     }
     
+    func update(with totalReservationDates: [ReservationDates]) {
+        self.totalReservationDates = totalReservationDates
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         totalReservationDates.count
     }
@@ -33,6 +37,11 @@ final class CalendarCollectionViewDataSource: NSObject, UICollectionViewDataSour
             return cell
         }
         cell.updateDay(dayDate.day, isEnabled: dayDate.isEnabled)
+        if dayDate.isSelected {
+            cell.selected()
+        } else {
+            cell.deselected()
+        }
         return cell
     }
     
