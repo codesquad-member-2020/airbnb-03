@@ -110,6 +110,7 @@
 		8DC8A917248956A300756086 /* SectionSummaryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A916248956A300756086 /* SectionSummaryFactory.swift */; };
 		8DC8A919248956B200756086 /* SectionAmenitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */; };
 		8DC8A91B248956BB00756086 /* SectionAmenityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */; };
+		8DC8A9242489891700756086 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A9232489891700756086 /* BottomBarView.swift */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
 		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
 		8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA197024754B7900B3C167 /* SearchFilterView.xib */; };
@@ -238,6 +239,7 @@
 		8DC8A916248956A300756086 /* SectionSummaryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSummaryFactory.swift; sourceTree = "<group>"; };
 		8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionAmenitiesFactory.swift; sourceTree = "<group>"; };
 		8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionAmenityFactory.swift; sourceTree = "<group>"; };
+		8DC8A9232489891700756086 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
 		8DCA197024754B7900B3C167 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
@@ -610,6 +612,7 @@
 				8D9B7A18247C1D4500D9A99D /* DetailButton.swift */,
 				8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */,
 				8D6A9DB92487F39600850C94 /* ReserveButton.swift */,
+				8DC8A9232489891700756086 /* BottomBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 				8D4633C12488EF3D00BBD5C2 /* StayDetailUseCase.swift in Sources */,
 				380B0237248834F70061C8C9 /* GuestsSaveFooterView.swift in Sources */,
 				38F1F8982479614500454668 /* StayListCollectionViewDataSource.swift in Sources */,
+				8DC8A9242489891700756086 /* BottomBarView.swift in Sources */,
 				3899CAE32481407D006CB23E /* ModalIndicatorView.swift in Sources */,
 				8D32844524764B0F0078678A /* SearchTextFieldDelegate.swift in Sources */,
 				8DCA197324754D5A00B3C167 /* SearchFilterView.swift in Sources */,

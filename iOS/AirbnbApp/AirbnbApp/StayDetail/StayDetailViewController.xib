@@ -82,7 +82,7 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="zPR-jX-7L8"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="rft-re-ZP4"/>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-Fq-gtQ" userLabel="Bottom Bar View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-Fq-gtQ" userLabel="Bottom Bar View" customClass="BottomBarView" customModule="AirbnbApp" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="792" width="414" height="70"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwv-CC-KuX" customClass="ReserveButton" customModule="AirbnbApp" customModuleProvider="target">
@@ -132,6 +132,9 @@
                         <constraint firstItem="tgd-uV-wAW" firstAttribute="bottom" secondItem="Vwv-CC-KuX" secondAttribute="bottom" id="dz1-0t-oNQ"/>
                         <constraint firstAttribute="trailing" secondItem="Vwv-CC-KuX" secondAttribute="trailing" constant="25" id="vZ9-9c-y6m"/>
                     </constraints>
+                    <connections>
+                        <outlet property="priceLabel" destination="ZDk-Ky-4hn" id="fEx-cP-vEo"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

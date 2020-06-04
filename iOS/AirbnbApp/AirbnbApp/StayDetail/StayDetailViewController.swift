@@ -5,15 +5,19 @@ class StayDetailViewController: UIViewController {
     @IBOutlet weak var thumbImagesPagingView: ThumbImagePagingView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var topBarView: UIView!
-    @IBOutlet weak var bottomBarView: UIView!
+    @IBOutlet weak var bottomBarView: BottomBarView!
 
     var stayDetailID: Int!
     private var stayDetail: StayDetail!
+    private var stayDetailDataSource: StayDetailDataSource?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fetchStayDetail(id: stayDetailID)
+        self.stayDetailDataSource = .init() { [weak self] stayDetail in
+            self?.bottomBarView.priceLabel.text = "$ \(stayDetail.priceInfo.price)"
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -66,10 +70,12 @@ class StayDetailViewController: UIViewController {
         StayDetailUseCase.getStayDetail(url: url) { result in
             switch result {
             case .success(let stayDetail):
-                DispatchQueue.main.async {
-                    self.configureStackView(with: stayDetail)
-                    self.thumbImagesPagingView.configureStackView(numberOfImage: stayDetail.images.count, cornerRadius: 0)
-                    self.fetchImages(with: stayDetail.images)
+                DispatchQueue.main.async { [weak self] in
+                    self?.stayDetailDataSource?.configure(with: stayDetail)
+
+                    self?.configureStackView(with: stayDetail)
+                    self?.thumbImagesPagingView.configureStackView(numberOfImage: stayDetail.images.count, cornerRadius: 0)
+                    self?.fetchImages(with: stayDetail.images)
                 }
             case .failure(let error):
                 print("Errorrrrr")
@@ -79,10 +85,10 @@ class StayDetailViewController: UIViewController {
 
     private func fetchImages(with imageURLs: [String]) {
         imageURLs.enumerated().forEach { (index, imageURL) in
-            StayDetailUseCase.getImage(from: imageURL) { result in
+            StayDetailUseCase.getImage(from: imageURL) { [weak self] result in
                 switch result {
                 case .success(let image):
-                    self.thumbImagesPagingView.updateImage(at: index, image: image)
+                    self?.thumbImagesPagingView.updateImage(at: index, image: image)
                 case .failure(let error):
                     debugPrint("Errrrrrr")
                 }

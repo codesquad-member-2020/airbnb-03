@@ -13,7 +13,7 @@ class StayDetailDataSource: ViewModelBinding {
 
     private var changedHandler: Handler
 
-    init(with stayDetail: Key? = nil, changedHandler: @escaping Handler = {_ in }) {
+    init(with stayDetail: StayDetail? = nil, changedHandler: @escaping Handler = {_ in }) {
         self.stayDetail = stayDetail
         self.changedHandler = changedHandler
     }

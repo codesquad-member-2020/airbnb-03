@@ -11,6 +11,7 @@ struct StayDetail: Decodable {
     let reviewInfo: ReviewInfo
     let hostInfo: HostInfo
     let roomInfo: RoomInfo
+    let priceInfo: PriceInfo
 }
 
 extension StayDetail {
@@ -37,5 +38,9 @@ extension StayDetail {
         let bathrooms: Int
         let bedrooms: Int
         let beds: Int
+    }
+
+    struct PriceInfo: Decodable {
+        let price: Float
     }
 }
