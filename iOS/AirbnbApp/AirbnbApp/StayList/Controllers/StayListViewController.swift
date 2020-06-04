@@ -147,9 +147,20 @@ extension StayListViewController: SearchFilterViewTapDelegate {
         datesFilterViewController.searchDelegate = self
         present(datesFilterViewController, animated: true)
     }
+    
+    func didTapGuestsFilter() {
+        let guestsFilterViewController = GuestsFilterViewController()
+        guestsFilterViewController.searchDelegate = self
+        present(guestsFilterViewController, animated: true)
+        var guests = searchFilterQuery.filteredGuests()
+        if guests == (0, 0, 0) {
+            guests = (1, 0, 0)
+        }
+        guestsFilterViewController.updateGuests(guests)
+    }
 }
 
-extension StayListViewController: DatesFilterViewControllerSearchDelegate {
+extension StayListViewController: DatesFilterSearchDelegate {
     func searchStayList(dates: (checkIn: String?, checkOut: String?)) {
         guard let checkIn = dates.checkIn, let checkOut = dates.checkOut
             else {
@@ -161,10 +172,25 @@ extension StayListViewController: DatesFilterViewControllerSearchDelegate {
     }
 }
 
+extension StayListViewController: GuestsFilterSearchDelegate {
+    func searchStayList(guests: (adults: Int?, children: Int?, infants: Int?)) {
+        searchFilterQuery.updateFilters(
+            guest: SearchFilterQuery.Guest(
+                adults: guests.adults,
+                children: guests.children,
+                infants: guests.infants))
+        if searchFilterQuery.filteredGuests() != (1, 0, 0) {
+            searchFilterView.updateGuestsFiltered(with: true)
+            fetchStayList()
+        } else {
+            searchFilterView.updateGuestsFiltered(with: false)
+        }
+    }
+}
+
 // MARK:- UI & Layout
 
 extension StayListViewController {
-    
     private func configureUI() {
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)

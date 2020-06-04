@@ -16,7 +16,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZrR-G0-IBa">
                     <rect key="frame" x="0.0" y="0.0" width="126" height="40"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p8-VY-cQI" customClass="DatesFilterButton" customModule="AirbnbApp" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p8-VY-cQI" customClass="FilterButton" customModule="AirbnbApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="36" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="Dates">
@@ -26,14 +26,17 @@
                                 <action selector="didTapDatesFilter:" destination="iN0-l3-epB" eventType="touchUpInside" id="kJV-fL-n1d"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHb-5k-hdf" customClass="PeopleFilterButton" customModule="AirbnbApp" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHb-5k-hdf" customClass="FilterButton" customModule="AirbnbApp" customModuleProvider="target">
                             <rect key="frame" x="44" y="0.0" width="43" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="Guests">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="didTapGuestsFilter:" destination="iN0-l3-epB" eventType="touchUpInside" id="7be-l2-VW6"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrv-9G-tao" customClass="PriceFilterButton" customModule="AirbnbApp" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrv-9G-tao" customClass="FilterButton" customModule="AirbnbApp" customModuleProvider="target">
                             <rect key="frame" x="95" y="0.0" width="31" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="Price">
@@ -51,6 +54,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="guestsFilterButton" destination="RHb-5k-hdf" id="hCB-7H-bSv"/>
+            </connections>
             <point key="canvasLocation" x="-249.27536231884059" y="-35.491071428571423"/>
         </view>
     </objects>

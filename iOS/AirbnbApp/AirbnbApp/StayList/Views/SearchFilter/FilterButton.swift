@@ -1,6 +1,6 @@
 import UIKit
 
-class FilterButton: UIButton {
+final class FilterButton: UIButton {
     
     private let sidePadding: CGFloat = 20
     
@@ -21,10 +21,11 @@ class FilterButton: UIButton {
 
     override var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize
-        return CGSize(width: size.width + (sidePadding * 2),
-                      height: size.height)
+        return CGSize(width: size.width + (sidePadding * 2), height: size.height)
+    }
+    
+    func update(with filtered: Bool) {
+        backgroundColor = filtered ? .darkGray : .white
+        setTitleColor(filtered ? .white : .darkGray, for: .normal)
     }
 }
-
-class PeopleFilterButton: FilterButton { }
-class PriceFilterButton: FilterButton { }

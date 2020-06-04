@@ -1,19 +1,16 @@
 import UIKit
 
-protocol DatesFilterFixedFooterViewDelegate: class {
+protocol SearchFooterViewDelegate: class {
     func didTapSearchButton()
     func didTapClearButton()
 }
 
-final class DatesFilterFixedFooterView: UIView, ViewFromXib {
+final class SearchFooterView: UIView {
     
     private enum Color {
         static let searchEnabled: UIColor? = UIColor(named: "button.enabled")
         static let searchDisabled: UIColor? = UIColor(named: "button.disabled")
     }
-    
-    static var xibName: String = String(describing: DatesFilterFixedFooterView.self)
-    static let height: CGFloat = 96
     
     @IBOutlet weak var searchButton: DatesFilterSearchButton! {
         didSet {
@@ -26,7 +23,7 @@ final class DatesFilterFixedFooterView: UIView, ViewFromXib {
         }
     }
     
-    weak var delegate: DatesFilterFixedFooterViewDelegate?
+    weak var delegate: SearchFooterViewDelegate?
     
     override func draw(_ rect: CGRect) {
         drawEdgeLine(edge: .top, lineWidth: 0.3, lineColor: .lightGray)
@@ -46,17 +43,18 @@ final class DatesFilterFixedFooterView: UIView, ViewFromXib {
         clearButton.isEnabled = false
     }
     
-    func updateSearchButton(with isSelected: Bool) {
-        searchButton.isEnabled = isSelected
-        searchButton.backgroundColor = isSelected ? Color.searchEnabled : Color.searchDisabled
-        searchButton.tintColor = isSelected ? .white : .black
+    func updateSearchButton(with isEnabled: Bool) {
+        searchButton.isEnabled = isEnabled
+        searchButton.backgroundColor = isEnabled ? Color.searchEnabled : Color.searchDisabled
+        searchButton.tintColor = isEnabled ? .white : .black
     }
     
-    func updateClearButton(with isSelected: Bool) {
-        clearButton.isEnabled = isSelected
+    func updateClearButton(with isEnabled: Bool) {
+        clearButton.isEnabled = isEnabled
     }
     
-    @IBAction func didTapSearch(_ sender: Any) {
+    @IBAction func didTapSearch(_ button: UIButton) {
+        button.animateTap(withDuration: 0.4)
         delegate?.didTapSearchButton()
     }
     

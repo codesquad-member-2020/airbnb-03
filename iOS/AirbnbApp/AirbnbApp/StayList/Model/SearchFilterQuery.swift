@@ -2,17 +2,17 @@ import Foundation
 
 struct SearchFilterQuery: Encodable {
     private var pageOffset: Int = 1
-    private var checkInDate: String? = nil
-    private var checkOutDate: String? = nil
-    private var adults: Int? = nil
-    private var children: Int? = nil
-    private var infants: Int? = nil
-    private var minPrice: Int? = nil
-    private var maxPrice: Int? = nil
-    private var minLatitude: Double? = nil
-    private var minLongitude: Double? = nil
-    private var maxLatitude: Double? = nil
-    private var maxLongitude: Double? = nil
+    private(set) var checkInDate: String? = nil
+    private(set) var checkOutDate: String? = nil
+    private(set) var adults: Int? = nil
+    private(set) var children: Int? = nil
+    private(set) var infants: Int? = nil
+    private(set) var minPrice: Int? = nil
+    private(set) var maxPrice: Int? = nil
+    private(set) var minLatitude: Double? = nil
+    private(set) var minLongitude: Double? = nil
+    private(set) var maxLatitude: Double? = nil
+    private(set) var maxLongitude: Double? = nil
     
     struct Date {
         let checkIn, checkOut: String?
@@ -28,6 +28,10 @@ struct SearchFilterQuery: Encodable {
     
     struct LocationRange {
         let minLatitude, minLongitude, maxLatitude, maxLongitude: Double?
+    }
+    
+    func filteredGuests() -> (Int, Int, Int) {
+        return (adults ?? 0, children ?? 0, infants ?? 0)
     }
 }
 

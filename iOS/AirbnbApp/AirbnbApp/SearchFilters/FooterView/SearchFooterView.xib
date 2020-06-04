@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DatesFilterFixedFooterView" customModule="AirbnbApp" customModuleProvider="target">
+        <view contentMode="scaleToFill" ambiguous="YES" id="iN0-l3-epB" customClass="SearchFooterView" customModule="AirbnbApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -28,7 +28,7 @@
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="medium"/>
                     </state>
                     <connections>
-                        <action selector="didTapSearch:" destination="iN0-l3-epB" eventType="touchUpInside" id="zih-2B-7Im"/>
+                        <action selector="didTapSearch:" destination="iN0-l3-epB" eventType="touchUpInside" id="tFw-mx-cSw"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKA-Xq-3jy">
@@ -38,7 +38,7 @@
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="didTapClear:" destination="iN0-l3-epB" eventType="touchUpInside" id="qgY-Qk-0Nm"/>
+                        <action selector="didTapClear:" destination="iN0-l3-epB" eventType="touchUpInside" id="gRp-0u-6s7"/>
                     </connections>
                 </button>
             </subviews>
@@ -47,13 +47,14 @@
                 <constraint firstItem="qpy-ux-Z3t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="9JV-9P-yUm"/>
                 <constraint firstItem="KKA-Xq-3jy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="Bng-LM-aJH"/>
                 <constraint firstItem="KKA-Xq-3jy" firstAttribute="centerY" secondItem="qpy-ux-Z3t" secondAttribute="centerY" id="DX9-Ao-w0k"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qpy-ux-Z3t" secondAttribute="trailing" constant="28" id="XOb-Ps-dLl"/>
+                <constraint firstAttribute="bottom" secondItem="qpy-ux-Z3t" secondAttribute="bottom" constant="8" id="Hmu-sy-VPl"/>
+                <constraint firstAttribute="trailing" secondItem="qpy-ux-Z3t" secondAttribute="trailing" constant="28" id="XOb-Ps-dLl"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="clearButton" destination="KKA-Xq-3jy" id="DZw-Aq-Hgj"/>
-                <outlet property="searchButton" destination="qpy-ux-Z3t" id="JQC-Pw-1xM"/>
+                <outlet property="clearButton" destination="KKA-Xq-3jy" id="saM-ef-wMV"/>
+                <outlet property="searchButton" destination="qpy-ux-Z3t" id="GyK-Fr-uGL"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="18.415178571428569"/>
         </view>
