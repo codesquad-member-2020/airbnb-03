@@ -78,19 +78,19 @@ public class AirbnbController {
     public ResponseEntity<CommonMessage> cancelTheProperties(@PathVariable Long propertyId) {
 
         reservationService.cancelTheProperties(propertyId);
-        return new ResponseEntity<>(getMessage("예약 취소", "200"), HttpStatus.OK);
+        return new ResponseEntity<>(getMessage("200", "예약 취소"), HttpStatus.OK);
     }
 
     @PutMapping("/saved/{propertyId}")
     public ResponseEntity<CommonMessage> savedProperties(@PathVariable("propertyId") Long propertyId, @RequestParam(value = "name", defaultValue = "Alex") String name) {
         airbnbService.saveProperties(propertyId, name);
-        return new ResponseEntity<>(getMessage("즐겨찾기 성공", "200"), HttpStatus.OK);
+        return new ResponseEntity<>(getMessage("200", "즐겨찾기 성공"), HttpStatus.OK);
     }
 
     @DeleteMapping("/saved/{propertyId}")
     public ResponseEntity<CommonMessage> unSavedProperties(@PathVariable("propertyId") Long propertyId, @RequestParam(value = "name", defaultValue = "Alex") String name) {
         airbnbService.unSaveProperties(propertyId, name);
-        return new ResponseEntity<>(getMessage("즐겨찾기 삭제", "200"), HttpStatus.OK);
+        return new ResponseEntity<>(getMessage("200", "즐겨찾기 삭제"), HttpStatus.OK);
     }
 
     @GetMapping("/saved")
