@@ -17,6 +17,9 @@ struct StayDetail: Decodable {
 extension StayDetail {
     struct LocationInfo: Decodable {
         let address: String
+        let description: String
+        let latitude: Double
+        let longitude: Double
     }
 
     struct ReviewInfo: Decodable {

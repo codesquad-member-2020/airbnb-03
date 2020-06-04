@@ -58,6 +58,7 @@ class StayDetailViewController: UIViewController {
         addSectionInStackView(title: nil, subContentView: SectionBriefInfoFactory.makeView(for: stayDetail))
         addSectionInStackView(title: "Summary", subContentView: SectionSummaryFactory.makeView(for: stayDetail))
         addSectionInStackView(title: "Amenities", subContentView: SectionAmenitiesFactory.makeView(for: stayDetail, amenitiesLimit: 5))
+        addSectionInStackView(title: "Location", subContentView: SectionMapFactory.makeView(for: stayDetail))
     }
 
     private func addSectionInStackView(title: String?, subContentView: ContentView) {
