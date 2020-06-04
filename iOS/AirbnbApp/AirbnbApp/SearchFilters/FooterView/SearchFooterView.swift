@@ -54,7 +54,7 @@ final class SearchFooterView: UIView {
     }
     
     @IBAction func didTapSearch(_ button: UIButton) {
-        button.animate(initialAlpha: 1, duration: 0.4)
+        button.animateTap(withDuration: 0.4)
         delegate?.didTapSearchButton()
     }
     

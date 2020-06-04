@@ -46,7 +46,7 @@ final class GuestsFilterButtonSectionView: UIView {
     }
     
     @IBAction func didTapChangeButton(_ button: UIButton) {
-        button.animate(initialScale: 0.7, initialAlpha: 0.4, duration: 0.3)
+        button.animateTap(initialScale: 0.7, initialAlpha: 0.4, withDuration: 0.3)
     }
     
     func update(with guests: (adults: Int, children: Int, infants: Int)) {
