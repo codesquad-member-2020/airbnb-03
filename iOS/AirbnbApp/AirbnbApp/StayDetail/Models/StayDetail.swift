@@ -5,6 +5,7 @@ struct StayDetail: Decodable {
     let title: String
     let reservable: Bool
     let saved: Bool
+    let images: [String]
 
     let locationInfo: LocationInfo
     let reviewInfo: ReviewInfo

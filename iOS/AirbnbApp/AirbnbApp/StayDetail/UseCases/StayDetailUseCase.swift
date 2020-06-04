@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 struct StayDetailUseCase {
     static func getStayDetail(
@@ -13,6 +13,22 @@ struct StayDetailUseCase {
                     completionHandler(.success(decoded))
                 } else {
                     debugPrint("Decoding StayDetail is failed.")
+                }
+            case .failure(let error):
+                debugPrint(error)
+                completionHandler(.failure(error))
+            }
+        }
+    }
+
+    static func getImage(from urlString: String, completionHandler: @escaping (Result<UIImage, Error>) -> Void) {
+        NetworkManager.getResource(from: urlString) { result in
+            switch result {
+            case .success(let data):
+                if let decoded = UIImage(data: data) {
+                    completionHandler(.success(decoded))
+                } else {
+                    debugPrint("Decoding UIImage is failed.")
                 }
             case .failure(let error):
                 debugPrint(error)

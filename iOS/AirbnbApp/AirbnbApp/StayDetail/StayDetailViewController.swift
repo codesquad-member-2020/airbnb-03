@@ -14,8 +14,6 @@ class StayDetailViewController: UIViewController {
         super.viewDidLoad()
 
         fetchStayDetail(id: stayDetailID)
-//        thumbImagesPagingView.configureStackView(numberOfImage: stayDetail.images.count, cornerRadius: 0)
-//        fetchImages(with: stayDetail.images)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -23,12 +21,6 @@ class StayDetailViewController: UIViewController {
 
         topBarView.drawBorder(.bottom)
         bottomBarView.drawBorder(.top)
-
-        let images: [UIImage] = [#imageLiteral(resourceName: "host.super"), #imageLiteral(resourceName: "host.super"), #imageLiteral(resourceName: "host.super")]
-        thumbImagesPagingView.configureStackView(numberOfImage: images.count, cornerRadius: 0)
-        for (index, image) in images.enumerated() {
-            thumbImagesPagingView.updateImage(at: index, image: image)
-        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -76,10 +68,26 @@ class StayDetailViewController: UIViewController {
             case .success(let stayDetail):
                 DispatchQueue.main.async {
                     self.configureStackView(with: stayDetail)
+                    self.thumbImagesPagingView.configureStackView(numberOfImage: stayDetail.images.count, cornerRadius: 0)
+                    self.fetchImages(with: stayDetail.images)
                 }
             case .failure(let error):
                 print("Errorrrrr")
             }
         }
+    }
+
+    private func fetchImages(with imageURLs: [String]) {
+        imageURLs.enumerated().forEach { (index, imageURL) in
+            StayDetailUseCase.getImage(from: imageURL) { result in
+                switch result {
+                case .success(let image):
+                    self.thumbImagesPagingView.updateImage(at: index, image: image)
+                case .failure(let error):
+                    debugPrint("Errrrrrr")
+                }
+            }
+        }
+
     }
 }
