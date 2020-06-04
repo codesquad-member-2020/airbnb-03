@@ -22,11 +22,17 @@ final class NetworkManager {
             }
         }
     }
-    
+
     static func getResource(
         from urlString: String,
         completionHandler: @escaping (Result<Data, AFError>) -> Void) {
         let url = URL(string: urlString)!
+        getResource(from: url, completionHandler: completionHandler)
+    }
+
+    static func getResource(
+        from url: URL,
+        completionHandler: @escaping (Result<Data, AFError>) -> Void) {
         AF.request(url).responseData { (response) in
             switch response.result {
             case .success(let data):
