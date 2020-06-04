@@ -98,9 +98,9 @@ extension StayListViewController: StayListCollectionViewTapDelegate {
         stayListCollectionViewDataSource.idForCell(at: indexPath) { [weak self] (id) in
             let detailViewController = StayDetailViewController()
             #warning("Request detail data")
-            self?.navigationController?.pushViewController(
-                detailViewController,
-                animated: true)
+            self?.navigationController?.pushViewController(detailViewController, animated: true)
+//            detailViewController.modalPresentationStyle = .fullScreen
+//            present(detailViewController, animated: true, completion: nil)
         }
     }
 }

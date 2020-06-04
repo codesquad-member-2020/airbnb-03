@@ -17,9 +17,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="iH2-Lz-aRp"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="IrN-fo-Loq"/>
                     </constraints>
-                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -33,10 +33,11 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="mai-vb-8QM" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0og-9n-SQ7"/>
-                <constraint firstItem="mai-vb-8QM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="87T-7t-Fqd"/>
+                <constraint firstItem="mai-vb-8QM" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="0og-9n-SQ7"/>
+                <constraint firstItem="mai-vb-8QM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="87T-7t-Fqd"/>
                 <constraint firstItem="aKY-Ju-gSm" firstAttribute="top" secondItem="mai-vb-8QM" secondAttribute="bottom" constant="10" id="hcs-rP-j2i"/>
-                <constraint firstItem="aKY-Ju-gSm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mEq-bk-Y1H"/>
+                <constraint firstItem="aKY-Ju-gSm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mEq-bk-Y1H"/>
+                <constraint firstAttribute="bottom" secondItem="aKY-Ju-gSm" secondAttribute="bottom" id="mmW-PL-6Dk"/>
                 <constraint firstItem="mai-vb-8QM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qPc-NX-1XJ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

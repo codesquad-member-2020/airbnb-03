@@ -14,13 +14,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★ 4.83(260)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nq-lT-Xh8">
-                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="16"/>
+                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="36"/>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downtown Seattle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hi-5G-DLT">
-                    <rect key="frame" x="94.5" y="0.0" width="110" height="16"/>
+                    <rect key="frame" x="94.5" y="10" width="110" height="16"/>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -32,6 +32,7 @@
                 <constraint firstItem="0hi-5G-DLT" firstAttribute="leading" secondItem="6nq-lT-Xh8" secondAttribute="trailing" constant="16" id="0nF-Oo-vFq"/>
                 <constraint firstItem="0hi-5G-DLT" firstAttribute="centerY" secondItem="6nq-lT-Xh8" secondAttribute="centerY" id="7DO-lr-VrP"/>
                 <constraint firstItem="6nq-lT-Xh8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EWX-GI-aTb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="6nq-lT-Xh8" secondAttribute="bottom" id="O2Y-qh-ahL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

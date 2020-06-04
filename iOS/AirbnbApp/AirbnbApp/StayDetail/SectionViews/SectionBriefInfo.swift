@@ -12,7 +12,7 @@ class SectionBriefInfo: UIView, ViewFromXib {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        if briefInfo != nil { configure() }
+        configure()
     }
 
     private func configure() {

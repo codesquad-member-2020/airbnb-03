@@ -12,7 +12,7 @@ final class SectionTitleInfo: UIView, ViewFromXib {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        if titleInfo != nil { configure() }
+        configure()
     }
 
     private func configure() {
