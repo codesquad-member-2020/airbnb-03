@@ -18,7 +18,13 @@ class SectionAmenities: UIView, ContentView, ViewFromXib {
 }
 
 struct AmenityCollection {
-    let items: [Amenity]
+    private(set) var items: [Amenity]
+
+    mutating func limited(_ limit: Int) -> Self {
+        items = Array<Amenity>(items[0..<limit])
+
+        return self
+    }
 }
 
 extension AmenityCollection {
@@ -31,8 +37,9 @@ extension AmenityCollection {
 }
 
 class SectionAmenitiesFactory {
-    static func makeView(for stayDetail: StayDetail) -> SectionAmenities {
-        makeView(for: AmenityCollection(for: stayDetail))
+    static func makeView(for stayDetail: StayDetail, amenitiesLimit number: Int) -> SectionAmenities {
+        var amenities = AmenityCollection(for: stayDetail)
+        return makeView(for: amenities.limited(number))
     }
 
     static func makeView(for amenities: AmenityCollection) -> SectionAmenities {

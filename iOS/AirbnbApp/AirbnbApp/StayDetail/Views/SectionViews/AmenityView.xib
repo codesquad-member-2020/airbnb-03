@@ -30,6 +30,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="4pB-4R-cQe" secondAttribute="bottom" id="2gp-b0-5oh"/>
+                <constraint firstItem="4pB-4R-cQe" firstAttribute="height" secondItem="2eW-Rl-uKb" secondAttribute="height" id="3q0-Hg-yvO"/>
                 <constraint firstItem="2eW-Rl-uKb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="74l-Mg-sqh"/>
                 <constraint firstItem="2eW-Rl-uKb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OXV-8k-fa1"/>
                 <constraint firstItem="4pB-4R-cQe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hgU-Us-wQT"/>
