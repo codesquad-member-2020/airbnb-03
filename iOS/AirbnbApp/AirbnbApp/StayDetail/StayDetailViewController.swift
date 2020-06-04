@@ -7,12 +7,15 @@ class StayDetailViewController: UIViewController {
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var bottomBarView: UIView!
 
+    var stayDetailID: Int!
     private var stayDetail: StayDetail!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchStayDetail(id: 1)
+        fetchStayDetail(id: stayDetailID)
+//        thumbImagesPagingView.configureStackView(numberOfImage: stayDetail.images.count, cornerRadius: 0)
+//        fetchImages(with: stayDetail.images)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +40,8 @@ class StayDetailViewController: UIViewController {
     // MARK: - IBAction
 
     @IBAction func backButtonTouched(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func detailTouched(_ sender: Any) {
@@ -72,7 +76,6 @@ class StayDetailViewController: UIViewController {
             case .success(let stayDetail):
                 DispatchQueue.main.async {
                     self.configureStackView(with: stayDetail)
-                    print("Hooooola")
                 }
             case .failure(let error):
                 print("Errorrrrr")
