@@ -1,14 +1,10 @@
 import UIKit
 
-class SectionSummary: UIView, ContentView, ViewFromXib {
+class SectionSummary: ContentView, ViewFromXib {
 
     static var xibName = String(describing: SectionSummary.self)
 
     @IBOutlet weak var textView: UITextView!
-
-    func updateChanges() {
-
-    }
 }
 
 class SectionSummaryFactory {

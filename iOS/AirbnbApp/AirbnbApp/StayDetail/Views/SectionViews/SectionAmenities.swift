@@ -1,6 +1,6 @@
 import UIKit
 
-class SectionAmenities: UIView, ContentView, ViewFromXib {
+class SectionAmenities: ContentView, ViewFromXib {
     static let xibName = String(describing: SectionAmenities.self)
 
     @IBOutlet weak var stackView: UIStackView!
@@ -10,10 +10,6 @@ class SectionAmenities: UIView, ContentView, ViewFromXib {
         super.awakeFromNib()
 
         stackView.resetArrangedSubViews()
-    }
-
-    func updateChanges() {
-
     }
 }
 

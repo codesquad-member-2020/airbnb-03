@@ -1,14 +1,10 @@
 import UIKit
 
-final class SectionTitleInfo: UIView, ContentView, ViewFromXib {
+final class SectionTitleInfo: ContentView, ViewFromXib {
     static let xibName = String(describing: SectionTitleInfo.self)
 
     @IBOutlet weak var reviewsLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-
-    func updateChanges() {
-
-    }
 }
 
 struct TitleInfo {

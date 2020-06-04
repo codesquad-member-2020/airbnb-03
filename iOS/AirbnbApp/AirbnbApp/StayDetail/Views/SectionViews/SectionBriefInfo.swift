@@ -1,14 +1,10 @@
 import UIKit
 
-class SectionBriefInfo: UIView, ContentView, ViewFromXib {
+class SectionBriefInfo: ContentView, ViewFromXib {
     static var xibName: String = .init(describing: SectionBriefInfo.self)
 
     @IBOutlet weak var hostNameLabel: UILabel!
     @IBOutlet weak var roomInfoLabel: UILabel!
-
-    func updateChanges() {
-
-    }
 }
 
 struct BriefInfo {

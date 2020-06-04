@@ -29,6 +29,5 @@ class DetailSectionView: UIView, ViewFromXib {
     }
 }
 
-protocol ContentView: UIView {
-    func updateChanges()
+class ContentView: UIView {
 }
