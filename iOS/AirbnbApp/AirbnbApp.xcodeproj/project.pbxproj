@@ -100,6 +100,16 @@
 		8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */; };
 		8DA4BA33247FB7B800FFE332 /* StayDetailSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */; };
 		8DC8A90524893E4400756086 /* AmenityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC8A90424893E4400756086 /* AmenityView.xib */; };
+		8DC8A908248955D400756086 /* TitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A907248955D400756086 /* TitleInfo.swift */; };
+		8DC8A90A2489560D00756086 /* BriefInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A9092489560D00756086 /* BriefInfo.swift */; };
+		8DC8A90C2489561800756086 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A90B2489561800756086 /* Summary.swift */; };
+		8DC8A90E2489562100756086 /* Amenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A90D2489562100756086 /* Amenities.swift */; };
+		8DC8A9102489562A00756086 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A90F2489562A00756086 /* Amenity.swift */; };
+		8DC8A9132489567200756086 /* SectionTitleInfoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A9122489567200756086 /* SectionTitleInfoFactory.swift */; };
+		8DC8A9152489569300756086 /* SectionBriefInfoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A9142489569300756086 /* SectionBriefInfoFactory.swift */; };
+		8DC8A917248956A300756086 /* SectionSummaryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A916248956A300756086 /* SectionSummaryFactory.swift */; };
+		8DC8A919248956B200756086 /* SectionAmenitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */; };
+		8DC8A91B248956BB00756086 /* SectionAmenityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
 		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
 		8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA197024754B7900B3C167 /* SearchFilterView.xib */; };
@@ -218,6 +228,16 @@
 		8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDetailSectionViewController.swift; sourceTree = "<group>"; };
 		8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayDetailSectionViewController.xib; sourceTree = "<group>"; };
 		8DC8A90424893E4400756086 /* AmenityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmenityView.xib; sourceTree = "<group>"; };
+		8DC8A907248955D400756086 /* TitleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfo.swift; sourceTree = "<group>"; };
+		8DC8A9092489560D00756086 /* BriefInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefInfo.swift; sourceTree = "<group>"; };
+		8DC8A90B2489561800756086 /* Summary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		8DC8A90D2489562100756086 /* Amenities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amenities.swift; sourceTree = "<group>"; };
+		8DC8A90F2489562A00756086 /* Amenity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
+		8DC8A9122489567200756086 /* SectionTitleInfoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleInfoFactory.swift; sourceTree = "<group>"; };
+		8DC8A9142489569300756086 /* SectionBriefInfoFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBriefInfoFactory.swift; sourceTree = "<group>"; };
+		8DC8A916248956A300756086 /* SectionSummaryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSummaryFactory.swift; sourceTree = "<group>"; };
+		8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionAmenitiesFactory.swift; sourceTree = "<group>"; };
+		8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionAmenityFactory.swift; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
 		8DCA197024754B7900B3C167 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
@@ -589,12 +609,12 @@
 				8D9B7A14247C09F700D9A99D /* DetailSectionView.xib */,
 				8D9B7A18247C1D4500D9A99D /* DetailButton.swift */,
 				8D9B7A1A247C206400D9A99D /* RoundedBorder.swift */,
-				8D6A9DB82487EFBC00850C94 /* SectionViews */,
+				8D6A9DB92487F39600850C94 /* ReserveButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8D6A9DB82487EFBC00850C94 /* SectionViews */ = {
+		8D6A9DB82487EFBC00850C94 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				8D5CE98424868F1600C850A1 /* SectionTitleInfo.swift */,
@@ -607,9 +627,8 @@
 				8D5CE9882486939E00C850A1 /* SectionAmenities.xib */,
 				8D5CE99224869A1C00C850A1 /* AmenityView.swift */,
 				8DC8A90424893E4400756086 /* AmenityView.xib */,
-				8D6A9DB92487F39600850C94 /* ReserveButton.swift */,
 			);
-			path = SectionViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8D6A9DBF24880A1B00850C94 /* Reservation */ = {
@@ -650,6 +669,7 @@
 				8D4633C22488EF5D00BBD5C2 /* ViewModels */,
 				8D4633BF2488EEC800BBD5C2 /* UseCases */,
 				8D4633C52488EFDA00BBD5C2 /* Views */,
+				8DC8A91C248957B500756086 /* Sections */,
 				8D6A9DBF24880A1B00850C94 /* Reservation */,
 			);
 			path = StayDetail;
@@ -662,6 +682,40 @@
 				8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */,
 			);
 			path = StayDetailSection;
+			sourceTree = "<group>";
+		};
+		8DC8A906248955B200756086 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8DC8A907248955D400756086 /* TitleInfo.swift */,
+				8DC8A9092489560D00756086 /* BriefInfo.swift */,
+				8DC8A90B2489561800756086 /* Summary.swift */,
+				8DC8A90D2489562100756086 /* Amenities.swift */,
+				8DC8A90F2489562A00756086 /* Amenity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8DC8A9112489564D00756086 /* ViewFactories */ = {
+			isa = PBXGroup;
+			children = (
+				8DC8A9122489567200756086 /* SectionTitleInfoFactory.swift */,
+				8DC8A9142489569300756086 /* SectionBriefInfoFactory.swift */,
+				8DC8A916248956A300756086 /* SectionSummaryFactory.swift */,
+				8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */,
+				8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */,
+			);
+			path = ViewFactories;
+			sourceTree = "<group>";
+		};
+		8DC8A91C248957B500756086 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				8DC8A906248955B200756086 /* Models */,
+				8D6A9DB82487EFBC00850C94 /* Views */,
+				8DC8A9112489564D00756086 /* ViewFactories */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 		BB525B3078B278E3107AD411 /* Frameworks */ = {
@@ -886,6 +940,8 @@
 				8D5CE9612484E77100C850A1 /* SectionSummary.swift in Sources */,
 				8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */,
 				3899CB0624829859006CB23E /* Dates.swift in Sources */,
+				8DC8A90A2489560D00756086 /* BriefInfo.swift in Sources */,
+				8DC8A9102489562A00756086 /* Amenity.swift in Sources */,
 				3899CAEF24815434006CB23E /* DatesFilterSearchButton.swift in Sources */,
 				8D328443247647900078678A /* ViewFromXib.swift in Sources */,
 				8D5CE9872486939400C850A1 /* SectionAmenities.swift in Sources */,
@@ -893,6 +949,7 @@
 				8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */,
 				38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */,
 				3899CB092484FB28006CB23E /* CalendarCollectionViewDataSource.swift in Sources */,
+				8DC8A9132489567200756086 /* SectionTitleInfoFactory.swift in Sources */,
 				38DC238B247BDAE200DC3BCC /* NetworkManager.swift in Sources */,
 				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
 				8D6A9DBA2487F39600850C94 /* ReserveButton.swift in Sources */,
@@ -902,6 +959,7 @@
 				8D4633BB2488D78100BBD5C2 /* Endpoint.swift in Sources */,
 				38109A3C2488268D003EC0AC /* UIView+Nib.swift in Sources */,
 				3899CB0424828B4A006CB23E /* ReservationDate.swift in Sources */,
+				8DC8A917248956A300756086 /* SectionSummaryFactory.swift in Sources */,
 				38BDDCB02475AB21000ACA1C /* LabelWithLeadingImage.swift in Sources */,
 				38A328E62487DB77009ED71D /* GuestsFilterTitleView.swift in Sources */,
 				8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */,
@@ -916,17 +974,23 @@
 				8D5CE98524868F1600C850A1 /* SectionTitleInfo.swift in Sources */,
 				38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */,
 				3893B5DE247E9168004783C4 /* SaveButton.swift in Sources */,
+				8DC8A919248956B200756086 /* SectionAmenitiesFactory.swift in Sources */,
 				8D63C75D2476CFA10074BF0F /* MapButtonView.swift in Sources */,
 				3893B5E0247F9A83004783C4 /* UIView+layer.swift in Sources */,
 				38A328DF2487D025009ED71D /* UIView+RoundCorner.swift in Sources */,
 				8D4633C42488EF7400BBD5C2 /* StayDetailDataSource.swift in Sources */,
 				38BDDCAC24751DED000ACA1C /* ReviewLabel.swift in Sources */,
 				38EB9D8F2479A48100236DB4 /* LoadingView.swift in Sources */,
+				8DC8A90E2489562100756086 /* Amenities.swift in Sources */,
 				3859747F2478FF98004A358C /* ThumbImageView.swift in Sources */,
+				8DC8A9152489569300756086 /* SectionBriefInfoFactory.swift in Sources */,
+				8DC8A91B248956BB00756086 /* SectionAmenityFactory.swift in Sources */,
 				8D9B7A1B247C206400D9A99D /* RoundedBorder.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
+				8DC8A908248955D400756086 /* TitleInfo.swift in Sources */,
 				385F47E12488C58E006B0A33 /* UIView+addSubviews.swift in Sources */,
 				3899CADF24813ABD006CB23E /* DatesFilterTitleView.swift in Sources */,
+				8DC8A90C2489561800756086 /* Summary.swift in Sources */,
 				3899CB0B2484FFD2006CB23E /* ReservationDates.swift in Sources */,
 				8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */,
 				8D9B7A13247C09E500D9A99D /* DetailSectionView.swift in Sources */,
