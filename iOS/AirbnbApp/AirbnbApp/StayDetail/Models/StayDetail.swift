@@ -23,7 +23,7 @@ extension StayDetail {
     }
 
     struct ReviewInfo: Decodable {
-        let average: Float
+        let average: Double
         let numberOfReviews: Int
     }
 

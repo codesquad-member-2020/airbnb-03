@@ -112,7 +112,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★ 4.83(260)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgd-uV-wAW">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★ 4.83(260)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgd-uV-wAW" customClass="ReviewLabel" customModule="AirbnbApp" customModuleProvider="target">
                             <rect key="frame" x="25" y="41" width="79" height="16"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,6 +134,7 @@
                     </constraints>
                     <connections>
                         <outlet property="priceLabel" destination="ZDk-Ky-4hn" id="fEx-cP-vEo"/>
+                        <outlet property="reviewLabel" destination="tgd-uV-wAW" id="yiM-68-F4b"/>
                     </connections>
                 </view>
             </subviews>

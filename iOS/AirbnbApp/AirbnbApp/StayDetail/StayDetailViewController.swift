@@ -11,13 +11,13 @@ class StayDetailViewController: UIViewController {
     private var stayDetail: StayDetail!
     private var stayDetailDataSource: StayDetailDataSource?
 
+    // MARK: - View Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fetchStayDetail(id: stayDetailID)
-        self.stayDetailDataSource = .init() { [weak self] stayDetail in
-            self?.bottomBarView.priceLabel.text = "$ \(stayDetail.priceInfo.price)"
-        }
+        self.stayDetailDataSource = makeStayDetailDataSource()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +51,14 @@ class StayDetailViewController: UIViewController {
         present(viewController, animated: true, completion: nil)
     }
 
-    // MARK: Private Methods
+    // MARK: - Configuration
+
+    private func makeStayDetailDataSource() -> StayDetailDataSource {
+        StayDetailDataSource() { [weak self] stayDetail in
+            self?.bottomBarView.priceLabel.text = "$ \(stayDetail.priceInfo.price)"
+            self?.bottomBarView.reviewLabel.updateWith(reviewAverage: stayDetail.reviewInfo.average, numberOfReviews: stayDetail.reviewInfo.numberOfReviews)
+        }
+    }
 
     private func configureStackView(with stayDetail: StayDetail) {
         addSectionInStackView(title: stayDetail.title, subContentView: SectionTitleInfoFactory.makeView(for: stayDetail))
@@ -65,6 +72,8 @@ class StayDetailViewController: UIViewController {
         let detailSectionView = DetailSectionView.loadFromXib(title: title, contentView: subContentView)
         stackView.addArrangedSubview(detailSectionView)
     }
+
+    // MARK: - Fetch Model
 
     private func fetchStayDetail(id: Int) {
         let url = Endpoint.detail(id: id).url
@@ -95,6 +104,5 @@ class StayDetailViewController: UIViewController {
                 }
             }
         }
-
     }
 }

@@ -5,7 +5,7 @@ class SectionTitleInfoFactory {
         let titleInfo = TitleInfo(for: stayDetail)
         let view = SectionTitleInfo.loadFromXib()
 
-        view.reviewsLabel.text = "\(titleInfo.reviewAverage)(\(titleInfo.numberOfReviews))"
+        view.reviewsLabel.updateWith(reviewAverage: titleInfo.reviewAverage, numberOfReviews: titleInfo.numberOfReviews)
         view.addressLabel.text = "\(titleInfo.address)"
 
         return view

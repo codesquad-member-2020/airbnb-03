@@ -1,7 +1,7 @@
 import Foundation
 
 struct TitleInfo {
-    let reviewAverage: Float
+    let reviewAverage: Double
     let numberOfReviews: Int
     let address: String
 }
