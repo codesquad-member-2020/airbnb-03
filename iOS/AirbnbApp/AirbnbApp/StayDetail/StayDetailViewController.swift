@@ -1,6 +1,8 @@
 import UIKit
 
 class StayDetailViewController: UIViewController {
+
+    @IBOutlet weak var thumbImagesPagingView: ThumbImagePagingView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var bottomBarView: UIView!
@@ -23,6 +25,12 @@ class StayDetailViewController: UIViewController {
 
         topBarView.drawBorder(.bottom)
         bottomBarView.drawBorder(.top)
+
+        let images: [UIImage] = [#imageLiteral(resourceName: "host.super"), #imageLiteral(resourceName: "host.super"), #imageLiteral(resourceName: "host.super")]
+        thumbImagesPagingView.configureStackView(numberOfImage: images.count, cornerRadius: 0)
+        for (index, image) in images.enumerated() {
+            thumbImagesPagingView.updateImage(at: index, image: image)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -56,7 +64,8 @@ class StayDetailViewController: UIViewController {
             subContentView.constraints(topAnchor: sectionView.contentView.topAnchor,
                                        leadingAnchor: sectionView.contentView.leadingAnchor,
                                        bottomAnchor: sectionView.contentView.bottomAnchor,
-                                       trailingAnchor: sectionView.contentView.trailingAnchor
+                                       trailingAnchor: sectionView.contentView.trailingAnchor,
+                                       padding: .init(top: 0, left: 20, bottom: 0, right: 20)
             )
         }
         stackView.addArrangedSubview(detailSectionView)

@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="bottomBarView" destination="lhf-Fq-gtQ" id="VeK-3F-3pS"/>
                 <outlet property="stackView" destination="nIX-aF-DtO" id="NdW-G1-dat"/>
+                <outlet property="thumbImagesPagingView" destination="kfj-4Q-7lc" id="AYz-GU-pVh"/>
                 <outlet property="topBarView" destination="hWN-ZV-Swm" id="Txa-8X-UTH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -44,17 +45,39 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-tZ-CWi">
                     <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nIX-aF-DtO">
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybp-HO-iLz">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
-                            <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
-                        </stackView>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nIX-aF-DtO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                    <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfj-4Q-7lc" customClass="ThumbImagePagingView" customModule="AirbnbApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="248.5"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="kfj-4Q-7lc" secondAttribute="height" multiplier="5:3" id="agk-tI-CHx"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="kfj-4Q-7lc" firstAttribute="top" secondItem="ybp-HO-iLz" secondAttribute="top" id="5gD-Oc-VmX"/>
+                                <constraint firstItem="kfj-4Q-7lc" firstAttribute="leading" secondItem="ybp-HO-iLz" secondAttribute="leading" id="BQC-fQ-PsX"/>
+                                <constraint firstAttribute="trailing" secondItem="nIX-aF-DtO" secondAttribute="trailing" id="Isl-fz-cjY"/>
+                                <constraint firstAttribute="bottom" secondItem="nIX-aF-DtO" secondAttribute="bottom" id="Na3-I0-WrX"/>
+                                <constraint firstItem="nIX-aF-DtO" firstAttribute="leading" secondItem="ybp-HO-iLz" secondAttribute="leading" id="Yj7-pC-xbU"/>
+                                <constraint firstItem="nIX-aF-DtO" firstAttribute="top" secondItem="kfj-4Q-7lc" secondAttribute="bottom" id="dAU-AW-mKk"/>
+                                <constraint firstAttribute="trailing" secondItem="kfj-4Q-7lc" secondAttribute="trailing" id="qHt-e3-1GV"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="nIX-aF-DtO" firstAttribute="trailing" secondItem="zPR-jX-7L8" secondAttribute="trailing" id="XnL-Ha-s6T"/>
-                        <constraint firstItem="nIX-aF-DtO" firstAttribute="leading" secondItem="zPR-jX-7L8" secondAttribute="leading" id="hEM-LA-lj6"/>
-                        <constraint firstItem="nIX-aF-DtO" firstAttribute="width" secondItem="rft-re-ZP4" secondAttribute="width" id="rus-LS-ikt"/>
-                        <constraint firstItem="nIX-aF-DtO" firstAttribute="top" secondItem="zPR-jX-7L8" secondAttribute="top" id="yd3-Kh-HQR"/>
-                        <constraint firstItem="nIX-aF-DtO" firstAttribute="bottom" secondItem="zPR-jX-7L8" secondAttribute="bottom" id="zAk-h3-MKp"/>
+                        <constraint firstItem="ybp-HO-iLz" firstAttribute="top" secondItem="zPR-jX-7L8" secondAttribute="top" id="8Jz-Hv-bPM"/>
+                        <constraint firstItem="ybp-HO-iLz" firstAttribute="width" secondItem="rft-re-ZP4" secondAttribute="width" id="YNa-sf-Pg9"/>
+                        <constraint firstItem="ybp-HO-iLz" firstAttribute="leading" secondItem="zPR-jX-7L8" secondAttribute="leading" id="bz5-Go-JHj"/>
+                        <constraint firstItem="ybp-HO-iLz" firstAttribute="trailing" secondItem="zPR-jX-7L8" secondAttribute="trailing" id="ezI-r3-XRl"/>
+                        <constraint firstItem="ybp-HO-iLz" firstAttribute="bottom" secondItem="zPR-jX-7L8" secondAttribute="bottom" id="h6h-vk-doB"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="zPR-jX-7L8"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="rft-re-ZP4"/>

@@ -2,7 +2,7 @@ import UIKit
 
 final class ThumbImageView: UIImageView {
     
-    private let cornerRadius: CGFloat = 12
+    private var cornerRadius: CGFloat = 12
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -11,6 +11,12 @@ final class ThumbImageView: UIImageView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        configure()
+    }
+
+    init(frame: CGRect = .zero, cornerRadius: CGFloat) {
+        super.init(frame: frame)
+        self.cornerRadius = cornerRadius
         configure()
     }
     
