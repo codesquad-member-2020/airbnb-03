@@ -1,10 +1,7 @@
-DROP TABLE IF EXISTS calendar;
-DROP TABLE IF EXISTS images;
-DROP TABLE IF EXISTS bookmarks;
-DROP TABLE IF EXISTS detail;
-DROP TABLE IF EXISTS user;
-DROP TABLE IF EXISTS bookings;
-DROP TABLE IF EXISTS properties;
+drop table if exists calendar;
+drop table if exists bookmarks;
+drop table if exists user;
+drop table if exists bookings;
 
 CREATE TABLE IF NOT EXISTS properties
 (
