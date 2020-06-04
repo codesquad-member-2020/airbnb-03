@@ -1,49 +1,42 @@
 import UIKit
 
 class StayDetailViewController: UIViewController {
+
+    @IBOutlet weak var thumbImagesPagingView: ThumbImagePagingView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var topBarView: UIView!
+    @IBOutlet weak var bottomBarView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        #warning("테스트용 뷰")
-        let detailSectionView = DetailSectionView.loadFromXib(titleText: "Center of Seattle, with Great City Views!!!") { view in
-            let subView = SectionTitleInfo.loadFromXib()
-            let titleInfo = TitleInfo(reviewAverage: 3.01, numberOfReviews: 299, address: "western digital")
-            subView.titleInfo = titleInfo
-            view.contentView.addSubview(subView)
-        }
-        let detailSectionView5 = DetailSectionView.loadFromXib(titleText: nil) { view in
-            let subView = SectionBriefInfo.loadFromXib()
-            let briefInfo = BriefInfo(hostName: "John", accommodates: 3, numberOfBedrooms: 1, numberOfBeds: 2, numberOfBathrooms: 1)
-            subView.briefInfo = briefInfo
-            view.contentView.addSubview(subView)
-        }
-        let detailSectionView2 = DetailSectionView.loadFromXib(titleText: "Summary") { view in
-            let subView = SectionSummary.loadFromXib()
-            view.contentView.addSubview(subView)
-        }
-        let detailSectionView3 = DetailSectionView.loadFromXib(titleText: "Amenities") { view in
-            let subView = SectionAmenities.loadFromXib()
-            view.contentView.addSubview(subView)
-        }
-        let detailSectionView4 = DetailSectionView.loadFromXib(titleText: "Stay with me") { view in
-            let subView = SectionSummary.loadFromXib()
-            view.contentView.addSubview(subView)
-        }
-//        stackView.distribution = .equalSpacing
-        stackView.addArrangedSubview(detailSectionView)
-        stackView.addArrangedSubview(detailSectionView5)
-        stackView.addArrangedSubview(detailSectionView2)
-        stackView.addArrangedSubview(detailSectionView3)
-        stackView.addArrangedSubview(detailSectionView4)
+        addSectionInStackView(title: "Center of Seattle", subContentView: SectionTitleInfo.loadFromXib())
+        addSectionInStackView(title: nil, subContentView: SectionBriefInfo.loadFromXib())
+        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addSectionInStackView(title: "Amenities", subContentView: SectionAmenities.loadFromXib())
+        
+        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        topBarView.drawBottomBorder()
+        topBarView.drawBorder(.bottom)
+        bottomBarView.drawBorder(.top)
+
+        let images: [UIImage] = [#imageLiteral(resourceName: "host.super"), #imageLiteral(resourceName: "host.super"), #imageLiteral(resourceName: "host.super")]
+        thumbImagesPagingView.configureStackView(numberOfImage: images.count, cornerRadius: 0)
+        for (index, image) in images.enumerated() {
+            thumbImagesPagingView.updateImage(at: index, image: image)
+        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        stackView.arrangedSubviews.forEach { $0.drawBorder(.top) }
     }
 
     // MARK: - IBAction
@@ -56,5 +49,26 @@ class StayDetailViewController: UIViewController {
         print("detail button")
         let viewController = StayDetailSectionViewController()
         navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    @IBAction func reserveButtonTouched(_ sender: ReserveButton) {
+        let viewController = ReservationViewController()
+        present(viewController, animated: true, completion: nil)
+    }
+
+    // MARK: Private Methods
+
+    private func addSectionInStackView(title: String?, subContentView: UIView) {
+        let detailSectionView = DetailSectionView.loadFromXib(titleText: title) { sectionView in
+            sectionView.contentView.addSubview(subContentView)
+            subContentView.constraints(
+                topAnchor: sectionView.contentView.topAnchor,
+                leadingAnchor: sectionView.contentView.leadingAnchor,
+                bottomAnchor: sectionView.contentView.bottomAnchor,
+                trailingAnchor: sectionView.contentView.trailingAnchor,
+                padding: .init(top: 0, left: 20, bottom: 0, right: 20)
+            )
+        }
+        stackView.addArrangedSubview(detailSectionView)
     }
 }
