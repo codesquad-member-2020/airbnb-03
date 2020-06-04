@@ -9,8 +9,7 @@ class SectionMap: ContentView, RoundedBorder {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        drawBorders(cornerRadius: 12, borderWidth: 0.1, borderColor: UIColor.white.cgColor)
-        clipsToBounds = true
+        configure()
     }
 
     func updateMap(with annotation: MKPointAnnotation) {
@@ -23,6 +22,11 @@ class SectionMap: ContentView, RoundedBorder {
 
         mapView.showAnnotations([annotation], animated: true)
     }
+
+    private func configure() {
+        drawBorders(cornerRadius: 12, borderWidth: 0.1, borderColor: UIColor.white.cgColor)
+        clipsToBounds = true
+    }
 }
 
 //extension SectionMap: MKMapViewDelegate {
@@ -34,35 +38,3 @@ class SectionMap: ContentView, RoundedBorder {
 //        return annotationView
 //    }
 //}
-
-struct MapInfo {
-    let address: String
-    let description: String
-    let latitude: Double
-    let longitude: Double
-}
-
-extension MapInfo {
-    init(for stayDetail: StayDetail) {
-        self.address = stayDetail.locationInfo.address
-        self.description = stayDetail.locationInfo.description
-        self.latitude = stayDetail.locationInfo.latitude
-        self.longitude = stayDetail.locationInfo.longitude
-    }
-}
-
-class SectionMapFactory {
-    static func makeView(for stayDetail: StayDetail) -> SectionMap {
-        let mapInfo = MapInfo(for: stayDetail)
-        let view = SectionMap.loadFromNib()
-
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: mapInfo.latitude, longitude: mapInfo.longitude)
-        view.updateMap(with: annotation)
-
-        view.addressLabel.text = mapInfo.address
-        view.descriptionLabel.text = mapInfo.description
-
-        return view
-    }
-}

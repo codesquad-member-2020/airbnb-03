@@ -3,10 +3,8 @@ import UIKit
 struct AmenityCollection {
     private(set) var items: [Amenity]
 
-    mutating func limited(_ limit: Int) -> Self {
-        items = Array<Amenity>(items[0..<limit])
-
-        return self
+    var count: Int {
+        items.count
     }
 }
 

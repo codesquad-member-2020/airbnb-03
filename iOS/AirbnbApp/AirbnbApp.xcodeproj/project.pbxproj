@@ -110,9 +110,11 @@
 		8DC8A917248956A300756086 /* SectionSummaryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A916248956A300756086 /* SectionSummaryFactory.swift */; };
 		8DC8A919248956B200756086 /* SectionAmenitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */; };
 		8DC8A91B248956BB00756086 /* SectionAmenityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */; };
-		8DC8A9242489891700756086 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A9232489891700756086 /* BottomBarView.swift */; };
 		8DC8A91E248967A200756086 /* SectionMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC8A91D248967A200756086 /* SectionMap.xib */; };
 		8DC8A9202489680200756086 /* SectionMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A91F2489680200756086 /* SectionMap.swift */; };
+		8DC8A9242489891700756086 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A9232489891700756086 /* BottomBarView.swift */; };
+		8DC8A92624899CE500756086 /* SectionMapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A92524899CE500756086 /* SectionMapFactory.swift */; };
+		8DC8A92824899D5D00756086 /* MapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A92724899D5D00756086 /* MapInfo.swift */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
 		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
 		8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA197024754B7900B3C167 /* SearchFilterView.xib */; };
@@ -241,9 +243,11 @@
 		8DC8A916248956A300756086 /* SectionSummaryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSummaryFactory.swift; sourceTree = "<group>"; };
 		8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionAmenitiesFactory.swift; sourceTree = "<group>"; };
 		8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionAmenityFactory.swift; sourceTree = "<group>"; };
-		8DC8A9232489891700756086 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		8DC8A91D248967A200756086 /* SectionMap.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionMap.xib; sourceTree = "<group>"; };
 		8DC8A91F2489680200756086 /* SectionMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionMap.swift; sourceTree = "<group>"; };
+		8DC8A9232489891700756086 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
+		8DC8A92524899CE500756086 /* SectionMapFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionMapFactory.swift; sourceTree = "<group>"; };
+		8DC8A92724899D5D00756086 /* MapInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInfo.swift; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
 		8DCA197024754B7900B3C167 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
@@ -701,6 +705,7 @@
 				8DC8A90B2489561800756086 /* Summary.swift */,
 				8DC8A90D2489562100756086 /* Amenities.swift */,
 				8DC8A90F2489562A00756086 /* Amenity.swift */,
+				8DC8A92724899D5D00756086 /* MapInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -713,6 +718,7 @@
 				8DC8A916248956A300756086 /* SectionSummaryFactory.swift */,
 				8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */,
 				8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */,
+				8DC8A92524899CE500756086 /* SectionMapFactory.swift */,
 			);
 			path = ViewFactories;
 			sourceTree = "<group>";
@@ -998,6 +1004,7 @@
 				8DC8A9152489569300756086 /* SectionBriefInfoFactory.swift in Sources */,
 				8DC8A91B248956BB00756086 /* SectionAmenityFactory.swift in Sources */,
 				8D9B7A1B247C206400D9A99D /* RoundedBorder.swift in Sources */,
+				8DC8A92824899D5D00756086 /* MapInfo.swift in Sources */,
 				8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */,
 				8DC8A908248955D400756086 /* TitleInfo.swift in Sources */,
 				385F47E12488C58E006B0A33 /* UIView+addSubviews.swift in Sources */,
@@ -1005,6 +1012,7 @@
 				8DC8A90C2489561800756086 /* Summary.swift in Sources */,
 				3899CB0B2484FFD2006CB23E /* ReservationDates.swift in Sources */,
 				8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */,
+				8DC8A92624899CE500756086 /* SectionMapFactory.swift in Sources */,
 				8D9B7A13247C09E500D9A99D /* DetailSectionView.swift in Sources */,
 				3899CB0124818FE1006CB23E /* DateCell.swift in Sources */,
 				38F1F89224795E0400454668 /* Stay.swift in Sources */,
