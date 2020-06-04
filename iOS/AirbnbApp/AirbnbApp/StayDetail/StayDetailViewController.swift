@@ -18,6 +18,8 @@ class StayDetailViewController: UIViewController {
         addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
         addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
         addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+
+        fetchStayDetail(id: 1)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,5 +71,19 @@ class StayDetailViewController: UIViewController {
             )
         }
         stackView.addArrangedSubview(detailSectionView)
+    }
+
+    private func fetchStayDetail(id: Int) {
+        let url = Endpoint.detail(id: id).url
+        StayDetailUseCase.getStayDetail(url: url) { result in
+            switch result {
+            case .success(let stayDetail):
+                DispatchQueue.main.async {
+                    print("Hooooola")
+                }
+            case .failure(let error):
+                print("Errorrrrr")
+            }
+        }
     }
 }
