@@ -57,7 +57,13 @@ class StayDetailViewController: UIViewController {
         addSectionInStackView(title: stayDetail.title, subContentView: SectionTitleInfoFactory.makeView(for: stayDetail))
         addSectionInStackView(title: nil, subContentView: SectionBriefInfoFactory.makeView(for: stayDetail))
         addSectionInStackView(title: "Summary", subContentView: SectionSummaryFactory.makeView(for: stayDetail))
-        addSectionInStackView(title: "Amenities", subContentView: SectionAmenities.loadFromXib())
+        let amenities = AmenityCollection(items: [
+            Amenity(title: "Internet", symbol: UIImage(systemName: "wifi")),
+            Amenity(title: "TV", symbol: UIImage(systemName: "tv")),
+            Amenity(title: "Bed", symbol: UIImage(systemName: "bed.double"))
+        ])
+        addSectionInStackView(title: "Amenities", subContentView: SectionAmenitiesFactory.makeView(for: amenities
+        ))
     }
 
     private func addSectionInStackView(title: String?, subContentView: ContentView) {

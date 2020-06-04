@@ -99,6 +99,7 @@
 		8DA4BA2D247FB45E00FFE332 /* UIView+drawBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA2C247FB45E00FFE332 /* UIView+drawBorder.swift */; };
 		8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */; };
 		8DA4BA33247FB7B800FFE332 /* StayDetailSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */; };
+		8DC8A90524893E4400756086 /* AmenityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC8A90424893E4400756086 /* AmenityView.xib */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
 		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
 		8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA197024754B7900B3C167 /* SearchFilterView.xib */; };
@@ -216,6 +217,7 @@
 		8DA4BA2C247FB45E00FFE332 /* UIView+drawBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+drawBorder.swift"; sourceTree = "<group>"; };
 		8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDetailSectionViewController.swift; sourceTree = "<group>"; };
 		8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayDetailSectionViewController.xib; sourceTree = "<group>"; };
+		8DC8A90424893E4400756086 /* AmenityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmenityView.xib; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
 		8DCA197024754B7900B3C167 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
@@ -604,6 +606,7 @@
 				8D5CE9862486939400C850A1 /* SectionAmenities.swift */,
 				8D5CE9882486939E00C850A1 /* SectionAmenities.xib */,
 				8D5CE99224869A1C00C850A1 /* AmenityView.swift */,
+				8DC8A90424893E4400756086 /* AmenityView.xib */,
 				8D6A9DB92487F39600850C94 /* ReserveButton.swift */,
 			);
 			path = SectionViews;
@@ -774,6 +777,7 @@
 				3899CAE124813ACF006CB23E /* DatesFilterTitleView.xib in Resources */,
 				3899CB0224818FE1006CB23E /* DateCell.xib in Resources */,
 				380B0238248834F70061C8C9 /* GuestsSaveFooterView.xib in Resources */,
+				8DC8A90524893E4400756086 /* AmenityView.xib in Resources */,
 				3899CAEB24814FD5006CB23E /* SearchFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

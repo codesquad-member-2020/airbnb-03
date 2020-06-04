@@ -9,17 +9,7 @@ class SectionAmenities: UIView, ContentView, ViewFromXib {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        let frame = CGRect(x: 0, y: 0, width: stackView.bounds.width, height: 20)
         stackView.resetArrangedSubViews()
-
-        let amenities = [
-            Amenity(title: "Internet", symbol: UIImage(systemName: "wifi")),
-            Amenity(title: "TV", symbol: UIImage(systemName: "tv")),
-            Amenity(title: "Bed", symbol: UIImage(systemName: "bed.double"))
-        ]
-
-        amenities.map     { AmenityView(frame: frame, title: $0.title, symbol: $0.symbol) }
-                 .forEach { stackView.addArrangedSubview($0) }
     }
 
     func updateChanges() {
@@ -27,8 +17,35 @@ class SectionAmenities: UIView, ContentView, ViewFromXib {
     }
 }
 
-struct Amenity {
-    let title: String
-    let symbol: UIImage?
+struct AmenityCollection {
+    let items: [Amenity]
 }
 
+extension AmenityCollection {
+    init(for stayDetail: StayDetail) {
+        let amenitiesText = stayDetail.roomInfo.amenities
+        let amenityTitles = amenitiesText.dropFirst().dropLast().split(separator: ",")
+
+        self.items = amenityTitles.map { Amenity(title: String($0), symbol: nil) }
+    }
+}
+
+class SectionAmenitiesFactory {
+    static func makeView(for stayDetail: StayDetail) -> SectionAmenities {
+        makeView(for: AmenityCollection(for: stayDetail))
+    }
+
+    static func makeView(for amenities: AmenityCollection) -> SectionAmenities {
+        let view = SectionAmenities.loadFromXib()
+
+        amenities.items.map {
+            let view = AmenityView.loadFromXib()
+            view.titleLabel.text = $0.title
+            view.symbolImageView.image = $0.symbol
+
+            return view
+        }.forEach { view.stackView.addArrangedSubview($0) }
+
+        return view
+    }
+}

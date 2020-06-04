@@ -31,6 +31,7 @@ extension StayDetail {
 
     struct RoomInfo: Decodable {
         let summary: String
+        let amenities: String
         let accommodates: Int
         let bathrooms: Int
         let bedrooms: Int
