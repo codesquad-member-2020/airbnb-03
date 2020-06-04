@@ -110,6 +110,8 @@
 		8DC8A917248956A300756086 /* SectionSummaryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A916248956A300756086 /* SectionSummaryFactory.swift */; };
 		8DC8A919248956B200756086 /* SectionAmenitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */; };
 		8DC8A91B248956BB00756086 /* SectionAmenityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */; };
+		8DC8A91E248967A200756086 /* SectionMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC8A91D248967A200756086 /* SectionMap.xib */; };
+		8DC8A9202489680200756086 /* SectionMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A91F2489680200756086 /* SectionMap.swift */; };
 		8DCA196D24750CB900B3C167 /* SearchFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA196C24750CB900B3C167 /* SearchFieldView.swift */; };
 		8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */; };
 		8DCA197124754B7900B3C167 /* SearchFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA197024754B7900B3C167 /* SearchFilterView.xib */; };
@@ -238,6 +240,8 @@
 		8DC8A916248956A300756086 /* SectionSummaryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionSummaryFactory.swift; sourceTree = "<group>"; };
 		8DC8A918248956B200756086 /* SectionAmenitiesFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionAmenitiesFactory.swift; sourceTree = "<group>"; };
 		8DC8A91A248956BB00756086 /* SectionAmenityFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionAmenityFactory.swift; sourceTree = "<group>"; };
+		8DC8A91D248967A200756086 /* SectionMap.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionMap.xib; sourceTree = "<group>"; };
+		8DC8A91F2489680200756086 /* SectionMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionMap.swift; sourceTree = "<group>"; };
 		8DCA196C24750CB900B3C167 /* SearchFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFieldView.swift; sourceTree = "<group>"; };
 		8DCA196E24750CCF00B3C167 /* SearchFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFieldView.xib; sourceTree = "<group>"; };
 		8DCA197024754B7900B3C167 /* SearchFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFilterView.xib; sourceTree = "<group>"; };
@@ -627,6 +631,8 @@
 				8D5CE9882486939E00C850A1 /* SectionAmenities.xib */,
 				8D5CE99224869A1C00C850A1 /* AmenityView.swift */,
 				8DC8A90424893E4400756086 /* AmenityView.xib */,
+				8DC8A91F2489680200756086 /* SectionMap.swift */,
+				8DC8A91D248967A200756086 /* SectionMap.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -811,6 +817,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DC8A91E248967A200756086 /* SectionMap.xib in Resources */,
 				8D63C75B2476CF4E0074BF0F /* MapButtonView.xib in Resources */,
 				8D5CE9892486939E00C850A1 /* SectionAmenities.xib in Resources */,
 				8D9B7A15247C09F700D9A99D /* DetailSectionView.xib in Resources */,
@@ -953,6 +960,7 @@
 				38DC238B247BDAE200DC3BCC /* NetworkManager.swift in Sources */,
 				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
 				8D6A9DBA2487F39600850C94 /* ReserveButton.swift in Sources */,
+				8DC8A9202489680200756086 /* SectionMap.swift in Sources */,
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,
 				38A328EC2487DEC3009ED71D /* GuestsFilterButtonSectionView.swift in Sources */,
