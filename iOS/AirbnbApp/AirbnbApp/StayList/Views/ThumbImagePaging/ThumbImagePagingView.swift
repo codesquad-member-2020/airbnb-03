@@ -16,11 +16,11 @@ final class ThumbImagePagingView: UIView {
         configure()
     }
     
-    func configureStackView(numberOfImage: Int) {
+    func configureStackView(numberOfImage: Int, cornerRadius: CGFloat = 12) {
         pageControl.numberOfPages = numberOfImage
         
         for _ in 0..<numberOfImage {
-            let imageView = ThumbImageView()
+            let imageView = ThumbImageView(cornerRadius: cornerRadius)
             imageStackView.addArrangedSubview(imageView)
             imageView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor).isActive = true
         }
@@ -30,7 +30,12 @@ final class ThumbImagePagingView: UIView {
         let thumbImageViews = imageStackView.arrangedSubviews as! [ThumbImageView]
         thumbImageViews[index].image = UIImage(data: data)
     }
-    
+
+    func updateImage(at index: Int, image: UIImage) {
+        let thumbImageViews = imageStackView.arrangedSubviews as! [ThumbImageView]
+        thumbImageViews[index].image = image
+    }
+
     func prepareForReuse() {
         pageControl.currentPage = 0
         scrollView.contentOffset.x = 0

@@ -9,6 +9,7 @@ final class StayListCollectionViewDataSource: NSObject, UICollectionViewDataSour
             changedHandler(stayList)
         }
     }
+    
     private var changedHandler: Handler
     
     init(with stayList: Key = StayList(), changedHandler: @escaping Handler = { _ in }) {
@@ -25,8 +26,11 @@ final class StayListCollectionViewDataSource: NSObject, UICollectionViewDataSour
         handler(stay.id)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StayCell.reuseIdentifier, for: indexPath) as! StayCell
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: StayCell.reuseIdentifier, for: indexPath) as! StayCell
         let stay = stayList[indexPath]
         cell.update(with: stay)
         fetchThumbImages(at: cell, with: stay.images)
@@ -56,7 +60,9 @@ extension StayListCollectionViewDataSource {
         self.changedHandler = handler
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
         return stayList.count
     }
 }

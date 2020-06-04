@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DateCell" id="gTV-IL-0wX" customClass="DateCell" customModule="AirbnbApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2d-sx-xBp" userLabel="betweenSelectionsView">
+                        <rect key="frame" x="0.0" y="4" width="50" height="42"/>
+                        <color key="backgroundColor" red="0.93010390228426398" green="0.93010390228426398" blue="0.93010390228426398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVh-4c-6ev" userLabel="checkInSelectedView">
+                        <rect key="frame" x="25" y="4" width="25" height="42"/>
+                        <color key="backgroundColor" red="0.93010390229999995" green="0.93010390229999995" blue="0.93010390229999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihe-gv-Tm1" userLabel="checkOutSelectedView">
+                        <rect key="frame" x="0.0" y="4" width="25" height="42"/>
+                        <color key="backgroundColor" red="0.93010390229999995" green="0.93010390229999995" blue="0.93010390229999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avv-xz-Nbi" userLabel="selectedView" customClass="CircleView" customModule="AirbnbApp" customModuleProvider="target">
+                        <rect key="frame" x="3" y="3" width="44" height="44"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5a-Id-kjf">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYh-Qe-JBO">
+                                <rect key="frame" x="21" y="18" width="8" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="V5a-Id-kjf" secondAttribute="height" multiplier="1:1" id="0u7-U8-ABf"/>
+                            <constraint firstItem="sYh-Qe-JBO" firstAttribute="centerX" secondItem="V5a-Id-kjf" secondAttribute="centerX" id="Lk8-tM-dXb"/>
+                            <constraint firstItem="sYh-Qe-JBO" firstAttribute="centerY" secondItem="V5a-Id-kjf" secondAttribute="centerY" id="u6u-tH-GE5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Avv-xz-Nbi" firstAttribute="bottom" secondItem="V5a-Id-kjf" secondAttribute="bottom" constant="-3" id="09C-95-xHb"/>
+                <constraint firstItem="P2d-sx-xBp" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="1MW-s6-b8q"/>
+                <constraint firstAttribute="bottom" secondItem="V5a-Id-kjf" secondAttribute="bottom" id="2TE-tR-JSa"/>
+                <constraint firstItem="zVh-4c-6ev" firstAttribute="top" secondItem="P2d-sx-xBp" secondAttribute="top" id="4kO-8a-wMu"/>
+                <constraint firstItem="ihe-gv-Tm1" firstAttribute="top" secondItem="P2d-sx-xBp" secondAttribute="top" id="5qd-RW-Rdr"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="centerX" secondItem="ihe-gv-Tm1" secondAttribute="trailing" id="8nw-3L-z87"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="ihe-gv-Tm1" secondAttribute="bottom" constant="4" id="8qP-A1-wjM"/>
+                <constraint firstItem="zVh-4c-6ev" firstAttribute="bottom" secondItem="P2d-sx-xBp" secondAttribute="bottom" id="FNh-OM-2vc"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="P2d-sx-xBp" secondAttribute="trailing" id="Fky-p0-y2M"/>
+                <constraint firstItem="V5a-Id-kjf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GcN-oq-CBt"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="zVh-4c-6ev" secondAttribute="trailing" id="R7l-Hs-HMJ"/>
+                <constraint firstItem="Avv-xz-Nbi" firstAttribute="leading" secondItem="V5a-Id-kjf" secondAttribute="leading" constant="3" id="ZnQ-Mt-nse"/>
+                <constraint firstItem="V5a-Id-kjf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b7v-Mb-HcE"/>
+                <constraint firstItem="zVh-4c-6ev" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="c0z-96-upe"/>
+                <constraint firstAttribute="trailing" secondItem="V5a-Id-kjf" secondAttribute="trailing" id="ePK-ez-hD6"/>
+                <constraint firstItem="P2d-sx-xBp" firstAttribute="bottom" secondItem="Avv-xz-Nbi" secondAttribute="bottom" constant="-1" id="f7g-gt-jZf"/>
+                <constraint firstItem="P2d-sx-xBp" firstAttribute="top" secondItem="Avv-xz-Nbi" secondAttribute="top" constant="1" id="hTs-mD-LfW"/>
+                <constraint firstItem="ihe-gv-Tm1" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="mg4-lU-d8N"/>
+                <constraint firstItem="Avv-xz-Nbi" firstAttribute="top" secondItem="V5a-Id-kjf" secondAttribute="top" constant="3" id="rNp-M9-9PD"/>
+                <constraint firstItem="Avv-xz-Nbi" firstAttribute="trailing" secondItem="V5a-Id-kjf" secondAttribute="trailing" constant="-3" id="xfW-jR-gyy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="betweenSelectionsView" destination="P2d-sx-xBp" id="ltx-og-39T"/>
+                <outlet property="checkInSelectedView" destination="zVh-4c-6ev" id="5sN-LB-GRO"/>
+                <outlet property="checkOutSelectedView" destination="ihe-gv-Tm1" id="QBC-33-9ml"/>
+                <outlet property="dayLabel" destination="sYh-Qe-JBO" id="tqD-4D-Yal"/>
+                <outlet property="selectedView" destination="Avv-xz-Nbi" id="8zA-gh-2zv"/>
+            </connections>
+            <point key="canvasLocation" x="111.59420289855073" y="152.67857142857142"/>
+        </collectionViewCell>
+    </objects>
+</document>

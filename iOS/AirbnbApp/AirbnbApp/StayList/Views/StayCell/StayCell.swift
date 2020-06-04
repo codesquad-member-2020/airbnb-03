@@ -21,8 +21,8 @@ final class StayCell: UICollectionViewCell {
         titleLabel.text = stay.title
         priceLabel.updateWith(price: stay.price)
         thumbImagePagingView.configureStackView(numberOfImage: stay.images.count)
-        superHostLabel.isHidden = stay.hostType != "super"
-        #warning("update SaveButton status")
+        superHostLabel.isHidden = !stay.isSuperHost
+        saveButton.updateImage(with: stay.saved)
     }
     
     func updateImage(at index: Int, data: Data) {

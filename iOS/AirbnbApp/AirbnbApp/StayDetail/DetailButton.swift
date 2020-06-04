@@ -13,6 +13,8 @@ class DetailButton: UIButton, RoundedBorder {
     }
 
     private func configure() {
-        drawBorder()
+        drawBorders()
+        self.tintColor = .darkText
+        self.heightAnchor.constraint(equalToConstant: 45).isActive = true
     }
 }
