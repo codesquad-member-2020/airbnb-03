@@ -3,7 +3,7 @@ import UIKit
 class DetailSectionView: UIView, ViewFromXib {
 
     @IBOutlet weak var titleLabel: UILabel!
-    var contentView: ContentView!
+    weak var contentView: ContentView!
 
     static let xibName = String(describing: DetailSectionView.self)
 
@@ -27,7 +27,4 @@ class DetailSectionView: UIView, ViewFromXib {
             padding: .init(top: 10, left: 10, bottom: 0, right: 10)
         )
     }
-}
-
-class ContentView: UIView {
 }

@@ -99,6 +99,7 @@
 		8DA4BA2D247FB45E00FFE332 /* UIView+drawBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA2C247FB45E00FFE332 /* UIView+drawBorder.swift */; };
 		8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */; };
 		8DA4BA33247FB7B800FFE332 /* StayDetailSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */; };
+		8DC3856B2489B75A007820E2 /* SectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3856A2489B75A007820E2 /* SectionViewDelegate.swift */; };
 		8DC8A90524893E4400756086 /* AmenityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC8A90424893E4400756086 /* AmenityView.xib */; };
 		8DC8A908248955D400756086 /* TitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A907248955D400756086 /* TitleInfo.swift */; };
 		8DC8A90A2489560D00756086 /* BriefInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A9092489560D00756086 /* BriefInfo.swift */; };
@@ -232,6 +233,7 @@
 		8DA4BA2C247FB45E00FFE332 /* UIView+drawBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+drawBorder.swift"; sourceTree = "<group>"; };
 		8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDetailSectionViewController.swift; sourceTree = "<group>"; };
 		8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayDetailSectionViewController.xib; sourceTree = "<group>"; };
+		8DC3856A2489B75A007820E2 /* SectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewDelegate.swift; sourceTree = "<group>"; };
 		8DC8A90424893E4400756086 /* AmenityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmenityView.xib; sourceTree = "<group>"; };
 		8DC8A907248955D400756086 /* TitleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfo.swift; sourceTree = "<group>"; };
 		8DC8A9092489560D00756086 /* BriefInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefInfo.swift; sourceTree = "<group>"; };
@@ -636,10 +638,11 @@
 				8D5CE95E2484E74F00C850A1 /* SectionSummary.xib */,
 				8D5CE9862486939400C850A1 /* SectionAmenities.swift */,
 				8D5CE9882486939E00C850A1 /* SectionAmenities.xib */,
-				8D5CE99224869A1C00C850A1 /* AmenityView.swift */,
-				8DC8A90424893E4400756086 /* AmenityView.xib */,
 				8DC8A91F2489680200756086 /* SectionMap.swift */,
 				8DC8A91D248967A200756086 /* SectionMap.xib */,
+				8DC3856A2489B75A007820E2 /* SectionViewDelegate.swift */,
+				8D5CE99224869A1C00C850A1 /* AmenityView.swift */,
+				8DC8A90424893E4400756086 /* AmenityView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -970,6 +973,7 @@
 				38DC238B247BDAE200DC3BCC /* NetworkManager.swift in Sources */,
 				38BDDCB22475AD43000ACA1C /* SuperHostLabel.swift in Sources */,
 				8D6A9DBA2487F39600850C94 /* ReserveButton.swift in Sources */,
+				8DC3856B2489B75A007820E2 /* SectionViewDelegate.swift in Sources */,
 				8DC8A9202489680200756086 /* SectionMap.swift in Sources */,
 				381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */,
 				3869C446247BB9AC00A16C6D /* StayList.swift in Sources */,

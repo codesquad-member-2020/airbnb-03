@@ -8,8 +8,6 @@ struct StayDetailUseCase {
             switch result {
             case .success(let data):
                 if let decoded = try? JSONDecoder().decode(StayDetail.self, from: data) {
-                    debugPrint("Decoding StayDetail is success.")
-                    debugPrint(decoded)
                     completionHandler(.success(decoded))
                 } else {
                     debugPrint("Decoding StayDetail is failed.")

@@ -70,6 +70,9 @@ class StayDetailViewController: UIViewController {
 
     private func addSectionInStackView(title: String?, subContentView: ContentView) {
         let detailSectionView = DetailSectionView.loadFromXib(title: title, contentView: subContentView)
+        if subContentView.needsDelegate() {
+            subContentView.assignDelegate(self)
+        }
         stackView.addArrangedSubview(detailSectionView)
     }
 
@@ -104,5 +107,23 @@ class StayDetailViewController: UIViewController {
                 }
             }
         }
+    }
+}
+
+extension StayDetailViewController: SectionSummaryDelegate {
+    func didTapMore() {
+        print("Tapped more button......")
+    }
+}
+
+extension StayDetailViewController: SectionAmenitiesDelegate {
+    func didTouchShowAllButton() {
+        print("Tapped Amenities detail button......")
+    }
+}
+
+extension StayDetailViewController: SectionMapDelegate {
+    func didTouchMoreLocationButton() {
+        print("Tapped Map detail button...")
     }
 }

@@ -39,6 +39,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poO-LU-nUw" customClass="DetailButton" customModule="AirbnbApp" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="155" width="414" height="30"/>
                     <state key="normal" title="Show all 30 amenities"/>
+                    <connections>
+                        <action selector="showAllButtonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="NIA-qa-li5"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -1,10 +1,14 @@
 import UIKit
 import MapKit
 
-class SectionMap: ContentView, RoundedBorder {
+class SectionMap: UIView, RoundedBorder {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+
+    static var xibName: String = .init(describing: SectionMap.self)
+
+    private weak var delegate: SectionMapDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -13,8 +17,6 @@ class SectionMap: ContentView, RoundedBorder {
     }
 
     func updateMap(with annotation: MKPointAnnotation) {
-//        mapView.delegate = self
-
         mapView.isZoomEnabled = false
         mapView.isScrollEnabled = false
         mapView.isPitchEnabled = false
@@ -27,14 +29,18 @@ class SectionMap: ContentView, RoundedBorder {
         drawBorders(cornerRadius: 12, borderWidth: 0.1, borderColor: UIColor.white.cgColor)
         clipsToBounds = true
     }
+
+    @IBAction func moreButtonTouched(_ sender: Any) {
+        delegate?.didTouchMoreLocationButton()
+    }
 }
 
-//extension SectionMap: MKMapViewDelegate {
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let annotationView = MKAnnotationView()
-//        let imageView = UIImageView(image: UIImage(systemName: "house.fill"))
-//        annotationView.addSubview(imageView)
-//
-//        return annotationView
-//    }
-//}
+extension SectionMap: ContentView {
+    func needsDelegate() -> Bool {
+        return true
+    }
+
+    func assignDelegate(_ delegate: SectionViewDelegate) {
+        self.delegate = delegate as? SectionMapDelegate
+    }
+}

@@ -18,6 +18,9 @@
                     <state key="normal" title="more &gt;">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
+                    <connections>
+                        <action selector="moreButtonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="qWq-lu-u80"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuG-lQ-b8N">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
