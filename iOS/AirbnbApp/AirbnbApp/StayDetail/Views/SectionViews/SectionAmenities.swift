@@ -56,3 +56,17 @@ class SectionAmenitiesFactory {
         return view
     }
 }
+
+typealias AmenityPair = Dictionary<String, UIImage>
+
+extension AmenityCollection {
+    static let pairs: AmenityPair = [
+        "TV": UIImage(systemName: "tv")!,
+        "Internet": UIImage(systemName: "globe")!,
+        "Wireless Internet": UIImage(systemName: "wifi")!,
+        "First Aid Kit": UIImage(systemName: "bandage")!,
+        "Free Parking on Premises": UIImage(systemName: "car")!,
+        "Kitchen": UIImage(systemName: "dial.fill")!,
+        "Family/Kid Friendly": UIImage(systemName: "person.3.fill")!,
+    ]
+}
