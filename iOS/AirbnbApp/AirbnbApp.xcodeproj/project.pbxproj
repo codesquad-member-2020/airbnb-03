@@ -15,6 +15,9 @@
 		38109A3C2488268D003EC0AC /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38109A3B2488268D003EC0AC /* UIView+Nib.swift */; };
 		381A0304247623F3004EDE84 /* PlaceTypeAndCityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */; };
 		381A030624762561004EDE84 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A030524762561004EDE84 /* PriceLabel.swift */; };
+		382C88D524891680008CDAB0 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382C88D424891680008CDAB0 /* Endpoints.swift */; };
+		382C88D724891C9A008CDAB0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382C88D624891C9A008CDAB0 /* Request.swift */; };
+		382C88D9248921C3008CDAB0 /* StayCellSaveUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382C88D8248921C3008CDAB0 /* StayCellSaveUseCase.swift */; };
 		3839C7B02477D6760039BB19 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3839C7AF2477D6760039BB19 /* SeparatorView.swift */; };
 		384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E362473E0650051528B /* StayListCollectionView.swift */; };
 		384C0E3C2473F62A0051528B /* StayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C0E3A2473F62A0051528B /* StayCell.swift */; };
@@ -121,6 +124,9 @@
 		38109A3B2488268D003EC0AC /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTypeAndCityLabel.swift; sourceTree = "<group>"; };
 		381A030524762561004EDE84 /* PriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
+		382C88D424891680008CDAB0 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		382C88D624891C9A008CDAB0 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		382C88D8248921C3008CDAB0 /* StayCellSaveUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCellSaveUseCase.swift; sourceTree = "<group>"; };
 		3839C7AF2477D6760039BB19 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		384C0E362473E0650051528B /* StayListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListCollectionView.swift; sourceTree = "<group>"; };
 		384C0E3A2473F62A0051528B /* StayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayCell.swift; sourceTree = "<group>"; };
@@ -512,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				38AEA755247BF7590058050D /* StayListUseCase.swift */,
+				382C88D8248921C3008CDAB0 /* StayCellSaveUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -520,6 +527,8 @@
 			isa = PBXGroup;
 			children = (
 				38DC238A247BDAE200DC3BCC /* NetworkManager.swift */,
+				382C88D424891680008CDAB0 /* Endpoints.swift */,
+				382C88D624891C9A008CDAB0 /* Request.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -812,6 +821,7 @@
 				3899CAE524814871006CB23E /* UIView+draw.swift in Sources */,
 				385F47E02488C58E006B0A33 /* UIView+AutoLayout.swift in Sources */,
 				388E141F2480D30100FC0D50 /* SearchFilterQuery.swift in Sources */,
+				382C88D724891C9A008CDAB0 /* Request.swift in Sources */,
 				8D9B7A17247C0F1200D9A99D /* StayListCollectionViewDelegate.swift in Sources */,
 				38A328E42487D9A3009ED71D /* GuestsFilterViewController.swift in Sources */,
 				380F73262486E0500045C6CA /* CircleView.swift in Sources */,
@@ -821,6 +831,7 @@
 				384C0E3C2473F62A0051528B /* StayCell.swift in Sources */,
 				8D6A9DBD248809AA00850C94 /* ReservationViewController.swift in Sources */,
 				385D8BE524728EC8009E2E2B /* AppDelegate.swift in Sources */,
+				382C88D9248921C3008CDAB0 /* StayCellSaveUseCase.swift in Sources */,
 				3899CAF224816FE9006CB23E /* CalendarCollectionView.swift in Sources */,
 				384C0E372473E0650051528B /* StayListCollectionView.swift in Sources */,
 				380B023A2488397F0061C8C9 /* UIView+Animations.swift in Sources */,
@@ -833,6 +844,7 @@
 				8D5CE9992487842D00C850A1 /* SectionBriefInfo.swift in Sources */,
 				8D5CE9612484E77100C850A1 /* SectionSummary.swift in Sources */,
 				8DCA19752475546C00B3C167 /* FilterButton.swift in Sources */,
+				382C88D524891680008CDAB0 /* Endpoints.swift in Sources */,
 				3899CB0624829859006CB23E /* Dates.swift in Sources */,
 				3899CAEF24815434006CB23E /* DatesFilterSearchButton.swift in Sources */,
 				8D328443247647900078678A /* ViewFromXib.swift in Sources */,
