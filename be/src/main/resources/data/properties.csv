@@ -1,5 +1,4 @@
 id,host_type,title,city,state,latitude,longitude,reservable,price,place_type,review_average,number_of_reviews,saved
-<<<<<<< HEAD
 1,super,Bright & Airy Queen Anne Apartment,Seattle,WA,47.63912312,-122.3656665,1,150,Entire home/apt,4.5,43,0
 2,super,Tiny Garden cabin on Queen Anne  ,Seattle,WA,47.64016054,-122.375856,1,60,Private room,1.43,173,0
 3,super,Airy + Bright Queen Anne Apartment,Seattle,WA,47.63749172,-122.3668886,1,150,Entire home/apt,3.34,32,0
