@@ -1,6 +1,6 @@
 import UIKit
 
-class SectionAmenities: UIView, ViewFromXib {
+class SectionAmenities: UIView, ContentView, ViewFromXib {
     static let xibName = String(describing: SectionAmenities.self)
 
     @IBOutlet weak var stackView: UIStackView!
@@ -21,6 +21,10 @@ class SectionAmenities: UIView, ViewFromXib {
         amenities.map     { AmenityView(frame: frame, title: $0.title, symbol: $0.symbol) }
                  .forEach { stackView.addArrangedSubview($0) }
     }
+
+    func updateChanges() {
+
+    }
 }
 
 struct Amenity {
@@ -28,13 +32,3 @@ struct Amenity {
     let symbol: UIImage?
 }
 
-extension UIStackView {
-    func resetArrangedSubViews() {
-        guard arrangedSubviews.count != 0 else { return }
-
-        arrangedSubviews.forEach {
-            removeArrangedSubview($0)
-            $0.removeFromSuperview()
-        }
-    }
-}

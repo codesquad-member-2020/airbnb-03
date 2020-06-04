@@ -1,6 +1,6 @@
 import UIKit
 
-final class SectionTitleInfo: UIView, ViewFromXib {
+final class SectionTitleInfo: UIView, ContentView, ViewFromXib {
     static let xibName = String(describing: SectionTitleInfo.self)
 
     @IBOutlet weak var reviewsLabel: UILabel!
@@ -23,6 +23,10 @@ final class SectionTitleInfo: UIView, ViewFromXib {
     func updateWith(titleInfo: TitleInfo) {
         reviewsLabel.text = "\(titleInfo.reviewAverage)(\(titleInfo.numberOfReviews))"
         addressLabel.text = "\(titleInfo.address)"
+    }
+
+    func updateChanges() {
+
     }
 }
 

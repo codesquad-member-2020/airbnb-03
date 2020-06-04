@@ -10,10 +10,7 @@ class StayDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addSectionInStackView(title: "Center of Seattle", subContentView: SectionTitleInfo.loadFromXib())
-        addSectionInStackView(title: nil, subContentView: SectionBriefInfo.loadFromXib())
-        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
-        addSectionInStackView(title: "Amenities", subContentView: SectionAmenities.loadFromXib())
+        configureStackView()
         
         addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
         addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
@@ -60,16 +57,15 @@ class StayDetailViewController: UIViewController {
 
     // MARK: Private Methods
 
-    private func addSectionInStackView(title: String?, subContentView: UIView) {
-        let detailSectionView = DetailSectionView.loadFromXib(titleText: title) { sectionView in
-            sectionView.contentView.addSubview(subContentView)
-            subContentView.constraints(
-                topAnchor: sectionView.contentView.topAnchor,
-                leadingAnchor: sectionView.contentView.leadingAnchor,
-                bottomAnchor: sectionView.contentView.bottomAnchor,
-                trailingAnchor: sectionView.contentView.trailingAnchor
-            )
-        }
+    private func configureStackView() {
+        addSectionInStackView(title: nil, subContentView: SectionTitleInfo.loadFromXib())
+        addSectionInStackView(title: nil, subContentView: SectionBriefInfo.loadFromXib())
+        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addSectionInStackView(title: "Amenities", subContentView: SectionAmenities.loadFromXib())
+    }
+
+    private func addSectionInStackView(title: String?, subContentView: ContentView) {
+        let detailSectionView = DetailSectionView.loadFromXib(title: title, contentView: subContentView)
         stackView.addArrangedSubview(detailSectionView)
     }
 

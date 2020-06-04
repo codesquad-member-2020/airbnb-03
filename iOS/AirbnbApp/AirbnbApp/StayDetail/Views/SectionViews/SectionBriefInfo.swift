@@ -1,6 +1,6 @@
 import UIKit
 
-class SectionBriefInfo: UIView, ViewFromXib {
+class SectionBriefInfo: UIView, ContentView, ViewFromXib {
     static var xibName: String = .init(describing: SectionBriefInfo.self)
 
     @IBOutlet weak var hostNameLabel: UILabel!
@@ -21,6 +21,10 @@ class SectionBriefInfo: UIView, ViewFromXib {
         hostNameLabel.text = briefInfo.hostName
         let roomInfo: [String] = ["\(briefInfo.accommodates) guests", "\(briefInfo.numberOfBedrooms) bedrooms", "\(briefInfo.numberOfBeds) beds", "\(briefInfo.numberOfBathrooms) baths"]
         roomInfoLabel.text = roomInfo.joined(separator: ",")
+    }
+
+    func updateChanges() {
+
     }
 }
 
