@@ -7,14 +7,10 @@ class StayDetailViewController: UIViewController {
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var bottomBarView: UIView!
 
+    private var stayDetail: StayDetail!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureStackView()
-        
-        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
-        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
-        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
 
         fetchStayDetail(id: 1)
     }
@@ -57,10 +53,10 @@ class StayDetailViewController: UIViewController {
 
     // MARK: Private Methods
 
-    private func configureStackView() {
-        addSectionInStackView(title: nil, subContentView: SectionTitleInfo.loadFromXib())
-        addSectionInStackView(title: nil, subContentView: SectionBriefInfo.loadFromXib())
-        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+    private func configureStackView(with stayDetail: StayDetail) {
+        addSectionInStackView(title: stayDetail.title, subContentView: SectionTitleInfoFactory.makeView(for: stayDetail))
+        addSectionInStackView(title: nil, subContentView: SectionBriefInfoFactory.makeView(for: stayDetail))
+        addSectionInStackView(title: "Summary", subContentView: SectionSummaryFactory.makeView(for: stayDetail))
         addSectionInStackView(title: "Amenities", subContentView: SectionAmenities.loadFromXib())
     }
 
@@ -75,6 +71,7 @@ class StayDetailViewController: UIViewController {
             switch result {
             case .success(let stayDetail):
                 DispatchQueue.main.async {
+                    self.configureStackView(with: stayDetail)
                     print("Hooooola")
                 }
             case .failure(let error):

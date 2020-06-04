@@ -6,23 +6,6 @@ class SectionBriefInfo: UIView, ContentView, ViewFromXib {
     @IBOutlet weak var hostNameLabel: UILabel!
     @IBOutlet weak var roomInfoLabel: UILabel!
 
-    var briefInfo: BriefInfo? = nil {
-        didSet { configure() }
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configure()
-    }
-
-    private func configure() {
-        guard let briefInfo = briefInfo else { return }
-
-        hostNameLabel.text = briefInfo.hostName
-        let roomInfo: [String] = ["\(briefInfo.accommodates) guests", "\(briefInfo.numberOfBedrooms) bedrooms", "\(briefInfo.numberOfBeds) beds", "\(briefInfo.numberOfBathrooms) baths"]
-        roomInfoLabel.text = roomInfo.joined(separator: ",")
-    }
-
     func updateChanges() {
 
     }
@@ -34,4 +17,27 @@ struct BriefInfo {
     var numberOfBedrooms: Int
     var numberOfBeds: Int
     var numberOfBathrooms: Int
+}
+
+extension BriefInfo {
+    init(for stayDetail: StayDetail) {
+        self.hostName = stayDetail.hostInfo.name
+        self.accommodates = stayDetail.roomInfo.accommodates
+        self.numberOfBedrooms = stayDetail.roomInfo.bedrooms
+        self.numberOfBeds = stayDetail.roomInfo.beds
+        self.numberOfBathrooms = stayDetail.roomInfo.bathrooms
+    }
+}
+
+class SectionBriefInfoFactory {
+    static func makeView(for stayDetail: StayDetail) -> SectionBriefInfo {
+        let briefInfo = BriefInfo(for: stayDetail)
+        let view = SectionBriefInfo.loadFromXib()
+
+        view.hostNameLabel.text = briefInfo.hostName
+        let roomInfos: [String] = ["\(briefInfo.accommodates) guests", "\(briefInfo.numberOfBedrooms) bedrooms", "\(briefInfo.numberOfBeds) beds", "\(briefInfo.numberOfBathrooms) baths"]
+        view.roomInfoLabel.text = roomInfos.joined(separator: ",")
+
+        return view
+    }
 }
