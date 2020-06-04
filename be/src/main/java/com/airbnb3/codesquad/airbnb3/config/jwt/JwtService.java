@@ -20,7 +20,7 @@ public class JwtService {
 
     private Logger logger = LoggerFactory.getLogger(JwtService.class);
 
-    private String secretKey = "ThisIsHyoJunSecretKeyWelcomeMyFirstJwt";
+    private String secretKey = "ThisIsAirbnb03SecretKey";
     private byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary(secretKey);
     private SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
     private final Key KEY = new SecretKeySpec(apiKeySecretBytes, signatureAlgorithm.getJcaName());
