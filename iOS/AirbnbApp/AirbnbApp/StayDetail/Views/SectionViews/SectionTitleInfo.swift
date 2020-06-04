@@ -17,7 +17,10 @@ final class SectionTitleInfo: UIView, ViewFromXib {
 
     private func configure() {
         guard let titleInfo = titleInfo else { return }
+        updateWith(titleInfo: titleInfo)
+    }
 
+    func updateWith(titleInfo: TitleInfo) {
         reviewsLabel.text = "\(titleInfo.reviewAverage)(\(titleInfo.numberOfReviews))"
         addressLabel.text = "\(titleInfo.address)"
     }

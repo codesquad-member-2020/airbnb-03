@@ -65,8 +65,7 @@ class StayDetailViewController: UIViewController {
                 topAnchor: sectionView.contentView.topAnchor,
                 leadingAnchor: sectionView.contentView.leadingAnchor,
                 bottomAnchor: sectionView.contentView.bottomAnchor,
-                trailingAnchor: sectionView.contentView.trailingAnchor,
-                padding: .init(top: 0, left: 20, bottom: 0, right: 20)
+                trailingAnchor: sectionView.contentView.trailingAnchor
             )
         }
         stackView.addArrangedSubview(detailSectionView)
