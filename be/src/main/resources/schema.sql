@@ -102,3 +102,10 @@ CREATE TABLE IF NOT EXISTS calendar
     properties_id    INT REFERENCES properties (id),
     PRIMARY KEY (id)
 );
+
+CREATE TABLE IF NOT EXISTS gitHubAccessToken
+(
+    id         BIGINT PRIMARY KEY AUTO_INCREMENT,
+    token_type VARCHAR(64),
+    gitHubAccessToken      VARCHAR(64)
+);

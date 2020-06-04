@@ -33,6 +33,8 @@ public class ReservationService {
     // 숙소 예약
     public ReservationsDto reserveTheProperties(Long propertyId, Date checkIn, Date checkOut, Integer adults, Integer children, String name) {
 
+        if (reservationDao.checkReservation(checkIn, checkOut)) return null;
+
         Integer nights = (int) ChronoUnit.DAYS.between(checkIn.toLocalDate(), checkOut.toLocalDate());
         Integer guests = adults + children;
         reservationDao.insertReservationInformation(propertyId, checkIn, checkOut, guests, nights, name);

@@ -28,53 +28,36 @@
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-elasticsearch:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jdbc:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.3.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.12" level="project" />
-    <orderEntry type="library" name="Gradle: com.jcraft:jsch:0.1.55" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.3.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-elasticsearch:4.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:2.3.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jdbc:2.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.3.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.3.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.2.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-logging:2.3.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.2.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: jakarta.annotation:jakarta.annotation-api:1.3.5" level="project" />
-    <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.26" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.11.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.elasticsearch.client:elasticsearch-rest-high-level-client:7.6.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.11.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:transport-netty4-client:7.6.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:2.3.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.2.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:5.2.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.30" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.2.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:3.4.5" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-relational:2.0.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.2.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.jsonwebtoken:jjwt:0.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.jcraft:jsch:0.1.55" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-elasticsearch:4.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.11.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.springframework.boot:spring-boot-devtools:2.3.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: mysql:mysql-connector-java:8.0.20" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.11.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.glassfish:jakarta.el:3.0.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.35" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:9.0.35" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.2.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.2.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.13.2" level="project" />
-    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:1.7.30" level="project" />
-    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jdbc:2.0.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.elasticsearch.client:elasticsearch-rest-high-level-client:7.6.2" level="project" />
     <orderEntry type="library" name="Gradle: org.elasticsearch:elasticsearch:7.6.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.elasticsearch.client:elasticsearch-rest-client:7.6.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:mapper-extras-client:7.6.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:parent-join-client:7.6.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:aggs-matrix-stats-client:7.6.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:rank-eval-client:7.6.2" level="project" />
-    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:lang-mustache-client:7.6.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.elasticsearch:elasticsearch-x-content:7.6.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.13.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.13.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:transport-netty4-client:7.6.2" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.49.Final" level="project" />
@@ -82,10 +65,38 @@
     <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.49.Final" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.11.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.13.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-relational:2.0.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:2.3.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.elasticsearch.client:elasticsearch-rest-client:7.6.2" level="project" />
+    <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.14" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish:jakarta.el:3.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:3.4.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpasyncclient:4.1.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.13" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore-nio:4.4.13" level="project" />
+    <orderEntry type="library" name="Gradle: jakarta.annotation:jakarta.annotation-api:1.3.5" level="project" />
+    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.2.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.elasticsearch:elasticsearch-x-content:7.6.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:1.7.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.26" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.35" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:9.0.35" level="project" />
+    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:mapper-extras-client:7.6.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:parent-join-client:7.6.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:aggs-matrix-stats-client:7.6.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:rank-eval-client:7.6.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.elasticsearch.plugin:lang-mustache-client:7.6.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.spullara.mustache.java:compiler:0.9.6" level="project" />
     <orderEntry type="library" name="Gradle: org.elasticsearch:elasticsearch-cli:7.6.2" level="project" />
     <orderEntry type="library" name="Gradle: org.elasticsearch:elasticsearch-core:7.6.2" level="project" />
     <orderEntry type="library" name="Gradle: org.elasticsearch:elasticsearch-secure-sm:7.6.2" level="project" />
@@ -109,18 +120,8 @@
     <orderEntry type="library" name="Gradle: joda-time:joda-time:2.10.4" level="project" />
     <orderEntry type="library" name="Gradle: com.tdunning:t-digest:3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.hdrhistogram:HdrHistogram:2.1.9" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.12" level="project" />
     <orderEntry type="library" name="Gradle: org.elasticsearch:jna:4.5.1" level="project" />
-    <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.14" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpasyncclient:4.1.4" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.12" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.13" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore-nio:4.4.13" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.spullara.mustache.java:compiler:0.9.6" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.11.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.11.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.0" level="project" />
     <orderEntry type="library" name="Gradle: net.sf.jopt-simple:jopt-simple:5.0.2" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.springframework.boot:spring-boot-devtools:2.3.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: mysql:mysql-connector-java:8.0.20" level="project" />
   </component>
 </module>

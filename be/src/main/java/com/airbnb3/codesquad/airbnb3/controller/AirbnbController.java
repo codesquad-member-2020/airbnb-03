@@ -1,11 +1,10 @@
 package com.airbnb3.codesquad.airbnb3.controller;
 
 import com.airbnb3.codesquad.airbnb3.common.CommonMessage;
+import com.airbnb3.codesquad.airbnb3.config.jwt.JwtService;
 import com.airbnb3.codesquad.airbnb3.dto.DetailDto;
 import com.airbnb3.codesquad.airbnb3.dto.PropertiesDto;
-import com.airbnb3.codesquad.airbnb3.dto.ReservationDto;
 import com.airbnb3.codesquad.airbnb3.dto.ReservationsDto;
-import com.airbnb3.codesquad.airbnb3.dto.hamill.BookingsDtoHamill;
 import com.airbnb3.codesquad.airbnb3.service.AirbnbService;
 import com.airbnb3.codesquad.airbnb3.service.ReservationService;
 import org.slf4j.Logger;
@@ -14,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.util.List;
 
@@ -26,10 +26,12 @@ public class AirbnbController {
     private static final Logger logger = LoggerFactory.getLogger(AirbnbController.class);
     private final AirbnbService airbnbService;
     private final ReservationService reservationService;
+    private final JwtService jwtService;
 
-    public AirbnbController(AirbnbService airbnbService, ReservationService reservationService) {
+    public AirbnbController(AirbnbService airbnbService, ReservationService reservationService, JwtService jwtService) {
         this.airbnbService = airbnbService;
         this.reservationService = reservationService;
+        this.jwtService = jwtService;
     }
 
     @GetMapping("/properties")
@@ -47,12 +49,13 @@ public class AirbnbController {
             @RequestParam(value = "max_long", required = false, defaultValue = DEFAULT_MAX_LONGITUDE) String maxLongitude,
             @RequestParam(value = "name", required = false, defaultValue = DEFAULT_NAME) String name
     ) {
+
         return new ResponseEntity<>(airbnbService.stayedProperties(offset, adults, children, checkIn, checkOut, name,
                 minPrice, maxPrice, minLatitude, maxLatitude, minLongitude, maxLongitude), HttpStatus.OK);
     }
 
     @GetMapping("/properties/{id}")
-    public ResponseEntity<DetailDto> detailPage(@PathVariable("id") Long id) {
+    public ResponseEntity<DetailDto> detailPage(@PathVariable("id") Long id, HttpServletRequest request) {
         return new ResponseEntity<>(airbnbService.detailProperties(id), HttpStatus.OK);
     }
 
@@ -62,7 +65,7 @@ public class AirbnbController {
     }
 
     @PutMapping("/reservations/{propertyId}")
-    public ResponseEntity<ReservationsDto> reserveTheProperties(
+    public ResponseEntity<Object> reserveTheProperties(
             @PathVariable Long propertyId,
             @RequestParam(value = "check_in") Date checkIn,
             @RequestParam(value = "check_out") Date checkOut,
@@ -70,8 +73,12 @@ public class AirbnbController {
             @RequestParam(value = "children", required = false, defaultValue = DEFAULT_CHILDREN_COUNT) Integer children,
             @CookieValue(value = "name", required = false, defaultValue = DEFAULT_NAME) String name) {
 
-        return new ResponseEntity<>(reservationService.reserveTheProperties(
-                propertyId, checkIn, checkOut, adults, children, name), HttpStatus.OK);
+        ReservationsDto result = reservationService.reserveTheProperties(propertyId, checkIn, checkOut, adults, children, name);
+
+        if (result == null) {
+            return new ResponseEntity<>(getMessage("400", "이미 예약되어 있는 상품입니다"), HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @DeleteMapping("/reservations/{propertyId}")
