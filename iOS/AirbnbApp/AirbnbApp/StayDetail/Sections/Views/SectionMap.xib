@@ -10,26 +10,62 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SectionMap" customModule="AirbnbApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="323"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="352"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bah-8Z-blT">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="323"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="ZfY-7r-6by"/>
+                    </constraints>
                 </mapView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2H-nW-sgF">
+                    <rect key="frame" x="0.0" y="220" width="414" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="guh-st-2km"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7G-cb-UhR" customClass="DetailButton" customModule="AirbnbApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="314" width="414" height="30"/>
+                    <state key="normal" title=" More about the location"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnO-VP-9jR">
+                    <rect key="frame" x="0.0" y="248" width="414" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="lp8-dQ-KTC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="s2H-nW-sgF" secondAttribute="trailing" id="5Lb-RN-dnh"/>
                 <constraint firstItem="bah-8Z-blT" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="7IJ-Tj-W7E"/>
+                <constraint firstAttribute="trailing" secondItem="z7G-cb-UhR" secondAttribute="trailing" id="8fO-IR-KgQ"/>
+                <constraint firstItem="z7G-cb-UhR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8gw-he-7BS"/>
                 <constraint firstItem="bah-8Z-blT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EVJ-s0-vsB"/>
+                <constraint firstAttribute="bottom" secondItem="z7G-cb-UhR" secondAttribute="bottom" constant="8" id="K00-Np-Fob"/>
+                <constraint firstItem="bnO-VP-9jR" firstAttribute="top" secondItem="s2H-nW-sgF" secondAttribute="bottom" constant="8" id="KG5-9J-GGR"/>
+                <constraint firstAttribute="trailing" secondItem="bnO-VP-9jR" secondAttribute="trailing" id="NRI-GQ-Y3m"/>
+                <constraint firstItem="s2H-nW-sgF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vip-6B-nvC"/>
                 <constraint firstItem="bah-8Z-blT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZeK-c1-E82"/>
-                <constraint firstItem="bah-8Z-blT" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="huT-Ib-TxA"/>
+                <constraint firstItem="z7G-cb-UhR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bnO-VP-9jR" secondAttribute="bottom" constant="8" id="eZG-og-UNm"/>
+                <constraint firstItem="s2H-nW-sgF" firstAttribute="top" secondItem="bah-8Z-blT" secondAttribute="bottom" constant="20" id="h0T-Ed-aLj"/>
+                <constraint firstItem="bnO-VP-9jR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="v9a-TQ-MWZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="addressLabel" destination="s2H-nW-sgF" id="nP3-EJ-kXY"/>
+                <outlet property="descriptionLabel" destination="bnO-VP-9jR" id="I1u-NP-VuE"/>
                 <outlet property="mapView" destination="bah-8Z-blT" id="Oul-DX-jCd"/>
             </connections>
-            <point key="canvasLocation" x="2.8985507246376816" y="65.959821428571431"/>
+            <point key="canvasLocation" x="2.8985507246376816" y="75"/>
         </view>
     </objects>
 </document>
