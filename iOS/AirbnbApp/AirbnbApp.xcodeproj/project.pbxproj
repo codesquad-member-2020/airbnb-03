@@ -272,7 +272,6 @@
 				38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */,
 				381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */,
 				381A030524762561004EDE84 /* PriceLabel.swift */,
-				3893B5DD247E9168004783C4 /* SaveButton.swift */,
 			);
 			path = StayCell;
 			sourceTree = "<group>";
@@ -860,7 +859,6 @@
 				38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */,
 				8D5CE98524868F1600C850A1 /* SectionTitleInfo.swift in Sources */,
 				38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */,
-				3893B5DE247E9168004783C4 /* SaveButton.swift in Sources */,
 				8D63C75D2476CFA10074BF0F /* MapButtonView.swift in Sources */,
 				3893B5E0247F9A83004783C4 /* UIView+layer.swift in Sources */,
 				38A328DF2487D025009ED71D /* UIView+RoundCorner.swift in Sources */,
