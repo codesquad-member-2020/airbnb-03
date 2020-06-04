@@ -10,14 +10,14 @@ class StayDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addToStackView(title: "Center of Seattle", subContentView: SectionTitleInfo.loadFromXib())
-        addToStackView(title: nil, subContentView: SectionBriefInfo.loadFromXib())
-        addToStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
-        addToStackView(title: "Amenities", subContentView: SectionAmenities.loadFromXib())
+        addSectionInStackView(title: "Center of Seattle", subContentView: SectionTitleInfo.loadFromXib())
+        addSectionInStackView(title: nil, subContentView: SectionBriefInfo.loadFromXib())
+        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addSectionInStackView(title: "Amenities", subContentView: SectionAmenities.loadFromXib())
         
-        addToStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
-        addToStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
-        addToStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
+        addSectionInStackView(title: "Summary", subContentView: SectionSummary.loadFromXib())
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -58,14 +58,15 @@ class StayDetailViewController: UIViewController {
 
     // MARK: Private Methods
 
-    private func addToStackView(title: String?, subContentView: UIView) {
+    private func addSectionInStackView(title: String?, subContentView: UIView) {
         let detailSectionView = DetailSectionView.loadFromXib(titleText: title) { sectionView in
             sectionView.contentView.addSubview(subContentView)
-            subContentView.constraints(topAnchor: sectionView.contentView.topAnchor,
-                                       leadingAnchor: sectionView.contentView.leadingAnchor,
-                                       bottomAnchor: sectionView.contentView.bottomAnchor,
-                                       trailingAnchor: sectionView.contentView.trailingAnchor,
-                                       padding: .init(top: 0, left: 20, bottom: 0, right: 20)
+            subContentView.constraints(
+                topAnchor: sectionView.contentView.topAnchor,
+                leadingAnchor: sectionView.contentView.leadingAnchor,
+                bottomAnchor: sectionView.contentView.bottomAnchor,
+                trailingAnchor: sectionView.contentView.trailingAnchor,
+                padding: .init(top: 0, left: 20, bottom: 0, right: 20)
             )
         }
         stackView.addArrangedSubview(detailSectionView)
