@@ -37,8 +37,9 @@ final class StayListCollectionView: UICollectionView {
         backgroundColor = .clear
         showsVerticalScrollIndicator = false
         
-        tapGestureRecognizer = UITapGestureRecognizer(target: self,
-                                                      action: #selector(didTapCollectionView))
+        tapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(didTapCollectionView))
         addGestureRecognizer(tapGestureRecognizer)
     }
     

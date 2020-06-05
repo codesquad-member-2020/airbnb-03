@@ -42,4 +42,21 @@ final class NetworkManager {
             }
         }
     }
+    
+    static func requestSave(
+        urlRequest: URLRequest,
+        completionHandler: @escaping (_ isSuccessful: Bool) -> Void) {
+        AF.request(urlRequest).responseData { (responseData) in
+            guard let response = responseData.response
+            else {
+                completionHandler(false)
+                return
+            }
+            if response.statusCode == 200 {
+                completionHandler(true)
+            } else {
+                completionHandler(false)
+            }
+        }
+    }
 }
