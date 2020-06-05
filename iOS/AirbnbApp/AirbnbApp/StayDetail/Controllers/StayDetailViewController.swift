@@ -118,6 +118,9 @@ class StayDetailViewController: UIViewController {
 extension StayDetailViewController: SectionSummaryDelegate {
     func didTapMoreSummaryButton() {
         let viewController = StayDetailSectionViewController()
+        viewController.contentTitle = "Summary"
+        viewController.viewFactory = SectionDetailSummaryFactory.self
+        viewController.stayDetail = stayDetail
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

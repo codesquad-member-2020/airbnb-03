@@ -16,7 +16,7 @@ class DetailSectionView: UIView, ViewFromXib {
         return view
     }
 
-    func addContentView(_ contentView: ContentView) {
+    private func addContentView(_ contentView: ContentView) {
         self.addSubview(contentView)
         self.contentView = contentView
         contentView.constraints(
