@@ -40,10 +40,7 @@ final class ThumbImagePagingView: UIView {
         pageControl.currentPage = 0
         scrollView.contentOffset.x = 0
         
-        imageStackView.arrangedSubviews.forEach {
-            imageStackView.removeArrangedSubview($0)
-            $0.removeFromSuperview()
-        }
+        imageStackView.resetArrangedSubViews()
     }
     
     private func configure() {

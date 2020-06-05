@@ -21,11 +21,11 @@ class TabBarController: UITabBarController {
     }
 
     private func makeRootViewControllerNamedExplore() -> UIViewController {
-        let navViewController = UINavigationController(rootViewController: StayListViewController())
+        let viewController = StayListViewController()
 
         let item = UITabBarItem(title: "EXPLORE", image: UIImage(systemName: "magnifyingglass"), tag: 0)
-        navViewController.tabBarItem = item
+        viewController.tabBarItem = item
 
-        return navViewController
+        return viewController
     }
 }

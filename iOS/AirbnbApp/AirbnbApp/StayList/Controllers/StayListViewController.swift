@@ -95,12 +95,13 @@ final class StayListViewController: UIViewController {
 
 extension StayListViewController: StayListCollectionViewTapDelegate {
     func didTapCell(at indexPath: IndexPath) {
-        stayListCollectionViewDataSource.idForCell(at: indexPath) { [weak self] (id) in
+        stayListCollectionViewDataSource.idForCell(at: indexPath) { id in
             let detailViewController = StayDetailViewController()
-            #warning("Request detail data")
-            self?.navigationController?.pushViewController(detailViewController, animated: true)
-//            detailViewController.modalPresentationStyle = .fullScreen
-//            present(detailViewController, animated: true, completion: nil)
+            detailViewController.stayDetailID = id
+
+            let viewController = UINavigationController(rootViewController: detailViewController)
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true)
         }
     }
 }
@@ -193,7 +194,6 @@ extension StayListViewController: GuestsFilterSearchDelegate {
 extension StayListViewController {
     private func configureUI() {
         view.backgroundColor = .white
-        navigationController?.setNavigationBarHidden(true, animated: false)
         searchFieldView = SearchFieldView.loadFromXib()
         separatorView = SeparatorView()
         searchFilterView = SearchFilterView.loadFromXib()
