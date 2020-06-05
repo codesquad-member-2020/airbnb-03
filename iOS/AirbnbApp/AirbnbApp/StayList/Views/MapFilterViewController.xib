@@ -7,9 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SectionDetailMapViewController" customModule="AirbnbApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapFilterViewController" customModule="AirbnbApp" customModuleProvider="target">
             <connections>
-                <outlet property="mapView" destination="93l-pa-lNi" id="iw8-pw-ao5"/>
+                <outlet property="mapView" destination="93l-pa-lNi" id="83l-d7-KvM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uKt-0y-owS"/>
             </connections>
         </placeholder>
@@ -29,7 +29,7 @@
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
                     </state>
                     <connections>
-                        <action selector="closeButtonTouched:" destination="-1" eventType="touchUpInside" id="gfP-RQ-Cnu"/>
+                        <action selector="closeButtonTouched:" destination="-1" eventType="touchUpInside" id="ue9-Fc-KLG"/>
                     </connections>
                 </button>
             </subviews>

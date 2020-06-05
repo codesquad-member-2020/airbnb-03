@@ -84,10 +84,9 @@ final class StayListViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func mapButtonTouched(_ sender: Any) {
-        #warning("동작 확인용 VC")
-        let viewController = UIViewController()
-        viewController.modalPresentationStyle = .automatic // .fullScreen으로 변경할 것
-        viewController.view.backgroundColor = .systemTeal
+        let viewController = MapFilterViewController()
+        viewController.stays = stayListCollectionViewDataSource.allStays
+        viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }
 }
