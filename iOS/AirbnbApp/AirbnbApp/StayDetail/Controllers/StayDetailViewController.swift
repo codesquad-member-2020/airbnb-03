@@ -1,4 +1,4 @@
-import UIKit
+import MapKit
 
 class StayDetailViewController: UIViewController {
 
@@ -139,5 +139,13 @@ extension StayDetailViewController: SectionAmenitiesDelegate {
 extension StayDetailViewController: SectionMapDelegate {
     func didTapMoreLocationButton() {
         makeAndPushController(contentTitle: "Location", viewFactoryType: SectionDetailLocationFactory.self)
+    }
+
+    func didTapMapView() {
+        let (latitude, longitude) = (stayDetail.locationInfo.latitude, stayDetail.locationInfo.longitude)
+        let viewController = SectionDetailMapViewController()
+        viewController.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
 }

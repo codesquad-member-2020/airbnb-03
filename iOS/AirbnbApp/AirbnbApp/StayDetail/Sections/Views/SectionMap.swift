@@ -33,6 +33,10 @@ class SectionMap: UIView, RoundedBorder {
     @IBAction func moreButtonTouched(_ sender: Any) {
         delegate?.didTapMoreLocationButton()
     }
+
+    @IBAction func mapTouched(_ sender: Any) {
+        delegate?.didTapMapView()
+    }
 }
 
 extension SectionMap: ContentView {

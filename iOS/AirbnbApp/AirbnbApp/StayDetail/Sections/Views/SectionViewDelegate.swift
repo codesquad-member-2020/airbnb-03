@@ -23,4 +23,5 @@ protocol SectionAmenitiesDelegate: SectionViewDelegate {
 
 protocol SectionMapDelegate: SectionViewDelegate {
     func didTapMoreLocationButton()
+    func didTapMapView()
 }

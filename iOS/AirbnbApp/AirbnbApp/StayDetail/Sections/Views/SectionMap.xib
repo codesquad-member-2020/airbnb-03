@@ -15,9 +15,13 @@
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bah-8Z-blT">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="ZfY-7r-6by"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="8OC-Ye-Fd9" appends="YES" id="nTG-Dx-V8c"/>
+                    </connections>
                 </mapView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2H-nW-sgF">
                     <rect key="frame" x="0.0" y="220" width="414" height="20"/>
@@ -70,5 +74,10 @@
             </connections>
             <point key="canvasLocation" x="2.8985507246376816" y="75"/>
         </view>
+        <tapGestureRecognizer id="8OC-Ye-Fd9">
+            <connections>
+                <action selector="mapTouched:" destination="iN0-l3-epB" id="fhy-7g-SAN"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

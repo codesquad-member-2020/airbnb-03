@@ -95,7 +95,7 @@ final class StayListViewController: UIViewController {
 
 extension StayListViewController: StayListCollectionViewTapDelegate {
     func didTapCell(at indexPath: IndexPath) {
-        stayListCollectionViewDataSource.idForCell(at: indexPath) { [weak self] (id) in
+        stayListCollectionViewDataSource.idForCell(at: indexPath) { id in
             let detailViewController = StayDetailViewController()
             detailViewController.stayDetailID = id
 
@@ -194,7 +194,6 @@ extension StayListViewController: GuestsFilterSearchDelegate {
 extension StayListViewController {
     private func configureUI() {
         view.backgroundColor = .white
-        navigationController?.setNavigationBarHidden(true, animated: false)
         searchFieldView = SearchFieldView.loadFromXib()
         separatorView = SeparatorView()
         searchFilterView = SearchFilterView.loadFromXib()

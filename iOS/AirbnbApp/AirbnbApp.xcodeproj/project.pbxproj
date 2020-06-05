@@ -111,6 +111,8 @@
 		8DC3857E2489E645007820E2 /* SectionDetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3857D2489E645007820E2 /* SectionDetailLocation.swift */; };
 		8DC385802489E652007820E2 /* SectionDetailAmenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3857F2489E652007820E2 /* SectionDetailAmenities.swift */; };
 		8DC385822489E914007820E2 /* SectionDetailLocationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC385812489E914007820E2 /* SectionDetailLocationFactory.swift */; };
+		8DC385842489F1C8007820E2 /* SectionDetailMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC385832489F1C8007820E2 /* SectionDetailMapViewController.xib */; };
+		8DC3858A2489F296007820E2 /* SectionDetailMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC385892489F296007820E2 /* SectionDetailMapViewController.swift */; };
 		8DC8A90524893E4400756086 /* AmenityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC8A90424893E4400756086 /* AmenityView.xib */; };
 		8DC8A908248955D400756086 /* TitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A907248955D400756086 /* TitleInfo.swift */; };
 		8DC8A90A2489560D00756086 /* BriefInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A9092489560D00756086 /* BriefInfo.swift */; };
@@ -255,6 +257,8 @@
 		8DC3857D2489E645007820E2 /* SectionDetailLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailLocation.swift; sourceTree = "<group>"; };
 		8DC3857F2489E652007820E2 /* SectionDetailAmenities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailAmenities.swift; sourceTree = "<group>"; };
 		8DC385812489E914007820E2 /* SectionDetailLocationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDetailLocationFactory.swift; sourceTree = "<group>"; };
+		8DC385832489F1C8007820E2 /* SectionDetailMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionDetailMapViewController.xib; sourceTree = "<group>"; };
+		8DC385892489F296007820E2 /* SectionDetailMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailMapViewController.swift; sourceTree = "<group>"; };
 		8DC8A90424893E4400756086 /* AmenityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmenityView.xib; sourceTree = "<group>"; };
 		8DC8A907248955D400756086 /* TitleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfo.swift; sourceTree = "<group>"; };
 		8DC8A9092489560D00756086 /* BriefInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefInfo.swift; sourceTree = "<group>"; };
@@ -725,6 +729,8 @@
 				8DC3857D2489E645007820E2 /* SectionDetailLocation.swift */,
 				8DC3857B2489E620007820E2 /* SectionDetailLocation.xib */,
 				8DC385812489E914007820E2 /* SectionDetailLocationFactory.swift */,
+				8DC385892489F296007820E2 /* SectionDetailMapViewController.swift */,
+				8DC385832489F1C8007820E2 /* SectionDetailMapViewController.xib */,
 			);
 			path = StayDetailSection;
 			sourceTree = "<group>";
@@ -890,6 +896,7 @@
 				3899CAE124813ACF006CB23E /* DatesFilterTitleView.xib in Resources */,
 				3899CB0224818FE1006CB23E /* DateCell.xib in Resources */,
 				380B0238248834F70061C8C9 /* GuestsSaveFooterView.xib in Resources */,
+				8DC385842489F1C8007820E2 /* SectionDetailMapViewController.xib in Resources */,
 				8DC8A90524893E4400756086 /* AmenityView.xib in Resources */,
 				3899CAEB24814FD5006CB23E /* SearchFooterView.xib in Resources */,
 				8DC385762489D9AC007820E2 /* SectionDetailSummary.xib in Resources */,
@@ -1031,6 +1038,7 @@
 				38A328E62487DB77009ED71D /* GuestsFilterTitleView.swift in Sources */,
 				8DA4BA32247FB7B800FFE332 /* StayDetailSectionViewController.swift in Sources */,
 				8D5CE99324869A1C00C850A1 /* AmenityView.swift in Sources */,
+				8DC3858A2489F296007820E2 /* SectionDetailMapViewController.swift in Sources */,
 				8DA4BA2D247FB45E00FFE332 /* UIView+drawBorder.swift in Sources */,
 				381A030624762561004EDE84 /* PriceLabel.swift in Sources */,
 				3899CB1024852EA9006CB23E /* CalendarHeaderView.swift in Sources */,
