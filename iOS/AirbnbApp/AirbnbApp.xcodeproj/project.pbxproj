@@ -341,7 +341,6 @@
 				38BDDCAF2475AB21000ACA1C /* LabelWithLeadingImage.swift */,
 				381A0303247623F3004EDE84 /* PlaceTypeAndCityLabel.swift */,
 				381A030524762561004EDE84 /* PriceLabel.swift */,
-				3893B5DD247E9168004783C4 /* SaveButton.swift */,
 			);
 			path = StayCell;
 			sourceTree = "<group>";

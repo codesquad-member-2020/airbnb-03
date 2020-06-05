@@ -6,7 +6,7 @@ final class StayCell: UICollectionViewCell {
     static let reuseIdentifier: String = "StayCell"
 
     @IBOutlet weak var thumbImagePagingView: ThumbImagePagingView!
-    @IBOutlet weak var saveButton: SaveButton!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var reviewLabel: ReviewLabel!
     @IBOutlet weak var superHostLabel: SuperHostLabel!
     @IBOutlet weak var placeTypeAndCityLabel: PlaceTypeAndCityLabel!
