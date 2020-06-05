@@ -6,7 +6,7 @@ class StayDetailSectionViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    override func loadView() {
-        view = DetailSectionView.loadFromXib()
+    @IBAction func backButtonTouched(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }

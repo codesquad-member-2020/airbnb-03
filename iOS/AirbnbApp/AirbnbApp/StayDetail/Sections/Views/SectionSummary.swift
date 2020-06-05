@@ -9,7 +9,7 @@ class SectionSummary: UIView {
     private weak var delegate: SectionSummaryDelegate?
 
     @IBAction func moreButtonTouched(_ sender: Any) {
-        delegate?.didTapMore()
+        delegate?.didTapMoreSummaryButton()
     }
 }
 

@@ -31,7 +31,7 @@ class SectionMap: UIView, RoundedBorder {
     }
 
     @IBAction func moreButtonTouched(_ sender: Any) {
-        delegate?.didTouchMoreLocationButton()
+        delegate?.didTapMoreLocationButton()
     }
 }
 

@@ -14,13 +14,13 @@ extension NeedsDelegate {
 protocol SectionViewDelegate: class { }
 
 protocol SectionSummaryDelegate: SectionViewDelegate {
-    func didTapMore()
+    func didTapMoreSummaryButton()
 }
 
 protocol SectionAmenitiesDelegate: SectionViewDelegate {
-    func didTouchShowAllButton()
+    func didTapShowAllButton()
 }
 
 protocol SectionMapDelegate: SectionViewDelegate {
-    func didTouchMoreLocationButton()
+    func didTapMoreLocationButton()
 }

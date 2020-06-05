@@ -15,7 +15,7 @@ class SectionAmenities: UIView {
     }
 
     @IBAction func showAllButtonTouched(_ sender: Any) {
-        delegate?.didTouchShowAllButton()
+        delegate?.didTapShowAllButton()
     }
 }
 

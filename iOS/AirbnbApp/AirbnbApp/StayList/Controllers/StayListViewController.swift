@@ -99,9 +99,9 @@ extension StayListViewController: StayListCollectionViewTapDelegate {
             let detailViewController = StayDetailViewController()
             detailViewController.stayDetailID = id
 
-//            self?.navigationController?.pushViewController(detailViewController, animated: true)
-            detailViewController.modalPresentationStyle = .fullScreen
-            present(detailViewController, animated: true)
+            let viewController = UINavigationController(rootViewController: detailViewController)
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true)
         }
     }
 }

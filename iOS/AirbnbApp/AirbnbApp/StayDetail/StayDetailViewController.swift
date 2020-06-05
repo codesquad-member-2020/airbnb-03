@@ -18,6 +18,7 @@ class StayDetailViewController: UIViewController {
 
         fetchStayDetail(id: stayDetailID)
         self.stayDetailDataSource = makeStayDetailDataSource()
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +56,7 @@ class StayDetailViewController: UIViewController {
 
     private func makeStayDetailDataSource() -> StayDetailDataSource {
         StayDetailDataSource() { [weak self] stayDetail in
-            self?.bottomBarView.priceLabel.text = "$ \(stayDetail.priceInfo.price)"
+            self?.bottomBarView.priceLabel.text = "$\(stayDetail.priceInfo.price)"
             self?.bottomBarView.reviewLabel.updateWith(reviewAverage: stayDetail.reviewInfo.average, numberOfReviews: stayDetail.reviewInfo.numberOfReviews)
         }
     }
@@ -111,19 +112,20 @@ class StayDetailViewController: UIViewController {
 }
 
 extension StayDetailViewController: SectionSummaryDelegate {
-    func didTapMore() {
-        print("Tapped more button......")
+    func didTapMoreSummaryButton() {
+        let viewController = StayDetailSectionViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
 extension StayDetailViewController: SectionAmenitiesDelegate {
-    func didTouchShowAllButton() {
+    func didTapShowAllButton() {
         print("Tapped Amenities detail button......")
     }
 }
 
 extension StayDetailViewController: SectionMapDelegate {
-    func didTouchMoreLocationButton() {
+    func didTapMoreLocationButton() {
         print("Tapped Map detail button...")
     }
 }
