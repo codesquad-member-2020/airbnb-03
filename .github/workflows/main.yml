@@ -1,0 +1,48 @@
+# .github/
+#      workflows/
+#              main.yml
+on:
+  push:
+    branches: [ dev ]
+
+name: Deploy String boot to Amazon EC2
+env:
+  PROJECT_NAME: action_codedeploy
+
+jobs:
+  deploy:
+    name: DEPLOY
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+        working-directory: be
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+        shell: bash
+
+      - name: Gradle 빌드
+        run: ./gradlew bootJar
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Upload to S3
+        run: aws deploy push --application-name airbnb-03 --description "This is a revision for the application airbnb_App" --s3-location s3://my-airbnb-bucket/server/build.zip --source .
+
+      - name: Code Deploy
+        run: aws deploy create-deployment --application-name airbnb-03 --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=my-airbnb-bucket,bundleType=zip,key=server/build.zip

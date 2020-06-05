@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b3f72608-7c9f-4489-9c76-75a76f6e022f" name="airbnb">
+        <fileTransfer accessType="SFTP" host="3.34.93.158" port="22" sshConfigId="5332fd8f-60bf-4204-9017-0e629eff540e" sshConfig="airbnb@3.34.93.158:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
