@@ -8,7 +8,10 @@ class StayDetailViewController: UIViewController {
     @IBOutlet weak var bottomBarView: BottomBarView!
 
     var stayDetailID: Int!
-    private var stayDetail: StayDetail!
+    private var stayDetail: StayDetail {
+        stayDetailEntity.stayDetail
+    }
+    private var stayDetailEntity: StayDetailEntity!
     private var stayDetailDataSource: StayDetailDataSource?
 
     // MARK: - View Cycle
@@ -85,6 +88,7 @@ class StayDetailViewController: UIViewController {
             switch result {
             case .success(let stayDetail):
                 DispatchQueue.main.async { [weak self] in
+                    self?.stayDetailEntity = StayDetailEntity(stayDetail)
                     self?.stayDetailDataSource?.configure(with: stayDetail)
 
                     self?.configureStackView(with: stayDetail)
