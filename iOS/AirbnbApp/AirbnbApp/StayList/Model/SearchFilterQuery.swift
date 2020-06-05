@@ -13,6 +13,7 @@ struct SearchFilterQuery: Encodable {
     private(set) var minLongitude: Double? = nil
     private(set) var maxLatitude: Double? = nil
     private(set) var maxLongitude: Double? = nil
+    private(set) var search: String? = nil
     
     struct Date {
         let checkIn, checkOut: String?
@@ -43,7 +44,8 @@ extension SearchFilterQuery {
         date: Date? = nil,
         guest: Guest? = nil,
         price: Price? = nil,
-        locationRange: LocationRange? = nil) {
+        locationRange: LocationRange? = nil,
+        search: String? = nil) {
         self.pageOffset = pageOffset
         checkInDate = date?.checkIn ?? self.checkInDate
         checkOutDate = date?.checkOut ?? self.checkOutDate
@@ -56,6 +58,7 @@ extension SearchFilterQuery {
         minLongitude = locationRange?.minLongitude ?? self.minLongitude
         maxLatitude = locationRange?.maxLatitude ?? self.maxLatitude
         maxLongitude = locationRange?.maxLongitude ?? self.maxLongitude
+        self.search = search
     }
 }
 
@@ -73,5 +76,6 @@ extension SearchFilterQuery {
         case maxLatitude = "max_lat"
         case minLongitude = "min_long"
         case maxLongitude = "max_long"
+        case search = "search"
     }
 }
