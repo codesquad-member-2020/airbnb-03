@@ -3,7 +3,7 @@ import Foundation
 struct Stay: Decodable {
     let id: Int
     let images: [String]
-    let saved: Bool
+    var saved: Bool
     let reviewAverage: Double
     let numberOfReviews: Int
     let isSuperHost: Bool

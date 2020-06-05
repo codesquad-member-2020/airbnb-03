@@ -26,6 +26,14 @@ final class StayListCollectionViewDataSource: NSObject, UICollectionViewDataSour
         handler(stay.id)
     }
     
+    func stayData(at indexPath: IndexPath, handler: (Stay) -> Void) {
+        handler(stayList[indexPath])
+    }
+    
+    func updateSavedData(at indexPath: IndexPath, saved: Bool) {
+        stayList.updateSaved(at: indexPath, saved: saved)
+    }
+    
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

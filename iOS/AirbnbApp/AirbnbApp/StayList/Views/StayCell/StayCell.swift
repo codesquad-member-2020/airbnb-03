@@ -36,15 +36,24 @@ final class StayCell: UICollectionViewCell {
     
     // MARK:- IBAction
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        
+    @IBAction func saveButtonTapped(_ button: UIButton) {
+        let collectionView = self.superview as! UICollectionView
+        let location = button.convert(button.bounds.origin, to: collectionView)
+        NotificationCenter.default.post(
+            name: .didTapSaveButton,
+            object: nil,
+            userInfo: ["location": location])
     }
 }
 
-// MARK:- Save Button Animation
+// MARK:- Save Button
 
 extension StayCell {
-    private func animateSaveButton() {
+    func updateSaveButton(with isSaved: Bool) {
+        saveButton.update(with: isSaved)
+    }
+    
+    func animateSaveButton() {
         saveButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         UIView.animate(
             withDuration: 0.3,
@@ -53,7 +62,7 @@ extension StayCell {
             initialSpringVelocity: 1.4,
             options: .curveEaseOut,
             animations: {
-                #warning("Update button ui")
+                self.saveButton.update(with: true)
                 self.saveButton.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         }, completion: { _ in
             UIView.animate(
@@ -67,4 +76,10 @@ extension StayCell {
             })
         })
     }
+}
+
+// MARK:- Notification
+
+extension Notification.Name {
+    static let didTapSaveButton: Notification.Name = Notification.Name("didTapSaveButton")
 }

@@ -27,7 +27,7 @@ struct SavingStayUseCase {
     static func requestSave(
         stayID: Int,
         shouldCancel: Bool,
-        completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        completionHandler: @escaping (_ isSuccessful: Bool) -> Void) {
         
         let request: Request = shouldCancel ? CancelRequest(id: stayID) : SaveRequest(id: stayID)
         guard let urlRequest = request.urlRequest()
@@ -36,12 +36,7 @@ struct SavingStayUseCase {
         }
         NetworkManager.requestSave(
         urlRequest: urlRequest) { (result) in
-            switch result {
-            case .success(let isSuccessful):
-                completionHandler(.success(isSuccessful))
-            case .failure(let error):
-                completionHandler(.failure(error))
-            }
+            completionHandler(result)
         }
     }
 }

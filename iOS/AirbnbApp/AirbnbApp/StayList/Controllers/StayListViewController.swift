@@ -22,6 +22,7 @@ final class StayListViewController: UIViewController {
         configureCollectionView()
         configureTextFieldDelegate()
         configureSearchFilterViewTapDelegate()
+        configureNotification()
         
         fetchStayList()
     }
@@ -88,6 +89,52 @@ final class StayListViewController: UIViewController {
         viewController.modalPresentationStyle = .automatic // .fullScreen으로 변경할 것
         viewController.view.backgroundColor = .systemTeal
         present(viewController, animated: true)
+    }
+}
+
+// MARK:- Notification Configuration
+
+extension StayListViewController {
+    private func configureNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didTapSaveButton),
+            name: .didTapSaveButton,
+            object: nil)
+    }
+    
+    @objc private func didTapSaveButton(notification: Notification) {
+        guard
+            let locationOfButton = notification.userInfo?["location"] as? CGPoint,
+            let indexPath = stayListCollectionView.indexPathForItem(at: locationOfButton),
+            let stayCell = stayListCollectionView.cellForItem(at: indexPath) as? StayCell
+        else {
+            return
+        }
+        stayListCollectionViewDataSource.stayData(at: indexPath) { [weak self] (stay) in
+            let isSaved: Bool = stay.saved
+            if !isSaved {
+                stayCell.animateSaveButton()
+            }
+            SavingStayUseCase.requestSave(
+                stayID: stay.id,
+                shouldCancel: isSaved) { (success) in
+                    guard success
+                    else {
+                        DispatchQueue.main.async {
+                            stayCell.updateSaveButton(with: isSaved)
+                        }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        stayCell.updateSaveButton(with: !isSaved)
+                        self?.stayListCollectionViewDataSource.updateSavedData(
+                            at: indexPath,
+                            saved: !isSaved)
+                        self?.stayListCollectionView.reloadItems(at: [indexPath])
+                    }
+            }
+        }
     }
 }
 
