@@ -179,6 +179,7 @@ extension StayListViewController {
     
     private func configureTextFieldDelegate() {
         searchTextFieldDelegate = SearchTextFieldDelegate()
+        searchTextFieldDelegate.searchDelegate = self
         searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
     }
 }
@@ -205,6 +206,13 @@ extension StayListViewController: SearchFilterViewTapDelegate {
             guests = (1, 0, 0)
         }
         guestsFilterViewController.updateGuests(guests)
+    }
+}
+
+extension StayListViewController: SearchTextFieldSearchDelegate {
+    func searchStayList(keyword: String?) {
+        searchFilterQuery.updateFilters(search: keyword)
+        fetchStayList()
     }
 }
 
