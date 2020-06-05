@@ -23,10 +23,15 @@ final class SearchFieldView: UIView, ViewFromXib {
 
     private func configure() {
         drawBorder()
-        drawShadow(color: .lightGray,
-                   radius: 4.0,
-                   opacity: 0.5,
-                   shouldRasterize: true)
+        drawShadow()
+    }
+
+    private func drawShadow() {
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 4
+        layer.shouldRasterize = true
     }
 
     private func drawBorder() {
