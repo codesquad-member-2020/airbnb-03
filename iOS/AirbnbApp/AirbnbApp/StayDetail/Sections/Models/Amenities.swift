@@ -6,6 +6,17 @@ struct AmenityCollection {
     var count: Int {
         items.count
     }
+
+    func limitOrAll(with number: Int?) -> ArraySlice<Amenity> {
+        var limit: Int
+        if let number = number {
+            limit = min(number, self.count)
+        } else {
+            limit = self.count
+        }
+
+        return self.items[0..<limit]
+    }
 }
 
 extension AmenityCollection {
