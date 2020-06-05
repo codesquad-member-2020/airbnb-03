@@ -7,6 +7,10 @@ struct StayList {
         stayList.count
     }
     
+    var allItems: [Stay] {
+        stayList
+    }
+
     init(_ stayList: [Stay] = []) {
         self.stayList = stayList
     }

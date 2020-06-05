@@ -11,7 +11,11 @@ final class StayListCollectionViewDataSource: NSObject, UICollectionViewDataSour
     }
     
     private var changedHandler: Handler
-    
+
+    var allStays: [Stay] {
+        self.stayList.allItems
+    }
+
     init(with stayList: Key = StayList(), changedHandler: @escaping Handler = { _ in }) {
         self.stayList = stayList
         self.changedHandler = changedHandler
@@ -33,7 +37,7 @@ final class StayListCollectionViewDataSource: NSObject, UICollectionViewDataSour
     func updateSavedData(at indexPath: IndexPath, saved: Bool) {
         stayList.updateSaved(at: indexPath, saved: saved)
     }
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

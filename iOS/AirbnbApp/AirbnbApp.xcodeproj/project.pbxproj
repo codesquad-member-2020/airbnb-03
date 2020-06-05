@@ -91,6 +91,8 @@
 		8D6A9DBA2487F39600850C94 /* ReserveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A9DB92487F39600850C94 /* ReserveButton.swift */; };
 		8D6A9DBD248809AA00850C94 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A9DBB248809AA00850C94 /* ReservationViewController.swift */; };
 		8D6A9DBE248809AA00850C94 /* ReservationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6A9DBC248809AA00850C94 /* ReservationViewController.xib */; };
+		8D7BB286248A265900EECF62 /* MapFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7BB285248A265900EECF62 /* MapFilterViewController.swift */; };
+		8D7BB288248A267000EECF62 /* MapFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D7BB287248A267000EECF62 /* MapFilterViewController.xib */; };
 		8D8FE71E2473CF71008FF0AF /* StayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */; };
 		8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */; };
 		8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */; };
@@ -240,6 +242,8 @@
 		8D6A9DB92487F39600850C94 /* ReserveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveButton.swift; sourceTree = "<group>"; };
 		8D6A9DBB248809AA00850C94 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		8D6A9DBC248809AA00850C94 /* ReservationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationViewController.xib; sourceTree = "<group>"; };
+		8D7BB285248A265900EECF62 /* MapFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapFilterViewController.swift; sourceTree = "<group>"; };
+		8D7BB287248A267000EECF62 /* MapFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapFilterViewController.xib; sourceTree = "<group>"; };
 		8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayListViewController.swift; sourceTree = "<group>"; };
 		8D9B7A0E247C06E500D9A99D /* StayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayDetailViewController.swift; sourceTree = "<group>"; };
 		8D9B7A0F247C06E500D9A99D /* StayDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StayDetailViewController.xib; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 				384C0E362473E0650051528B /* StayListCollectionView.swift */,
 				3839C7AF2477D6760039BB19 /* SeparatorView.swift */,
 				38EB9D8E2479A48100236DB4 /* LoadingView.swift */,
+				8D7BB287248A267000EECF62 /* MapFilterViewController.xib */,
 				384BB7B82477D3BC0019000B /* SearchField */,
 				384BB7B92477D3CC0019000B /* SearchFilter */,
 				384BB7BA2477D3F90019000B /* MapButton */,
@@ -618,6 +623,7 @@
 				8D8FE71D2473CF71008FF0AF /* StayListViewController.swift */,
 				8D32844424764B0F0078678A /* SearchTextFieldDelegate.swift */,
 				8D9B7A16247C0F1200D9A99D /* StayListCollectionViewDelegate.swift */,
+				8D7BB285248A265900EECF62 /* MapFilterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -889,6 +895,7 @@
 				385D8BF124728ECC009E2E2B /* LaunchScreen.storyboard in Resources */,
 				8D5CE95F2484E74F00C850A1 /* SectionSummary.xib in Resources */,
 				8D5CE98324868F0A00C850A1 /* SectionTitleInfo.xib in Resources */,
+				8D7BB288248A267000EECF62 /* MapFilterViewController.xib in Resources */,
 				8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */,
 				385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */,
 				8DC3857C2489E620007820E2 /* SectionDetailLocation.xib in Resources */,
@@ -1058,6 +1065,7 @@
 				8D4633BD2488DFE400BBD5C2 /* StayDetail.swift in Sources */,
 				8D4633C72489204700BBD5C2 /* UIStackView+resetSubviews.swift in Sources */,
 				38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */,
+				8D7BB286248A265900EECF62 /* MapFilterViewController.swift in Sources */,
 				8DC385802489E652007820E2 /* SectionDetailAmenities.swift in Sources */,
 				8D5CE98524868F1600C850A1 /* SectionTitleInfo.swift in Sources */,
 				38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */,
