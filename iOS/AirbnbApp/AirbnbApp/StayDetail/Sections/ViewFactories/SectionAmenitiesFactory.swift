@@ -8,7 +8,7 @@ class SectionAmenitiesFactory {
 
     static func makeView(for amenities: AmenityCollection, amenitiesLimit number: Int? = nil) -> SectionAmenities {
         let view = SectionAmenities.loadFromXib()
-        view.viewAllButton.setTitle("Show all \(amenities.count) amenities", for: .normal)
+        view.showAllButton.setTitle("Show all \(amenities.count) amenities", for: .normal)
 
         amenities.limitOrAll(with: number).map {
             let amenityView = AmenityView.loadFromXib()

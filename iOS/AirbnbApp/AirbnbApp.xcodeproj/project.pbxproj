@@ -105,6 +105,12 @@
 		8DC385722489D80B007820E2 /* SectionDetailViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC385712489D80B007820E2 /* SectionDetailViewFactory.swift */; };
 		8DC385742489D996007820E2 /* SectionDetailSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC385732489D996007820E2 /* SectionDetailSummary.swift */; };
 		8DC385762489D9AC007820E2 /* SectionDetailSummary.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC385752489D9AC007820E2 /* SectionDetailSummary.xib */; };
+		8DC385782489E0F0007820E2 /* SectionDetailAmenitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC385772489E0F0007820E2 /* SectionDetailAmenitiesFactory.swift */; };
+		8DC3857A2489E60A007820E2 /* SectionDetailAmenities.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC385792489E60A007820E2 /* SectionDetailAmenities.xib */; };
+		8DC3857C2489E620007820E2 /* SectionDetailLocation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC3857B2489E620007820E2 /* SectionDetailLocation.xib */; };
+		8DC3857E2489E645007820E2 /* SectionDetailLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3857D2489E645007820E2 /* SectionDetailLocation.swift */; };
+		8DC385802489E652007820E2 /* SectionDetailAmenities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3857F2489E652007820E2 /* SectionDetailAmenities.swift */; };
+		8DC385822489E914007820E2 /* SectionDetailLocationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC385812489E914007820E2 /* SectionDetailLocationFactory.swift */; };
 		8DC8A90524893E4400756086 /* AmenityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DC8A90424893E4400756086 /* AmenityView.xib */; };
 		8DC8A908248955D400756086 /* TitleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A907248955D400756086 /* TitleInfo.swift */; };
 		8DC8A90A2489560D00756086 /* BriefInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC8A9092489560D00756086 /* BriefInfo.swift */; };
@@ -243,6 +249,12 @@
 		8DC385712489D80B007820E2 /* SectionDetailViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailViewFactory.swift; sourceTree = "<group>"; };
 		8DC385732489D996007820E2 /* SectionDetailSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailSummary.swift; sourceTree = "<group>"; };
 		8DC385752489D9AC007820E2 /* SectionDetailSummary.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionDetailSummary.xib; sourceTree = "<group>"; };
+		8DC385772489E0F0007820E2 /* SectionDetailAmenitiesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailAmenitiesFactory.swift; sourceTree = "<group>"; };
+		8DC385792489E60A007820E2 /* SectionDetailAmenities.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionDetailAmenities.xib; sourceTree = "<group>"; };
+		8DC3857B2489E620007820E2 /* SectionDetailLocation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionDetailLocation.xib; sourceTree = "<group>"; };
+		8DC3857D2489E645007820E2 /* SectionDetailLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailLocation.swift; sourceTree = "<group>"; };
+		8DC3857F2489E652007820E2 /* SectionDetailAmenities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailAmenities.swift; sourceTree = "<group>"; };
+		8DC385812489E914007820E2 /* SectionDetailLocationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDetailLocationFactory.swift; sourceTree = "<group>"; };
 		8DC8A90424893E4400756086 /* AmenityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmenityView.xib; sourceTree = "<group>"; };
 		8DC8A907248955D400756086 /* TitleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleInfo.swift; sourceTree = "<group>"; };
 		8DC8A9092489560D00756086 /* BriefInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefInfo.swift; sourceTree = "<group>"; };
@@ -704,9 +716,15 @@
 				8DA4BA30247FB7B800FFE332 /* StayDetailSectionViewController.swift */,
 				8DA4BA31247FB7B800FFE332 /* StayDetailSectionViewController.xib */,
 				8DC385712489D80B007820E2 /* SectionDetailViewFactory.swift */,
-				8DC3856F2489D6B7007820E2 /* SectionDetailSummaryFactory.swift */,
 				8DC385732489D996007820E2 /* SectionDetailSummary.swift */,
 				8DC385752489D9AC007820E2 /* SectionDetailSummary.xib */,
+				8DC3856F2489D6B7007820E2 /* SectionDetailSummaryFactory.swift */,
+				8DC3857F2489E652007820E2 /* SectionDetailAmenities.swift */,
+				8DC385792489E60A007820E2 /* SectionDetailAmenities.xib */,
+				8DC385772489E0F0007820E2 /* SectionDetailAmenitiesFactory.swift */,
+				8DC3857D2489E645007820E2 /* SectionDetailLocation.swift */,
+				8DC3857B2489E620007820E2 /* SectionDetailLocation.xib */,
+				8DC385812489E914007820E2 /* SectionDetailLocationFactory.swift */,
 			);
 			path = StayDetailSection;
 			sourceTree = "<group>";
@@ -858,8 +876,10 @@
 				8D5CE98324868F0A00C850A1 /* SectionTitleInfo.xib in Resources */,
 				8DCA196F24750CCF00B3C167 /* SearchFieldView.xib in Resources */,
 				385D8BEE24728ECC009E2E2B /* Assets.xcassets in Resources */,
+				8DC3857C2489E620007820E2 /* SectionDetailLocation.xib in Resources */,
 				38A328E82487DB88009ED71D /* GuestsFilterTitleView.xib in Resources */,
 				8D9B7A11247C06E500D9A99D /* StayDetailViewController.xib in Resources */,
+				8DC3857A2489E60A007820E2 /* SectionDetailAmenities.xib in Resources */,
 				38A328EA2487DEB0009ED71D /* GuestsFilterButtonSectionView.xib in Resources */,
 				8D6A9DBE248809AA00850C94 /* ReservationViewController.xib in Resources */,
 				8D5CE9972487841E00C850A1 /* SectionBriefInfo.xib in Resources */,
@@ -984,12 +1004,14 @@
 				3899CB0624829859006CB23E /* Dates.swift in Sources */,
 				8DC8A90A2489560D00756086 /* BriefInfo.swift in Sources */,
 				8DC8A9102489562A00756086 /* Amenity.swift in Sources */,
+				8DC385782489E0F0007820E2 /* SectionDetailAmenitiesFactory.swift in Sources */,
 				3899CAEF24815434006CB23E /* DatesFilterSearchButton.swift in Sources */,
 				8D328443247647900078678A /* ViewFromXib.swift in Sources */,
 				8D5CE9872486939400C850A1 /* SectionAmenities.swift in Sources */,
 				385D8BE724728EC8009E2E2B /* SceneDelegate.swift in Sources */,
 				8DC385722489D80B007820E2 /* SectionDetailViewFactory.swift in Sources */,
 				8D9B7A10247C06E500D9A99D /* StayDetailViewController.swift in Sources */,
+				8DC3857E2489E645007820E2 /* SectionDetailLocation.swift in Sources */,
 				38BDDCAE2475A36D000ACA1C /* NSMutableAttributedString+append.swift in Sources */,
 				3899CB092484FB28006CB23E /* CalendarCollectionViewDataSource.swift in Sources */,
 				8DC8A9132489567200756086 /* SectionTitleInfoFactory.swift in Sources */,
@@ -1016,6 +1038,7 @@
 				8D4633BD2488DFE400BBD5C2 /* StayDetail.swift in Sources */,
 				8D4633C72489204700BBD5C2 /* UIStackView+resetSubviews.swift in Sources */,
 				38F1F89424795F5200454668 /* ViewModelBinding.swift in Sources */,
+				8DC385802489E652007820E2 /* SectionDetailAmenities.swift in Sources */,
 				8D5CE98524868F1600C850A1 /* SectionTitleInfo.swift in Sources */,
 				38863E252478F6AB00D8C75C /* ThumbImagePagingView.swift in Sources */,
 				3893B5DE247E9168004783C4 /* SaveButton.swift in Sources */,
@@ -1037,6 +1060,7 @@
 				385F47E12488C58E006B0A33 /* UIView+addSubviews.swift in Sources */,
 				3899CADF24813ABD006CB23E /* DatesFilterTitleView.swift in Sources */,
 				3899CB0B2484FFD2006CB23E /* ReservationDates.swift in Sources */,
+				8DC385822489E914007820E2 /* SectionDetailLocationFactory.swift in Sources */,
 				8D9B7A19247C1D4500D9A99D /* DetailButton.swift in Sources */,
 				8DC8A92624899CE500756086 /* SectionMapFactory.swift in Sources */,
 				8D9B7A13247C09E500D9A99D /* DetailSectionView.swift in Sources */,

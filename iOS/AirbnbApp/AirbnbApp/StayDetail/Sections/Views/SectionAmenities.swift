@@ -4,8 +4,8 @@ class SectionAmenities: UIView {
     static let xibName = String(describing: SectionAmenities.self)
 
     @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var viewAllButton: UIButton!
-
+    @IBOutlet weak var showAllButton: DetailButton!
+    
     private weak var delegate: SectionAmenitiesDelegate?
 
     override func awakeFromNib() {

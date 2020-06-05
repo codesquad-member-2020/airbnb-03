@@ -58,8 +58,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="showAllButton" destination="poO-LU-nUw" id="TLY-jK-JTv"/>
                 <outlet property="stackView" destination="2lf-JN-gFg" id="Mb5-w8-f7B"/>
-                <outlet property="viewAllButton" destination="poO-LU-nUw" id="Xpy-pn-hmE"/>
             </connections>
             <point key="canvasLocation" x="-23.188405797101453" y="-0.33482142857142855"/>
         </view>

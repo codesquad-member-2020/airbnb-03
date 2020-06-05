@@ -117,9 +117,13 @@ class StayDetailViewController: UIViewController {
 
 extension StayDetailViewController: SectionSummaryDelegate {
     func didTapMoreSummaryButton() {
+        makeAndPushController(contentTitle: "Summary", viewFactoryType: SectionDetailSummaryFactory.self)
+    }
+
+    private func makeAndPushController(contentTitle: String?, viewFactoryType: SectionDetailViewFactory.Type) {
         let viewController = StayDetailSectionViewController()
-        viewController.contentTitle = "Summary"
-        viewController.viewFactory = SectionDetailSummaryFactory.self
+        viewController.contentTitle = contentTitle
+        viewController.viewFactory = viewFactoryType.self
         viewController.stayDetail = stayDetail
         navigationController?.pushViewController(viewController, animated: true)
     }
@@ -127,12 +131,13 @@ extension StayDetailViewController: SectionSummaryDelegate {
 
 extension StayDetailViewController: SectionAmenitiesDelegate {
     func didTapShowAllButton() {
-        print("Tapped Amenities detail button......")
+        makeAndPushController(contentTitle: "Amenities", viewFactoryType: SectionDetailAmenitiesFactory.self)
+
     }
 }
 
 extension StayDetailViewController: SectionMapDelegate {
     func didTapMoreLocationButton() {
-        print("Tapped Map detail button...")
+        makeAndPushController(contentTitle: "Location", viewFactoryType: SectionDetailLocationFactory.self)
     }
 }
