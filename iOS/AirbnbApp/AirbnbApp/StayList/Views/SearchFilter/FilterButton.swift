@@ -24,7 +24,15 @@ final class FilterButton: UIButton {
         return CGSize(width: size.width + (sidePadding * 2), height: size.height)
     }
     
-    func update(with filtered: Bool) {
+    func update(with filtered: Bool, guests: (adults: Int, children: Int, infants: Int)? = nil) {
+        guard let guests = guests else { return }
+        if filtered {
+            var guestsText = "Guests \(guests.adults + guests.children)"
+            if guests.infants != 0 {
+                guestsText = "\(guestsText) ・ infants \(guests.infants)"
+            }
+            setTitle(guestsText, for: .normal)
+        }
         backgroundColor = filtered ? .darkGray : .white
         setTitleColor(filtered ? .white : .darkGray, for: .normal)
     }

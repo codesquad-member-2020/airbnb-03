@@ -232,15 +232,12 @@ extension StayListViewController: GuestsFilterSearchDelegate {
     func searchStayList(guests: (adults: Int?, children: Int?, infants: Int?)) {
         searchFilterQuery.updateFilters(
             guest: SearchFilterQuery.Guest(
-                adults: guests.adults,
-                children: guests.children,
-                infants: guests.infants))
-        if searchFilterQuery.filteredGuests() != (1, 0, 0) {
-            searchFilterView.updateGuestsFiltered(with: true)
-            fetchStayList()
-        } else {
-            searchFilterView.updateGuestsFiltered(with: false)
-        }
+                adults: guests.adults ?? 0,
+                children: guests.children ?? 0,
+                infants: guests.infants ?? 0))
+        let filteredGuests = searchFilterQuery.filteredGuests()
+        searchFilterView.updateGuestsFiltered(with: true, guests: filteredGuests)
+        fetchStayList()
     }
 }
 

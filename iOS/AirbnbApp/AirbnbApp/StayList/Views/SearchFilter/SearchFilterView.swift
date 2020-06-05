@@ -22,7 +22,7 @@ final class SearchFilterView: UIView, ViewFromXib {
         delegate?.didTapGuestsFilter()
     }
     
-    func updateGuestsFiltered(with filtered: Bool) {
-        guestsFilterButton.update(with: filtered)
+    func updateGuestsFiltered(with filtered: Bool, guests: (Int, Int, Int)? = nil) {
+        guestsFilterButton.update(with: filtered, guests: guests)
     }
 }
