@@ -34,6 +34,10 @@ struct SearchFilterQuery: Encodable {
     func filteredGuests() -> (Int, Int, Int) {
         return (adults ?? 0, children ?? 0, infants ?? 0)
     }
+    
+    func filteredDates() -> (checkIn: String?, checkOut: String?) {
+        return (checkInDate, checkOutDate)
+    }
 }
 
 // MARK:- Update Filters Method

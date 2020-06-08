@@ -223,6 +223,8 @@ extension StayListViewController: DatesFilterSearchDelegate {
         }
         searchFilterQuery.updateFilters(
             date: SearchFilterQuery.Date(checkIn: checkIn, checkOut: checkOut))
+        let dates = searchFilterQuery.filteredDates()
+        searchFilterView.updateDatesFiltered(dates: dates)
         fetchStayList()
     }
 }
