@@ -36,4 +36,24 @@ final class FilterButton: UIButton {
         backgroundColor = filtered ? .darkGray : .white
         setTitleColor(filtered ? .white : .darkGray, for: .normal)
     }
+    
+    func update(with dates: (checkIn: String?, checkOut: String?)) {
+        guard let checkIn = dates.checkIn else { return }
+        guard let checkOut = dates.checkOut else { return }
+        let checkInDate = DateFormatter.reservation.date(from: checkIn)!
+        let checkOutDate = DateFormatter.reservation.date(from: checkOut)!
+        
+        if checkInDate.monthName == checkOutDate.monthName {
+            setTitle(
+                "\(checkInDate.monthName) \(checkInDate.day) - \(checkOutDate.day)",
+                for: .normal)
+        } else {
+            setTitle(
+                "\(checkInDate.monthName) \(checkInDate.day) - \(checkOutDate.monthName) \(checkOutDate.day)",
+                for: .normal)
+        }
+        
+        backgroundColor = .darkGray
+        setTitleColor(.white, for: .normal)
+    }
 }
