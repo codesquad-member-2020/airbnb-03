@@ -22,6 +22,7 @@ final class StayListViewController: UIViewController {
         configureCollectionView()
         configureTextFieldDelegate()
         configureSearchFilterViewTapDelegate()
+        configureNotification()
         
         fetchStayList()
     }
@@ -83,11 +84,56 @@ final class StayListViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func mapButtonTouched(_ sender: Any) {
-        #warning("동작 확인용 VC")
-        let viewController = UIViewController()
-        viewController.modalPresentationStyle = .automatic // .fullScreen으로 변경할 것
-        viewController.view.backgroundColor = .systemTeal
+        let viewController = MapFilterViewController()
+        viewController.stays = stayListCollectionViewDataSource.allStays
+        viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
+    }
+}
+
+// MARK:- Notification Configuration
+
+extension StayListViewController {
+    private func configureNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didTapSaveButton),
+            name: .didTapSaveButton,
+            object: nil)
+    }
+    
+    @objc private func didTapSaveButton(notification: Notification) {
+        guard
+            let locationOfButton = notification.userInfo?["location"] as? CGPoint,
+            let indexPath = stayListCollectionView.indexPathForItem(at: locationOfButton),
+            let stayCell = stayListCollectionView.cellForItem(at: indexPath) as? StayCell
+        else {
+            return
+        }
+        stayListCollectionViewDataSource.stayData(at: indexPath) { [weak self] (stay) in
+            let isSaved: Bool = stay.saved
+            if !isSaved {
+                stayCell.animateSaveButton()
+            }
+            SavingStayUseCase.requestSave(
+                stayID: stay.id,
+                shouldCancel: isSaved) { (success) in
+                    guard success
+                    else {
+                        DispatchQueue.main.async {
+                            stayCell.updateSaveButton(with: isSaved)
+                        }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        stayCell.updateSaveButton(with: !isSaved)
+                        self?.stayListCollectionViewDataSource.updateSavedData(
+                            at: indexPath,
+                            saved: !isSaved)
+                        self?.stayListCollectionView.reloadItems(at: [indexPath])
+                    }
+            }
+        }
     }
 }
 
@@ -95,12 +141,13 @@ final class StayListViewController: UIViewController {
 
 extension StayListViewController: StayListCollectionViewTapDelegate {
     func didTapCell(at indexPath: IndexPath) {
-        stayListCollectionViewDataSource.idForCell(at: indexPath) { [weak self] (id) in
+        stayListCollectionViewDataSource.idForCell(at: indexPath) { id in
             let detailViewController = StayDetailViewController()
-            #warning("Request detail data")
-            self?.navigationController?.pushViewController(detailViewController, animated: true)
-//            detailViewController.modalPresentationStyle = .fullScreen
-//            present(detailViewController, animated: true, completion: nil)
+            detailViewController.stayDetailID = id
+
+            let viewController = UINavigationController(rootViewController: detailViewController)
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true)
         }
     }
 }
@@ -131,6 +178,7 @@ extension StayListViewController {
     
     private func configureTextFieldDelegate() {
         searchTextFieldDelegate = SearchTextFieldDelegate()
+        searchTextFieldDelegate.searchDelegate = self
         searchFieldView.configureTextFieldDelegate(searchTextFieldDelegate)
     }
 }
@@ -160,6 +208,13 @@ extension StayListViewController: SearchFilterViewTapDelegate {
     }
 }
 
+extension StayListViewController: SearchTextFieldSearchDelegate {
+    func searchStayList(keyword: String?) {
+        searchFilterQuery.updateFilters(search: keyword)
+        fetchStayList()
+    }
+}
+
 extension StayListViewController: DatesFilterSearchDelegate {
     func searchStayList(dates: (checkIn: String?, checkOut: String?)) {
         guard let checkIn = dates.checkIn, let checkOut = dates.checkOut
@@ -168,6 +223,8 @@ extension StayListViewController: DatesFilterSearchDelegate {
         }
         searchFilterQuery.updateFilters(
             date: SearchFilterQuery.Date(checkIn: checkIn, checkOut: checkOut))
+        let dates = searchFilterQuery.filteredDates()
+        searchFilterView.updateDatesFiltered(dates: dates)
         fetchStayList()
     }
 }
@@ -176,15 +233,12 @@ extension StayListViewController: GuestsFilterSearchDelegate {
     func searchStayList(guests: (adults: Int?, children: Int?, infants: Int?)) {
         searchFilterQuery.updateFilters(
             guest: SearchFilterQuery.Guest(
-                adults: guests.adults,
-                children: guests.children,
-                infants: guests.infants))
-        if searchFilterQuery.filteredGuests() != (1, 0, 0) {
-            searchFilterView.updateGuestsFiltered(with: true)
-            fetchStayList()
-        } else {
-            searchFilterView.updateGuestsFiltered(with: false)
-        }
+                adults: guests.adults ?? 0,
+                children: guests.children ?? 0,
+                infants: guests.infants ?? 0))
+        let filteredGuests = searchFilterQuery.filteredGuests()
+        searchFilterView.updateGuestsFiltered(with: true, guests: filteredGuests)
+        fetchStayList()
     }
 }
 
@@ -193,7 +247,6 @@ extension StayListViewController: GuestsFilterSearchDelegate {
 extension StayListViewController {
     private func configureUI() {
         view.backgroundColor = .white
-        navigationController?.setNavigationBarHidden(true, animated: false)
         searchFieldView = SearchFieldView.loadFromXib()
         separatorView = SeparatorView()
         searchFilterView = SearchFilterView.loadFromXib()

@@ -39,6 +39,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poO-LU-nUw" customClass="DetailButton" customModule="AirbnbApp" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="155" width="414" height="30"/>
                     <state key="normal" title="Show all 30 amenities"/>
+                    <connections>
+                        <action selector="showAllButtonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="NIA-qa-li5"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -55,8 +58,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="showAllButton" destination="poO-LU-nUw" id="TLY-jK-JTv"/>
                 <outlet property="stackView" destination="2lf-JN-gFg" id="Mb5-w8-f7B"/>
-                <outlet property="viewAllButton" destination="poO-LU-nUw" id="Xpy-pn-hmE"/>
             </connections>
             <point key="canvasLocation" x="-23.188405797101453" y="-0.33482142857142855"/>
         </view>

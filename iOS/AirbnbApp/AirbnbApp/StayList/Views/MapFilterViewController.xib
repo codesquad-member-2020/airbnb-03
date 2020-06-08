@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapFilterViewController" customModule="AirbnbApp" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="93l-pa-lNi" id="83l-d7-KvM"/>
+                <outlet property="view" destination="iN0-l3-epB" id="uKt-0y-owS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="93l-pa-lNi">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnS-1v-S2N">
+                    <rect key="frame" x="21" y="44" width="28" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="clear.fill" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large"/>
+                    </state>
+                    <connections>
+                        <action selector="closeButtonTouched:" destination="-1" eventType="touchUpInside" id="ue9-Fc-KLG"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="93l-pa-lNi" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="1N6-nO-KTb"/>
+                <constraint firstItem="93l-pa-lNi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="2qe-aN-GFf"/>
+                <constraint firstItem="93l-pa-lNi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DQg-uN-q1T"/>
+                <constraint firstItem="93l-pa-lNi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FD7-Dn-TeL"/>
+                <constraint firstItem="vnS-1v-S2N" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="XtA-7X-yeJ"/>
+                <constraint firstItem="vnS-1v-S2N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="21" id="glI-fS-sC1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
+    </resources>
+</document>

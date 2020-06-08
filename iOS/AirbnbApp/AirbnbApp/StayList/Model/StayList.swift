@@ -7,6 +7,10 @@ struct StayList {
         stayList.count
     }
     
+    var allItems: [Stay] {
+        stayList
+    }
+
     init(_ stayList: [Stay] = []) {
         self.stayList = stayList
     }
@@ -17,5 +21,9 @@ struct StayList {
     
     subscript(indexPath: IndexPath) -> Stay {
         stayList[indexPath.item]
+    }
+
+    mutating func updateSaved(at indexPath: IndexPath, saved: Bool) {
+        stayList[indexPath.item].saved = saved
     }
 }

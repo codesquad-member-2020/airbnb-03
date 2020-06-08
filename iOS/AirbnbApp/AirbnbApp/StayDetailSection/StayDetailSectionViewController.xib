@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StayDetailSectionViewController" customModule="AirbnbApp" customModuleProvider="target">
             <connections>
+                <outlet property="scrollContentView" destination="uKk-KL-Cd4" id="d58-Gi-USx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,9 +17,62 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVY-WY-Lxy" userLabel="Top Bar View">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvh-h3-pVt">
+                            <rect key="frame" x="15" y="14" width="13" height="22"/>
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <state key="normal" image="chevron.left" catalog="system">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
+                            </state>
+                            <connections>
+                                <action selector="backButtonTouched:" destination="-1" eventType="touchUpInside" id="InJ-2G-EEM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="J3n-sE-BA8"/>
+                        <constraint firstItem="Gvh-h3-pVt" firstAttribute="leading" secondItem="yVY-WY-Lxy" secondAttribute="leading" constant="15" id="e3m-Oa-LPH"/>
+                        <constraint firstItem="Gvh-h3-pVt" firstAttribute="centerY" secondItem="yVY-WY-Lxy" secondAttribute="centerY" id="mJa-px-1ln"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b7d-kZ-jSf">
+                    <rect key="frame" x="0.0" y="91" width="414" height="771"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKk-KL-Cd4" userLabel="Content View">
+                            <rect key="frame" x="10" y="0.0" width="394" height="771"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="uKk-KL-Cd4" firstAttribute="leading" secondItem="f7R-8y-pmZ" secondAttribute="leading" constant="10" id="03I-lC-fXi"/>
+                        <constraint firstItem="uKk-KL-Cd4" firstAttribute="bottom" secondItem="f7R-8y-pmZ" secondAttribute="bottom" id="D13-T7-wF8"/>
+                        <constraint firstItem="uKk-KL-Cd4" firstAttribute="width" secondItem="414-Hj-9xE" secondAttribute="width" constant="-20" id="M8U-q3-Fo5"/>
+                        <constraint firstItem="uKk-KL-Cd4" firstAttribute="trailing" secondItem="f7R-8y-pmZ" secondAttribute="trailing" constant="-10" id="oIa-hb-ECu"/>
+                        <constraint firstItem="uKk-KL-Cd4" firstAttribute="top" secondItem="f7R-8y-pmZ" secondAttribute="top" id="qWc-52-9Pf"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="f7R-8y-pmZ"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="414-Hj-9xE"/>
+                </scrollView>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="yVY-WY-Lxy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7pl-QB-Sx8"/>
+                <constraint firstItem="b7d-kZ-jSf" firstAttribute="top" secondItem="yVY-WY-Lxy" secondAttribute="bottom" id="MFx-vd-bNx"/>
+                <constraint firstItem="yVY-WY-Lxy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PLo-0L-kvD"/>
+                <constraint firstItem="b7d-kZ-jSf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UFD-7i-gw0"/>
+                <constraint firstItem="yVY-WY-Lxy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WtP-72-rWH"/>
+                <constraint firstItem="b7d-kZ-jSf" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ag0-oi-weI"/>
+                <constraint firstItem="b7d-kZ-jSf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="f86-e1-oGJ"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-154" y="-4"/>
+            <point key="canvasLocation" x="-155.07246376811597" y="-4.0178571428571423"/>
         </view>
     </objects>
+    <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+    </resources>
 </document>
