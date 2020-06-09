@@ -10,6 +10,12 @@
 
 <br>
 
+<p align="center">
+<img src="https://github.com/codesquad-member-2020/airbnb-03/blob/dev-ios/screenshots/iPhone11.stays-1.png" width="200px"> <img src="https://github.com/codesquad-member-2020/airbnb-03/blob/dev-ios/screenshots/iPhone11.stays-2.png" width="200px"> <img src="https://github.com/codesquad-member-2020/airbnb-03/blob/dev-ios/screenshots/iPhone11.stays-3.png" width="200px"> <img src="https://github.com/codesquad-member-2020/airbnb-03/blob/dev-ios/screenshots/iPhone11.detail-1.png" width="200px"> <img src="https://github.com/codesquad-member-2020/airbnb-03/blob/dev-ios/screenshots/iPhone11.detail-2.png" width="200px"> <img src="https://github.com/codesquad-member-2020/airbnb-03/blob/dev-ios/screenshots/iPhone11.detail-3.png" width="200px"><img src="https://github.com/codesquad-member-2020/airbnb-03/blob/dev-ios/screenshots/iPhone11.detail-4.png" width="200px"><img src="https://github.com/codesquad-member-2020/airbnb-03/blob/dev-ios/screenshots/iPhone11.detail-5.png" width="200px">
+</p>
+
+<br>
+
 ## 🍔 TEAM
 
 #### 든든한 백엔드
